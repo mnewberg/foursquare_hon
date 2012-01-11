@@ -1,0 +1,99 @@
+<!DOCTYPE html>  
+<html>  
+  <head>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+
+   <meta name="viewport" content="width=480, initial-scale=1">
+  
+  <form name="MyForm" id="MyForm" action="/gallery" method="get">
+	
+	<input type=hidden name="lat" id=”lat″>
+	<input type=hidden name="lon" id=”lon″>
+	<input type=hidden name="gender" id="gender">
+	
+ </form>
+ 
+     <script>  
+        jQuery(window).ready(function(){  
+            jQuery("#btnInit").click(initiate_geolocation);  
+        });
+                jQuery(window).ready(function(){  
+            jQuery("#btnInit2").click(initiate_geolocation_male);  
+        });  
+  
+  
+        function initiate_geolocation() {  
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
+        }
+        
+          
+        function initiate_geolocation_male() {  
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query_male,handle_errors);  
+        }  
+  
+  
+        function handle_errors(error)  
+        {  
+            switch(error.code)  
+            {  
+                case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+                break;  
+  
+                case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+                break;  
+  
+                case error.TIMEOUT: alert("retrieving position timed out");  
+                break;  
+  
+                default: alert("unknown error");  
+                break;  
+            }  
+        }
+        
+                function handle_geolocation_query(position){
+                var lat=position.coords.latitude
+                var lon=position.coords.longitude 
+           
+                  	$('input[name=lat]').val(lat);
+					$('input[name=lon]').val(lon);
+					$('input[name=gender]').val('female')
+					$('#MyForm').submit();  
+
+				}
+				
+				function handle_geolocation_query_male(position){
+                var lat=position.coords.latitude
+                var lon=position.coords.longitude 
+           
+                  	$('input[name=lat]').val(lat);
+					$('input[name=lon]').val(lon);
+					$('input[name=gender]').val('male')
+					$('#MyForm').submit();  
+
+				}
+
+
+        
+
+				
+    </script>  
+</head>
+<body>
+	<p>Who do you want to see?</p>
+	<br>
+<button id="btnInit" height="300" width="300" style="
+    width: 300px;
+    height: 150px;
+    font-size: 15px;
+    font-family: Helvetica;
+">Chicks</button>
+
+<button id="btnInit2" height="300" width="300" style="
+    width: 300px;
+    height: 150px;
+    font-size: 15px;
+    font-family: Helvetica;
+">Dudes</button>
+
+  </body>  
+</html>  

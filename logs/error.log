@@ -1,0 +1,2 @@
+[Mon Jan 09 22:19:03 2012] [error] [client 207.239.107.3] mod_wsgi (pid=17654): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Jan 09 22:19:03 2012] [error] [client 207.239.107.3] IOError: failed to write data

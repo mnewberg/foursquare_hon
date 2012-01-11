@@ -1,0 +1,70 @@
+<!DOCTYPE html>  
+<html>  
+  <head>
+   <meta name="viewport" content="width=480, initial-scale=1">
+ 
+  </head>
+  <body>
+  
+  <form name="MyForm" id="MyForm" action="/gallery" method="get">
+	
+	<input type=hidden name="lat" id=”lat″>
+	<input type=hidden name="lon" id=”lon″>
+	
+ </form>
+ 
+  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  	<script src="http://samplespotting.com/JS/h5utils.js"></script>
+    <script>  
+        jQuery(window).ready(function(){  
+            jQuery("#btnInit").click(initiate_geolocation);  
+        });  
+  
+        function initiate_geolocation() {  
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
+        }  
+  
+        function handle_errors(error)  
+        {  
+            switch(error.code)  
+            {  
+                case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+                break;  
+  
+                case error.POSITION_UNAVAILABLE: alert("could not detect cu
+                break;  
+  
+                case error.TIMEOUT: alert("retrieving position timed out");  
+                break;  
+  
+                default: alert("unknown error");  
+                break;  
+            }  
+        }
+        
+                function handle_geolocation_query(position){
+                var lat=position.coords.latitude
+                var lon=position.coords.longitude 
+           
+                  	$('input[name=lat]').val(lat);
+					$('input[name=lon]').val(lon);
+					$('#MyForm').submit();  
+
+				}
+
+        
+
+				
+    </script>  
+    <div>  
+<button id="btnInit" height="300" width="300" style="
+    width: 300px;
+    height: 150px;
+    font-size: 15px;
+    font-family: Helvetica;
+">Find my location</button>
+	
+    </div>  
+  </body>  
+</html>  

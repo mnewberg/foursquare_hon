@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+<script>
+
+jQuery(window).ready(function(){  
+    jQuery("#hot").live("click",function(){    
+		$.ajax({
+		type: "POST",
+		url: "/rating/",
+		data:{
+				 pic_id:$(".ui-page-active .id_val").val(),
+			 	 vote:1,
+			 	 csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
+			  }
+		});
+})});
+
+
+</script>
+
+
+</head>
+<body>
+<meta name = "viewport" content = "width = device-width">
+{% for key, value in chickpix.items %}
+<div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
+	<div data-role="header">
+		<h1>How do I look!?!</h1></div>
+		<div data-role="content" id="content2" align="center">
+	<p><img src="http://img-s.foursquare.com/userpix/{{ value.0 }}" width="250px">
+	<input type="hidden" value="{{value.0}}" class="id_val" id="id_val{{ forloop.counter }}"/>
+{% csrf_token %}
+
+	</p><br>{{ value.1 }} @ {{ value.2 }}</div>
+	<div align="center" data-role="footer" data-position="fixed">
+	<a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="star" data-iconpos="right"  data-inline="true" data-theme="e" id="hot" name="hot">HOT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-ic\
+on="alert" data-iconpos="left"  data-inline="true" data-theme="e">NOT</a>
+
+	</div>
+	</div>
+{% endfor %} 
+
+</body>
+
+</html> 
