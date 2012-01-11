@@ -27,8 +27,7 @@ def gallery(request):
 	params.update(csrf(request))
 	authenticator.set_token(request.session['code'])
 	da_id=authenticator.query("/users/self")
-# 	u1 = user(fsq_id=da_id['user']['id'], contact=da_id['user']['contact'], photo=['user']['photo'][44:])
-# 	u1.save()
+	u1 = user.objects.create(fsq_id=da_id['user']['id'], contact=da_id['user']['contact'], photo=da_id['user']['photo'][44:])
 	request.session['fsq_id']=da_id['user']['id']
 
 	
@@ -43,10 +42,10 @@ def gallery(request):
 		i = i+1
 	for venue in herenow:
 		venueName=venue['hereNow']['venueName']
-		for user in venue['hereNow']['items']:
-			if user['user']['gender']==gender:
-				id=user['user']['id']
-				chickpix[id]=[user['user']['photo'][44:],user['user']['firstName'],venueName]
+		for entry in venue['hereNow']['items']:
+			if entry['user']['gender']==gender:
+				the_id=entry['user']['id']
+				chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
 			else:
 				pass
                      
