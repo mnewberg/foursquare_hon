@@ -26,11 +26,12 @@ def gallery(request):
 	params = {}
 	params.update(csrf(request))
 	authenticator.set_token(request.session['code'])
-	da_id=authenticator.query("/users/self")
-	u1 = user.objects.create(fsq_id=da_id['user']['id'], contact=da_id['user']['contact'], photo=da_id['user']['photo'][44:])
-	request.session['fsq_id']=da_id['user']['id']
-
-	
+	if 'fsq_id' not in request.session:
+		da_id=authenticator.query("/users/self")
+		u1 = user.objects.create(fsq_id=da_id['user']['id'], contact=da_id['user']['contact'], photo=da_id['user']['photo'][44:])
+		request.session['fsq_id']=da_id['user']['id']
+	else:
+		pass
 	trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
 	chickpix={}
 	herenow=[]
@@ -62,8 +63,8 @@ def vote(request):
 		r1 = rating(pic_id=pic_id, rating=1)
 	r1.save()
 	u1 = user.objects.get(fsq_id=request.session['fsq_id'])
-	u2 = user(ratings=r1)
-	u2.save()
+	u1.ratings.add(r1)
+        u1.save()
 	
 	return HttpResponse('Vote successful')
     
