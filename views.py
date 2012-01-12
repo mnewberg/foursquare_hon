@@ -4,6 +4,7 @@ import pysq.apiv2 as psq
 from gallery.models import user, rating
 from django.template import RequestContext
 from django.core.context_processors import csrf
+from randomizer import chunk
 
 
 f = open('/tmp/workfile', 'w')
@@ -49,8 +50,8 @@ def gallery(request):
 				chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
 			else:
 				pass
-                     
-	return render_to_response ('gallery.html', {'chickpix':chickpix, 'csrf':params}, context_instance=RequestContext(request))
+	pairs=[list(x) for x in chunk(chickpix.values(), 2)]
+	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
 
 def vote(request):
