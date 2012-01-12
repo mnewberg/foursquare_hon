@@ -27,11 +27,14 @@ jQuery(window).ready(function(){
 <body>
 <meta name = "viewport" content = "width = device-width">
 {% for key, value in chickpix.items %}
+{{ chickpix.items. }}
+
 <div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
 	<div data-role="header">
-		<h1>How do I look!?!</h1></div>
+		<h1>Who's hotter!?!</h1></div>
 		<div data-role="content" id="content2" align="center">
 	<p><img src="http://img-s.foursquare.com/userpix/{{ value.0 }}" width="250px">
+	  <img src="http://img-s.foursquare.com/userpix/{{ value.0 }}" width="250px">
 	<input type="hidden" value="{{value.0}}" class="id_val" id="id_val{{ forloop.counter }}"/>
 {% csrf_token %}
 
