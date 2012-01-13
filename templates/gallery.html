@@ -20,7 +20,7 @@ jQuery(window).ready(function(){
 })});
 
 
-$(("#img")bind('taphold',function(event, ui){$("#lnkDialog").click();});
+// $(("#img")bind('taphold',function(event, ui){$("#lnkDialog").click();});
 </script>
 
 
@@ -33,21 +33,26 @@ $(("#img")bind('taphold',function(event, ui){$("#lnkDialog").click();});
 <div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
 	<div data-role="header">
 		<h1>Who's hotter!?!</h1></div>
-<a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
-<div data-rel="dialog" id='full'><img src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}"></div>
-		<div data-role="content" id="content2" align="center">
-	<p><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="100">
-	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="100">
-	<input type="hidden" value="{{value.0.0}}" class="id_val" id="id_val{{ forloop.counter }}"/>
+	<a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
+
+		<div data-role="content" id="content2" align="center" class="ui-grid-a">
+	<div class="ui-block-a"><a href="http://www.google.com" data-rel="dialog" data-transition="pop"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
+	  </div>
+	<div class="ui-block-b">
+	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150">
+<br>{{ value.1.1 }} @ {{value.1.2}}</div>
+	<input type="hidden" value="{{value.0.0}}" class="id_val" id="id_val{{ forloop.counter }}"/></div>
+
 {% csrf_token %}
 
-	</p><p>{{ value.0.1 }} @ {{ value.0.2 }} {{ value.1.1 }} @ {{value.1.2}}</p></div>
 	<div align="center" data-role="footer" data-position="fixed">
 	<a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="star" data-iconpos="right"  data-inline="true" data-theme="e" id="hot" name="hot">HOT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="alert" data-iconpos="left"  data-inline="true" data-theme="e">NOT</a>
 
 	</div>
 	</div>
+
+
 {% endfor %} 
 
 </body>
