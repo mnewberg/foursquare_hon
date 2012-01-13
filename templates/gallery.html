@@ -20,29 +20,31 @@ jQuery(window).ready(function(){
 })});
 
 
+$(("#img")bind('taphold',function(event, ui){$("#lnkDialog").click();});
 </script>
 
 
 </head>
 <body>
 <meta name = "viewport" content = "width = device-width">
-{% for key, value in chickpix.items %}
-{{ chickpix.items. }}
+
+{% for value in chickpix %}
 
 <div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
 	<div data-role="header">
 		<h1>Who's hotter!?!</h1></div>
+<a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
+<div data-rel="dialog" id='full'><img src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}"></div>
 		<div data-role="content" id="content2" align="center">
-	<p><img src="http://img-s.foursquare.com/userpix/{{ value.0 }}" width="250px">
-	  <img src="http://img-s.foursquare.com/userpix/{{ value.0 }}" width="250px">
-	<input type="hidden" value="{{value.0}}" class="id_val" id="id_val{{ forloop.counter }}"/>
+	<p><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="100">
+	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="100">
+	<input type="hidden" value="{{value.0.0}}" class="id_val" id="id_val{{ forloop.counter }}"/>
 {% csrf_token %}
 
-	</p><br>{{ value.1 }} @ {{ value.2 }}</div>
+	</p><p>{{ value.0.1 }} @ {{ value.0.2 }} {{ value.1.1 }} @ {{value.1.2}}</p></div>
 	<div align="center" data-role="footer" data-position="fixed">
 	<a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="star" data-iconpos="right"  data-inline="true" data-theme="e" id="hot" name="hot">HOT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-ic\
-on="alert" data-iconpos="left"  data-inline="true" data-theme="e">NOT</a>
+        <a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="alert" data-iconpos="left"  data-inline="true" data-theme="e">NOT</a>
 
 	</div>
 	</div>

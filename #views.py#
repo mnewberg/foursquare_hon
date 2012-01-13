@@ -27,7 +27,7 @@ def gallery(request):
 	params = {}
 	params.update(csrf(request))
 	authenticator.set_token(request.session['code'])
-	if 'fsq_id' not in request.session:
+	if user.objects.get(fsq_id=
 		da_id=authenticator.query("/users/self")
 		u1 = user.objects.create(fsq_id=da_id['user']['id'], contact=da_id['user']['contact'], photo=da_id['user']['photo'][44:])
 		request.session['fsq_id']=da_id['user']['id']

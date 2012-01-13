@@ -1,3 +1,4 @@
+from itertools import groupby, imap
 def chunk(it, n=0):
 	if n == 0:
 		return iter([it])
