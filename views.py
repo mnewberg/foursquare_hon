@@ -52,12 +52,15 @@ def gallery(request):
 	all_venues_nearby = nearby_venues + trending_venues
 	for item in set(nearby_venues).intersection(set(trending_venues)):
 		all_venues_nearby.remove(item)
+	venue_names=[]
+	for item in all_venues_nearby:
+		venue_names.append(item['name'])
 	chickpix={}
 	herenow=[]
 	i=0
 	for venue in all_venues_nearby:
 		herenow.append(authenticator.query("/venues/"+venue+"/herenow"))
-		herenow[i]['hereNow']['venueName']=trending['venues'][i]['name']
+		herenow[i]['hereNow']['venueName']=venue_names[i]
 		i = i+1
     # for item in all_nearby['venues']:
     #     if item['id'] not in herenow:
