@@ -16,6 +16,11 @@ authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215X
 # def first(request):
 #     HttpResponseRedirect (uri)
 
+def postrecv(request):
+    os.chdir("/var/www/foursquare/")
+    os.system("git pull origin master")
+    return HttpResponse('IT WORKS')
+
 def second(request):
      request.session['code']=request.GET['code']
      return render_to_response('loc.html')

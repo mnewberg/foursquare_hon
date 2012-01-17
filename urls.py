@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^loc/$','views.second'),
     url(r'^gallery/$','views.gallery'),
     url(r'^rating/$','views.vote'),
+	url(r'^postrecv/$','views.postrecv'),
     # Examples:
     # url(r'^$', 'twilio.views.home', name='home'),
     # url(r'^twilio/', include('twilio.foo.urls')),
