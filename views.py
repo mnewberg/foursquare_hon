@@ -86,7 +86,7 @@ def vote(request):
 	else:
 		r1 = rating(pic_id=pic_id, rating=1, total_sets=1)
 	r1.save()
-	if rating.objects.filter(pic_id=pic_id2).count==1:
+	if rating.objects.filter(pic_id=pic_id2).count()==1:
 		r2 = rating.objects.get(pic_id=pic_id2)
 		r2.total_sets +=1
 	else:
