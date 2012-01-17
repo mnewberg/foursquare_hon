@@ -44,8 +44,8 @@ def gallery(request):
 	    nearby_venues.append(item['id'])
     ## do some sort of intersection here?
 	all_venues_nearby = nearby_venues + trending_venues
-    for item in set(nearby_venues).intersection(set(trebding_venues)):
-        all_venues_nearby.remove(item)
+	for item in set(nearby_venues).intersection(set(trebding_venues)):
+		all_venues_nearby.remove(item)
 	chickpix={}
 	herenow=[]
 	i=0
