@@ -34,6 +34,18 @@ def gallery(request):
 	else:
 		pass
 	trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
+	trending_venues=[]
+	nearby_venues=[]
+	for item in trending['venues']:
+	    trending_venues.append(item['id'])
+	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon)})
+	i=0
+	for item in all_nearby['groups'][i]['items']:
+	    nearby_venues.append(item['id'])
+    ## do some sort of intersection here?
+    all_venues_nearby = nearby_venues + trending_venues
+    for item in set(nearby_venues).intersection(set(trebding_venues)):
+        all_venues_nearby.remove(item)
 	chickpix={}
 	herenow=[]
 	i=0
@@ -42,7 +54,15 @@ def gallery(request):
 		herenow.append(authenticator.query("/venues/"+venue+"/herenow"))
 		herenow[i]['hereNow']['venueName']=trending['venues'][i]['name']
 		i = i+1
-	for venue in herenow:
+    # for item in all_nearby['venues']:
+    #     if item['id'] not in herenow:
+    #         venue=item['id']
+    #         herenow.append(authenticator.query("/venues/"+venue+"/herenow"))
+    #           herenow[i]['hereNow']['venueName']=trending['venues'][i]['name']
+    #           i = i+1
+    #         else:
+    #             pass
+    	for venue in herenow:
 		venueName=venue['hereNow']['venueName']
 		for entry in venue['hereNow']['items']:
 			if entry['user']['gender']==gender:
