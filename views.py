@@ -40,37 +40,26 @@ def gallery(request):
 	else:
 		pass
 	trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
-	trending_venues=[]
-	nearby_venues=[]
+	trending_venues={}
+	nearby_venues={}
 	for item in trending['venues']:
-	    trending_venues.append(item['id'])
+	    trending_venues[item['id']]=item['name']
 	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon)})
 	i=0
 	for item in all_nearby['venues']:
-	    nearby_venues.append(item['id'])
+	    nearby_venues[item['id']]=item['name']
     ## do some sort of intersection here?
-	all_venues_nearby = nearby_venues + trending_venues
 	for item in set(nearby_venues).intersection(set(trending_venues)):
-		all_venues_nearby.remove(item)
+		del nearby_venues[item]
+	all_venues_nearby = nearby_venues.items() + trending_venues.items()	
 	venue_names=[]
-	for item in all_venues_nearby:
-		da_venue=authenticator.query("/venues/"+item)
-		venue_names.append(da_venue['venue']['name'])
 	chickpix={}
 	herenow=[]
 	i=0
 	for venue in all_venues_nearby:
-		herenow.append(authenticator.query("/venues/"+venue+"/herenow"))
-		herenow[i]['hereNow']['venueName']=venue_names[i]
+		herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow"))
+		herenow[i]['hereNow']['venueName']=venue[1]
 		i = i+1
-    # for item in all_nearby['venues']:
-    #     if item['id'] not in herenow:
-    #         venue=item['id']
-    #         herenow.append(authenticator.query("/venues/"+venue+"/herenow"))
-    #           herenow[i]['hereNow']['venueName']=trending['venues'][i]['name']
-    #           i = i+1
-    #         else:
-    #             pass
     	for venue in herenow:
 		venueName=venue['hereNow']['venueName']
 		for entry in venue['hereNow']['items']:
