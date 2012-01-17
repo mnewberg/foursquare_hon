@@ -40,7 +40,7 @@ def gallery(request):
 	    trending_venues.append(item['id'])
 	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon)})
 	i=0
-	for item in all_nearby['groups'][i]['items']:
+	for item in all_nearby['venues']:
 	    nearby_venues.append(item['id'])
     ## do some sort of intersection here?
 	all_venues_nearby = nearby_venues + trending_venues
