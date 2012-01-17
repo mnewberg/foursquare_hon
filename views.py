@@ -90,7 +90,7 @@ def vote(request):
 		r2 = rating.objects.get(pic_id=pic_id2)
 		r2.total_sets +=1
 	else:
-		r2 = rating(pic_id=pic_id, rating=0, total_sets=1)
+		r2 = rating(pic_id=pic_id2, rating=0, total_sets=1)
 	r2.save()
 	u1 = user.objects.get(fsq_id=request.session['fsq_id'])
 	u1.ratings.add(r1)
