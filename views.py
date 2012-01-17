@@ -5,6 +5,7 @@ from gallery.models import user, rating
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
+import os
 
 
 f = open('/tmp/workfile', 'w')
@@ -49,7 +50,7 @@ def gallery(request):
 	    nearby_venues.append(item['id'])
     ## do some sort of intersection here?
 	all_venues_nearby = nearby_venues + trending_venues
-	for item in set(nearby_venues).intersection(set(trebding_venues)):
+	for item in set(nearby_venues).intersection(set(trending_venues)):
 		all_venues_nearby.remove(item)
 	chickpix={}
 	herenow=[]
