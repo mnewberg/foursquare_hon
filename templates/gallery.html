@@ -12,7 +12,7 @@ jQuery(window).ready(function(){
 		type: "POST",
 		url: "/rating/",
 		data:{
-				chosen_id:$(".ui-page-active .id_val1").val(),
+				chosen_id:$(".ui-page-active .id_val").val(),
 				pic_id2:$(".ui-page-active .id_val2").val(),
 			 	vote:1,
 			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
@@ -27,7 +27,7 @@ jQuery(window).ready(function(){
 		url: "/rating/",
 		data:{
 				chosen_id:$(".ui-page-active .id_val2").val(),
-				pic_id2:$(".ui-page-active .id_val1").val(),
+				pic_id2:$(".ui-page-active .id_val").val(),
 			 	vote:1,
 			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
 			  }
