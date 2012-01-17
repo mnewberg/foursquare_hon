@@ -77,13 +77,21 @@ def gallery(request):
 
 def vote(request):
 	authenticator.set_token(request.session['code'])
-	pic_id = request.POST['pic_id']
+	pic_id = request.POST['chosen_id']
+	pic_id2 = request.POST['pic_id2']
 	if rating.objects.filter(pic_id=pic_id).count()==1:
 		r1 = rating.objects.get(pic_id=pic_id)
 		r1.rating += 1
+		r1.total_sets += 1
 	else:
-		r1 = rating(pic_id=pic_id, rating=1)
+		r1 = rating(pic_id=pic_id, rating=1, total_sets=1)
 	r1.save()
+	if rating.objects.filter(pic_id=pic_id2).count==1:
+		r2 = rating.objects.get(pic_id=pic_id2)
+		r2.total_sets +=1
+	else:
+		r2 = rating(pic_id=pic_id, rating=0, total_sets=1)
+	r2.save()
 	u1 = user.objects.get(fsq_id=request.session['fsq_id'])
 	u1.ratings.add(r1)
         u1.save()

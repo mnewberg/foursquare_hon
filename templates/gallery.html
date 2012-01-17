@@ -7,14 +7,29 @@
 <script>
 
 jQuery(window).ready(function(){  
-    jQuery("#hot").live("click",function(){    
+    jQuery("#person1").live("click",function(){    
 		$.ajax({
 		type: "POST",
 		url: "/rating/",
 		data:{
-				 pic_id:$(".ui-page-active .id_val").val(),
-			 	 vote:1,
-			 	 csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
+				chosen_id:$(".ui-page-active .id_val1").val(),
+				pic_id2:$(".ui-page-active .id_val2").val(),
+			 	vote:1,
+			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
+			  }
+		});
+})});
+
+jQuery(window).ready(function(){  
+    jQuery("#person2").live("click",function(){    
+		$.ajax({
+		type: "POST",
+		url: "/rating/",
+		data:{
+				chosen_id:$(".ui-page-active .id_val2").val(),
+				pic_id2:$(".ui-page-active .id_val1").val(),
+			 	vote:1,
+			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
 			  }
 		});
 })});
@@ -36,12 +51,13 @@ jQuery(window).ready(function(){
 	<a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
 
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
-	<div class="ui-block-a"><a href="http://www.google.com" data-rel="dialog" data-transition="pop"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
+	<div class="ui-block-a" id='person1'><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
 	  </div>
-	<div class="ui-block-b">
+	<div class="ui-block-b" id="person2">
 	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150">
 <br>{{ value.1.1 }} @ {{value.1.2}}</div>
-	<input type="hidden" value="{{value.0.0}}" class="id_val" id="id_val{{ forloop.counter }}"/></div>
+	<input type="hidden" value="{{value.0.0}}" class="id_val"/>
+	<input type="hidden" value="{{value.1.0}}" class="id_val2"/></div>
 
 {% csrf_token %}
 

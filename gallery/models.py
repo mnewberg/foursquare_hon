@@ -21,7 +21,7 @@ class user(models.Model):
 		
 class target_id(models.Model):
 	fsq_id=models.CharField(max_length=30)
-	pic_id=models.OneToOne(rating.pic_id)
+	pic_id=models.OneToOne(rating)
 	def __unicode__(self):
 		return self.fsq_id
 
