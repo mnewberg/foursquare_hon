@@ -65,7 +65,10 @@ def gallery(request):
 		for entry in venue['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
-				chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
+				if entry['user']['photo'][44:]=['']:
+					pass
+				else:
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
 			else:
 				pass
 	pairs=[list(x) for x in chunk(chickpix.values(), 4)]
