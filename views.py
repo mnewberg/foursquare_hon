@@ -49,8 +49,7 @@ def gallery(request):
 	chickpix={}
 	herenow=[]
 	i=0
-	for item in trending['venues']:
-		venue=item['id']
+	for venue in all_venues_nearby:
 		herenow.append(authenticator.query("/venues/"+venue+"/herenow"))
 		herenow[i]['hereNow']['venueName']=trending['venues'][i]['name']
 		i = i+1
