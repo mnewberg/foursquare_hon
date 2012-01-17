@@ -54,7 +54,7 @@ def gallery(request):
 		all_venues_nearby.remove(item)
 	venue_names=[]
 	for item in all_venues_nearby:
-		venue_names.append(item['name'])
+		venue_names.append(authenticator.query("/venues/"+item['name'])
 	chickpix={}
 	herenow=[]
 	i=0
