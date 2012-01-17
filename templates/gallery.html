@@ -51,9 +51,9 @@ jQuery(window).ready(function(){
 	<a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
 
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
-	<div class="ui-block-a" id='person1'><a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="star" data-iconpos="right"  data-inline="true" data-theme="e"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
+	<div class="ui-block-a" id='person1'><a href="#img{{ forloop.counter|add:"1"  }}"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
 	  </div>
-	<div class="ui-block-b" id="person2"><a href="#img{{ forloop.counter|add:"1"  }}" data-role="button" data-icon="star" data-iconpos="right"  data-inline="true" data-theme="e" id="hot" name="hot">
+	<div class="ui-block-b" id="person2"><a href="#img{{ forloop.counter|add:"1"  }}">
 	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150"></a>
 <br>{{ value.1.1 }} @ {{value.1.2}}</div>
 	<input type="hidden" value="{{value.0.0}}" class="id_val"/>
