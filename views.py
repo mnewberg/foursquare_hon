@@ -55,7 +55,7 @@ def gallery(request):
 	venue_names=[]
 	for item in all_venues_nearby:
 		da_venue=authenticator.query("/venues/"+item)
-		venue_names.append(da_venue['name'])
+		venue_names.append(da_venue['venue']['name'])
 	chickpix={}
 	herenow=[]
 	i=0
