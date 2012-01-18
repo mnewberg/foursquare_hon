@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
 import os
+import random
 
 
 f = open('/tmp/workfile', 'w')
@@ -71,7 +72,14 @@ def gallery(request):
 					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
 			else:
 				pass
-	pairs=[list(x) for x in chunk(chickpix.values(), 4)]
+    rand_chickpix={}
+    keys=chickpix.keys()
+    random.shuffle(keys)
+    for key in keys:
+	    rand_chickpix[key]=chickpix[key]
+	pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
+	if len(pairs) % 2 == 1:
+	    pairs.append[pairs[0]]
 	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
 
