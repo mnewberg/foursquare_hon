@@ -76,7 +76,7 @@ def gallery(request):
 	keys=chickpix.keys()
 	random.shuffle(keys)
 	for dakey in keys:
-        rand_chickpix[dakey]=chickpix[dakey]
+	    rand_chickpix[dakey]=chickpix[dakey]
 	pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
 	if len(pairs) % 2 == 1:
 	    pairs.append[pairs[0]]
