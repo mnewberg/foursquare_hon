@@ -101,7 +101,7 @@ def vote(request):
 	r2.save()
 	u1 = user.objects.get(fsq_id=request.session['fsq_id'])
 	u1.ratings.add(r1)
-    u1.save()
+	u1.save()
 	
 	return HttpResponse('Vote successful')
     
