@@ -49,8 +49,7 @@ def gallery(request):
 	i=0
 	for item in all_nearby['venues']:
 	    if item['hereNow']['count']>0:
-	    nearby_venues[item['id']]=item['name']
-    ## do some sort of intersection here?
+	        nearby_venues[item['id']]=item['name']
 	for item in set(nearby_venues).intersection(set(trending_venues)):
 		del nearby_venues[item]
 	all_venues_nearby = nearby_venues.items() + trending_venues.items()	
