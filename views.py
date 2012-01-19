@@ -79,7 +79,7 @@ def gallery(request):
 	    rand_chickpix[dakey]=chickpix[dakey]
 	pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
 	if len(pairs) % 2 == 1:
-	    pairs.append[pairs[0][0]]
+	    pairs.append(pairs[0][0])
 	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
 def vote(request):
