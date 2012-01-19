@@ -48,6 +48,7 @@ def gallery(request):
 	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon)})
 	i=0
 	for item in all_nearby['venues']:
+	    if item['hereNow']['count']>0:
 	    nearby_venues[item['id']]=item['name']
     ## do some sort of intersection here?
 	for item in set(nearby_venues).intersection(set(trending_venues)):
