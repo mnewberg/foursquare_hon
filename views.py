@@ -82,7 +82,6 @@ def gallery(request):
 	    pairs.append[pairs[0]]
 	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
-
 def vote(request):
 	authenticator.set_token(request.session['code'])
 	pic_id = request.POST['chosen_id']
