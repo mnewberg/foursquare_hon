@@ -20,22 +20,22 @@ jQuery(window).ready(function(){
 		});
 })});
 
-// jQuery(window).ready(function(){  
-//     jQuery("#person2").live("click",function(){    
-// 		$.ajax({
-// 		type: "POST",
-// 		url: "/rating/",
-// 		data:{
-// 				chosen_id:$(".ui-page-active .id_val2").val(),
-// 				pic_id2:$(".ui-page-active .id_val").val(),
-// 			 	vote:1,
-// 			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
-// 			  }
-// 		});
-// })});
+jQuery(window).ready(function(){  
+    jQuery("#person2").live("click",function(){    
+		$.ajax({
+		type: "POST",
+		url: "/rating/",
+		data:{
+				chosen_id:$(".ui-page-active .id_val2").val(),
+				pic_id2:$(".ui-page-active .id_val").val(),
+			 	vote:1,
+			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
+			  }
+		});
+})});
 
 
-// $(("#img")bind('taphold',function(event, ui){$("#lnkDialog").click();});
+$(("#img")bind('taphold',function(event, ui){$("#lnkDialog").click();});
 </script>
 
 
