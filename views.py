@@ -72,9 +72,9 @@ def gallery(request):
 					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
 			else:
 				pass
-    rand_chickpix={}
-    keys=chickpix.keys()
-    random.shuffle(keys)
+	rand_chickpix={}
+	keys=chickpix.keys()
+	random.shuffle(keys)
     for key in keys:
 	    rand_chickpix[key]=chickpix[key]
 	pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
