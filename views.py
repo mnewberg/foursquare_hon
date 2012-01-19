@@ -7,6 +7,7 @@ from django.core.context_processors import csrf
 from randomizer import chunk
 import os
 import random
+from time import time
 
 
 f = open('/tmp/workfile', 'w')
@@ -69,7 +70,7 @@ def gallery(request):
 				if entry['user']['photo'][44:]=='':
 					pass
 				else:
-					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName]
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,venue[0]]
 			else:
 				pass
 	rand_chickpix={}
@@ -86,6 +87,10 @@ def vote(request):
 	authenticator.set_token(request.session['code'])
 	pic_id = request.POST['chosen_id']
 	pic_id2 = request.POST['pic_id2']
+	venue_id=request.POST['venue_id']
+	time=round(time())
+	
+	initial_record=record(time=time, venue_id=venue_id)	
 	if rating.objects.filter(pic_id=pic_id).count()==1:
 		r1 = rating.objects.get(pic_id=pic_id)
 		r1.rating += 1
@@ -93,14 +98,22 @@ def vote(request):
 	else:
 		r1 = rating(pic_id=pic_id, rating=1, total_sets=1)
 	r1.save()
+	initial_record.target.add(r1)
+	initial_record.save()
+	
+	second_record=record(time=time, venue_id=venue_id)
 	if rating.objects.filter(pic_id=pic_id2).count()==1:
 		r2 = rating.objects.get(pic_id=pic_id2)
 		r2.total_sets +=1
 	else:
 		r2 = rating(pic_id=pic_id2, rating=0, total_sets=1)
 	r2.save()
+	second_record.targetadd(r2)
+	second_record.save()
+	
+	
 	u1 = user.objects.get(fsq_id=request.session['fsq_id'])
-	u1.ratings.add(r1)
+	u1.ratings.add(initial_record, second_record)
 	u1.save()
 	
 	return HttpResponse('Vote successful')
