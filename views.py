@@ -66,7 +66,7 @@ def gallery(request):
 		herenow[i]['hereNow']['venueName']=venue[1]
 		i = i+1
     	for item in herenow:
-		venueName=venue['hereNow']['venueName']
+		venueName=item['hereNow']['venueName']
 		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
