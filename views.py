@@ -73,7 +73,7 @@ def gallery(request):
 				if entry['user']['photo'][44:]=='':
 					pass
 				else:
-					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,entry[id]]
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,entry['id']]
 			else:
 				pass
 	rand_chickpix={}
