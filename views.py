@@ -104,9 +104,9 @@ def vote(request):
 		r1 = rating(pic_id=pic_id, rating=1, total_sets=1)
 	r1.save()
 	record.create(time=thetime, venue_id=venue_id, target=r1)
-	if rating.objects.filter(pic_id=pic_id2).count()==1:
-	    r2 = rating.objects.get(pic_id=pic_id2)
-	    r2.total_sets +=1
+    if rating.objects.filter(pic_id=pic_id2).count()==1:
+        r2 = rating.objects.get(pic_id=pic_id2)
+        r2.total_sets +=1
     else:
         r2 = rating(pic_id=pic_id2, rating=0, total_sets=1)
     r2.save()
