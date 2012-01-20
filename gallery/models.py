@@ -14,8 +14,8 @@ class record(models.Model):
 	venue_id=models.CharField(max_length=30)
 	
 class user(models.Model):
-    date_joined=DateTimeField()
 	fsq_id=models.CharField(max_length=30)
+    date_joined=DateTimeField()
 	first_name=models.CharField(max_length=20)
 	last_name=models.CharField(max_length=30)
 	ratings = models.ForeignKey(record)
