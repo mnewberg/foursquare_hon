@@ -9,7 +9,7 @@ class rating(models.Model):
 		return self.pic_id
 		
 class record(models.Model):
-	target=models.ManyToManyField(rating, null=True)
+	target=models.ForeignKey(rating, null=True)
 	time=models.IntegerField(max_length=20)
 	venue_id=models.CharField(max_length=30)
 	
