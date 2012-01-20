@@ -112,7 +112,7 @@ def vote(request):
 	record2=record(time=thetime, venue_id=venue_id, target=r2)
 	record2.save()
 	fsq_user = user.objects.get(fsq_id=request.session['fsq_id'])
-	fsq_user.ratings= [record1, record2]
+	fsq_user.ratings.add(record1, record2)
 	fsq_user.save()
 	
 	return HttpResponse('Vote successful')
