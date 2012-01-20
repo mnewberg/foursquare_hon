@@ -112,7 +112,7 @@ def vote(request):
 	else:        
 		r2 = rating(pic_id=pic_id2, rating=0, total_sets=1)
 	r2.save()
-	record2=record.objects.create(time=thetime, venue_id=venue_id, target=r2)
+	record2=record.objects.create(time=thetime, venue_id=venue_id2, target=r2)
 	fsq_user = user.objects.get(fsq_id=request.session['fsq_id'])
 	fsq_user.records.add(record1)
 	fsq_user.save()
