@@ -40,7 +40,7 @@ def gallery(request):
 		da_id=authenticator.query("/users/self")
 		u1 = user.objects.create(fsq_id=da_id['user']['id'], phone=da_id['user']['contact']['phone'],
 		email=da_id['user']['contact']['email'],twitter=da_id['user']['contact']['twitter'],
-		facebook=da_id['user']['contact']['facebook'],ratings='',photo=da_id['user']['photo'][44:], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today())
+		facebook=da_id['user']['contact']['facebook'],photo=da_id['user']['photo'][44:], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today())
 		request.session['fsq_id']=da_id['user']['id']
 	else:
 		pass
