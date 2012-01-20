@@ -70,10 +70,10 @@ def gallery(request):
 		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
-				if entry['user']['photo'][44:]=='':
+				if entry['user']['photo'][44:]==[]:
 					pass
 				else:
-					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,venue[0]]
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,venue]
 			else:
 				pass
 	rand_chickpix={}
