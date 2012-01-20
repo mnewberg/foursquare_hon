@@ -13,6 +13,10 @@ class record(models.Model):
 	time=models.IntegerField(max_length=20)
 	venue_id=models.CharField(max_length=30)
 	
+	def __unicode__(self):
+		return self.venue_id
+	
+	
 class user(models.Model):
 	fsq_id=models.CharField(max_length=30)
 	date_joined=models.DateTimeField()
