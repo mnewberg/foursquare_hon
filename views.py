@@ -8,6 +8,7 @@ from randomizer import chunk
 import os
 import random
 from time import time
+import datetime
 
 
 f = open('/tmp/workfile', 'w')
@@ -37,7 +38,9 @@ def gallery(request):
 	authenticator.set_token(request.session['code'])
 	if 'fsq_id' not in request.session:
 		da_id=authenticator.query("/users/self")
-		u1 = user.objects.create(fsq_id=da_id['user']['id'], phone=da_id['user']['contact']['phone'],email=da_id['user']['contact']['email'],twitter=da_id['user']['contact']['twitter'],facebook=da_id['user']['contact']['facebook'], photo=da_id['user']['photo'][44:])
+		u1 = user.objects.create(fsq_id=da_id['user']['id'], phone=da_id['user']['contact']['phone'],
+		email=da_id['user']['contact']['email'],twitter=da_id['user']['contact']['twitter'],
+		facebook=da_id['user']['contact']['facebook'], photo=da_id['user']['photo'][44:], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today())
 		request.session['fsq_id']=da_id['user']['id']
 	else:
 		pass
