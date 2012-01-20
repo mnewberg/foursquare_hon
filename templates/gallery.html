@@ -14,6 +14,8 @@ jQuery(window).ready(function(){
 		data:{
 				chosen_id:$(".ui-page-active .id_val").val(),
 				pic_id2:$(".ui-page-active .id_val2").val(),
+				venue_id:$(".ui-page-active .venue1").val(),    
+				venue_id2:$(".ui-page-active .venue2").val(),    
 			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
 			  }			
 		});
@@ -27,6 +29,8 @@ jQuery(window).ready(function(){
 		data:{
 				chosen_id:$(".ui-page-active .id_val2").val(),
 				pic_id2:$(".ui-page-active .id_val").val(),
+				venue_id2:$(".ui-page-active .venue2").val(),    
+				venue_id:$(".ui-page-active .venue1").val(),    
 			 	csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val() 			 	 
 			  }
 		});
