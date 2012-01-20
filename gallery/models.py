@@ -9,7 +9,7 @@ class rating(models.Model):
 		return self.pic_id
 		
 class record(models.Model):
-	target=models.ForeignKey(rating, null=True)
+	target=models.ManyToManyField(rating, null=True)
 	time=models.IntegerField(max_length=20)
 	venue_id=models.CharField(max_length=30)
 	
@@ -22,7 +22,7 @@ class user(models.Model):
 	date_joined=models.DateTimeField()
 	first_name=models.CharField(max_length=20)
 	last_name=models.CharField(max_length=30)
-	ratings = models.ForeignKey(record, null=True)
+	records = models.ManyToManyField(record, null=True)
 	phone = models.CharField(max_length=15)
 	twitter = models.CharField(max_length=30)
 	facebook = models.CharField(max_length=15)
