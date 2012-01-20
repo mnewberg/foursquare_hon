@@ -91,6 +91,7 @@ def vote(request):
 	pic_id = request.POST['chosen_id']
 	pic_id2 = request.POST['pic_id2']
 	venue_id=request.POST['venue_id']
+   	venue_id2=request.POST['venue_id2']
 	time=round(time())
 	
 	initial_record=record(time=time, venue_id=venue_id)	
@@ -104,7 +105,7 @@ def vote(request):
 	initial_record.target.add(r1)
 	initial_record.save()
 	
-	second_record=record(time=time, venue_id=venue_id)
+	second_record=record(time=time, venue_id=venue_id2)
 	if rating.objects.filter(pic_id=pic_id2).count()==1:
 		r2 = rating.objects.get(pic_id=pic_id2)
 		r2.total_sets +=1
