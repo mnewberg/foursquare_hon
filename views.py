@@ -65,15 +65,15 @@ def gallery(request):
 		herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow"))
 		herenow[i]['hereNow']['venueName']=venue[1]
 		i = i+1
-    	for venue in herenow:
+    	for item in herenow:
 		venueName=venue['hereNow']['venueName']
-		for entry in venue['hereNow']['items']:
+		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
 				if entry['user']['photo'][44:]=='':
 					pass
 				else:
-					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,entry['id']]
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,venue[0]]
 			else:
 				pass
 	rand_chickpix={}
