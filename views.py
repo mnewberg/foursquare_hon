@@ -60,9 +60,12 @@ def gallery(request):
 	venue_names=[]
 	chickpix={}
 	herenow=[]
+	v_ids=[]
 	i=0
+	n=0
 	for venue in all_venues_nearby:
 		herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow"))
+		v_ids.append(venue[0])
 		herenow[i]['hereNow']['venueName']=venue[1]
 		i = i+1
     	for item in herenow:
@@ -73,9 +76,10 @@ def gallery(request):
 				if entry['user']['photo'][44:]==[]:
 					pass
 				else:
-					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,venue]
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
 			else:
 				pass
+		n+=1
 	rand_chickpix={}
 	keys=chickpix.keys()
 	random.shuffle(keys)
