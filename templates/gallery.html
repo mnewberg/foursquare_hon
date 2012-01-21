@@ -49,8 +49,6 @@ jQuery(window).ready(function(){
 <div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
 	<div data-role="header">
 		<h1>Who's hotter!?!</h1></div>
-	<a id='lnkDialog' href="#dialog" data-rel="dialog" data-transition="pop" style='display:none;'></a>
-
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	<div class="ui-block-a"><a id="person1" href="#img{{ forloop.counter|add:"1"  }}"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
 	  </div>
