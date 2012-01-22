@@ -1,17 +1,15 @@
-<!DOCTYPE html>  
 <html>  
   <head>
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-	<meta name="viewport" content="width=device-width"> 
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+
+   <meta name="viewport" content="width=480, initial-scale=1">
   
-  <form name="MyForm" id="MyForm" action="/gallery" method="get" >
-	
+  <form name="MyForm" id="MyForm" action="/gallery" method="get">
+
 	<input type=hidden name="lat" id=”lat″>
 	<input type=hidden name="lon" id=”lon″>
 	<input type=hidden name="gender" id="gender">
-	
+
  </form>
  
      <script>  
@@ -61,7 +59,7 @@
 					$('#MyForm').submit();  
 
 				}
-				
+
 				function handle_geolocation_query_male(position){
                 var lat=position.coords.latitude
                 var lon=position.coords.longitude 
@@ -73,25 +71,28 @@
 
 				}
 
+
+        
+
+
     </script>  
 </head>
-<body>    
-	<div data-role="page">
-		<div data-role="header">
-	
-	<h1>Who do you want to see?</h1>
-	</div>
-	<div data-role="content">
-		<div class="ui-grid-a">
-			<div class="ui-block-a">
-				<button type="submit" data-theme="c" id="btnInit" data-ajax="false">Chicks</button></div>
-		<div class="ui-grid-b">
-			<button type="submit" data-theme="c" id="btnInit2">Dudes</button></div>
-			</div>
-			</div>
-			</div>
-			
-                              
+<body>
+	<p>Who do you want to see?</p>
+	<br>
+<button id="btnInit" height="300" width="300" style="
+    width: 300px;
+    height: 150px;
+    font-size: 15px;
+    font-family: Helvetica;
+">Chicks</button>
+
+<button id="btnInit2" height="300" width="300" style="
+    width: 300px;
+    height: 150px;
+    font-size: 15px;
+    font-family: Helvetica;
+">Dudes</button>
 
   </body>  
 </html>  
