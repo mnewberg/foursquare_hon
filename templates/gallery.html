@@ -6,6 +6,11 @@
 
 <script>
 
+$(document).bind("mobileinit", function(){
+  $.mobile.ajaxEnabled = false;
+});
+
+
 jQuery(window).ready(function(){  
     jQuery("#person1").live("click",function(){    
 		$.ajax({
