@@ -14,7 +14,12 @@
 
 	 </form>
 
-	     <script>  
+	     <script> 
+	
+		$(document).bind("mobileinit", function(){
+		  $.mobile.ajaxEnabled = false;
+		});
+	 
 	        jQuery(window).ready(function(){  
 	            jQuery("#btnInit").click(initiate_geolocation);  
 	        });
