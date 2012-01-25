@@ -23,11 +23,11 @@ class user(models.Model):
 	first_name=models.CharField(max_length=20)
 	last_name=models.CharField(max_length=30)
 	records = models.ManyToManyField(record, null=True)
-	phone = models.CharField(max_length=15)
-	twitter = models.CharField(max_length=30)
-	facebook = models.CharField(max_length=15)
-	email = models.EmailField(max_length=75)
-	photo = models.CharField(max_length=30)
+	phone = models.CharField(max_length=15, null=True)
+	twitter = models.CharField(max_length=30, null=True)
+	facebook = models.CharField(max_length=15, null=True)
+	email = models.EmailField(max_length=75, null=True)
+	photo = models.CharField(max_length=30, null=True)
 	
 	def __unicode__(self):
 		return self.fsq_id
