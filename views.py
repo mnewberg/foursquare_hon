@@ -38,9 +38,15 @@ def gallery(request):
 	authenticator.set_token(request.session['code'])
 	if 'fsq_id' not in request.session:
 		da_id=authenticator.query("/users/self")
-		u1 = user.objects.create(fsq_id=da_id['user']['id'], phone=da_id['user']['contact']['phone'],
-		email=da_id['user']['contact']['email'],twitter=da_id['user']['contact']['twitter'],
-		facebook=da_id['user']['contact']['facebook'],photo=da_id['user']['photo'][44:], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today())
+		u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
+		if 'phone' in da_id['user']['contact']:
+			u1.add(phone=da_id['user']['contact']['phone'])
+		if 'email' in da_id['user']['contact']:
+			u1.add(phone=da_id['user']['contact']['email'])
+		if 'twitter' in da_id['user']['contact']:
+			u1.add(phone=da_id['user']['contact']['twitter'])		
+		if 'facebook' in da_id['user']['contact']:
+			u1.add(phone=da_id['user']['contact']['facebook'])
 		request.session['fsq_id']=da_id['user']['id']
 	else:
 		pass
