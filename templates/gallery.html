@@ -1,7 +1,9 @@
 <html>
 <head>
+	<meta name = "viewport" content = "width = device-width">
+	
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
 <script>
@@ -38,11 +40,8 @@ jQuery(window).ready(function(){
 
 </script>
 
-
 </head>
 <body>
-
-<meta name = "viewport" content = "width = device-width, initial-scale=1">
 
 {% for value in chickpix %}
 
@@ -50,10 +49,10 @@ jQuery(window).ready(function(){
 	<div data-role="header">
 		<h1>Who's hotter!?!</h1></div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
-	<div class="ui-block-a"><a id="person1" href="#img{{ forloop.counter|add:"1"  }}"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150" data-transition="slide"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
+	<div class="ui-block-a"><a id="person1" href="#img{{ forloop.counter|add:"1"  }}" data-transition="slide"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
 	  </div>
-	<div class="ui-block-b" ><a id="person2" href="#img{{ forloop.counter|add:"1"  }}">
-	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150" data-transition="slide"></a>
+	<div class="ui-block-b" ><a id="person2" href="#img{{ forloop.counter|add:"1"  }}" data-transition="slide">
+	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150"></a>
 <br>{{ value.1.1 }} @ {{value.1.2}}</div>
 	<input type="hidden" value="{{value.0.0}}" class="id_val"/>
 	<input type="hidden" value="{{value.1.0}}" class="id_val2"/>
