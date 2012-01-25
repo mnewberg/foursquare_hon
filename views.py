@@ -40,13 +40,13 @@ def gallery(request):
 		da_id=authenticator.query("/users/self")
 		u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
 		if 'phone' in da_id['user']['contact']:
-			u1.add(phone=da_id['user']['contact']['phone'])
+			u1.update(phone=da_id['user']['contact']['phone'])
 		if 'email' in da_id['user']['contact']:
-			u1.add(phone=da_id['user']['contact']['email'])
+			u1.update(phone=da_id['user']['contact']['email'])
 		if 'twitter' in da_id['user']['contact']:
-			u1.add(phone=da_id['user']['contact']['twitter'])		
+			u1.update(phone=da_id['user']['contact']['twitter'])		
 		if 'facebook' in da_id['user']['contact']:
-			u1.add(phone=da_id['user']['contact']['facebook'])
+			u1.update(phone=da_id['user']['contact']['facebook'])
 		request.session['fsq_id']=da_id['user']['id']
 	else:
 		pass
