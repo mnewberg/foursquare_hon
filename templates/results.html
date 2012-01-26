@@ -11,9 +11,9 @@
 </head>
 <body>
 <ol>
-{% for name in your_venue_names %}
-<li>{{ name.0 }}</li>
--{{ name.1 }} {{ name.2 }}
+{% for key, value in your_venue_names %}
+<li>{{ key }}</li>
+-{{ value.0 }} {{ value.1 }}
 {%endfor%}
 </body>
 </html>
