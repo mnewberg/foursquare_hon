@@ -68,34 +68,16 @@
 	                  	$('input[name=lat]').val(lat);
 						$('input[name=lon]').val(lon);
 						$('input[name=gender]').val('female')
-						$target.appendChild(spinner.el);
 						$('#MyForm').submit();  
 
 					}
 
-					function handle_geolocation_query_male(position){
-	                var lat=position.coords.latitude;
-	                var lon=position.coords.longitude; 
-					var spinner = new Spinner().spin();
-					var opts = {
-					  lines: 8, // The number of lines to draw
-					  length: 19, // The length of each line
-					  width: 10, // The line thickness
-					  radius: 22, // The radius of the inner circle
-					  color: '#000', // #rgb or #rrggbb
-					  speed: 1.4, // Rounds per second
-					  trail: 18, // Afterglow percentage
-					  shadow: false // Whether to render a shadow
-					};
-					var target = document.getElementById('modal');
-					var spinner = new Spinner(opts).spin(target);
-					
+					function handle_geolocation_query_male(position){					
 	
 
 	                  	$('input[name=lat]').val(lat);
 						$('input[name=lon]').val(lon);
 						$('input[name=gender]').val('male')
-						$target.appendChild(spinner.el);
 						$('#MyForm').submit();  
 
 					}

@@ -10,21 +10,26 @@
 	<!-- Date: 2012-01-26 -->
 </head>
 <body>
-<ol>
+	<div data-role="collapsible-set">
+		
 {% for key, value in your_venue_names.items %}
-<li>{{ key }}</li>
--{{ value.0 }} {{ value.1 }}
+<div data-role="collapsible" data-collapsed="false" data-icon="plus">
+<h3>{{ key }}</h3>
+<p>{{ value.0 }} - {{ value.1 }}</p>
+</div>
 {%endfor%}
-</ol>
+</div>
 <br>
 <hr>
 <br>
 <ol>
 {% for key, value in all_venues.items %}
-<li>{{ key }}</li>
--{{ value.0 }} {{ value.1 }}
+<div data-role="collapsible" data-collapsed="false" data-icon="plus">
+<h3>{{ key }}</h3>
+<p>{{ value.0 }} {{ value.1 }}</p>
+</div>
 {%endfor%}
-</ol>
+</div>
 
 </body>
 </html>
