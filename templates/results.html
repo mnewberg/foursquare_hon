@@ -20,13 +20,16 @@
 <br>
 <hr>
 <br>
-<div data-role="collapsible" data-icon="plus">
+<div data-role="collapsible-set">
 {% for key, value in all_venues.items %}
+<div data-role="collapsible" data-icon="plus">
 <h3>{{ key }}</h3>
 <p>{{ value.0 }} {{ value.1 }}</p>
 </div>
 {%endfor%}
 </div>
+
+
 </div>
 </div>
 
