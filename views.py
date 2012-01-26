@@ -127,7 +127,7 @@ def results(request):
 	da_results=suggested_venues(fsq_id)
 	venue_names=[]
 	for item in da_results:
-		data=authenticator.query("/venues/"+item+"/herenow")
+		data=authenticator.query("/venues/"+item[0]+"/herenow")
 		venue_names.append(data['hereNow']['venueName'])
 	return render_to_response('results.html', {'your_venue_names':venue_names})
 		
