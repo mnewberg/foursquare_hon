@@ -9,6 +9,7 @@ import os
 import random
 from time import time
 import datetime
+import leaderboard
 
 f = open('/tmp/workfile', 'w')
 f.write(psq.__file__)
