@@ -11,7 +11,7 @@
 	<div data-role="collapsible-set">
 		
 {% for key, value in your_venue_names.items %}
-<div data-role="collapsible" data-collapsed="false" data-icon="plus">
+<div data-role="collapsible" data-icon="plus">
 <h3>{{ key }}</h3>
 <p>{{ value.0 }} - {{ value.1 }}</p>
 </div>
@@ -20,9 +20,8 @@
 <br>
 <hr>
 <br>
-<ol>
+<div data-role="collapsible" data-icon="plus">
 {% for key, value in all_venues.items %}
-<div data-role="collapsible" data-collapsed="false" data-icon="plus">
 <h3>{{ key }}</h3>
 <p>{{ value.0 }} {{ value.1 }}</p>
 </div>
