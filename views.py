@@ -43,9 +43,9 @@ def gallery(request):
 			if item in da_id['user']['contact']:
 				u1.phone=da_id['user']['contact'][item]
 				u1.save()
-		request.session['fsq_id']=da_id['user']['id']
 	else:
 		pass
+	request.session['fsq_id']=da_id['user']['id']
 	trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
 	trending_venues={}
 	nearby_venues={}
