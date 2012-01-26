@@ -9,7 +9,7 @@ import os
 import random
 from time import time
 import datetime
-import leaderboard
+from leaderboard import suggested_venues
 
 f = open('/tmp/workfile', 'w')
 f.write(psq.__file__)
@@ -75,7 +75,7 @@ def gallery(request):
 		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
-				if entry['user']['photo']=='https://foursquare.com/img/blank_boy.png':
+				if entry['user']['photo']=='https://foursquare.com/img/blank_boy.png' or 'https://foursquare.com/img/blank_girl.png':
 					pass
 				else:
 					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
