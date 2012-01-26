@@ -12,7 +12,8 @@
 <body>
 <ol>
 {% for name in your_venue_names %}
-<li>{{ name }}</li>
+<li>{{ name.0 }}</li>
+-{{ name.1 }} {{ name.2 }}
 {%endfor%}
 </body>
 </html>

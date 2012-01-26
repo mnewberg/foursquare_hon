@@ -23,7 +23,7 @@ authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215X
 def postrecv(request):
     os.chdir("/var/www/foursquare/")
     os.system("git pull origin master")
-    return HttpResponse('IT WORKS')
+    return HttpResponse('Vote added')
 
 def second(request):
      request.session['code']=request.GET['code']
@@ -128,7 +128,7 @@ def results(request):
 	venue_names=[]
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])
-		venue_names.append(data['venue']['name'])
+		venue_names.append(data['venue']['name'], data['venue']['location']['address'], data['venue']['location']['postalCode'])
 	return render_to_response('results.html', {'your_venue_names':venue_names})
 		
 		
