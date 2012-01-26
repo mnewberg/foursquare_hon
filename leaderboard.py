@@ -2,7 +2,7 @@ from time import time
 import operator
 from gallery.models import record, user
 
-def suggested_venues(fsq_id, fsq_id=''):
+def suggested_venues(fsq_id=''):
 	newdict = {}
 	if fsq_id:
 		query = record.objects.filter(time__lt=time(), time__gt=time()-3600, user=user.objects.get(fsq_id=fsq_id)).order_by('venue_id').values('venue_id')
