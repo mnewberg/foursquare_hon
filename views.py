@@ -10,7 +10,6 @@ import random
 from time import time
 import datetime
 
-
 f = open('/tmp/workfile', 'w')
 f.write(psq.__file__)
 f.close()
