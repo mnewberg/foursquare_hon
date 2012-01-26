@@ -37,7 +37,7 @@ def gallery(request):
 	params.update(csrf(request))
 	authenticator.set_token(request.session['code'])
 	da_id=authenticator.query("/users/self")
-	if 'fsq_id' not in request.session and user.objecs.filter(fsq_id=da_id['user']['id']).count()==0:
+	if 'fsq_id' not in request.session and user.objects.filter(fsq_id=da_id['user']['id']).count()==0:
 		u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
 		for item in ['phone','email','twitter','facebook']:
 			if item in da_id['user']['contact']:
