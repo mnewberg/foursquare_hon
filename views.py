@@ -36,21 +36,13 @@ def gallery(request):
 	params = {}
 	params.update(csrf(request))
 	authenticator.set_token(request.session['code'])
-	if 'fsq_id' not in request.session:
-		da_id=authenticator.query("/users/self")
+	da_id=authenticator.query("/users/self")
+	if 'fsq_id' not in request.session and user.objecs.filter(fsq_id=da_id['user']['id']).count()==0:
 		u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
-		if 'phone' in da_id['user']['contact']:
-			u1.phone=da_id['user']['contact']['phone']
-			u1.save()
-		if 'email' in da_id['user']['contact']:
-			u1.email=da_id['user']['contact']['email']
-			u1.save()
-		if 'twitter' in da_id['user']['contact']:
-			u1.twitter=da_id['user']['contact']['twitter']
-			u1.save()	
-		if 'facebook' in da_id['user']['contact']:
-			u1.facebook=da_id['user']['contact']['facebook']
-			u1.save()
+		for item in ['phone','email','twitter','facebook']
+			if item in da_id['user']['contact']:
+				u1.phone=da_id['user']['contact'][item]
+				u1.save()
 		request.session['fsq_id']=da_id['user']['id']
 	else:
 		pass
@@ -83,7 +75,7 @@ def gallery(request):
 		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
-				if entry['user']['photo'][44:]==[]:
+				if entry['user']['photo']=='https://foursquare.com/img/blank_boy.png':
 					pass
 				else:
 					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
