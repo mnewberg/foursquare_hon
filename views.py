@@ -128,7 +128,7 @@ def results(request):
 	venue_names={}
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])
-		venue_names[data['venue']['name']]=(data['venue']['location']['address'], data['venue']['location']['postalCode'])
+		venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
 	return render_to_response('results.html', {'your_venue_names':venue_names})
 		
 		

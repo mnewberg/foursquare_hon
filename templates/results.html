@@ -11,7 +11,7 @@
 </head>
 <body>
 <ol>
-{% for key, value in your_venue_names %}
+{% for key, value in your_venue_names.items %}
 <li>{{ key }}</li>
 -{{ value.0 }} {{ value.1 }}
 {%endfor%}
