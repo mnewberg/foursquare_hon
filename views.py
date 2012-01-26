@@ -124,7 +124,7 @@ def vote(request):
 def results(request):
 	authenticator.set_token(request.session['code'])
 	fsq_id=request.session['fsq_id']
-	da_results=leaderboard(fsq_id)
+	da_results=suggested_venues(fsq_id)
 	venue_names=[]
 	for item in da_results:
 		data=authenticator.query("/venues/"+item+"/herenow")
