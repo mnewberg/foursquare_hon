@@ -10,6 +10,7 @@ def suggested_venues(fsq_id):
 		else:
 			newdict[venue['venue_id']]+=1
 	sorted_vals=sorted(newdict.iteritems(), key=operator.itemgetter(1))
-	return sorted_vals.reverse()[:5]
+	sorted_vals.reverse()
+	return sorted_vals[:5]
 	
 	
