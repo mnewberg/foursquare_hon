@@ -46,8 +46,8 @@ jQuery(window).ready(function(){
 
 {% for value in chickpix %}
 
-<div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
-	<div data-role="subpage">
+<div data-role="page" data-theme="a">
+	<div data-role="subpage" id="img{{ forloop.counter }}">
 	<div data-role="header">
 		<h1>Who's hotter!?!</h1></div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
