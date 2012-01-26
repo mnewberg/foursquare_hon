@@ -50,7 +50,7 @@ def gallery(request):
 	nearby_venues={}
 	for item in trending['venues']:
 	    trending_venues[item['id']]=item['name']
-	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon)})
+	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50})
 	i=0
 	for item in all_nearby['venues']:
 	    if item['hereNow']['count']>0:
@@ -119,6 +119,18 @@ def vote(request):
 	fsq_user.save()
 	
 	return HttpResponse('Vote successful')
+
+def results(request):
+	authenticator.set_token(request.session['code'])
+	fsq_id=request.session['fsq_id']
+	da_results=leaderboard(fsq_id)
+	venue_names=[]
+	for item in da_results:
+		data=authenticator.query("/venues/"+item+"/herenow")
+		venue_names.append(data['hereNow']['venueName'])
+	return render_to_response('results.html', {'your_venue_names':venue_names})
+		
+		
     
     
     
