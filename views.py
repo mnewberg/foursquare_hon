@@ -129,7 +129,11 @@ def results(request):
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])
 		venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
-	return render_to_response('results.html', {'your_venue_names':venue_names})
+	global_results=suggested_venues()
+	for item in global_results:
+		data=authenticator.query("/venues/"+item[0])
+		venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
+	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
 		
 		
     
