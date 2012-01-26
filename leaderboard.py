@@ -1,5 +1,6 @@
 from time import time
 import operator
+from gallery.models import record, user
 
 def suggested_venues(fsq_id):
 	newdict = {}
