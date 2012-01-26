@@ -75,7 +75,7 @@ def gallery(request):
 		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
-				if entry['user']['photo']=='https://foursquare.com/img/blank_boy.png' or 'https://foursquare.com/img/blank_girl.png':
+				if entry['user']['photo'].startswith=='https://foursquare.com/img/':
 					pass
 				else:
 					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
