@@ -44,7 +44,7 @@ def gallery(request):
 	nearby_venues={}
 	for item in trending['venues']:
 	    trending_venues[item['id']]=item['name']
-	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50})
+	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':2000})
 	i=0
 	for item in all_nearby['venues']:
 	    if item['hereNow']['count']>0:
