@@ -13,9 +13,6 @@ from leaderboard import suggested_venues
 
 authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
 
-# def first(request):
-#     HttpResponseRedirect (uri)
-
 def postrecv(request):
     os.chdir("/var/www/foursquare/")
     os.system("git pull origin master")
