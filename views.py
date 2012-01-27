@@ -85,14 +85,12 @@ def gallery(request):
 	for dakey in keys:
 	    rand_chickpix[dakey]=chickpix[dakey]
 	f = open('/tmp/workfile', 'w')
-	f.write(rand_chickpix)
+	f.write(rand_chickpix.values())
 	pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
 	f.write(pairs)
 	if len(pairs) % 2 == 1:
 	    pairs.append(pairs[0][0])
 	f.write(pairs)
-	f.close()	
-	
 	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
 def vote(request):
