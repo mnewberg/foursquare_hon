@@ -3,6 +3,7 @@
 	<meta name = "viewport" content = "width = device-width, initial-scale=1">
 	
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+<script src="http://getpostd.com/jquery.mobile.subpage.js"></script>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
@@ -42,8 +43,9 @@ jQuery(window).ready(function(){
 
 </head>
 <body>
+	<div data-role="page">
 {% for value in chickpix %}
-	<div data-role="page" id="img{{ forloop.counter }}" data-theme="a">
+	<div data-role="subpage" id="img{{ forloop.counter }}" data-theme="a">
 	<div data-role="header" data-position="fixed">
 		<h1>Who's hotter!?!</h1></div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
@@ -64,6 +66,7 @@ jQuery(window).ready(function(){
 
 
 {% endfor %} 
+</div>
 
 </body>
 </html> 
