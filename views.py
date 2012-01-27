@@ -82,8 +82,9 @@ def gallery(request):
 	pairs=[list(x) for x in chunk(chickpix.values(), 2)]
 	if len(pairs) % 2 == 1:
 	    pairs.append(pairs[0][0])
+	random.shuffle(pairs)
 	
-	return render_to_response ('gallery.html', {'chickpix':random.shuffle(pairs), 'csrf':params}, context_instance=RequestContext(request))
+	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
 def vote(request):
 	authenticator.set_token(request.session['code'])
