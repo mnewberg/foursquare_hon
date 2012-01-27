@@ -80,8 +80,9 @@ def gallery(request):
 		n+=1
 		
 	pairs=[list(x) for x in chunk(chickpix.values(), 2)]
-	if len(pairs) % 2 == 1:
-	    pairs.append(pairs[0][0])
+	for item in pairs:
+		if len(item)<2:
+			item.append(pairs[0][0])
 	random.shuffle(pairs)
 	
 	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
