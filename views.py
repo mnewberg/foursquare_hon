@@ -75,7 +75,7 @@ def gallery(request):
 		for entry in item['hereNow']['items']:
 			if entry['user']['gender']==gender:
 				the_id=entry['user']['id']
-				if entry['user']['photo'].startswith=="https://foursquare.com/img/":
+				if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 					pass
 				else:
 					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
@@ -135,10 +135,3 @@ def results(request):
 		data=authenticator.query("/venues/"+item[0])
 		all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
-		
-		
-    
-    
-    
- 
-    
