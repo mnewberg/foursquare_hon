@@ -11,10 +11,6 @@ from time import time
 import datetime
 from leaderboard import suggested_venues
 
-f = open('/tmp/workfile', 'w')
-f.write(psq.__file__)
-f.close()
-
 authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
 
 # def first(request):
@@ -82,14 +78,21 @@ def gallery(request):
 			else:
 				pass
 		n+=1
+		
 	rand_chickpix={}
 	keys=chickpix.keys()
 	random.shuffle(keys)
 	for dakey in keys:
 	    rand_chickpix[dakey]=chickpix[dakey]
+	f = open('/tmp/workfile', 'w')
+	f.write(rand_chickpix)
 	pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
+	f.write(pairs)
 	if len(pairs) % 2 == 1:
 	    pairs.append(pairs[0][0])
+	f.write(pairs)
+	f.close()	
+	
 	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
     
 def vote(request):
