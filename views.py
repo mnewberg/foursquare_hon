@@ -22,7 +22,7 @@ def second(request):
      request.session['code']=request.GET['code']
      return render_to_response('loc.html')
     
-def gallery(request, page=0):
+def gallery(request, page):
 	if page==0:
 		lat=request.GET['lat']
 		lon=request.GET['lon']
