@@ -79,7 +79,7 @@ def gallery(request, page):
 		random.shuffle(keys)
 		for dakey in keys:
 		    rand_chickpix[dakey]=chickpix[dakey]
-		pairs=[list(x) for x in chunk(rand_chickpix.values(), 4)]
+		pairs=[list(x) for x in chunk(rand_chickpix.values(), 2)]
 		if len(pairs) % 2 == 1:
 		    pairs.append(pairs[0][0])
 		request.session['chickpix']=pairs
