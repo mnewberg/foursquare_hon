@@ -1,7 +1,6 @@
 <html>
 <head>
 	<meta name = "viewport" content = "width = device-width, initial-scale=1">
-	
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
@@ -42,6 +41,7 @@ jQuery(window).ready(function(){
 
 </head>
 <body>
+<<<<<<< HEAD
 	<div data-role="page" id="img1" data-theme="a">
 	<div data-role="header" data-position="fixed">
 		<h1>Who's hotter!?!</h1></div>
@@ -55,12 +55,30 @@ jQuery(window).ready(function(){
 	<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>
 	<input type="hidden" value="{{chickpix.0.3}}" class="venue1"/>
 	<input type="hidden" value="{{chickpix.1.3}}" class="venue2"/>
+=======
+	<div data-role="page" id="img{{page}}" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<h1>Who's hotter!?!</h1></div>
+		<div data-role="content" id="content2" align="center" class="ui-grid-a">
+	<div class="ui-block-a"><a id="person1" href="#img1" data-transition="slide"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
+	  </div>
+	<div class="ui-block-b" ><a id="person2" href="http://4sq.getpostd.com/gallery/{{page|add:"1"}}" data-transition="slide">
+	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150"></a>
+<br>{{ chickpix.1.1 }} @ {{chickpix.1.2}}</div>
+	<input type="hidden" value="{{value.0.0}}" class="id_val"/>
+	<input type="hidden" value="{{value.1.0}}" class="id_val2"/>
+	<input type="hidden" value="{{value.0.3}}" class="venue1"/>
+	<input type="hidden" value="{{value.1.3}}" class="venue2"/>
+>>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
 	</div>
 
 {% csrf_token %}
 	</div>
 
+<<<<<<< HEAD
 {{ chickpix }}
 
+=======
+>>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
 </body>
 </html> 
