@@ -41,19 +41,11 @@ jQuery(window).ready(function(){
 
 </head>
 <body>
-<<<<<<< HEAD
 	<div data-role="page" id="img{{page}}" data-theme="a">
 	<div data-role="header" data-position="fixed">
 		<h1>Who's hotter!?!</h1></div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	<div class="ui-block-a"><a id="person1" href="#img1" data-transition="slide"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ value.0.1 }} @ {{ value.0.2 }}
-=======
-	<div data-role="page"  data-theme="a">     
-	<div data-role="header" data-position="fixed">
-		<h1>Who's hotter!?!</h1></div>
-		<div data-role="content" id="content2" align="center" class="ui-grid-a">
-	<div class="ui-block-a"><a id="person1" href="#img{{ forloop.counter|add:"1"  }}" data-transition="slide"><img id="img" src="http://img-s.foursquare.com/userpix/{{ value.0.0 }}" height="150"></a><br>{{ chickpix.0.1 }} @ {{ chickpix.0.2 }}
->>>>>>> master
 	  </div>
 	<div class="ui-block-b" ><a id="person2" href="http://4sq.getpostd.com/gallery/{{page|add:"1"}}" data-transition="slide">
 	  <img src="http://img-s.foursquare.com/userpix/{{ value.1.0 }}" height="150"></a>
@@ -68,12 +60,5 @@ jQuery(window).ready(function(){
 
 	</div>
 
-<<<<<<< HEAD
-
-
-=======
-</div>
- {{ chickpix }}
->>>>>>> master
 </body>
 </html> 
