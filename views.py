@@ -9,26 +9,20 @@ import os
 import random
 from time import time
 import datetime
-
-
-f = open('/tmp/workfile', 'w')
-f.write(psq.__file__)
-f.close()
+from leaderboard import suggested_venues
 
 authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
-
-# def first(request):
-#     HttpResponseRedirect (uri)
 
 def postrecv(request):
     os.chdir("/var/www/foursquare/")
     os.system("git pull origin master")
-    return HttpResponse('IT WORKS')
+    return HttpResponse('Vote added')
 
 def second(request):
      request.session['code']=request.GET['code']
      return render_to_response('loc.html')
     
+<<<<<<< HEAD
 def gallery(request, page=0):
 	if page==0:
 		lat=request.GET['lat']
@@ -94,6 +88,69 @@ def gallery(request, page=0):
 		pass
 	return render_to_response ('gallery.html', {'chickpix':request.session['chickpix'].pop(0), 'csrf':params}, context_instance=RequestContext(request))	
 	
+=======
+def gallery(request):
+	lat=request.GET['lat']
+	lon=request.GET['lon']
+	gender=request.GET['gender']
+	params = {}
+	params.update(csrf(request))
+	authenticator.set_token(request.session['code'])
+	da_id=authenticator.query("/users/self")
+	if 'fsq_id' not in request.session and user.objects.filter(fsq_id=da_id['user']['id']).count()==0:
+		u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
+		for item in ['phone','email','twitter','facebook']:
+			if item in da_id['user']['contact']:
+				u1.phone=da_id['user']['contact'][item]
+				u1.save()
+	else:
+		pass
+	request.session['fsq_id']=da_id['user']['id']
+	trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
+	trending_venues={}
+	nearby_venues={}
+	for item in trending['venues']:
+	    trending_venues[item['id']]=item['name']
+	all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':2000})
+	i=0
+	for item in all_nearby['venues']:
+	    if item['hereNow']['count']>0:
+	        nearby_venues[item['id']]=item['name']
+	for item in set(nearby_venues).intersection(set(trending_venues)):
+		del nearby_venues[item]
+	all_venues_nearby = nearby_venues.items() + trending_venues.items()	
+	venue_names=[]
+	chickpix={}
+	herenow=[]
+	v_ids=[]
+	i=0
+	n=0
+	for venue in all_venues_nearby:
+		herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow"))
+		v_ids.append(venue[0])
+		herenow[i]['hereNow']['venueName']=venue[1]
+		i = i+1
+    	for item in herenow:
+		venueName=item['hereNow']['venueName']
+		for entry in item['hereNow']['items']:
+			if entry['user']['gender']==gender:
+				the_id=entry['user']['id']
+				if entry['user']['photo'].startswith("https://foursquare.com/img/"):
+					pass
+				else:
+					chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
+			else:
+				pass
+		n+=1
+		
+	pairs=[list(x) for x in chunk(chickpix.values(), 2)]
+	for item in pairs:
+		if len(item)<2:
+			item.append(pairs[0][0])
+	random.shuffle(pairs)
+	
+	return render_to_response ('gallery.html', {'chickpix':pairs, 'csrf':params}, context_instance=RequestContext(request))
+>>>>>>> e71d23939b58fa39bcd62a9c1e76bc8d1d4240d2
     
 def vote(request):
 	authenticator.set_token(request.session['code'])
@@ -123,8 +180,18 @@ def vote(request):
 	fsq_user.save()
 	
 	return HttpResponse('Vote successful')
-    
-    
-    
- 
-    
+
+def results(request):
+	authenticator.set_token(request.session['code'])
+	fsq_id=request.session['fsq_id']
+	da_results=suggested_venues(fsq_id)
+	venue_names={}
+	for item in da_results:
+		data=authenticator.query("/venues/"+item[0])
+		venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
+	global_results=suggested_venues()
+	all_venues={}
+	for item in global_results:
+		data=authenticator.query("/venues/"+item[0])
+		all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
+	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
