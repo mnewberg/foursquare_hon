@@ -23,7 +23,7 @@ def second(request):
      return render_to_response('loc.html')
     
 def gallery(request, page):
-	if page==0:
+	if page=='0':
 		lat=request.GET['lat']
 		lon=request.GET['lon']
 		gender=request.GET['gender']
