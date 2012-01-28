@@ -15,7 +15,7 @@ uri = authenticator.authorize_uri()
 urlpatterns = patterns('',
     url(r'^$',redirect_to,{'url':uri}),
     url(r'^loc/$','views.second'),
-    url(r'^gallery/$','views.gallery'),
+    url(r'^gallery/(\d{1,3}$','views.gallery'),
     url(r'^rating/$','views.vote'),
 	url(r'^postrecv/$','views.postrecv'),
 	url(r'^results/$','views.results'),
