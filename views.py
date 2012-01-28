@@ -84,7 +84,8 @@ def gallery(request, page):
 		random.shuffle(pairs)
 		request.session['chickpix']=pairs
 	else:
-		pass
+		params = {}
+		params.update(csrf(request))
 	return render_to_response ('gallery.html', {'chickpix':request.session['chickpix'].pop(0), 'csrf':params, 'page':page}, context_instance=RequestContext(request))
     
 def vote(request):
