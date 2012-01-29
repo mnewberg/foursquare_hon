@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	  <form name="MyForm" id="MyForm" action="/gallery" method="get" data-ajax="false">
+	  <form name="MyForm" id="MyForm" action="/gallery/0" method="get">
 
 		<input type=hidden name="lat" id=”lat″>
 		<input type=hidden name="lon" id=”lon″>
@@ -63,7 +63,7 @@
 	                function handle_geolocation_query(position){
 	                var lat=position.coords.latitude
 	                var lon=position.coords.longitude 
-					var spinner = new Spinner().spin();
+				
 
 	                  	$('input[name=lat]').val(lat);
 						$('input[name=lon]').val(lon);
@@ -73,7 +73,9 @@
 					}
 
 					function handle_geolocation_query_male(position){					
-	
+		                var lat=position.coords.latitude
+		                var lon=position.coords.longitude 
+
 
 	                  	$('input[name=lat]').val(lat);
 						$('input[name=lon]').val(lon);
@@ -97,8 +99,8 @@
 			<div class="ui-grid-b">
 				<button type="button" data-theme="c" id="btnInit2">Dudes</button></div>
 				</div>
-				<div id="modal">
-					</div>
+				
+				
 					
 					
 				</div>

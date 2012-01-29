@@ -83,10 +83,12 @@ def gallery(request, page):
 				item.append(pairs[0][0])
 		random.shuffle(pairs)
 		request.session['chickpix']=pairs
-	else:
+        else:
 		params = {}
 		params.update(csrf(request))
-	return render_to_response ('gallery.html', {'chickpix':request.session['chickpix'].pop(0), 'csrf':params, 'page':page}, context_instance=RequestContext(request))
+        request.session.modified = True
+        image_pair=request.session['chickpix'].pop(0)
+	return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':page}, context_instance=RequestContext(request))
     
 def vote(request):
 	authenticator.set_token(request.session['code'])
