@@ -48,7 +48,7 @@ jQuery(window).ready(function(){
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	<div class="ui-block-a"><a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch><img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" height="150"></a><br>{{ chickpix.0.1 }} @ {{ chickpix.0.2 }}
 	  </div>
-	<div class="ui-block-b" ><a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
+	<div class="ui-block-b" ><a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 	  <img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" height="150"></a>
 <br>{{ chickpix.1.1 }} @ {{chickpix.1.2}}</div>
 	<input type="hidden" value="{{chickpix.0.0}}" class="id_val"/>
@@ -59,8 +59,6 @@ jQuery(window).ready(function(){
 
 {% csrf_token %}
 	</div>
-
-{{ chickpix }}
 
 </body>
 </html> 
