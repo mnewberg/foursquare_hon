@@ -29,6 +29,9 @@ def gallery(request, page):
 		lat=request.GET['lat']
 		lon=request.GET['lon']
 		gender=request.GET['gender']
+                request.session['gender']=gender
+                request.session['lat']=lat
+                request.session['lon']=lon
 		params = {}
 		params.update(csrf(request))
 		authenticator.set_token(request.session['code'])
@@ -59,7 +62,7 @@ def gallery(request, page):
 		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6:
                     radius=2000
                 else:
-                    radius=10000
+                    radius=request.GET['radius']
                 all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
 		for item in all_nearby['venues']:
@@ -102,8 +105,14 @@ def gallery(request, page):
 		params = {}
 		params.update(csrf(request))
         request.session.modified = True
-        image_pair=request.session['chickpix'][int(page)]
-	return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
+        if len(request.session['chickpix'])<(int(page)+1):
+            newradius=request.session['radius']+15000
+            if newradius>100000:
+                lastpage=True
+            return render_to_response('lastpage.html', {'newradius':newradius,'lastpage':lastpage, 'gender':request.session['gender'], 'lat':request.session['lat'], 'lon':request.session['lon']})
+        else:
+            image_pair=request.session['chickpix'][int(page)]
+            return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
     
 def vote(request):
 	authenticator.set_token(request.session['code'])
