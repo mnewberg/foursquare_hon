@@ -1,9 +1,0 @@
-<div data-role="page" data-theme="a">
-<div data-role="header" data-theme="a">
-<a href="" data-icon="delete"></a>
-<h1>A closer look...</h1>
-</div>
-<div align="center" data-role="content" data-theme="a">
-<img src="http://img-s.foursquare.com/userpix/{{ image }}">
-</div>
-</div>
