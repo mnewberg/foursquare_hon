@@ -150,7 +150,6 @@ def results(request):
 			all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
 
-
 def dialog(request, image):
     return render_to_response('popup.html',{'image':image})
 
