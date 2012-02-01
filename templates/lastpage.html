@@ -14,11 +14,15 @@
   <div data-role="header">
     <h1>Page Title</h1>
     </div><!-- /header -->
-
   <div data-role="content">
+{% if lastpage %}
+<p>That's all for now folks!</p>
+See results? <a href="/notice">click here!</a>
+{% else %}
+
     <p>That's all we have nearby you. Don't give up now! Let's look further and wider</p>
 <br>
-<a href="/gallery/0?lat={{ lat }}&lon={{ lon }}&gender={{ gender }}&radius={{ newradius }}">Try this</a>
+<a href="/gallery/0?lat={{ lat }}&lon={{ lon }}&gender={{ gender }}&radius={{ newradius }}">Try this</a>{% endif %}
     </div><!-- /content -->
 </div>
 </body>

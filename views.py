@@ -63,6 +63,7 @@ def gallery(request, page):
                     radius=2000
                 else:
                     radius=request.GET['radius']
+                request.session['radius']=radius
                 all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
 		for item in all_nearby['venues']:
@@ -107,8 +108,11 @@ def gallery(request, page):
         request.session.modified = True
         if len(request.session['chickpix'])<(int(page)+1):
             newradius=request.session['radius']+15000
+            request.session['radius']=newradius
             if newradius>100000:
                 lastpage=True
+            else:
+                lastpage=False
             return render_to_response('lastpage.html', {'newradius':newradius,'lastpage':lastpage, 'gender':request.session['gender'], 'lat':request.session['lat'], 'lon':request.session['lon']})
         else:
             image_pair=request.session['chickpix'][int(page)]
