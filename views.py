@@ -10,6 +10,8 @@ import random
 from time import time
 import datetime
 from leaderboard import suggested_venues
+from django.template.defaultfilters import stringfilter
+from haversine import *
 
 authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
 
@@ -30,7 +32,8 @@ def gallery(request, page):
 		params = {}
 		params.update(csrf(request))
 		authenticator.set_token(request.session['code'])
-		da_id=authenticator.query("/users/self")
+		request.session.set_expiry(3600)
+                da_id=authenticator.query("/users/self")
 		if 'fsq_id' not in request.session and user.objects.filter(fsq_id=da_id['user']['id']).count()==0:
 			u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
 			for item in ['phone','email','twitter','facebook']:
@@ -45,7 +48,11 @@ def gallery(request, page):
 		nearby_venues={}
 		for item in trending['venues']:
 		    trending_venues[item['id']]=item['name']
-		all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':2000})
+		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6:
+                    radius=2000
+                else:
+                    radius=10000
+                all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
 		i=0
 		for item in all_nearby['venues']:
 		    if item['hereNow']['count']>0:
@@ -87,8 +94,8 @@ def gallery(request, page):
 		params = {}
 		params.update(csrf(request))
         request.session.modified = True
-        image_pair=request.session['chickpix'].pop(0)
-	return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':page}, context_instance=RequestContext(request))
+        image_pair=request.session['chickpix'][int(page)]
+	return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
     
 def vote(request):
 	authenticator.set_token(request.session['code'])
@@ -133,3 +140,10 @@ def results(request):
 		data=authenticator.query("/venues/"+item[0])
 		all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
+
+
+def dialog(request, image):
+    return render_to_response('popup.html',{'image':image})
+
+def notice(request):
+    return render_to_response('warning.html')

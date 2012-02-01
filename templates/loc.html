@@ -6,6 +6,13 @@
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<STYLE TYPE="text/css">
+.overflow{
+         width:200px;
+         overflow:overlay;
+}
+
+</style>
 
 	  <form name="MyForm" id="MyForm" action="/gallery/0" method="get">
 
@@ -16,12 +23,7 @@
 	 </form>
 
 	     <script>
-	 
 	
-		$(document).bind("mobileinit", function(){
-		  $.mobile.loadingMessage = "loading girls";
-		});
-	 
 	        jQuery(window).ready(function(){  
 	            jQuery("#btnInit").click(initiate_geolocation);  
 	        });
@@ -69,6 +71,7 @@
 						$('input[name=lon]').val(lon);
 						$('input[name=gender]').val('female')
 						$('#MyForm').submit();  
+                $.mobile.loadingMessage = "Loading up lots of broads... please be patient!";
 
 					}
 
@@ -80,9 +83,49 @@
 	                  	$('input[name=lat]').val(lat);
 						$('input[name=lon]').val(lon);
 						$('input[name=gender]').val('male')
-						$('#MyForm').submit();  
+						$('#MyForm').submit();
+		$.mobile.loadingMessage = "Loading up lots of bros... please be patient!";
+  
 
 					}
+
+
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val").val(),
+                                pic_id2:$(".ui-page-active .id_val2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+		});
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+                $.ajax({
+		type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val2").val(),
+                                pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+		                        csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+                });
+})});
+
+		
+
+
+
 
 	    </script>  
 	</head>
