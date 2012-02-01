@@ -32,16 +32,8 @@ def gallery(request, page):
 		params = {}
 		params.update(csrf(request))
 		authenticator.set_token(request.session['code'])
-<<<<<<< HEAD
 		request.session.set_expiry(3600)
                 da_id=authenticator.query("/users/self")
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
-		da_id=authenticator.query("/users/self")
->>>>>>> 94b8a99173f0135e2c734824a897388f013366ce
 		if 'fsq_id' not in request.session and user.objects.filter(fsq_id=da_id['user']['id']).count()==0:
 			u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
 			for item in ['phone','email','twitter','facebook']:
@@ -51,9 +43,6 @@ def gallery(request, page):
 		else:
 			pass
 		request.session['fsq_id']=da_id['user']['id']
-<<<<<<< HEAD
-=======
-=======
 		if 'fsq_id' not in request.session:
 			da_id=authenticator.query("/users/self")
 			u1 = user.objects.create(fsq_id=da_id['user']['id'], phone=da_id['user']['contact']['phone'],
@@ -62,31 +51,17 @@ def gallery(request, page):
 			request.session['fsq_id']=da_id['user']['id']
 		else:
 			pass
->>>>>>> master
->>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
 		trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
 		trending_venues={}
 		nearby_venues={}
 		for item in trending['venues']:
 		    trending_venues[item['id']]=item['name']
-<<<<<<< HEAD
 		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6:
                     radius=2000
                 else:
                     radius=10000
                 all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
-=======
-<<<<<<< HEAD
-		all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':2000})
-=======
-<<<<<<< HEAD
-		all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':2000})
-=======
-		all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon)})
->>>>>>> master
->>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
->>>>>>> 94b8a99173f0135e2c734824a897388f013366ce
-		i=0
+                i=0
 		for item in all_nearby['venues']:
 		    if item['hereNow']['count']>0:
 		        nearby_venues[item['id']]=item['name']
@@ -109,25 +84,13 @@ def gallery(request, page):
 			for entry in item['hereNow']['items']:
 				if entry['user']['gender']==gender:
 					the_id=entry['user']['id']
-<<<<<<< HEAD
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
-=======
-<<<<<<< HEAD
-					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
-=======
-					if entry['user']['photo'][44:]==[]:
->>>>>>> master
->>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
 						pass
 					else:
 						chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
 				else:
 					pass
 			n+=1
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 4a35b173582ac989fcaae958308bfed9de97c718
 		
 		pairs=[list(x) for x in chunk(chickpix.values(), 2)]
 		for item in pairs:
@@ -142,21 +105,6 @@ def gallery(request, page):
         image_pair=request.session['chickpix'][int(page)]
 	return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
     
-=======
-		rand_chickpix={}
-		keys=chickpix.keys()
-		random.shuffle(keys)
-		for dakey in keys:
-		    rand_chickpix[dakey]=chickpix[dakey]
-		pairs=[list(x) for x in chunk(rand_chickpix.values(), 2)]
-		if len(pairs) % 2 == 1:
-		    pairs.append(pairs[0][0])
-		request.session['chickpix']=pairs
-	else:
-		pass
-	return render_to_response ('gallery.html', {'chickpix':request.session['chickpix'].pop(0), 'csrf':params}, context_instance=RequestContext(request))	
-	
->>>>>>> master
 def vote(request):
 	authenticator.set_token(request.session['code'])
 	pic_id = request.POST['chosen_id']
@@ -198,12 +146,8 @@ def results(request):
 	all_venues={}
 	for item in global_results:
 		data=authenticator.query("/venues/"+item[0])
-<<<<<<< HEAD
-		all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
-=======
 		if data['venue']['location']['address'] and data['venue']['location']['postalCode']: 
 			all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
->>>>>>> 48182174980435118f1cc6fbf7619978b8eb80f1
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
 
 
