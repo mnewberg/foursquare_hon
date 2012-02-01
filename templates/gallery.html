@@ -4,50 +4,9 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-<STYLE TYPE="text/css">
-.overflow{
-         width:200px;
-         overflow:hidden;
-}
-
-.target{
-        margin-left:-40px;
-}
-</style>
-<script>
 
 
 
-jQuery(window).ready(function(){
-    jQuery("#person1").live("click",function(){
-                $.ajax({
-type: "POST",
-url: "/rating/",
-                data:{
-                                chosen_id:$(".ui-page-active .id_val").val(),
-                                pic_id2:$(".ui-page-active .id_val2").val(),
-venue_id:$(".ui-page-active .venue1").val(),
-venue_id2:$(".ui-page-active .venue2").val(),
-                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
-                          }
-                });
-})});
-
-jQuery(window).ready(function(){
-    jQuery("#person2").live("click",function(){
-                $.ajax({
-                type: "POST",
-                url: "/rating/",
-                data:{
-                                chosen_id:$(".ui-page-active .id_val2").val(),
-                                pic_id2:$(".ui-page-active .id_val").val(),
-                                venue_id2:$(".ui-page-active .venue2").val(),
-                                venue_id:$(".ui-page-active .venue1").val(),
-                               csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
-                          }
-                });
-})});
-</script>
 </head>
 <body>
 	<div data-role="page" data-theme="a">
