@@ -12,6 +12,8 @@ import datetime
 from leaderboard import suggested_venues
 from django.template.defaultfilters import stringfilter
 from haversine import *
+import urllib
+import urllib2
 
 authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
 
@@ -37,24 +39,15 @@ def gallery(request, page):
 		authenticator.set_token(request.session['code'])
 		request.session.set_expiry(3600)
                 da_id=authenticator.query("/users/self")
-		if 'fsq_id' not in request.session and user.objects.filter(fsq_id=da_id['user']['id']).count()==0:
-			u1 = user.objects.create(fsq_id=da_id['user']['id'], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today(),photo=da_id['user']['photo'][44:])
-			for item in ['phone','email','twitter','facebook']:
-				if item in da_id['user']['contact']:
-					u1.phone=da_id['user']['contact'][item]
-					u1.save()
-		else:
-			pass
-		request.session['fsq_id']=da_id['user']['id']
-		if 'fsq_id' not in request.session:
-			da_id=authenticator.query("/users/self")
-			u1 = user.objects.create(fsq_id=da_id['user']['id'], phone=da_id['user']['contact']['phone'],
-			email=da_id['user']['contact']['email'],twitter=da_id['user']['contact']['twitter'],
-			facebook=da_id['user']['contact']['facebook'],photo=da_id['user']['photo'][44:], first_name=da_id['user']['firstName'], last_name=da_id['user']['lastName'],date_joined=datetime.datetime.today())
-			request.session['fsq_id']=da_id['user']['id']
-		else:
-			pass
-		trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
+                f_id=da_id['user']['id']
+                finder = psq.UserFinder(authenticator)
+		query = finder.findUser(f_id)
+                if 'fsq_id' not in request.session and user.objects.filter(fsq_id=f_id).count()==0:
+			u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False)
+                else:
+                    pass
+                request.session['fsq_id']=f_id
+    		trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
 		trending_venues={}
 		nearby_venues={}
 		for item in trending['venues']:
@@ -150,7 +143,13 @@ def vote(request):
 def results(request):
 	authenticator.set_token(request.session['code'])
 	fsq_id=request.session['fsq_id']
-	da_results=suggested_venues(fsq_id)
+        u=user.objects.get(fsq_id=fsq_id)
+	if u.has_shared==False:
+            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','second test, cool'),('broadcast','public,followers')]
+            urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
+            u.has_shared=True
+            u.save()
+        da_results=suggested_venues(fsq_id)
 	venue_names={}
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])

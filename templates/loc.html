@@ -6,6 +6,11 @@
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="HandheldFriendly" content="true" />
+
 <STYLE TYPE="text/css">
 .overflow{
          width:200px;
@@ -130,7 +135,7 @@ en']").val()
 
 	    </script>  
 	</head>
-	<body>
+	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 		<div data-role="page">
 			<div data-role="header">
 

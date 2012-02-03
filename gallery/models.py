@@ -28,7 +28,7 @@ class user(models.Model):
 	facebook = models.CharField(max_length=15, null=True)
 	email = models.EmailField(max_length=75, null=True)
 	photo = models.CharField(max_length=30, null=True)
-	
+	has_shared = models.BooleanField()
 	def __unicode__(self):
 		return self.fsq_id
 		

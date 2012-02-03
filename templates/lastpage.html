@@ -8,6 +8,59 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
+
+<STYLE TYPE="text/css">
+.overflow{
+         width:200px;
+         overflow:hidden;
+}
+
+</style>
+
+
+<script>
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val").val(),
+                                pic_id2:$(".ui-page-active .id_val2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+		 });
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+                $.ajax({
+		 type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val2").val(),
+                                pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+		                         csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+                });
+})});
+
+		 
+
+
+
+
+		     </script>  
+
+
+
 </head> 
 
 <body> 

@@ -8,9 +8,9 @@
 
 
 </head>
-<body>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a">
-	<div data-role="header" data-position="fixed">
+	<div data-role="header">
 		<h1>Who's hotter!?!</h1></div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	<div class="ui-block-a"><div class="overflow"><a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch><img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" height="150px"></a><div class="ui-block-a" style="width:200px; padding-top:15px">{% if page > 0 %}<a href="http://4sq.getpostd.com/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}{{ chickpix.0.1 }}</a> @ {{ chickpix.0.2 }}</div></div>
