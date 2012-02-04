@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
-from gallery.models import user, rating, record
+from gallery.models import user, rating, record, user_lookup
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
@@ -37,7 +37,7 @@ def gallery(request, page):
 		params = {}
 		params.update(csrf(request))
 		authenticator.set_token(request.session['code'])
-		request.session.set_expiry(3600)
+		request.session.set_expiry(0)
                 da_id=authenticator.query("/users/self")
                 f_id=da_id['user']['id']
                 finder = psq.UserFinder(authenticator)
@@ -85,7 +85,11 @@ def gallery(request, page):
 						pass
 					else:
 						chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
-				else:
+                                                try: 
+                                                    user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][44:])
+                                                except:
+                                                    pass
+                                else:
 					pass
 			n+=1
 		
@@ -153,13 +157,18 @@ def results(request):
 	venue_names={}
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])
-		venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
-	global_results=suggested_venues()
+		try:
+                    venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1]]
+                except:
+                    pass
+        global_results=suggested_venues()
 	all_venues={}
 	for item in global_results:
 		data=authenticator.query("/venues/"+item[0])
-		if data['venue']['location']['address'] and data['venue']['location']['postalCode']: 
-			all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode']]
+                try:
+                    all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1]]
+                except:
+                    pass
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
 
 def dialog(request, image):
