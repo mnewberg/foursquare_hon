@@ -31,4 +31,9 @@ class user(models.Model):
 	has_shared = models.BooleanField()
 	def __unicode__(self):
 		return self.fsq_id
-		
+
+class user_lookup(models.Model):
+	fsq_id=models.CharField(max_length=30)
+	pic_id=models.CharField(max_length=30, primary_key=True)
+	def __unicode__(self):
+		return self.fsq_id
