@@ -10,13 +10,13 @@
 </head>
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a">
-		<div data-role ="header" style="background-image:http://getpostd.com/button.png">
-			<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold">who's better looking</h1>
+		<div data-role ="ui-header" style="">
+			<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold; align:left; margin-left:10px;">who's better looking</h1>
 		</div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	
-	<div class="ui-block-a" style="width:50%">
-		<center><div class="overflow">
+	<div class="ui-block-a" style="width:40%">
+		<div class="overflow">
 			<a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" height="150px">
 			</a>
@@ -24,11 +24,11 @@
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}{{ chickpix.0.1 }}
 				</a> @ {{ chickpix.0.2 }}
 			</div>
-		</div></center>
+		</div>
 	</div>
 	
-	<div class="ui-block-b" style="width:50%">
-		<center><div class="overflow">
+	<div class="ui-block-b" style="width:40%; margint-right:10%;">
+		<div class="overflow">
 			<a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" height="150px" class="target">
 	 		</a>
@@ -36,7 +36,7 @@
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop">{% endif %}{{ chickpix.1.1 }}
 				</a> @ {{chickpix.1.2}}
 			</div>
-		</div></center>
+		</div>
 	</div>
 	
 
