@@ -20,11 +20,12 @@
 			<a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px; overflow:hidden;" >
 			</a>
+		</div>
 			<div class="ui-block-a" style="width:90%; padding-top:15px">{% if page > 0 %}
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}{{ chickpix.0.1 }}
 				</a> @ {{ chickpix.0.2 }}
 			</div>
-		</div>
+		
 	</div>
 	
 	<div class="ui-block-b" style="width:40%; margin-right:10%;">
@@ -32,11 +33,12 @@
 			<a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; overflow:hidden;" class="target">
 	 		</a>
+	 	</div>
 			<div class="ui-block-b" style="width:90%; padding-top:15px">{% if page > 0 %}
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop">{% endif %}{{ chickpix.1.1 }}
 				</a> @ {{chickpix.1.2}}
 			</div>
-		</div>
+		
 	</div>
 	
 
