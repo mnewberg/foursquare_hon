@@ -10,9 +10,12 @@
 </head>
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a">
-		<h1 style="letter-spacing:1px; margin-top: 100px; font-size:24px; font-weight:bold">who's better looking</h1>
+		<header style="background-image:http://getpostd.com/button.png">
+			<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold">who's better looking</h1>
+		</header>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
-	<div class="ui-block-a" style="width:50%">
+	
+	<center><div class="ui-block-a" style="width:50%">
 		<div class="overflow">
 			<a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" height="150px">
@@ -35,7 +38,8 @@
 			</div>
 		</div>
 	</div>
-	
+	</center>
+
 	<input type="hidden" value="{{chickpix.0.0}}" class="id_val"/>
 	<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>
 	<input type="hidden" value="{{chickpix.0.3}}" class="venue1"/>
