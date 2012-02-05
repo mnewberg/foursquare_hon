@@ -11,9 +11,8 @@
 	<div data-role="collapsible-set">
 		
 {% for key, value in your_venue_names.items %}
-{{ your_venue_names.items }}
 <div data-role="collapsible" data-icon="plus">
-<h3>{{ key }} - {{ value.3 }} people you like</h3>
+<h3>{{ key }} - {{ value.2 }} {% if value.2 > 1 %}people{% else %}person{% endif %} you like</h3>
 <p>{{ value.0 }} - {{ value.1 }}</p>
 </div>
 {%endfor%}
