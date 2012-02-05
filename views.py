@@ -14,6 +14,7 @@ from django.template.defaultfilters import stringfilter
 from haversine import *
 import urllib
 import urllib2
+from detection import *
 
 authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
 
@@ -22,8 +23,16 @@ def postrecv(request):
     os.system("git pull origin master")
     return HttpResponse('Vote added')
 
+def home(request):
+    user_agent = get_user_agent(request)
+    if is_desktop(user_agent):
+        return HttpResponse('you is on a desktop. you need to go on your smartphone')
+    else:
+        return render_to_response('home.html')
+
 def second(request):
      request.session['code']=request.GET['code']
+     request.session.set_expiry(0)
      return render_to_response('loc.html')
     
 def gallery(request, page):
@@ -37,7 +46,6 @@ def gallery(request, page):
 		params = {}
 		params.update(csrf(request))
 		authenticator.set_token(request.session['code'])
-		request.session.set_expiry(0)
                 da_id=authenticator.query("/users/self")
                 f_id=da_id['user']['id']
                 finder = psq.UserFinder(authenticator)

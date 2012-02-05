@@ -13,7 +13,8 @@ uri = authenticator.authorize_uri()
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$',redirect_to,{'url':uri}),
+    url(r'^$','views.home'),
+    url(r'^login$',redirect_to,{'url':uri}),
     url(r'^loc/$','views.second'),
     url(r'^gallery/(\d*)$','views.gallery'),
     url(r'^rating/$','views.vote'),
