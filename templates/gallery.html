@@ -15,30 +15,30 @@
 		</div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	
-	<div class="ui-block-a" style="width:30%; margin-right:20%;">
+	<div class="ui-block-a" >
 	{% if page > 0 %}
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.0.0}}" data-rel="dialog"><h2>{% endif %}{{ chickpix.0.1 }}</h2>
 				</a>
-		<div class="overflow" style="width:100px">
+		<div class="overflow">
 			<a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px; overflow:hidden;" >
 			</a>
 		</div>
-			<div class="ui-block-a" style="text-align:center;"><br><h6>@ {{ chickpix.0.2 }}</h6>
+			<div class="ui-block-a" style="text-align:center;width:100%"><br><h6>@ {{ chickpix.0.2 }}</h6>
 			</div>
 		
 	</div>
 	
-	<div class="ui-block-b" style="width:40%; margin-right:10%;">
+	<div class="ui-block-b">
 	{% if page > 0 %}
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop"><h2>{% endif %}{{ chickpix.1.1 }}</h2>
 				</a>
-		<div class="overflow" style="width:100px">
+		<div class="overflow">
 			<a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; overflow:hidden;" class="target">
 	 		</a>
 	 	</div>
-			<div class="ui-block-b" style="text-align:center"><br> <h6>@ {{chickpix.1.2}}</h6>
+			<div class="ui-block-b" style="text-align:center;width:100%"><br> <h6>@ {{chickpix.1.2}}</h6>
 			</div>
 		
 	</div>
