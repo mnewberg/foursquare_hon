@@ -16,7 +16,7 @@ import urllib
 import urllib2
 from detection import *
 
-authenticator = psq.FSAuthenticator('H0P2PQASLI5GNXUQSR5KN2MH4Z002YS0VSYNDFS215XNHCY5','HBDVHGLMFXFUT5SXEKLFFGBAYBXJZLGBLQ5BS232F0NGDNRG','http://4sq.getpostd.com/loc/')
+authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://beta.tryfourplay.com/loc/')
 
 def postrecv(request):
     os.chdir("/var/www/foursquare/")
@@ -157,7 +157,7 @@ def results(request):
 	fsq_id=request.session['fsq_id']
         u=user.objects.get(fsq_id=fsq_id)
 	if u.has_shared==False:
-            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','second test, cool'),('broadcast','public,followers')]
+            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','TESTING A REALLY COOL APP WOOOOO!'),('broadcast','public,followers')]
             urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
             u.has_shared=True
             u.save()

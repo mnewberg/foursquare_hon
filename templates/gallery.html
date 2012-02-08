@@ -4,7 +4,40 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+<script>
 
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+type: "POST",
+url: "/rating/",
+                data:{
+        chosen_id:$(".ui-page-active .id_val").val(),
+pic_id2:$(".ui-page-active .id_val2").val(),
+        venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\                                                                    
+en']").val()
+                          }
+});
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+$.ajax({
+type: "POST",
+url: "/rating/",
+                data:{
+                chosen_id:$(".ui-page-active .id_val2").val(),
+        pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+venue_id:$(".ui-page-active .venue1").val(),
+csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\                                                            
+en']").val()
+                          }
+                });
+})});
+</script>
 
 
 </head>
@@ -17,10 +50,10 @@
 	
 	<div class="ui-block-a" >
 	{% if page > 0 %}
-				<a href="http://4sq.getpostd.com/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}<h2>{{ chickpix.0.1 }}</h2>
+				<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}<h2>{{ chickpix.0.1 }}</h2>
 				</a>
 		<div class="overflow">
-			<a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
+			<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px; overflow:hidden;" >
 			</a>
 		</div>
@@ -32,10 +65,10 @@
 	<div class="ui-block-b">
 
 	{% if page > 0 %}
-				<a href="http://4sq.getpostd.com/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop">{% endif %}<h2>{{ chickpix.1.1 }}</h2>
+				<a href="/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop">{% endif %}<h2>{{ chickpix.1.1 }}</h2>
 				</a>
 		
-	<div class="overflow">		<a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
+	<div class="overflow">		<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; overflow:hidden;" class="target">
 	 		</a></div></div>
 			<div class="ui-block-b" style="text-align:center"><br> <h6>@ {{chickpix.1.2}}</h6>

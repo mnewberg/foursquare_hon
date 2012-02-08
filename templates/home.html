@@ -21,12 +21,54 @@ message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 };
 </script>
 <script type="application/javascript" src="http://getpostd.com/src/add2home.js" charset="utf-8"></script>
+<style type="text/css">
+
+@-webkit-keyframes reset {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 0;
+}
+}
+ 
+@-webkit-keyframes fade-in {
+0% {
+    opacity: 0;
+}
+60% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+
+}
+.fade-in {
+    -webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+}
+
+.fade-in.one {-webkit-animation-delay: 0, 0;}
+.fade-in.two {-webkit-animation-delay: 0, 1s;}
+.fade-in.three {-webkit-animation-delay: 0, 1.5s;}
+.fade-in.four {-webkit-animation-delay: 0, 2s;}
+.fade-in.five {-webkit-animation-delay: 0, 3s;}
+.fade-in.six {-webkit-animation-delay: 0, 4s;}
+
+
+</style>
+
 </head>
-<body bgcolor="#A00E20">
+<body bgcolor="#A00E20" class="content">
+>
 <img align="center" style="max-width:320px;" src="http://getpostd.com/fourplay_logo.png"><div align="center">
-Check out people checked in near you.
-<a href="/login">
-<img src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px;padding-top:100px">
+<div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center">
+<b><span class="fade-in one">Check out</b></span> <span class="fade-in two"> people</span><br> <b><span class="fade-in three">checked</span> <span class="fade-in four">in</span></b><span class="fade-in five"> near you.</span></div>
+<div class="fade-in six"><a href="/login">
+<img src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px;margin-top:80px"></div>
 </div>
 </body>
 </html>
