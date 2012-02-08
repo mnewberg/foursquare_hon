@@ -12,19 +12,35 @@
 		<meta name="HandheldFriendly" content="true" />
 
 <STYLE TYPE="text/css">
-@media screen and (min-device-width: 480px) {
-.overflow{ 
-width:200px;
-overflow:hidden;
 
+
+@media only screen and (min-device-width: 319px) {
+.overflow{ 
+width:100px;
+overflow:hidden;
+}
+
+.dialog_image{
+max-width:400px;
+}
 
 }
 
-@media screen and (min-device-width:320px){
+@media only screen and (max-device-width:481px){
 .overflow{
-         width:100px;
+         width:200px;
          overflow:hidden;
-}}
+
+}
+
+
+
+
+.dialog_image{
+max-width:200px;}
+
+
+}
 
 </style>
 

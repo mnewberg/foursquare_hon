@@ -15,32 +15,29 @@
 		</div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	
-	<div class="ui-block-a" >
+	<div class="ui-block-a">
+
 	{% if page > 0 %}
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}<h2>{{ chickpix.0.1 }}</h2>
 				</a>
-		<div class="overflow">
-			<a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
-				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px; overflow:hidden;" >
-			</a>
-		</div>
-			<div class="ui-block-a" style="text-align:center;width:100%"><br><h6>@ {{ chickpix.0.2 }}</h6>
-			</div>
+			<div class="overflow"><a id="person1" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
+<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px; overflow:hidden;" ></a></div></div>			<div class="ui-block-a" style="width:100%;text-align:center;"><br><h6>@ {{ chickpix.0.2 }}</h6>
+	
 		
 	</div>
 	
 	<div class="ui-block-b">
 
+
 	{% if page > 0 %}
 				<a href="http://4sq.getpostd.com/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop">{% endif %}<h2>{{ chickpix.1.1 }}</h2>
 				</a>
 		
-	<div class="overflow">		<a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
+	<div class="overflow>		<a id="person2" href="http://4sq.getpostd.com/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; overflow:hidden;" class="target">
 	 		</a></div></div>
 			<div class="ui-block-b" style="width:100%;text-align:center"><br> <h6>@ {{chickpix.1.2}}</h6>
-			</div>
-	
+			</div>	
 
 	<input type="hidden" value="{{chickpix.0.0}}" class="id_val"/>
 	<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>
@@ -54,9 +51,5 @@
 
 
 
-
-	</div>
-
 </body>
 </html> 
-
