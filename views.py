@@ -26,7 +26,7 @@ def postrecv(request):
 def home(request):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
-        return HttpResponse('<center><img src="http://b.static.memegenerator.net/cache/instances/500x/13/13766/14096424.jpg"></center>')
+        return render_to_response('desktop.html')
     else:
         return render_to_response('home.html')
 
