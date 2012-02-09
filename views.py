@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
-from gallery.models import user, rating, record, user_lookup
+from gallery.models import user, rating, record, user_lookup, invite_codes
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
