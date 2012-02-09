@@ -33,6 +33,9 @@ def home(request):
 def second(request):
      request.session['code']=request.GET['code']
      request.session.set_expiry(0)
+	## does user already exist in user table? IF invite set to true, render to response loc
+		##else- save user data now. 
+			##if user invite code is valid then refer to loc.html and store 'invite' to true, else, return other page set field 'invite' to false   
      return render_to_response('loc.html')
     
 def gallery(request, page):

@@ -29,6 +29,7 @@ class user(models.Model):
 	email = models.EmailField(max_length=75, null=True)
 	photo = models.CharField(max_length=30, null=True)
 	has_shared = models.BooleanField()
+	invite = models.BooleanField()
 	def __unicode__(self):
 		return self.fsq_id
 
@@ -37,3 +38,11 @@ class user_lookup(models.Model):
 	pic_id=models.CharField(max_length=30, primary_key=True)
 	def __unicode__(self):
 		return self.fsq_id
+		
+class invite_codes(models.Model):
+	code=models.CharField(max_length=12)
+	quota=models.IntegerField(max_length=3)
+	def __unicode__(self):
+		return self.code
+	
+	
