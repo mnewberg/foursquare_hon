@@ -46,17 +46,14 @@ message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 }
 .fade-in {
     -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 4s;
+    -webkit-animation-duration: 3s;
     -webkit-animation-timing-function: ease-in;
     -webkit-animation-iteration-count: 1;
 }
 
 .fade-in.one {-webkit-animation-delay: 0, 0;}
 .fade-in.two {-webkit-animation-delay: 0, 1s;}
-.fade-in.three {-webkit-animation-delay: 0, 1.5s;}
-.fade-in.four {-webkit-animation-delay: 0, 2s;}
-.fade-in.five {-webkit-animation-delay: 0, 3s;}
-.fade-in.six {-webkit-animation-delay: 0, 4s;}
+.fade-in.three {-webkit-animation-delay: 0, 2s;}
 
 
 </style>
@@ -64,13 +61,13 @@ message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 </head>
 <body bgcolor="#A00E20" class="content">
 
-<div align="center"> <img style="max-width:320px;" src="http://getpostd.com/fourplay_logo.png"></div>
+<div align="center" class="fade-in one"> <img style="max-width:320px;" src="http://getpostd.com/fourplay_logo.png"></div>
 <div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center">
-<b><span class="fade-in one">Check out</b></span> <span class="fade-in two"> people</span><br> <b><span class="fade-in three">checked</span> <span class="fade-in four">in</span></b><span class="fade-in five"> near you.</span></div>
-<div class="fade-in six">
+<b><span class="fade-in two">Check out</b> people</span><br> <b>checked in</b> near you.</span></div>
+<div class="fade-in three" align="center" style="padding-top:80px">
 	  <form name="MyForm" id="MyForm" action="/login" method="get">
 		<input type="text" name="invite_code" id="invite_code" value="invite code"><br><br>
-		<input type="image" src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px;margin-top:80px" value="submit">
+		<input type="image" src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px" value="submit">
 
 	 </form>
 </div>
