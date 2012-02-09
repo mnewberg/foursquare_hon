@@ -33,7 +33,7 @@ def home(request):
 def login(request):
 	request.session['invite_code']=request.GET['invite_code']
 	uri = authenticator.authorize_uri()
-	return HttpResponse(uri)
+	return HttpResponseRedirect(uri)
 	
 
 def second(request):
