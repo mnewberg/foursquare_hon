@@ -30,35 +30,48 @@ def home(request):
     else:
         return render_to_response('home.html')
 
+def login(request):
+	request.session['invite_code']=request.GET['invite_code']
+	uri = authenticator.authorize_uri()
+	return HttpResponse(uri)
+	
+
 def second(request):
-     request.session['code']=request.GET['code']
-     request.session.set_expiry(0)
+	request.session['code']=request.GET['code']
+	request.session.set_expiry(0)
+
+	authenticator.set_token(request.session['code'])
+	da_id=authenticator.query("/users/self")
+	f_id=da_id['user']['id']
+	finder = psq.UserFinder(authenticator)
+	query = finder.findUser(f_id)
+	
+	invite_code= request.session['invite_code']
 	## does user already exist in user table? IF invite set to true, render to response loc
-		##else- save user data now. 
-			##if user invite code is valid then refer to loc.html and store 'invite' to true, else, return other page set field 'invite' to false   
-     return render_to_response('loc.html')
+    if user.objects.filter(fsq_id=f_id, invite=True).count()==1:
+		request.session['fsq_id']=f_id
+		return render_to_response('loc.html')
+    elif invite_codes.objects.filter(code=invite_code).count()==1:
+		request.session['fsq_id']=f_id
+		u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True)
+		return render_to_response('loc.html')
+	else:
+		u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)		
+     return render_to_response('wait.html')
     
 def gallery(request, page):
 	if page=='0':
 		lat=request.GET['lat']
 		lon=request.GET['lon']
 		gender=request.GET['gender']
-                request.session['gender']=gender
-                request.session['lat']=lat
-                request.session['lon']=lon
+        request.session['gender']=gender
+        request.session['lat']=lat
+        request.session['lon']=lon
 		params = {}
 		params.update(csrf(request))
 		authenticator.set_token(request.session['code'])
-                da_id=authenticator.query("/users/self")
-                f_id=da_id['user']['id']
-                finder = psq.UserFinder(authenticator)
-		query = finder.findUser(f_id)
-                if 'fsq_id' not in request.session and user.objects.filter(fsq_id=f_id).count()==0:
-			u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False)
-                else:
-                    pass
-                request.session['fsq_id']=f_id
-    		trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
+		
+   		trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
 		trending_venues={}
 		nearby_venues={}
 		for item in trending['venues']:

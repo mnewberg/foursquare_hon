@@ -67,8 +67,14 @@ message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 <img align="center" style="max-width:320px;" src="http://getpostd.com/fourplay_logo.png"><div align="center">
 <div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center">
 <b><span class="fade-in one">Check out</b></span> <span class="fade-in two"> people</span><br> <b><span class="fade-in three">checked</span> <span class="fade-in four">in</span></b><span class="fade-in five"> near you.</span></div>
-<div class="fade-in six"><a href="/login">
-<img src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px;margin-top:80px"></div>
+<div class="fade-in six">
+	  <form name="MyForm" id="MyForm" action="/login" method="get">
+
+		<input type="text" name="invite_code" id="invite_code" value="invite code">
+		<input type="image" src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px;margin-top:80px" value="submit">
+
+	 </form>
+</div>
 </div>
 </body>
 </html>
