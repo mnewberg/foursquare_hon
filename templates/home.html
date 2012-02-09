@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="stylesheet" href="http://www.getpostd.com/style/add2home.css">
-	<link rel="apple-touch-icon" href="http://getpostd.com/4p_icon_LG.png" />
+	<link rel="apple-touch-icon-precomposed" href="http://getpostd.com/4p_icon_LG.png" />
 
 
 <script type="text/javascript">
@@ -19,7 +19,7 @@ animationOut: 'bubble',
 lifespan:10000,
 expire:1440,
 touchIcon:true,
-message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk about easy access ;)'
+message:'Add Fourplay to your <strong>%device</strong>! Click the `%icon`! Talk about easy access ;)'
 };
 </script>
 <script type="application/javascript" src="http://getpostd.com/src/add2home.js" charset="utf-8"></script>
@@ -48,26 +48,26 @@ message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 }
 .fade-in {
     -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: ease-in;
     -webkit-animation-iteration-count: 1;
 }
 
 .fade-in.one {-webkit-animation-delay: 0, 0;}
 .fade-in.two {-webkit-animation-delay: 0, .5s;}
-.fade-in.three {-webkit-animation-delay: 0, 1s;}
+.fade-in.three {-webkit-animation-delay: 0, .8s;}
 
 
 </style>
 
 </head>
 <body bgcolor="#A00E20" class="content">
-<div align="center" class="fade-in one"> <img style="max-width:320px;" src="http://getpostd.com/fourplay_logo.png"></div>
+<div align="center" class="fade-in one"> <img style="max-width:320px;" src="http://getpostd.com/4P_trans.png"></div>
 <div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center" class="fade-in two">
 <b>Check out</b> people<br> <b>checked in</b> near you.</div>
 <div class="fade-in three" align="center" style="padding-top:80px">
 	  <form name="MyForm" id="MyForm" action="/login" method="get">
-		<input type="text" name="invite_code" id="invite_code" value="invite code" style="width:200px"><br><br>
+		<input type="text" name="invite_code" id="invite_code" value="Invite Code?" style="width:200px;height:30px" onClick="this.value=''"><br><br>
 		<input type="image" src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px" value="submit">
 
 	 </form>
