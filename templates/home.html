@@ -52,21 +52,20 @@ message:'Add fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 }
 
 .fade-in.one {-webkit-animation-delay: 0, 0;}
-.fade-in.two {-webkit-animation-delay: 0, 1s;}
-.fade-in.three {-webkit-animation-delay: 0, 2s;}
+.fade-in.two {-webkit-animation-delay: 0, .5s;}
+.fade-in.three {-webkit-animation-delay: 0, 1s;}
 
 
 </style>
 
 </head>
 <body bgcolor="#A00E20" class="content">
-
 <div align="center" class="fade-in one"> <img style="max-width:320px;" src="http://getpostd.com/fourplay_logo.png"></div>
-<div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center">
-<b><span class="fade-in two">Check out</b> people<br> <b>checked in</b> near you.</span></div>
+<div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center" class="fade-in two">
+<b>Check out</b> people<br> <b>checked in</b> near you.</div>
 <div class="fade-in three" align="center" style="padding-top:80px">
 	  <form name="MyForm" id="MyForm" action="/login" method="get">
-		<input type="text" name="invite_code" id="invite_code" value="invite code"><br><br>
+		<input type="text" name="invite_code" id="invite_code" value="invite code" style="width:200px"><br><br>
 		<input type="image" src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-white@2x.png" style="max-width:200px" value="submit">
 
 	 </form>
