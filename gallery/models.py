@@ -47,8 +47,9 @@ class invite_codes(models.Model):
 	
 class venue_ll(models.Model):
 	venue_id=models.CharField(max_length=30, primary_key=True)
-	lat=models.IntegerField(max_length=15)
-        lon=models.IntegerField(max_length=15)
+	lat=models.FloatField()
+        lon=models.FloatField()
+
 	def __unicode__(self):
                 return self.lat, self.lon
 

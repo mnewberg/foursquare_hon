@@ -171,8 +171,8 @@ def vote(request):
 	fsq_user.save()
 	for place in venue_id, venue_id2:
             try: 
-                location=authenticator.query("/venues/"+place)['venue']['location']
-                venue_ll.objects.create(venue_id=place, lat=location['lat'], lon=location['lon'])
+                location=authenticator.query("/venues/"+place)
+                venue_ll.objects.create(venue_id=place, lat=float(location['venue']['location']['lat']), lon=float(location['venue']['location']['lng']))
             except:
                 pass
 
