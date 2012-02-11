@@ -195,7 +195,7 @@ def results(request):
                     venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1]]
                 except:
                     pass
-        global_results=suggested_venues()
+                global_results=suggested_venues(request.session['lat'],request.session['lon'],request.session['radius'])
 	all_venues={}
 	for item in global_results:
 		data=authenticator.query("/venues/"+item[0])
