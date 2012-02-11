@@ -6,6 +6,21 @@
 	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 <script>
 
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+
 jQuery(window).ready(function(){
     jQuery("#person1").live("click",function(){
                 $.ajax({
@@ -52,9 +67,9 @@ en']").val()
 	{% if page > 0 %}
 				<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}<h4 style="margin-top:2px">{{ chickpix.0.1 }}</h4>
 				</a>
-		<div class="overflow">
+	 <div class="overflow"> 
 			<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
-				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px; overflow:hidden;" align="center" >
+				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px" align="center" >
 			</a>
 		</div>
 <br><h6 style="margin-top:2px">@ {{ chickpix.0.2 }}</h6>
@@ -68,7 +83,7 @@ en']").val()
 				</a>
 		
 	<div class="overflow">		<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide">
-	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; overflow:hidden;" class="target" align="center">
+	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; " class="target" align="center">
 	 		</a></div>
 <br> <h6 style="margin-top:2px">@ {{chickpix.1.2}}</h6>
 			</div>

@@ -13,6 +13,19 @@
 
 
 <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
 var addToHomeConfig = {
 animationIn: 'fade',
 animationOut: 'bubble',
@@ -64,7 +77,7 @@ message:'Add Fourplay to your <strong>%device</strong>! Click the `%icon`! Talk 
 <body bgcolor="#A00E20" class="content">
 <div align="center" class="fade-in one"> <img style="max-width:320px;" src="http://getpostd.com/4P_trans.png"></div>
 <div style="color:#faf8be;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/" align="center" class="fade-in two">
-<b>Check out</b> people<br> <b>checked in</b> near you.</div>
+<b>Check in.</b><br>Get <b>checked out</b></div>
 <div class="fade-in three" align="center" style="padding-top:80px">
 	  <form name="MyForm" id="MyForm" action="/login" method="get">
 		<input type="text" name="invite_code" id="invite_code" value="Invite Code?" style="width:200px;height:30px" onClick="this.value=''"><br><br>

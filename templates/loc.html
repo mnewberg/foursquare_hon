@@ -11,15 +11,21 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="HandheldFriendly" content="true" />
 
+
+
 <STYLE TYPE="text/css">
 
 
-@media only screen and (min-device-width: 319px) {
+@media screen and (max-width: 320px) {
 .overflow{ 
-width:80px;
+width:120px;
 overflow:hidden;
 
 }
+
+.person1, .person2 {
+
+margin-left:-50px;
 
 .dialog_image{
 max-width:200px;
@@ -27,7 +33,7 @@ max-width:200px;
 
 }
 
-@media only screen and (max-device-width:481px){
+@media screen and (min-width:321px){
 .overflow{
          width:200px;
          overflow:hidden;
@@ -55,6 +61,21 @@ max-width:400px;}
 	 </form>
 
 	     <script>
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
 	
 	        jQuery(window).ready(function(){  
 	            jQuery("#btnInit").click(initiate_geolocation);  
@@ -78,7 +99,7 @@ max-width:400px;}
 	        {  
 	            switch(error.code)  
 	            {  
-	                case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+	                case error.PERMISSION_DENIED: alert("you did not share geolocation data!");  
 	                break;  
 
 	                case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
@@ -166,7 +187,7 @@ en']").val()
 		<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
 			<div class="ui-grid-a">
 				<div class="ui-block-a" style="margin-top:172px;">
-				<button type="button" data-theme="c" id="btnInit" style="height:100px">Chicks</button></div>
+				<button type="button" data-theme="c" id="btnInit" style="height:100px;">Chicks</button></div>
 			<div class="ui-grid-b" style="margin-top:172px;">
 				<button type="button" data-theme="c" id="btnInit2" style="height:100px">Dudes</button></div>
 				</div>
