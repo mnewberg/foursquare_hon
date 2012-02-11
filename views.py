@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
-from gallery.models import user, rating, record, user_lookup, invite_codes
+from gallery.models import user, rating, record, user_lookup, invite_codes, venue_ll
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
@@ -169,7 +169,13 @@ def vote(request):
 	fsq_user = user.objects.get(fsq_id=request.session['fsq_id'])
 	fsq_user.records.add(record1)
 	fsq_user.save()
-	
+	for place in venue_id, venue_id2:
+            try: 
+                location=authenticator.query("/venues/"+place)['venue']['location']
+                venue_ll.objects.create(venue_id=place, lat=location['lat'], lon=location['lon'])
+            except:
+                pass
+
 	return HttpResponse('Vote successful')
 
 def results(request):
