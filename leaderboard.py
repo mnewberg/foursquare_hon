@@ -15,8 +15,10 @@ def suggested_venues(fsq_id='', lat='', lon='', radius=''):
 	else:
 		query = record.objects.filter(time__lt=time(), time__gt=time()-3600).order_by('venue_id').values('venue_id')
 		for venue in query:
-			vlat,vlon=venue_ll(venue['venue_id'])
-			if venue['venue_id'] not in newdict and haversine(lat,lon,vlat,vlon) <= radius:
+			v=venue_ll.objects.get(venue_id=venue['venue_id'])
+			vlat=v.lat
+			vlon=v.lon
+			if venue['venue_id'] not in newdict and haversine(float(lat),float(lon),float(vlat),float(vlon)) <= radius:
 				newdict[venue['venue_id']]=1
 			elif venue['venue_id'] in newdict:
 				newdict[venue['venue_id']]+=1
