@@ -1,7 +1,7 @@
 import re
 from django.http import HttpRequest
 
-RE_MOBILE = re.compile(r"(iphone|ipod|blackberry|android|palm|windows\s+ce)", re.I)
+RE_MOBILE = re.compile(r"(iphone|ipod|blackberry|android|palm|IEMobile|windows\s+ce)", re.I)
 RE_DESKTOP = re.compile(r"(windows|linux|os\s+[x9]|solaris|bsd)", re.I)
 RE_BOT = re.compile(r"(spider|crawl|slurp|bot)", re.I)
 

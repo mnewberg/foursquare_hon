@@ -1,7 +1,8 @@
 <html>
 <head>
 	<meta name = "viewport" content = "width = device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+        <link rel="stylesheet" href="http://getpostd.com/style.css" />
+
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 <script>
@@ -59,33 +60,32 @@ en']").val()
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a" style="background-color:#A00E20">
 		<div data-role ="header" style="">
-			<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;">who's better?</h1>
+			<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;">Which one?</h1>
 		</div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
 	
 	<div class="ui-block-a" >
-	{% if page > 0 %}
-				<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog">{% endif %}<h4 style="margin-top:2px">{{ chickpix.0.1 }}</h4>
-				</a>
+	
+		<h4 style="margin-top:1px;margin-bottom:12px;">{{ chickpix.0.1 }}{% if page > 0 %}<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog"><img src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="padding-left:10px;width:16px">
+				</a>{% endif %}</h4>
 	 <div class="overflow"> 
 			<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px" align="center" >
 			</a>
 		</div>
-<br><h6 style="margin-top:2px">@ {{ chickpix.0.2 }}</h6>
+<br><h6 style="margin-top:2px;max-width:70%">@ {{ chickpix.0.2 }}</h6>
 		
 	</div>
 	
 	<div class="ui-block-b">
 
-	{% if page > 0 %}
-				<a href="/dialog/{{chickpix.1.0}}" data-rel="dialog" data-transition="pop">{% endif %}<h4 style="margin-top:2px">{{ chickpix.1.1 }}</h4>
-				</a>
-		
+                <h4 style="margin-top:1px;margin-bottom:12px;">{{ chickpix.1.1 }}{% if page > 0 %} <a href="/dialog/{{chickpix.1.0}}" data-rel="dialog"><img src="http://getpostd.c
+om/images/magnify.png" border="0" valign="-2px" style="padding-left:10px;width:16px">
+                                </a>{% endif %}</h4>
 	<div class="overflow">		<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; " class="target" align="center">
 	 		</a></div>
-<br> <h6 style="margin-top:2px">@ {{chickpix.1.2}}</h6>
+<br> <h6 style="margin-top:2px;max-width:70%">@ {{chickpix.1.2}}</h6>
 			</div>
 	
 
