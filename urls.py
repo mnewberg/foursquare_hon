@@ -14,6 +14,7 @@ uri = authenticator.authorize_uri()
 
 urlpatterns = patterns('',
     url(r'^$','views.home'),
+    url(r'^faq$','views.faq'),
     url(r'^login$','views.login'),
     url(r'^loc/$','views.second'),
     url(r'^gallery/(\d*)$','views.gallery'),

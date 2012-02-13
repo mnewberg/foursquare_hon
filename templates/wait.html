@@ -3,15 +3,34 @@
 
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>wait</title>
+
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("Fourplay will now Checkin to the app for friends to see. This checkin may be sent to Twitter or Facebook.");
+if (r==true)
+  {
+  window.location='/checkin';
+  }
+else
+  {
+  parent.close();
+  }
+}
+</script>
 </head>
-<body>
-	
-	<div align="center"><h1>Thanks for your interest in trying Fourplay.</h1></div>
-<p>We have your email and stuff we'll let you know when you can play.</p>
-<p>Love,</p>
-<p>Fourplay</p>
+
+</head>
+
+<body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div align="center">
+<img style="max-width:300px;" src="http://getpostd.com/images/wait.png"><br><button type="button" style="background-image: url('http://getpostd.com/button.png');width:200px;height:37px;margin-top:-100px;color:#FAF8BE;font-weight:bold;font-family: HelveticaNeue,Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size:.8em;border-radius:10px;border:#000;" onClick="show_confirm()">Checkin to Fourplay
+</div>	
 
 </body>
 </html>

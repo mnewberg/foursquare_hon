@@ -63,29 +63,28 @@ en']").val()
 			<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;">Which one?</h1>
 		</div>
 		<div data-role="content" id="content2" align="center" class="ui-grid-a">
-	
-	<div class="ui-block-a" >
-	
-		<h4 style="margin-top:1px;margin-bottom:12px;">{{ chickpix.0.1 }}{% if page > 0 %}<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog"><img src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="padding-left:10px;width:16px">
-				</a>{% endif %}</h4>
-	 <div class="overflow"> 
-			<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
-				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}" class="target" style="height:150px" align="center" >
-			</a>
-		</div>
-<br><h6 style="margin-top:2px;max-width:70%">@ {{ chickpix.0.2 }}</h6>
-		
-	</div>
-	
-	<div class="ui-block-b">
 
-                <h4 style="margin-top:1px;margin-bottom:12px;">{{ chickpix.1.1 }}{% if page > 0 %} <a href="/dialog/{{chickpix.1.0}}" data-rel="dialog"><img src="http://getpostd.c
-om/images/magnify.png" border="0" valign="-2px" style="padding-left:10px;width:16px">
+	<div class="ui-block-a" align="center">
+	
+		<h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">{{ chickpix.0.1 }}{% if page > 0 %}<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog"><img src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="padding-left:10px;width:16px">
+				</a>{% endif %}</h4>
+	 <div class="overflow" align="center"> 
+			<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
+				<img id="img" src="http://img-s.foursquare.com/userpix/{{ chickpix.0.0 }}"  class="target" style="height:150px" align="center" >
+			</a>
+<img src="http://getpostd.com/images/or.png" style="float: right;position:fixed;margin-top:20%;">
+		</div>
+<br><h6 style="margin-top:2px;max-width:70%;text-align:center">@ {{ chickpix.0.2 }}</h6>
+
+</div>
+	<div class="ui-block-b" align="center">
+
+                <h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">{{ chickpix.1.1 }}{% if page > 0 %} <a href="/dialog/{{chickpix.1.0}}" data-rel="dialog"><img src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="padding-left:10px;width:16px">
                                 </a>{% endif %}</h4>
-	<div class="overflow">		<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide">
-	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px; " class="target" align="center">
+	<div class="overflow" align="center">		<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide">
+	 			<img src="http://img-s.foursquare.com/userpix/{{ chickpix.1.0 }}" style="height:150px;" class="target" align="center">
 	 		</a></div>
-<br> <h6 style="margin-top:2px;max-width:70%">@ {{chickpix.1.2}}</h6>
+<br> <h6 style="margin-top:2px;max-width:70%;text-align:center">@ {{chickpix.1.2}}</h6>
 			</div>
 	
 

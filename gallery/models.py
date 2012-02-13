@@ -49,7 +49,6 @@ class venue_ll(models.Model):
 	venue_id=models.CharField(max_length=30, primary_key=True)
 	lat=models.FloatField()
         lon=models.FloatField()
-
 	def __unicode__(self):
-                return self.lat, self.lon
+                return self.venue_id
 

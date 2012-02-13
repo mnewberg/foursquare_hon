@@ -46,12 +46,20 @@ def second(request):
 	finder = psq.UserFinder(authenticator)
 	query = finder.findUser(f_id)
 	invite_code= request.session['invite_code']	
-	
+        request.session['fsq_id']=f_id
 
 	## does user already exist in user table? IF invite set to true, render to response loc
 	if user.objects.filter(fsq_id=f_id, invite=True).count()==1:
-		request.session['fsq_id']=f_id
 		return render_to_response('loc.html')
+        elif user.objects.filter(fsq_id=f_id, invite=False).count()==1 and invite_codes.objects.filter(code=invite_code).count()==1:
+                i=invite_codes.objects.get(code=invite_code)
+                i.quota-=1
+                i.save()
+                u=user.objects.get(fsq_id=f_id)
+                u.invite=True
+                u.save()
+                return render_to_response('loc.html')
+
 	elif invite_codes.objects.filter(code=invite_code).count()==1 and invite_codes.objects.filter(code=invite_code)[0].quota>0:
 		request.session['fsq_id']=f_id
 		u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True)
@@ -59,8 +67,10 @@ def second(request):
 		i.quota-=1
 		i.save()
 		return render_to_response('loc.html')
-	else:
-		u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)		
+	elif user.objects.filter(fsq_id=f_id).count()==1:
+               return render_to_response('wait.html')
+        else:
+                u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)		
 		return render_to_response('wait.html')
     
 def gallery(request, page):
@@ -210,3 +220,6 @@ def dialog(request, image):
 
 def notice(request):
     return render_to_response('warning.html')
+
+def faq(request):
+    return render_to_response('faq.html')
