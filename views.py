@@ -15,8 +15,9 @@ from haversine import *
 import urllib
 import urllib2
 from detection import *
+import re
 
-authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://beta.tryfourplay.com/loc/')
+authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
 
 def postrecv(request):
     os.chdir("/var/www/foursquare/")
@@ -32,25 +33,30 @@ def home(request):
 
 def login(request):
 	request.session['invite_code']=request.GET['invite_code']
-	uri = authenticator.authorize_uri()
+	request.session.set_expiry(0)
+        uri = authenticator.authorize_uri()
 	return HttpResponseRedirect(uri)
 	
 
 def second(request):
 	request.session['code']=request.GET['code']
-	request.session.set_expiry(3600)
-
 	authenticator.set_token(request.session['code'])
 	da_id=authenticator.query("/users/self")
 	f_id=da_id['user']['id']
 	finder = psq.UserFinder(authenticator)
 	query = finder.findUser(f_id)
-	invite_code= request.session['invite_code']	
         request.session['fsq_id']=f_id
+
+        try:
+            invite_code= request.session['invite_code']
+        except:
+            return render_to_response('wait.html') 
+        
 
 	## does user already exist in user table? IF invite set to true, render to response loc
 	if user.objects.filter(fsq_id=f_id, invite=True).count()==1:
 		return render_to_response('loc.html')
+##RETURNING USER
         elif user.objects.filter(fsq_id=f_id, invite=False).count()==1 and invite_codes.objects.filter(code=invite_code).count()==1:
                 i=invite_codes.objects.get(code=invite_code)
                 i.quota-=1
@@ -59,18 +65,21 @@ def second(request):
                 u.invite=True
                 u.save()
                 return render_to_response('loc.html')
-
-	elif invite_codes.objects.filter(code=invite_code).count()==1 and invite_codes.objects.filter(code=invite_code)[0].quota>0:
+##correct invite code THIS Time. Last time wasn't in.
+	elif invite_codes.objects.filter(code=invite_code).count()==1 and user.objects.filter(fsq_id=f_id).count()==0:
 		request.session['fsq_id']=f_id
 		u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True)
 		i=invite_codes.objects.get(code=invite_code)
 		i.quota-=1
 		i.save()
 		return render_to_response('loc.html')
+## first time in, correct invite
 	elif user.objects.filter(fsq_id=f_id).count()==1:
                return render_to_response('wait.html')
+##not first time in, you didnt guess correctly
         else:
-                u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)		
+                u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)
+## first time in, didn't guess correctly		
 		return render_to_response('wait.html')
     
 def gallery(request, page):
@@ -143,7 +152,7 @@ def gallery(request, page):
 		params.update(csrf(request))
         request.session.modified = True
         if len(request.session['chickpix'])<(int(page)+1):
-            newradius=request.session['radius']+15000
+            newradius=int(request.session['radius'])+15000
             request.session['radius']=newradius
             if newradius>100000:
                 lastpage=True
@@ -193,17 +202,17 @@ def results(request):
 	authenticator.set_token(request.session['code'])
 	fsq_id=request.session['fsq_id']
         u=user.objects.get(fsq_id=fsq_id)
-	if u.has_shared==False:
-            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m checking out people nearby on Fourplay.com! This is nuts.'),('broadcast','public,followers')]
-            urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
-            u.has_shared=True
-            u.save()
+	## if u.has_shared==False:
+            ## post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m checking out people nearby on Fourplay.com! This is nuts.'),('broadcast','public,followers')]
+            ## urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
+            ## u.has_shared=True
+            ## u.save()
         da_results=suggested_venues(fsq_id)
 	venue_names={}
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])
 		try:
-                    venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1]]
+                    venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
                 except:
                     pass
                 global_results=suggested_venues('',request.session['lat'],request.session['lon'],request.session['radius'])
@@ -211,7 +220,7 @@ def results(request):
 	for item in global_results:
 		data=authenticator.query("/venues/"+item[0])
                 try:
-                    all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1]]
+                    all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
                 except:
                     pass
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
@@ -225,13 +234,15 @@ def notice(request):
 def faq(request):
     return render_to_response('faq.html')
 
+def tos(request):
+    return render_to_response('tos.html')
+
 def checkin(request):
         authenticator.set_token(request.session['code'])
         fsq_id=request.session['fsq_id']
         u=user.objects.get(fsq_id=fsq_id)
-        if u.has_shared==False:
-            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
-            urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
-            u.has_shared=True
-            u.save()
-            return HttpResponseRedirect('http://tryfourplay.com')
+        post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+        urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
+        u.has_shared=True
+        u.save()
+        return HttpResponseRedirect('http://tryfourplay.com')
