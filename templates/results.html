@@ -27,19 +27,20 @@
 {% for key, value in all_venues.items %}
 <div data-role="collapsible" data-icon="plus">
 <h4>{{ key }}</h4>
-<p><a href="http://maps.google.com/maps?q={{ value.0 }}{{ value.1 }}">{\
-{ value.0 }} . {{ value.1 }}</a></p>
+<p><a href="http://maps.google.com/maps?q={{ value.0 }}{{ value.1 }}">
+{{ value.0 }} . {{ value.1 }}</a></p>
 </div>
 {%endfor%}
 </div>
+</div>
 
 <center>
-<button type="button" style="background-image: url('http://getpostd.com/button.png');width:200px;height:37px;color:#FAF8BE;font-weight:bold;font-family: HelveticaNeue,Helvetica Neue, Helvetica, Arial, sans-serif;font-size:.8em;border-radius:10px;border:#000;" onClick="history.back()">Back</button>
+<button type="button" onClick="history.back()">Back</button>
 </center>
+</div>
 
 
-</div>
-</div>
+
 
 </body>
 </html>
