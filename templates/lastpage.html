@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
   <head> 
-    <title>Page Title</title> 
+    <title>You're Done!</title> 
     
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
@@ -65,7 +65,7 @@ en']").val()
 
 <body> 
   <div data-role="header">
-    <h1>Page Title</h1>
+    <h1>You're done!</h1>
     </div><!-- /header -->
   <div data-role="content">
 {% if lastpage %}
@@ -73,9 +73,9 @@ en']").val()
 See results? <a href="/notice">click here!</a>
 {% else %}
 
-    <p>That's all we have nearby you. Don't give up now! Let's look further and wider</p>
+    <div style="font-family:HelveticaNeue,Helvetica Neue, Helvetica, Arial, sans-serif;color:white"><p>That's all we have nearby you. Don't give up now! Let's look further and wider</p>
 <br>
-<a href="/gallery/0?lat={{ lat }}&lon={{ lon }}&gender={{ gender }}&radius={{ newradius }}">Try this</a>{% endif %}
+<a href="/gallery/0?lat={{ lat }}&lon={{ lon }}&gender={{ gender }}&radius={{ newradius }}">Try this</a>{% endif %}</div>
     </div><!-- /content -->
 </div>
 </body>

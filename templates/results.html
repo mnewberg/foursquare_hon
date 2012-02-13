@@ -14,7 +14,7 @@
 		
 {% for key, value in your_venue_names.items %}
 <div data-role="collapsible" data-icon="plus">
-<h4>{{ key }}<span style="font-size:10px;font-style:italic;"> - {{ value.2 }} {% if value.2 > 1 %}people{% else %}person{% endif %} you like</h3>
+<span style="font-size:14px">{{ key }}</span><span style="font-size:10px;font-style:italic;"> - {{ value.2 }} {% if value.2 > 1 %}people{% else %}person{% endif %} you like</h5>
 <p><a href="http://maps.google.com/maps?={{ value.0 }} {{ value.1 }}">{{ value.0 }} . {{ value.1 }}</a></p>
 </div>
 {%endfor%}
@@ -26,7 +26,7 @@
 <div data-role="collapsible-set">
 {% for key, value in all_venues.items %}
 <div data-role="collapsible" data-icon="plus">
-<h4>{{ key }}</h4>
+<span style="font-size:14px">{{ key }}</span>
 <p><a href="http://maps.google.com/maps?q={{ value.0 }}{{ value.1 }}">
 {{ value.0 }} . {{ value.1 }}</a></p>
 </div>

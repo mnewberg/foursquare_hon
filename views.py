@@ -90,11 +90,11 @@ def gallery(request, page):
 		nearby_venues={}
 		for item in trending['venues']:
 		    trending_venues[item['id']]=item['name']
-		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6:
+                radius=request.GET['radius']
+		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6 and radius<=10000:
                     radius=2000
                 else:
-                    radius=request.GET['radius']
-                request.session['radius']=radius
+                    pass
                 all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
 		for item in all_nearby['venues']:
