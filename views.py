@@ -95,6 +95,7 @@ def gallery(request, page):
                     radius=2000
                 else:
                     pass
+                request.session['radius']=radius
                 all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
 		for item in all_nearby['venues']:
@@ -193,7 +194,7 @@ def results(request):
 	fsq_id=request.session['fsq_id']
         u=user.objects.get(fsq_id=fsq_id)
 	if u.has_shared==False:
-            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','TESTING A REALLY COOL APP WOOOOO!'),('broadcast','public,followers')]
+            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m checking out people nearby on Fourplay.com! This is nuts.'),('broadcast','public,followers')]
             urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
             u.has_shared=True
             u.save()
@@ -223,3 +224,14 @@ def notice(request):
 
 def faq(request):
     return render_to_response('faq.html')
+
+def checkin(request):
+        authenticator.set_token(request.session['code'])
+        fsq_id=request.session['fsq_id']
+        u=user.objects.get(fsq_id=fsq_id)
+        if u.has_shared==False:
+            post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+            urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
+            u.has_shared=True
+            u.save()
+            return HttpResponseRedirect('http://tryfourplay.com')
