@@ -203,7 +203,7 @@ def results(request):
 	fsq_id=request.session['fsq_id']
         u=user.objects.get(fsq_id=fsq_id)
 	## if u.has_shared==False:
-            ## post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m checking out people nearby on Fourplay.com! This is nuts.'),('broadcast','public,followers')]
+            ## post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m checking out people nearby on TryFourplay.com! This is nuts.'),('broadcast','public,followers')]
             ## urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
             ## u.has_shared=True
             ## u.save()
