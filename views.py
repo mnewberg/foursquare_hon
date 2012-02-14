@@ -208,14 +208,16 @@ def results(request):
             ## u.has_shared=True
             ## u.save()
         da_results=suggested_venues(fsq_id)
-	venue_names={}
+	
+        venue_names={}
+        
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0])
 		try:
                     venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
                 except:
                     pass
-                global_results=suggested_venues('',request.session['lat'],request.session['lon'],request.session['radius'])
+        global_results=suggested_venues('',request.session['lat'],request.session['lon'],request.session['radius'])
 	all_venues={}
 	for item in global_results:
 		data=authenticator.query("/venues/"+item[0])
