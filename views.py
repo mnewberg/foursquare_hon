@@ -68,7 +68,7 @@ def second(request):
 ##correct invite code THIS Time. Last time wasn't in.
 	elif invite_codes.objects.filter(code=invite_code).count()==1 and user.objects.filter(fsq_id=f_id).count()==0:
 		request.session['fsq_id']=f_id
-		u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True)
+		u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True)
 		i=invite_codes.objects.get(code=invite_code)
 		i.quota-=1
 		i.save()
@@ -78,7 +78,7 @@ def second(request):
                return render_to_response('wait.html')
 ##not first time in, you didnt guess correctly
         else:
-                u1 = user.objects.create(fsq_id=query.id(), first_name=query.first_name(), last_name=query.last_name(),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)
+                u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)
 ## first time in, didn't guess correctly		
 		return render_to_response('wait.html')
     

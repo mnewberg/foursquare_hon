@@ -21,7 +21,7 @@ class user(models.Model):
 	fsq_id=models.CharField(max_length=30)
 	date_joined=models.DateTimeField()
 	first_name=models.CharField(max_length=20)
-	last_name=models.CharField(max_length=30)
+	last_name=models.CharField(max_length=30, null=True)
 	records = models.ManyToManyField(record, null=True)
 	phone = models.CharField(max_length=15, null=True)
 	twitter = models.CharField(max_length=30, null=True)
