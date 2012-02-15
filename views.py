@@ -27,7 +27,7 @@ def postrecv(request):
 def home(request):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
-        return render_to_response('home.html')
+        return render_to_response('desktop.html')
     else:
         return render_to_response('home.html')
 
@@ -46,12 +46,7 @@ def second(request):
 	query = finder.findUser(token, f_id)
         request.session['fsq_id']=f_id
 
-        try:
-            invite_code= request.session['invite_code']
-        except:
-            u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False, token=token)
-
-            return render_to_response('wait.html') 
+        
         
 
 	## does user already exist in user table? IF invite set to true, render to response loc
