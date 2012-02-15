@@ -2,7 +2,8 @@ from django.conf.urls.defaults import patterns, include, url
 import views
 import pysq.apiv2 as psq
 from django.views.generic.simple import redirect_to
-
+from django.contrib import admin
+admin.autodiscover()
 
 authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
 
@@ -33,5 +34,5 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+     url(r'^admin/', include(admin.site.urls)),
 )
