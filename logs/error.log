@@ -170,3 +170,219 @@
 [Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template, referer: http://beta.tryfourplay.com/gallery/12
 [Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name), referer: http://beta.tryfourplay.com/gallery/12
 [Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html, referer: http://beta.tryfourplay.com/gallery/12
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11200): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11201): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11200): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11201): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax

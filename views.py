@@ -39,23 +39,27 @@ def login(request):
 	
 
 def second(request):
-	request.session['code']=request.GET['code']
-	authenticator.set_token(request.session['code'])
-	da_id=authenticator.query("/users/self")
+	token=authenticator.set_token(request.GET['code'])
+	da_id=authenticator.query("/users/self", token, None)
 	f_id=da_id['user']['id']
 	finder = psq.UserFinder(authenticator)
-	query = finder.findUser(f_id)
+	query = finder.findUser(token, f_id)
         request.session['fsq_id']=f_id
 
         try:
             invite_code= request.session['invite_code']
         except:
+            u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False, token=token)
+
             return render_to_response('wait.html') 
         
 
 	## does user already exist in user table? IF invite set to true, render to response loc
 	if user.objects.filter(fsq_id=f_id, invite=True).count()==1:
-		return render_to_response('loc.html')
+            u=user.objects.get(fsq_id=f_id)
+            u.token=token
+            u.save()
+            return render_to_response('loc.html')
 ##RETURNING USER
         elif user.objects.filter(fsq_id=f_id, invite=False).count()==1 and invite_codes.objects.filter(code=invite_code).count()==1:
                 i=invite_codes.objects.get(code=invite_code)
@@ -63,12 +67,13 @@ def second(request):
                 i.save()
                 u=user.objects.get(fsq_id=f_id)
                 u.invite=True
+                u.token=token
                 u.save()
                 return render_to_response('loc.html')
 ##correct invite code THIS Time. Last time wasn't in.
 	elif invite_codes.objects.filter(code=invite_code).count()==1 and user.objects.filter(fsq_id=f_id).count()==0:
 		request.session['fsq_id']=f_id
-		u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True)
+		u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=True, token=token)
 		i=invite_codes.objects.get(code=invite_code)
 		i.quota-=1
 		i.save()
@@ -78,7 +83,7 @@ def second(request):
                return render_to_response('wait.html')
 ##not first time in, you didnt guess correctly
         else:
-                u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False)
+                u1 = user.objects.create(fsq_id=query.id(), first_name=re.sub('\&#.*;','',query.first_name()), last_name=re.sub('\&#.*;','',query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, invite=False, token=token)
 ## first time in, didn't guess correctly		
 		return render_to_response('wait.html')
     
@@ -92,9 +97,8 @@ def gallery(request, page):
 		request.session['lon']=lon
 		params = {}
 		params.update(csrf(request))
-		authenticator.set_token(request.session['code'])
-
-		trending=authenticator.query("/venues/trending", {'ll':str(lat)+','+str(lon)})
+		token = user.objects.get(fsq_id=request.session['fsq_id']).token
+		trending=authenticator.query("/venues/trending", token, {'ll':str(lat)+','+str(lon)})
 		trending_venues={}
 		nearby_venues={}
 		for item in trending['venues']:
@@ -105,7 +109,7 @@ def gallery(request, page):
                 else:
                     pass
                 request.session['radius']=radius
-                all_nearby = authenticator.query("/venues/search", {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
+                all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
 		for item in all_nearby['venues']:
 		    if item['hereNow']['count']>0:
@@ -120,7 +124,7 @@ def gallery(request, page):
 		i=0
 		n=0
 		for venue in all_venues_nearby:
-			herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow"))
+			herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow",token))
 			v_ids.append(venue[0])
 			herenow[i]['hereNow']['venueName']=venue[1]
 			i = i+1
@@ -164,7 +168,7 @@ def gallery(request, page):
             return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
     
 def vote(request):
-	authenticator.set_token(request.session['code'])
+        token = user.objects.get(fsq_id=request.session['fsq_id']).token
 	pic_id = request.POST['chosen_id']
 	pic_id2 = request.POST['pic_id2']
 	venue_id=request.POST['venue_id']
@@ -191,7 +195,7 @@ def vote(request):
 	fsq_user.save()
 	for place in venue_id, venue_id2:
             try: 
-                location=authenticator.query("/venues/"+place)
+                location=authenticator.query("/venues/"+place,token)
                 venue_ll.objects.create(venue_id=place, lat=float(location['venue']['location']['lat']), lon=float(location['venue']['location']['lng']))
             except:
                 pass
@@ -199,9 +203,11 @@ def vote(request):
 	return HttpResponse('Vote successful')
 
 def results(request):
-	authenticator.set_token(request.session['code'])
+        
 	fsq_id=request.session['fsq_id']
         u=user.objects.get(fsq_id=fsq_id)
+        token = u.token
+
 	## if u.has_shared==False:
             ## post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m checking out people nearby on TryFourplay.com! This is nuts.'),('broadcast','public,followers')]
             ## urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
@@ -212,7 +218,7 @@ def results(request):
         venue_names={}
         
 	for item in da_results:
-		data=authenticator.query("/venues/"+item[0])
+		data=authenticator.query("/venues/"+item[0],token)
 		try:
                     venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
                 except:
@@ -220,7 +226,7 @@ def results(request):
         global_results=suggested_venues('',request.session['lat'],request.session['lon'],request.session['radius'])
 	all_venues={}
 	for item in global_results:
-		data=authenticator.query("/venues/"+item[0])
+		data=authenticator.query("/venues/"+item[0],token)
                 try:
                     all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
                 except:
@@ -239,12 +245,10 @@ def faq(request):
 def tos(request):
     return render_to_response('tos.html')
 
-def checkin(request):
-        authenticator.set_token(request.session['code'])
-        fsq_id=request.session['fsq_id']
-        u=user.objects.get(fsq_id=fsq_id)
-        post_data=[('oauth_token',authenticator.auth_param()[13:]),('shout','I\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
-        urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
-        u.has_shared=True
-        u.save()
+def checkin(request):        
+##        token = user.objects.get(fsq_id=request.session['fsq_id']).token
+##        post_data=[('oauth_token',token,('shout','I\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+##        urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
+##        u.has_shared=True
+##        u.save()
         return HttpResponseRedirect('http://tryfourplay.com')

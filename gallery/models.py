@@ -30,6 +30,7 @@ class user(models.Model):
 	photo = models.CharField(max_length=30, null=True)
 	has_shared = models.BooleanField()
 	invite = models.BooleanField()
+	token= models.CharField(max_length=60, null=True)
 	def __unicode__(self):
 		return self.fsq_id
 
