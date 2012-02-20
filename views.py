@@ -16,8 +16,10 @@ import urllib
 import urllib2
 from detection import *
 import re
+from categorize import *
+import settings
 
-authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
+authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 def postrecv(request):
     os.chdir("/var/www/foursquare/")
@@ -97,7 +99,7 @@ def gallery(request, page):
 		trending_venues={}
 		nearby_venues={}
 		for item in trending['venues']:
-		    trending_venues[item['id']]=item['name']
+		    trending_venues[item['id']]=item['name'],item['categories']['name']
                 radius=request.GET['radius']
 		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6 and radius<=10000:
                     radius=2000
@@ -108,12 +110,13 @@ def gallery(request, page):
                 i=0
 		for item in all_nearby['venues']:
 		    if item['hereNow']['count']>0:
-		        nearby_venues[item['id']]=item['name']
+		        nearby_venues[item['id']]=item['name'], item['categories']['name']
 		for item in set(nearby_venues).intersection(set(trending_venues)):
 			del nearby_venues[item]
 		all_venues_nearby = nearby_venues.items() + trending_venues.items()	
 		venue_names=[]
 		chickpix={}
+                backpix={}
 		herenow=[]
 		v_ids=[]
 		i=0
@@ -121,30 +124,37 @@ def gallery(request, page):
 		for venue in all_venues_nearby:
 			herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow",token))
 			v_ids.append(venue[0])
-			herenow[i]['hereNow']['venueName']=venue[1]
+			herenow[i]['hereNow']['venueName']=venue[1][0]
+                        herenow[i]['hereNow']['venueCat']=venue=[1][1]
 			i = i+1
 	    	for item in herenow:
 			venueName=item['hereNow']['venueName']
+                        venueCat=item['hereNow']['venueCat']
 			for entry in item['hereNow']['items']:
 				if entry['user']['gender']==gender:
 					the_id=entry['user']['id']
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 						pass
-					else:
-						chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
-                                                try: 
-                                                    user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][44:])
-                                                except:
-                                                    pass
+					elif categorize(venueName):
+						chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n],venueCat]
+                                        else:
+                                                backpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n],venueCat]
+                                        try: 
+                                                user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][44:])
+                                        except:
+                                                pass
                                 else:
 					pass
 			n+=1
 		
-		pairs=[list(x) for x in chunk(chickpix.values(), 2)]
-		for item in pairs:
+		preferred=[list(x) for x in chunk(chickpix.values(), 2)]
+		other=[list(x) for x in chunk(backpix.values(), 2)]
+                random.shuffle(preferred)
+                random.shuffle(other)
+                pairs=preferred+other
+                for item in pairs:
 			if len(item)<2:
 				item.append(pairs[0][0])
-		random.shuffle(pairs)
 		request.session['chickpix']=pairs
         else:
 		params = {}

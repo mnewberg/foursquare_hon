@@ -26,6 +26,11 @@ SESSION_ENGINE='django.contrib.sessions.backends.db'
 
 SESSION_SAVE_EVERY_REQUEST=True
 
+CLIENT_ID='4KS2JZ3U4GYSHOL1NQ3DCEH5ZXC3R5PVEVAAQAQCA5Z5RRRS'
+
+CLIENT_SECRET='TOXCCMYSGVPM2OAVPR3RIDUM0WFMKVJ4VUFNFSI00QSZF4IH'
+
+CALLBACK_URL='http://staging.tryfourplay.com/loc/'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
