@@ -47,7 +47,7 @@ def second(request):
 	finder = psq.UserFinder(authenticator)
 	query = finder.findUser(token, f_id)
         request.session['fsq_id']=f_id
-
+        invite_code=request.session['invite_code']
         
         
 
