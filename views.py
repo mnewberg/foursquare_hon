@@ -225,7 +225,7 @@ def results(request):
 	for item in da_results:
 		data=authenticator.query("/venues/"+item[0],token)
 		try:
-                    venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
+                    venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1][0],re.sub(' ','+',data['venue']['location']['address']),item[1][1]]
                 except:
                     pass
         global_results=suggested_venues('',request.session['lat'],request.session['lon'],request.session['radius'])
@@ -233,7 +233,7 @@ def results(request):
 	for item in global_results:
 		data=authenticator.query("/venues/"+item[0],token)
                 try:
-                    all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1],re.sub(' ','+',data['venue']['location']['address'])]
+                    all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1][0],re.sub(' ','+',data['venue']['location']['address']),item[1][1]]
                 except:
                     pass
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
