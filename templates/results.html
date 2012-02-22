@@ -15,7 +15,7 @@
 {% for key, value in your_venue_names.items %}
 <div data-role="collapsible" data-icon="plus">
 <h5>{{ key }}<span style="font-size:10px;font-style:italic;"> - {{ value.2 }} {% if value.2 > 1 %}people{% else %}person{% endif %} you like</span></h5>
-<p><a href="http://maps.google.com/maps?q={{ value.3 }}+{{ value.1 }}">{{ value.0 }} . {{ value.1 }}</a></p>
+<p><a href="http://maps.google.com/maps?q={{ value.3 }}+{{ value.1 }}">{{ value.0 }} . {{ value.1 }}</a></p>{% for thumb in value.4 %}<a href="/dialog/{{thumb}}" data-rel="dialog"><img src="http://img-s.foursquare.com/userpix_thumbs/{{thumb}}" width="50" height="50"></a>{%endfor%}
 </div>
 {%endfor%}
 </div>
