@@ -4,9 +4,11 @@ class rating(models.Model):
 	pic_id=models.CharField(max_length=30)
 	rating=models.IntegerField(max_length=7)
 	total_sets=models.IntegerField(max_length=7)
-	
 	def __unicode__(self):
 		return self.pic_id
+	def quotient(self):
+		return (float(self.rating-1)/self.total_sets)
+		
 		
 class record(models.Model):
 	target=models.ForeignKey(rating, null=True)
