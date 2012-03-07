@@ -1,0 +1,103 @@
+<html>
+<head>
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://getpostd.com/style.css" />
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+<script>
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+type: "POST",
+url: "/rating/",
+                data:{
+        chosen_id:$(".ui-page-active .id_val").val(),
+pic_id2:$(".ui-page-active .id_val2").val(),
+        venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\                                                                    
+en']").val()
+                          }
+});
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+$.ajax({
+type: "POST",
+url: "/rating/",
+                data:{
+                chosen_id:$(".ui-page-active .id_val2").val(),
+        pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+venue_id:$(".ui-page-active .venue1").val(),
+csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\                                                            
+en']").val()
+                          }
+                });
+})});
+</script>
+
+
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+    
+    <div data-role="page" data-theme="a" style="background-color:#A00E20">
+        
+        <div data-role="header" style="">
+            <h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;">Which one?</h1>
+        </div>
+        
+        <div data-role="content" id="content2" align="center" class="ui-grid-a">
+            
+            <div class="ui-block-a" align="center">
+                <h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">
+                    <a href="/dialog/{{chickpix.0.0}}" data-rel="dialog">
+                        <img src="http://getpostd.com/images/magnify.png" border="0" valign="-2px"
+                            style="width:16px;padding-right:10px;margin-left:-30px">
+                    </a>
+                    <div class="photo-wrap">
+                        <img src="sample_chick1.jpg" />
+                        <div class="photo-overlay">&nbsp;</div>
+                    </div>
+                </h4>
+                
+                <div class="overflow" align="center">
+                    <a id="person1" href="/gallery/{{%20page|add:" data-transition="slide" data-prefetch=""><img id="img" src="http://img-s.foursquare.com/userpix/{{%20chickpix.0.0%20}}" class="target" style="height:150px" align="center"></a> <!--<img src="http://getpostd.com/images/or.png" style="float: right;position:absolute;margin-top:15%;margin-right:-10px;z-index:1000">-->
+                </div><br>
+                
+                <h6 style="word-wrap:break-word;margin-top:2px;max-width:70%;text-align:center">@ {{ chickpix.0.2 }}</h6>
+            </div>
+            
+            <div class="ui-block-b" align="center">
+                <h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">{% if page &gt; 0 %} <a href="/dialog/{{chickpix.1.0}}" data-rel="dialog"><img src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="margin-left:-30px;width:16px;padding-right:10px;"></a>{% endif %}{{ chickpix.1.1 }}</h4>
+                
+                <div class="overflow" align="center">
+                    <a id="person2" href="/gallery/{{%20page|add:" data-transition="slide"><img src="http://img-s.foursquare.com/userpix/{{%20chickpix.1.0%20}}" style="height:150px" class="target" align="center"></a>
+                </div><br>
+                
+                <h6 style="margin-top:2px;max-width:70%;text-align:center;word-wrap:break-word;">@ {{chickpix.1.2}}</h6>
+            </div><input type="hidden" value="{{chickpix.0.0}}" class="id_val"> <input type="hidden" value="{{chickpix.1.0}}" class="id_val2"> <input type="hidden" value="{{chickpix.0.3}}" class="venue1"> <input type="hidden" value="{{chickpix.1.3}}" class="venue2">
+        </div><br>
+        {% if page &gt; 4 %} <a data-rel="dialog" href="/results" data-transition="pop"><img src="http://getpostd.com/images/checkout.png" class="ribbon" style="max-width:300px;margin-top:-30px;" border="0"></a> {% endif %} {% csrf_token %}
+    </div>
+    
+</body>
+</html>

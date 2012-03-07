@@ -1,0 +1,212 @@
+<html>
+
+<head>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://fgnass.github.com/spin.js/spin.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<link rel="stylesheet" href="http://getpostd.com/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="HandheldFriendly" content="true" />
+
+
+
+<STYLE TYPE="text/css">
+
+
+@media screen and (max-width: 320px) {
+.overflow{ 
+width:120px;
+overflow:hidden;
+align:center;
+}
+
+.target {
+
+margin-left:-40px;
+
+}
+
+.ribbon_corner{
+visibility:hidden;
+}
+
+.dialog_image{
+max-width:180px;
+}
+.poptitle{
+font-size:14px;
+
+}
+}
+@media screen and (min-width:321px){
+.overflow{
+         width:200px;
+         overflow:hidden;
+
+}
+
+.dialog_image{
+max-width:400px;}
+
+.poptitle{
+font-size:16px;}
+
+.ribbon{
+visibility:hidden;
+}
+
+}
+
+</style>
+
+	  <form name="MyForm" id="MyForm" action="/gallery/0" method="get" >
+
+		<input type=hidden name="lat" id="lat">
+		<input type=hidden name="lon" id="lon">
+		<input type=hidden name="gender" id="gender">
+		<input type=hidden name="radius" id="radius" value="10000">
+
+	 </form>
+
+	     <script>
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+	
+	        jQuery(window).ready(function(){  
+	            jQuery("#btnInit").click(initiate_geolocation);  
+	        });
+	                jQuery(window).ready(function(){  
+	            jQuery("#btnInit2").click(initiate_geolocation_male);  
+	        });  
+
+
+	        function initiate_geolocation() {  
+	            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
+	        }
+
+
+	        function initiate_geolocation_male() {  
+	            navigator.geolocation.getCurrentPosition(handle_geolocation_query_male,handle_errors);  
+	        }  
+
+
+	        function handle_errors(error)  
+	        {  
+	            switch(error.code)  
+	            {  
+	                case error.PERMISSION_DENIED: alert("you did not share geolocation data!");  
+	                break;  
+
+	                case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+	                break;  
+
+	                case error.TIMEOUT: alert("retrieving position timed out");  
+	                break;  
+
+	                default: alert("unknown error");  
+	                break;  
+	            }  
+	        }
+					
+	
+
+	                function handle_geolocation_query(position){
+	                var lat=position.coords.latitude
+	                var lon=position.coords.longitude 
+				
+
+	                  	$('input[name=lat]').val(lat);
+						$('input[name=lon]').val(lon);
+						$('input[name=gender]').val('female')
+						$('#MyForm').submit();  
+                $.mobile.loadingMessage = "Loading up lots of chicks... please be patient!";
+
+					}
+
+					function handle_geolocation_query_male(position){					
+		                var lat=position.coords.latitude
+		                var lon=position.coords.longitude 
+
+
+	                  	$('input[name=lat]').val(lat);
+						$('input[name=lon]').val(lon);
+						$('input[name=gender]').val('male')
+						$('#MyForm').submit();
+		$.mobile.loadingMessage = "Loading up lots of dudes... please be patient!";
+  
+
+					}
+
+
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val").val(),
+                                pic_id2:$(".ui-page-active .id_val2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+		});
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+                $.ajax({
+		type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val2").val(),
+                                pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+		                        csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+                });
+})});
+
+		
+
+
+
+
+	    </script>  
+	</head>
+	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+		<div data-role="page">
+		<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="margin-top:172px;">
+				<button type="button" data-theme="c" id="btnInit" style="height:100px;">Chicks</button></div>
+			<div class="ui-grid-b" style="margin-top:172px;">
+				<button type="button" data-theme="c" id="btnInit2" style="height:100px">Dudes</button></div>
+<div style="margin-top:90px;font-size:12px;font-family:Helvetica Neue, HelveticaNeue, Arial, san-serif;text-align:center">Please ensure geolocation is enabled in your phone's settings.</div>
+
+
+				</div>
+							
+					
+				</div>
+	</body>
+	</html>
