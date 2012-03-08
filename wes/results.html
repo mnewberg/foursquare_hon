@@ -2,41 +2,57 @@
 <head>
 		<meta name = "viewport" content = "width = device-width, initial-scale=1">
                 <link rel="stylesheet" href="http://getpostd.com/style.css" />
+                
+<link rel="stylesheet" href="wes_css.css" />
 
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 </head>
 <body>
-	<div data-role="page">
-		<div data-role="content">
-<img src="http://getpostd.com/pyl.png">
-	<div data-role="collapsible-set">
-		
-{% for key, value in your_venue_names.items %}
-<div data-role="collapsible" data-icon="plus">
-<h5>{{ key }}<span style="font-size:10px;font-style:italic;"> - {{ value.2 }} {% if value.2 > 1 %}people{% else %}person{% endif %} you like</span></h5>
-<p><a href="http://maps.google.com/maps?q={{ value.3 }}+{{ value.1 }}">{{ value.0 }} . {{ value.1 }}</a></p>{% for thumb in value.4 %}<a href="/dialog/{{thumb}}" data-rel="dialog"><img src="http://img-s.foursquare.com/userpix_thumbs/{{thumb}}" width="50" height="50"></a>{%endfor%}
-</div>
-{%endfor%}
-</div>
-<br>
-<hr>
-<img src="http://getpostd.com/hnv.png" style="margin-left:-9px; max-width:300px">
-<br>
-<div data-role="collapsible-set">
-{% for key, value in all_venues.items %}
-<div data-role="collapsible" data-icon="plus">
-<h5>{{ key }}</h5>
-<p><a href="http://maps.google.com/maps?q={{ value.3 }}+{{ value.1 }}">
-{{ value.0 }} . {{ value.1 }}</a></p>
-</div>
-{%endfor%}
-</div>
-</div>
 
-<center>
-<button type="button" onClick="window.history.go(-2)">Back</button>
-</center>
+<div data-role="page">
+    
+    <div style="background-color:#A00E20; width:100%;" class="ui-body-a">
+	<div data-role="header" style="width:100%;" class="ui-header ui-bar-a" role="banner">
+	    <h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;" class="ui-title" tabindex="0" role="heading" aria-level="1">
+                Places You'd Like
+            </h1>
+	</div>
+    </div>
+    <div data-role="content">	
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-icon="plus">
+                <h5>Location Name</h5>
+                <p><a href="http://maps.google.com/maps?q=">gmap link</a></p>
+                <a href="/dialog/tiny_thumb.jpg" data-rel="dialog"><img src="images/tiny_thumb.jpg" width="50" height="50"></a>
+                <a href="/dialog/tiny_thumb.jpg" data-rel="dialog"><img src="images/tiny_thumb.jpg" width="50" height="50"></a>
+                <a href="/dialog/tiny_thumb.jpg" data-rel="dialog"><img src="images/tiny_thumb.jpg" width="50" height="50"></a>
+                <a href="/dialog/tiny_thumb.jpg" data-rel="dialog"><img src="images/tiny_thumb.jpg" width="50" height="50"></a>
+                <a href="/dialog/tiny_thumb.jpg" data-rel="dialog"><img src="images/tiny_thumb.jpg" width="50" height="50"></a>
+            </div>
+        </div>
+    </div>
+    
+    <br />
+    
+    <div style="background-color:#A00E20; width:100%;" class="ui-body-a">
+    <div data-role="header" style="width:100%;" class="ui-header ui-bar-a" role="banner">
+        <h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;" class="ui-title" tabindex="0" role="heading" aria-level="1">
+            Hottest Nearbye Venues
+        </h1>
+    </div>
+    <div data-role="content">
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-icon="plus">
+                <h5>Venue Name</h5>
+                <p><a href="http://maps.google.com/maps?q=map">GMap Link
+                </a></p>
+            </div>
+        </div>
+    </div>
+    <center>
+        <button type="button" onClick="window.history.go(-2)">Back</button>
+    </center>
 </div>
 
 
