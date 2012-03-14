@@ -2,11 +2,9 @@
 
 <head>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://c4261091.r91.cf2.rackcdn.com/spin.min.js"></script>
+		<script src="http://fgnass.github.com/spin.js/spin.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 		<link rel="stylesheet" href="http://getpostd.com/style.css" />
-		<link rel="stylesheet" href="http://c4261091.r91.cf2.rackcdn.com/wes_css.css" />
-		
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<meta name="apple-touch-fullscreen" content="YES" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -147,8 +145,8 @@ else
 	                var lon=position.coords.longitude 
 				
 
-	                  	$('input[name=lat]').val(40.714353);
-						$('input[name=lon]').val(-74.005973);
+	                  	$('input[name=lat]').val(lat);
+						$('input[name=lon]').val(lon);
 						$('input[name=gender]').val('female')
 						$('#MyForm').submit();  
                 $.mobile.loadingMessage = "Loading up lots of chicks... please be patient!";
@@ -180,7 +178,8 @@ jQuery(window).ready(function(){
                                 pic_id2:$(".ui-page-active .id_val2").val(),
                                 venue_id:$(".ui-page-active .venue1").val(),
                                 venue_id2:$(".ui-page-active .venue2").val(),
-                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
                           }
 		});
 })});
@@ -195,7 +194,8 @@ jQuery(window).ready(function(){
                                 pic_id2:$(".ui-page-active .id_val").val(),
                                 venue_id2:$(".ui-page-active .venue2").val(),
                                 venue_id:$(".ui-page-active .venue1").val(),
-		                        csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+		                        csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
                           }
                 });
 })});

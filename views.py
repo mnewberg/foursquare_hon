@@ -73,14 +73,14 @@ def second(request):
         if showmessage==False:
                 u=user.objects.get(fsq_id=f_id)
                 u.token=token
-                u.photo=query.photo()[44:]
+                u.photo=query.photo()[37:]
                 has_shared=u.has_shared
                 u.save()
                 return render_to_response('loc.html', {'has_shared':has_shared})
         elif unread and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
 	elif unread>0 and user.objects.filter(fsq_id=f_id).count()==0:
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, token=token)
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token)
                 if not query.phone():
                     return render_to_response('missing.html')
                 else:
@@ -93,14 +93,14 @@ def second(request):
 	elif user.objects.filter(fsq_id=f_id).count()==1:
 		u=user.objects.get(fsq_id=f_id)
 		u.token=token
-                u.photo=query.photo()[44:]
+                u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
 		return render_to_response('loc.html', {'has_shared':has_shared})
 ##RETURNING USER
 	else:
 		request.session['fsq_id']=f_id
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[44:], has_shared=False, token=token)
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
 		return render_to_response('loc.html')
 
     
@@ -160,12 +160,12 @@ def gallery(request, page):
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 						pass
 					elif categorize(venueName):
-						chickpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
+						chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName,v_ids[n]]
                                         else:
-                                                backpix[the_id]=[entry['user']['photo'][44:],entry['user']['firstName'],venueName,v_ids[n]]
+                                                backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName,v_ids[n]]
                                         
                                         try: 
-                                            user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][44:])
+                                            user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:])
                                         except:
                                             pass
                                         
