@@ -1,0 +1,9 @@
+<html>
+<body>
+<center>
+We sent a message to the person you requested. If they respond, we'll put both of you in an SMS conversation with each other!
+</center>
+
+<a href="javascript: history.go(-2)">Back</a>
+</body>
+</html>

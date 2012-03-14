@@ -1,0 +1,592 @@
+[Mon Jan 09 22:19:03 2012] [error] [client 207.239.107.3] mod_wsgi (pid=17654): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Jan 09 22:19:03 2012] [error] [client 207.239.107.3] IOError: failed to write data
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158] mod_wsgi (pid=7582): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158] Traceback (most recent call last):
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     response = self.get_response(request)
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     return callback(request, **param_dict)
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     template, origin = find_template(template_name)
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:19:45 2012] [error] [client 66.250.143.158] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88] mod_wsgi (pid=7583): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88] Traceback (most recent call last):
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     response = self.get_response(request)
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict)
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name)
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:35:03 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88] mod_wsgi (pid=7583): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88] Traceback (most recent call last):
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     response = self.get_response(request)
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict)
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name)
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:35:08 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88] mod_wsgi (pid=7583): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88] Traceback (most recent call last):
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     response = self.get_response(request)
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict)
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name)
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:35:13 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184] mod_wsgi (pid=7583): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184] Traceback (most recent call last):
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     response = self.get_response(request)
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     return callback(request, **param_dict)
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     template, origin = find_template(template_name)
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:38:03 2012] [error] [client 174.252.6.184] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88] mod_wsgi (pid=7582): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88] Traceback (most recent call last):
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     response = self.get_response(request)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88] mod_wsgi (pid=7583): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88] Traceback (most recent call last):
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     response = self.get_response(request)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name)
+[Mon Feb 13 02:39:50 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88] mod_wsgi (pid=7582): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'., referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88] Traceback (most recent call last):, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     response = self.get_response(request), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template., referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:39:51 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88] mod_wsgi (pid=8587): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'., referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88] Traceback (most recent call last):, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     response = self.get_response(request), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template., referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:40:44 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88] mod_wsgi (pid=8588): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'., referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88] Traceback (most recent call last):, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     response = self.get_response(request), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     return callback(request, **param_dict), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     response = view_func(request, *args, **kwargs), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     t = loader.get_template(template_name) # You need to create a 500.html template., referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     template, origin = find_template(template_name), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template, referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88]     raise TemplateDoesNotExist(name), referer: http://beta.tryfourplay.com/gallery/12
+[Mon Feb 13 02:41:03 2012] [error] [client 68.173.34.88] TemplateDoesNotExist: 500.html, referer: http://beta.tryfourplay.com/gallery/12
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11200): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11201): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:33 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11200): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11201): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:14:36 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:15:50 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:15:51 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:09 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:10 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:11 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11346): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] mod_wsgi (pid=11347): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.get_response(request)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     if resolver.urlconf_module is None:
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     __import__(name)
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/urls.py", line 2, in <module>
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     import views
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]   File "/var/www/foursquare/views.py", line 250
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]     post_data=[('oauth_token',str(token),('shout','I\\'m having a blast on Fourplay! TryFourplay.com'),('broadcast','public,followers')]
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3]                                                                                                                                       ^
+[Tue Feb 14 18:16:12 2012] [error] [client 207.239.107.3] SyntaxError: invalid syntax
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8990): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8991): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:28 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8990): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8991): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:31 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8990): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:32 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8991): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:33 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8990): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3] mod_wsgi (pid=8991): Exception occurred processing WSGI script '/var/www/apache/django3.wsgi'.
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3] Traceback (most recent call last):
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     self.load_middleware()
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     self._setup()
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     self._wrapped = Settings(settings_module)
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 89, in __init__
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3]     raise ImportError("Could not import settings '%s' (Is it on sys.path?): %s" % (self.SETTINGS_MODULE, e))
+[Mon Feb 20 23:30:34 2012] [error] [client 207.239.107.3] ImportError: Could not import settings 'foursquare.settings' (Is it on sys.path?): No module named settings
+[Fri Feb 24 12:49:26 2012] [error] [client 204.236.139.99] mod_wsgi (pid=11755): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 12:49:26 2012] [error] [client 204.236.139.99] IOError: failed to write data
+[Fri Feb 24 12:49:28 2012] [error] [client 89.151.116.52] mod_wsgi (pid=11754): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 12:49:28 2012] [error] [client 89.151.116.52] IOError: failed to write data
+[Fri Feb 24 13:24:58 2012] [error] [client 89.151.99.92] mod_wsgi (pid=11754): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 13:24:58 2012] [error] [client 89.151.99.92] IOError: failed to write data
+[Fri Feb 24 14:15:19 2012] [error] [client 204.236.172.91] mod_wsgi (pid=11754): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:15:19 2012] [error] [client 204.236.172.91] IOError: failed to write data
+[Fri Feb 24 14:15:19 2012] [error] [client 89.151.116.53] mod_wsgi (pid=11755): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:15:19 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 14:21:56 2012] [error] [client 50.18.2.161] mod_wsgi (pid=15577): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:21:56 2012] [error] [client 50.18.2.161] IOError: failed to write data
+[Fri Feb 24 14:21:56 2012] [error] [client 89.151.116.56] mod_wsgi (pid=15576): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:21:56 2012] [error] [client 89.151.116.56] IOError: failed to write data
+[Fri Feb 24 14:49:01 2012] [error] [client 89.151.116.53] mod_wsgi (pid=17503): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:49:01 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 14:50:10 2012] [error] [client 184.72.22.42] mod_wsgi (pid=17503): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:50:10 2012] [error] [client 184.72.22.42] IOError: failed to write data
+[Fri Feb 24 14:50:11 2012] [error] [client 89.151.116.53] mod_wsgi (pid=17502): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:50:11 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 14:50:36 2012] [error] [client 89.151.116.53] mod_wsgi (pid=17502): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:50:36 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 14:50:36 2012] [error] [client 184.72.25.102] mod_wsgi (pid=17502): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:50:36 2012] [error] [client 184.72.25.102] IOError: failed to write data
+[Fri Feb 24 14:58:13 2012] [error] [client 89.151.99.94] mod_wsgi (pid=17503): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 14:58:13 2012] [error] [client 89.151.99.94] IOError: failed to write data
+[Fri Feb 24 15:08:13 2012] [error] [client 204.236.183.86] mod_wsgi (pid=17503): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:08:13 2012] [error] [client 204.236.183.86] IOError: failed to write data
+[Fri Feb 24 15:08:13 2012] [error] [client 89.151.116.53] mod_wsgi (pid=17502): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:08:13 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:15:41 2012] [error] [client 89.151.116.53] mod_wsgi (pid=18771): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:15:41 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:15:42 2012] [error] [client 50.18.246.79] mod_wsgi (pid=18772): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:15:42 2012] [error] [client 50.18.246.79] IOError: failed to write data
+[Fri Feb 24 15:15:47 2012] [error] [client 204.236.151.215] mod_wsgi (pid=18771): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:15:47 2012] [error] [client 204.236.151.215] IOError: failed to write data
+[Fri Feb 24 15:15:48 2012] [error] [client 89.151.116.52] mod_wsgi (pid=18771): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:15:48 2012] [error] [client 89.151.116.52] IOError: failed to write data
+[Fri Feb 24 15:17:55 2012] [error] [client 50.18.20.185] mod_wsgi (pid=18772): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:17:55 2012] [error] [client 50.18.20.185] IOError: failed to write data
+[Fri Feb 24 15:17:55 2012] [error] [client 89.151.116.53] mod_wsgi (pid=18771): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:17:55 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:18:11 2012] [error] [client 50.18.67.15] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:18:11 2012] [error] [client 50.18.67.15] IOError: failed to write data
+[Fri Feb 24 15:18:12 2012] [error] [client 89.151.116.52] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:18:12 2012] [error] [client 89.151.116.52] IOError: failed to write data
+[Fri Feb 24 15:18:33 2012] [error] [client 204.236.153.159] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:18:33 2012] [error] [client 204.236.153.159] IOError: failed to write data
+[Fri Feb 24 15:18:33 2012] [error] [client 89.151.116.52] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:18:33 2012] [error] [client 89.151.116.52] IOError: failed to write data
+[Fri Feb 24 15:21:01 2012] [error] [client 89.151.116.56] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:21:01 2012] [error] [client 89.151.116.56] IOError: failed to write data
+[Fri Feb 24 15:21:05 2012] [error] [client 184.72.17.90] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:21:05 2012] [error] [client 184.72.17.90] IOError: failed to write data
+[Fri Feb 24 15:23:18 2012] [error] [client 50.18.20.185] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:23:18 2012] [error] [client 50.18.20.185] IOError: failed to write data
+[Fri Feb 24 15:23:18 2012] [error] [client 89.151.116.53] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:23:18 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:25:18 2012] [error] [client 184.72.29.139] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:25:18 2012] [error] [client 184.72.29.139] IOError: failed to write data
+[Fri Feb 24 15:25:21 2012] [error] [client 89.151.116.53] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:25:21 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:28:36 2012] [error] [client 204.236.155.105] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:28:36 2012] [error] [client 204.236.155.105] IOError: failed to write data
+[Fri Feb 24 15:28:41 2012] [error] [client 89.151.116.53] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:28:41 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:30:56 2012] [error] [client 89.151.116.53] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:30:56 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:30:59 2012] [error] [client 184.72.21.19] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:30:59 2012] [error] [client 184.72.21.19] IOError: failed to write data
+[Fri Feb 24 15:32:15 2012] [error] [client 89.151.116.53] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:32:15 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Fri Feb 24 15:32:17 2012] [error] [client 204.236.161.173] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:32:17 2012] [error] [client 204.236.161.173] IOError: failed to write data
+[Fri Feb 24 15:53:00 2012] [error] [client 89.151.116.59] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:53:00 2012] [error] [client 89.151.116.59] IOError: failed to write data
+[Fri Feb 24 15:53:52 2012] [error] [client 89.151.99.92] mod_wsgi (pid=19112): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:53:52 2012] [error] [client 89.151.99.92] IOError: failed to write data
+[Fri Feb 24 15:56:14 2012] [error] [client 89.151.99.92] mod_wsgi (pid=19113): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 15:56:14 2012] [error] [client 89.151.99.92] IOError: failed to write data
+[Fri Feb 24 16:05:21 2012] [error] [client 89.151.99.94] mod_wsgi (pid=21133): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Feb 24 16:05:21 2012] [error] [client 89.151.99.94] IOError: failed to write data
+[Sat Feb 25 12:57:40 2012] [error] [client 50.18.12.217] mod_wsgi (pid=8414): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Sat Feb 25 12:57:40 2012] [error] [client 50.18.12.217] IOError: failed to write data
+[Sat Feb 25 12:57:40 2012] [error] [client 89.151.116.56] mod_wsgi (pid=8414): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Sat Feb 25 12:57:40 2012] [error] [client 89.151.116.56] IOError: failed to write data
+[Sun Feb 26 16:54:41 2012] [error] [client 89.151.116.53] mod_wsgi (pid=16545): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Sun Feb 26 16:54:41 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Sun Feb 26 16:55:15 2012] [error] [client 50.18.39.45] mod_wsgi (pid=16544): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Sun Feb 26 16:55:15 2012] [error] [client 50.18.39.45] IOError: failed to write data
+[Sun Feb 26 16:55:35 2012] [error] [client 184.72.29.242] mod_wsgi (pid=16545): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Sun Feb 26 16:55:35 2012] [error] [client 184.72.29.242] IOError: failed to write data
+[Mon Feb 27 11:16:58 2012] [error] [client 204.236.148.248] mod_wsgi (pid=28781): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Feb 27 11:16:58 2012] [error] [client 204.236.148.248] IOError: failed to write data
+[Mon Feb 27 11:34:21 2012] [error] [client 89.151.116.53] mod_wsgi (pid=28781): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Feb 27 11:34:21 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Mon Feb 27 11:38:36 2012] [error] [client 184.72.29.139] mod_wsgi (pid=28782): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Feb 27 11:38:36 2012] [error] [client 184.72.29.139] IOError: failed to write data
+[Mon Feb 27 11:38:36 2012] [error] [client 89.151.116.53] mod_wsgi (pid=28782): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Feb 27 11:38:36 2012] [error] [client 89.151.116.53] IOError: failed to write data

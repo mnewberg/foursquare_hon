@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fourplay</title>
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://fgnass.github.com/spin.js/spin.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<link rel="stylesheet" href="http://getpostd.com/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="HandheldFriendly" content="true" />
+
+</head>
+<body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div data-role="page" data-theme="a">
+	<div data-role="header" data-theme="c">You've been messaged!</div>
+	{{ first_name }} said...
+<img src="http://img-s.foursquare.com/userpix/{{pic}}" style="max-width:280px">
+<br>
+{{ message }}
+<br>
+<a href="/login" data-ajax="false">Message back over anonymous SMS.</a>
+</div>
+                       
+
+</body>
+</html>

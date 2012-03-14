@@ -1,0 +1,28 @@
+from django.db import models
+
+class avail_DIDs(models.Model):
+    DID=models.BigIntegerField(max_length=10)
+    def __unicode__(self):
+        return self.DID
+
+class routing(models.Model):
+    sender=models.BigIntegerField(max_length=10)
+    recipient=models.BigIntegerField(max_length=10)
+    DID=models.BigIntegerField(max_length=10)
+    def __unicode__(self):
+        return self.DID
+
+class log(models.Model):
+    time=models.DateTimeField()
+    sender=models.BigIntegerField(max_length=10)
+    recipient=models.BigIntegerField(max_length=10)
+    from_did=models.BigIntegerField(max_length=10)
+    to_did=models.BigIntegerField(max_length=10)
+    message=models.BigIntegerField(max_length=400)
+    def __unicode__(self):
+        return self.time
+
+
+
+
+# Create your models here.

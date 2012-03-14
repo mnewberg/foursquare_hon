@@ -1,0 +1,19 @@
+from django_cron import cronScheduler, Job
+from time import time
+from twilio.rest import TwilioRestClient
+from sms.models import routing
+
+client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
+
+class ExpireRoutes(Job):
+    # run every 300 seconds (5 minutes)
+    run_every = 300
+
+    def job(self):
+        # This will be executed ever 5 mins
+        to_expire=routing.objects.filter(time_created__lt=time()-1800)
+        for item in to_expire:
+            item.delete()
+
+cronScheduler.register(ExpireRoutes)
+

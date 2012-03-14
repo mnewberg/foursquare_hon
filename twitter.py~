@@ -1,0 +1,6 @@
+import tweepy
+import settings
+
+def send_twitter_shout(t_handle,message,uid):
+    consumer_key=""
+    consumer_secret=""

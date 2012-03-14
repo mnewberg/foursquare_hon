@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div style="color:#FAF8BE;font-family:Helvetica, Arial, sans-serif /*{global-font-family}*/">
+<h1>FAQ</h1>
+<h3><u>What is fourplay?</u></h3>
+<h4>Fourplay is a revolutionary social game that places your surroundings at your fingertips. It's "Hot or Not" meets Foursquare. By allowing users to rank other users checked in nearby, the service is able to recommend venues with the hottest crowds in real-time.</h4>
+
+<h3><u>How does it work?</u></h3>
+<h4>The application pulls public information using Foursquare's open platform and matches it with your mobile browser's location. The identities and social media profiles of those displayed are masked. Each time you are asked to choose between two profiles, you are helping our system better determine the best places to go. While Foursquare users may not be aware they are being rated on Fourplay, all data is already made available to the public on each check-in.</h4>
+
+<h3><u>Who is behind fourplay?</u></h3>
+<h4>Fourplay is the brain child of a NYC-based technologist who has experience in the online/offline dating space. While he could have hoarded the data for himself, he figured it would be overly selfish to not release it.</h4>
+
+<h3><u>I don't want to be compared with anyone else on Fourplay. How do I get off of it?</u></h3>
+<h4>Don't checkin on Foursquare (or check-in off the grid).</h4>
+
+<h3><u>I want to know how hot I am relative to other people. How do I find out?</u></h3>
+<h4>That information is extremely proprietary at the moment. One day we may charge you for it.</h4>
+
+<h3><u>How did you come up with the name Fourplay?</u></h3>
+<h4>No comment.</h4>
+
+
+<button type="button" style="background-image: url('http://getpostd.com/button.png');width:200px;height:37px;margin-top:-100px;color:#FAF8BE;font-weight:bold;font-family: HelveticaNeue,Helvetica Neue, Helvetica, Arial, sans-serif;font-size:.8em;border-radius:10px;border:#000;" onClick="history.back()">Back</button>
+</div>
+
+
+</div>
+
