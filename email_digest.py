@@ -25,9 +25,13 @@ def email(lat,lon, radius):
 			the_set[item.venue_id]=[venue_name,venue_address,item.target.quotient(),1]
 		else:
 			pass
+	print the_set
 	averages={}		
 	for item in the_set.iteritems():
        		averages[item[0]]=[item[1][2]/item[1][3]]
+	
+	print averages
+
 	for item in the_records:
        		averages[item.venue_id].append(item.target.pic_id)
 	

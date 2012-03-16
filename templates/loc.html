@@ -78,12 +78,18 @@ visibility:hidden;
 var r=confirm("Fourplay will now Checkin to the app for friends to see. This checkin may be sent to Twitter or Facebook.");
 if (r==true)
   {
-  mobile.changePage("/results");
+  $.mobile.changePage("/results");
   }
 else
   {
   parent.close();
   }
+}
+
+{% else %}
+
+function show_confirm(){
+$.mobile.changePage("/results");
 }
 
 {% endif %}
