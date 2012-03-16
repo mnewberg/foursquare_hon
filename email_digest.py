@@ -8,7 +8,10 @@ authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, 
 
 
 def email(lat,lon, radius):
-	user.objects.filter(last_lat__lt=lat+5, last_lat__gt=lat-5, last_lon__lt=lon+5, last_lon__gt=lon-5)
+	recipients=user.objects.filter(last_lat__lt=lat+5, last_lat__gt=lat-5, last_lon__lt=lon+5, last_lon__gt=lon-5)
+	recips={}
+	for recipient in recipients:
+		recips[recipient.fsq_id]=recipient.first_name, recipient.last_name, recipient.email
 	the_records = record.objects.filter(time__lt=time(),time__gt=time()-86400)
 	the_set={}
 	for item in the_records:
@@ -21,7 +24,7 @@ def email(lat,lon, radius):
 		if item.venue_id in the_set.keys():
 			the_set[item.venue_id][2]+=item.target.quotient()
 			the_set[item.venue_id][3]+=1
-		elif haversine(vlon,vlat,lat,lon)<=radius:
+		elif haversine(float(vlon),float(vlat),float(lon),float(lat))<=int(radius):
 			the_set[item.venue_id]=[venue_name,venue_address,item.target.quotient(),1]
 		else:
 			pass
@@ -37,4 +40,4 @@ def email(lat,lon, radius):
 	
 	for item in the_set:
 		the_set[item].append(averages[item])
-	return the_set
+	return the_set, recips
