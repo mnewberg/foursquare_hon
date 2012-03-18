@@ -61,7 +61,7 @@ def second(request):
             unread=twitter_outreach.objects.filter(m_target=user_look, read=False).count()
         except:
             showmessage=False
-
+            unread=False 
         try:
             last_name=scrub(last_name)
         except:
@@ -69,8 +69,8 @@ def second(request):
         try:
             user_look=user_lookup.objects.get(fsq_id=f_id)
         except:
-            pass
-        if showmessage==False:
+            user_look=False
+        if showmessage==False and user_look!=False:
                 u=user.objects.get(fsq_id=f_id)
                 u.token=token
                 u.photo=query.photo()[37:]
@@ -123,7 +123,10 @@ def gallery(request, page):
 		trending_venues={}
 		nearby_venues={}
 		for item in trending['venues']:
-		    trending_venues[item['id']]=item['name'],item['categories'][0]['name']
+		    try:
+                        trending_venues[item['id']]=item['name'],item['categories'][0]['name']
+                    except:
+                        trending_venues[item['id']]=item['name'],''
                 radius=request.GET['radius']
 		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6 and radius<=10000:
                     radius=2000
@@ -134,7 +137,10 @@ def gallery(request, page):
                 i=0
 		for item in all_nearby['venues']:
 		    if item['hereNow']['count']>0:
-		        nearby_venues[item['id']]=item['name'], item['categories'][0]['name']
+                        try:
+                            nearby_venues[item['id']]=item['name'], item['categories'][0]['name']
+                        except:
+                            nearby_venues[item['id']]=item['name'],''
 		for item in set(nearby_venues).intersection(set(trending_venues)):
 			del nearby_venues[item]
 		all_venues_nearby = nearby_venues.items() + trending_venues.items()	
