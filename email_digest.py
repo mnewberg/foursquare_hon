@@ -36,8 +36,10 @@ def email(lat,lon, radius):
 	print averages
 
 	for item in the_records:
-       		averages[item.venue_id].append(item.target.pic_id)
-	
+		try:
+			averages[item.venue_id].append(item.target.pic_id)
+		except:
+			pass
 	for item in the_set:
 		the_set[item].append(averages[item])
 	return the_set, recips

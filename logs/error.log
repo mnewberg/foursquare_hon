@@ -590,3 +590,4 @@
 [Mon Feb 27 11:38:36 2012] [error] [client 184.72.29.139] IOError: failed to write data
 [Mon Feb 27 11:38:36 2012] [error] [client 89.151.116.53] mod_wsgi (pid=28782): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
 [Mon Feb 27 11:38:36 2012] [error] [client 89.151.116.53] IOError: failed to write data
+[Sat Mar 17 16:22:18 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/CSS
