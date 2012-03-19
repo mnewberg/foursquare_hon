@@ -281,14 +281,19 @@ def dialog(request, image):
         has_twitter=True
         t.t_handle=twitter
         t.save()
+        request.session['f_name']=query.first_name()
         request.session['t_handle']=twitter
+        request.session['t_pic']=image
     else:
         has_twitter=False
 
-    return render_to_response('popup.html',{'image':image, 'twitter':has_twitter})
+    return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name(),'t_pic':image})
 
 def pickmessage(request):
-    return render_to_response('message.html')
+    target_t=request.session['t_handle']
+    target_p=request.session['t_pic']
+    target_n=request.session['f_name']
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n})
 
 def outreach(request):
     t_handle=request.session['t_handle']
