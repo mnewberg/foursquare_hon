@@ -1,10 +1,13 @@
 <html>
 <body>
-<div data-role="page' data-theme="a">
+<div data-role="page" data-theme="a">
 <form action="/missing" method="get">
 <input type="text" name="phone"><br>
 <input type="submit">
 </form>
+{% if error %}
+<br><h1>Please enter a valid phone number!</h1>
+{% endif %}
 </div>
 </body>
 </html>

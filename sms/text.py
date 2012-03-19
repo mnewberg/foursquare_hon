@@ -39,7 +39,7 @@ def callback(request):
 		curr_outgoing_did=advanceDID(logged_in_user.phone)
 	else:
 		curr_outgoing_did=avail_DIDs.objects.get(id=1)
-	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body="Message from Fourplay: responding to this number for the next 30 minutes will forward all messages to" + logged_in_user.first_name + ".")
+	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body="Message from Fourplay: responding to this number for the next 30 minutes will forward all messages to " + logged_in_user.first_name + ".")
 	return HttpResponse('success')
 
 @csrf_exempt
@@ -48,8 +48,7 @@ def incoming(request):
 	did=avail_DIDs.objects.get(DID=request.POST['To'])
 	the_message=request.POST['Body']
 	the_recipient=routing.objects.get(sender=sender,DID=did).recipient
-	print the_recipient
 	recipient_did=routing.objects.get(sender=the_recipient,recipient=sender).DID.DID
-	print recipient_did
 	message=client.sms.messages.create(to=the_recipient, from_=recipient_did, body=the_message)
+	log.objects.create(time=time(),sender=sender,recipient=the_recipeint,from_did=recipient_did, to_did=the_recipient, message=the_message)
 	return HttpResponse('success')

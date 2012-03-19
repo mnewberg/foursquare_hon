@@ -31,22 +31,22 @@ class ExpireRoutes(Job):
             item.delete()
 cronScheduler.register(ExpireRoutes)
 
-class AusGrab(Job):
-    run_every = 300
-    
-    def job(self):
-        now=authenticator.query("/venues/440da2cbf964a52091301fe3/herenow",token)
-        contain=conn.get_container('fourplay')
-        objects=contain.get_objects()
-        for item in now['hereNow']['items']:
-            if item['user']['photo'][44:] not in objects:
-                commands.getoutput('wget https://img-s.foursquare.com/userpix/'+item['user']['photo'][44:]+' -P /var/www/four_staging/foursquare/static/media')
-                commands.getoutput('mogrify -thumbnail 160 /var/www/four_staging/foursquare/static/media/'+ item['user']['photo'][44:])
-                img=contain.create_object(item['user']['photo'][44:])
-                img.load_from_file('/var/www/four_staging/foursquare/static/media'+item['user']['photo'][44:])
-                f='/var/www/four_staging/foursquare/static/media/'+item['user']['photo'][44:]
-                img.load_from_filename(f)
-            else:
-                pass
+#class AusGrab(Job):
+#    run_every = 300
+#    
+#    def job(self):
+#        now=authenticator.query("/venues/440da2cbf964a52091301fe3/herenow",token)
+#        contain=conn.get_container('fourplay')
+#        objects=contain.get_objects()
+#        for item in now['hereNow']['items']:
+#            if item['user']['photo'][44:] not in objects:
+#                commands.getoutput('wget https://img-s.foursquare.com/userpix/'+item['user']['photo'][44:]+' -P /var/www/four_staging/foursquare/static/media')
+#                commands.getoutput('mogrify -thumbnail 160 /var/www/four_staging/foursquare/static/media/'+ item['user']['photo'][44:])
+#                img=contain.create_object(item['user']['photo'][44:])
+#                img.load_from_file('/var/www/four_staging/foursquare/static/media'+item['user']['photo'][44:])
+#                f='/var/www/four_staging/foursquare/static/media/'+item['user']['photo'][44:]
+#                img.load_from_filename(f)
+#            else:
+#                pass
 
-cronScheduler.register(AusGrab)
+#cronScheduler.register(AusGrab)
