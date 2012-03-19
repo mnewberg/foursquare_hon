@@ -736,6 +736,45 @@ serif;
 	text-decoration: none;
 }
 
+/* I */
+
+.ui-btn-up-i {
+    border: 1px solid #222 /*{a-bup-border}*/;
+    background: red /*{a-bup-background-color}*/;
+font-weight: bold;
+color: #fff /*{a-bup-color}*/;
+text-shadow: 0 /*{a-bup-shadow-x}*/ -1px /*{a-bup-shadow-y}*/ 1px /*{a-bup-shadow-radius}*/ #000 /*{a-bup-shadow-color}*/;
+}
+.ui-btn-up-i a.ui-link-inherit {
+    color: #fff /*{a-bup-color}*/;
+}
+.ui-btn-hover-i {
+    border: 1px solid #000 /*{a-bhover-border}*/;
+    background: red;
+font-weight: bold;
+color: #fff /*{a-bhover-color}*/;
+text-shadow: 0 /*{a-bhover-shadow-x}*/ -1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #000 /*{a-bhover-shadow-color}*/;
+}
+.ui-btn-hover-i a.ui-link-inherit {
+    color: #fff /*{a-bhover-color}*/;
+}
+.ui-btn-down-i {
+    border: 1px solid #000 /*{a-bdown-border}*/;
+    background: red;
+font-weight: bold;
+color: #fff /*{a-bdown-color}*/;
+text-shadow: 0 /*{a-bdown-shadow-x}*/ -1px /*{a-bdown-shadow-y}*/ 1px /*{a-bdown-shadow-radius}*/ #000 /*{a-bdown-shadow-color}*/;
+}
+.ui-btn-down-i a.ui-link-inherit {
+    color: #fff /*{a-bdown-color}*/;
+}
+.ui-btn-up-i,
+.ui-btn-hover-i,
+.ui-btn-down-i {
+font-family: Helvetica, Arial, sans-serif!important /*{global-font-family}*/;
+text-decoration: none;
+}
+
 
 
 
