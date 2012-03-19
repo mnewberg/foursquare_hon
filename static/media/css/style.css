@@ -788,8 +788,7 @@ serif;
 .ui-body-f select,
 .ui-body-f textarea,
 .ui-body-f button {
-	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-\
-serif;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 	text-transform:uppercase;
 	letter-spacing:2px;
@@ -824,7 +823,8 @@ serif;
 	color: 					#fff ;
 	text-shadow: 1px 1px 1px black;
 	background-image: url('http://getpostd.com/button.png');
-	background:red;
+	background:#A00e20;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/*background-image: -webkit-gradient(linear, left top, left bottom, from( #fdfdfd /*{c-bup-background-start}*/), to( #eee /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
 	/*background-image: -webkit-linear-gradient(#fdfdfd /*{c-bup-background-start}*/, #eee /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
 	/*background-image:    -moz-linear-gradient(#fdfdfd /*{c-bup-background-start}*/, #eee /*{c-bup-background-end}*/); /* FF3.6 */
@@ -839,7 +839,6 @@ serif;
 .ui-btn-hover-f {
 	border: 1px solid 		#231F20;
 	font-weight: bold;
-	background-image: url('http://getpostd.com/button.png');
 	color: 					#fff;
 	text-shadow: 1px 1px 1px black;
 	/*background-image: -webkit-gradient(linear, left top, left bottom, from( #ededed /*{c-bhover-background-start}*/), to( #dadada /*{c-bhover-background-end}*/)); /* Saf4+, Chrome */
@@ -854,7 +853,7 @@ serif;
 }
 .ui-btn-down-f {
 	border: 1px solid 		#231F20;
-	background-image: url('http://getpostd.com/button.png');
+	background:red;
 	font-weight: bold;
 	text-shadow: 1px 1px 1px black;
 	text-shadow: 0 /*{c-bdown-shadow-x}*/ 1px /*{c-bdown-shadow-y}*/ 1px /*{c-bdown-shadow-radius}*/ #ffffff /*{c-bdown-shadow-color}*/;
