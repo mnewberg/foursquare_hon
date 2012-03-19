@@ -336,10 +336,18 @@ def checkin(request):
         return HttpResponseRedirect('http://tryfourplay.com')
 
 def missing(request):
+    error=False
     phone=request.GET['phone']
     source=request.GET['user']
+    if len(re.sub('[^\d.]+','',phone))!=10:
+        if source=='sender':
+            return render_to_response('missing_sender.html',{'error':True})
+        else:
+            return render_to_response('missing.html',{'error':True})
+    else:
+        pass
     u=user.objects.get(fsq_id=request.session['fsq_id'])
-    u.phone=phone
+    u.phone=re.sub('[^\d.]+','',phone)
     u.save()
     if source=='sender':
         return HttpResponse('your message has been sent')
