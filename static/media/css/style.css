@@ -337,7 +337,7 @@ text-decoration: none;
 .ui-bar-c button {
 	font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
 	text-transform:uppercase;
-	letter-spacing:3px;
+	letter-spacing:2px;
 }
 .ui-body-c,
 .ui-dialog.ui-overlay-c {
@@ -359,6 +359,14 @@ serif;
 	font-weight: bold;
 	font-size:18px;
 	line-height:24px;
+}
+
+
+.ui-body-c select{
+	text-transform:none;
+	font-size:14px;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 
 .ui-body-c .ui-link-inherit {
