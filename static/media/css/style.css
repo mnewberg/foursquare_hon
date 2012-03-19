@@ -1901,6 +1901,6 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 /*** custom styles ****/
 
 
-.submitmessage{
+.submitmessage.ui-btn-hidden{
 	background-color:red!important;
 }
