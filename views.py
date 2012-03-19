@@ -296,7 +296,6 @@ def pickmessage(request):
     return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n})
 
 def outreach(request):
-    token = user.objects.get(fsq_id=request.session['fsq_id']).token
     t_handle=request.session['t_handle']
     message=request.GET['message']
     uid=random_string(5)
@@ -304,11 +303,10 @@ def outreach(request):
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False)
     tweet_response = send_twitter_shout(t_handle,message,uid)
-    query= finder.findUser(token, request.session['fsq_id'])
-    if tweet_response and query.phone():
+    if tweet_response and sender.phone:
         return render_to_response('sent.html')
-    elif not query.phone:
-        return render_to_response('missing.html')
+    elif not sender.phone:
+        return render_to_response('missing_sender.html')
     else:
         return render_to_response('error.html')
 
@@ -339,7 +337,11 @@ def checkin(request):
 
 def missing(request):
     phone=request.GET['phone']
+    source=request.GET['user']
     u=user.objects.get(fsq_id=request.session['fsq_id'])
     u.phone=phone
     u.save()
-    return HttpResponseRedirect('/login')
+    if source=='sender':
+        return HttpResponse('your message has been sent')
+    else:
+        return HttpResponseRedirect('/login')
