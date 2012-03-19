@@ -287,7 +287,7 @@ def dialog(request, image):
     else:
         has_twitter=False
 
-    return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name(),'t_pic':image})
+    return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name()})
 
 def pickmessage(request):
     target_t=request.session['t_handle']
