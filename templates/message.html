@@ -7,21 +7,27 @@
 		<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;">Message</h1>
 	</div>
 	<div align="center">
-		<h4 style="font-family:Helvetica;">Say something to {{f_name}}</h4>
-		<img src="https://is1.4sqi.net/userpix/{{t_pic}}" style="height:150px;" align="center">
+		<h4 style="font-family:Helvetica; font-weight:normal; text-shadow:1px 1px 1px #c82e4e;">Say something to {{f_name}}</h4>
+		<img src="https://is1.4sqi.net/userpix/{{t_pic}}" style="height:150px; border:2px solid #c82e4e" align="center">
 	</div>
 	
-<form action="/outreach" method="get" data-theme="c">
-<select name="message">
-<option value="Me You and Your Chloe Glasses, Go Somewhere Private where we can discuss fashion!!">"Me You and Your Chloe Glasses, Go Somewhere Private where we can discuss fashion!!!</option>
-<option value="Let me take you to da mooovies shawtay!">Let me take you to da mooovies shawtay!</option>
-<option value="What's up with it vanillaface" selected="selected">What's up with it vanillaface</option>
-<option value="Mind if I take you for a usability test?">Mind if I take you for a usability test?</option>
-</select>
-<input type="text" name="message" value="Or write your own message!" onclick="this.value=''">
-<input type="submit" value="submit"> 
-</form>
+	<div data-theme="c">
+		<form action="/outreach" method="get" data-theme="c">
+			<select name="message">
+				<option value="Me You and Your Chloe Glasses, Go Somewhere Private where we can discuss fashion!!">"Me You and Your Chloe Glasses, Go Somewhere Private where we can discuss fashion!!!</option>
+				<option value="Let me take you to da mooovies shawtay!">Let me take you to da mooovies shawtay!</option>
+				<option value="What's up with it vanillaface" selected="selected">What's up with it vanillaface</option>
+				<option value="Mind if I take you for a usability test?">Mind if I take you for a usability test?</option>
+			</select>
+			<input type="text" name="message" value="Or write your own message!" onclick="this.value=''">
+			<input type="submit" value="submit"> 
+		</form>
+	</div>
+	
 
 </body>
+
+
+
 </html>
 
