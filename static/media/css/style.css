@@ -531,7 +531,6 @@ serif;
 .ui-btn-up-d {
 	border: 1px solid 		#ccc /*{d-bup-border}*/;
 	background: 			#fff /*{d-bup-background-color}*/;
-	background:#c92e4e;
 	font-weight: bold;
 	color: 					#444 /*{d-bup-color}*/;
 	text-shadow: 0 /*{d-bup-shadow-x}*/ 1px /*{d-bup-shadow-y}*/ 1px /*{d-bup-shadow-radius}*/ #fff /*{d-bup-shadow-color}*/;
