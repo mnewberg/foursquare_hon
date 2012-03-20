@@ -74,7 +74,7 @@ en']").val()
 {% endif %}
 	<div class="ui-block-a" align="center">
 	
-		<h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">{% if page > 0 %}<a href="/dialog/{{chickpix.0.0}}" data-rel="dialog"><img id="img1" src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="width:16px;padding-right:10px;margin-left:-30px"></a>{% endif %}{{ chickpix.0.1 }} </h4>
+		<h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">{% if page > 0 %}<a href="/dialog/{{chickpix.0.0}}&{{chickpix.0.3}}" data-rel="dialog"><img id="img1" src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="width:16px;padding-right:10px;margin-left:-30px"></a>{% endif %}{{ chickpix.0.1 }} </h4>
 	 <div class="overflow" align="center"> 
 			<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch>
 				<img id="img" src="https://is1.4sqi.net/userpix/{{ chickpix.0.0 }}"  class="target" style="height:150px" align="center" >
@@ -86,7 +86,7 @@ en']").val()
 </div>
 	<div class="ui-block-b" align="center">
 
-               <h4 style="text-align:center;margin-top:1px;margin-bottom:12px;"> {% if page > 0 %} <a href="/dialog/{{chickpix.1.0}}" data-rel="dialog"><img id="img2" src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="margin-left:-30px;width:16px;padding-right:10px;"></a>{% endif %}{{ chickpix.1.1 }}</h4>
+               <h4 style="text-align:center;margin-top:1px;margin-bottom:12px;"> {% if page > 0 %} <a href="/dialog/{{chickpix.1.0}}&{{chickpix.1.3}}" data-rel="dialog"><img id="img2" src="http://getpostd.com/images/magnify.png" border="0" valign="-2px" style="margin-left:-30px;width:16px;padding-right:10px;"></a>{% endif %}{{ chickpix.1.1 }}</h4>
 	<div class="overflow" align="center">		<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide">
 	 			<img src="https://is1.4sqi.net/userpix/{{ chickpix.1.0 }}" style="height:150px" class="target" align="center">
 	 		</a></div>

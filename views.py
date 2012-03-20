@@ -271,7 +271,7 @@ def results(request):
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
 
 def dialog(request, image):
-    venue=request.POST['venue_id']
+    venue=request.GET['venue_id']
     token = user.objects.get(fsq_id=request.session['fsq_id']).token
     t=user_lookup.objects.get(pic_id=image)
     the_id=t.fsq_id

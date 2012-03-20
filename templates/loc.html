@@ -208,31 +208,6 @@ en']").val()
                 });
 })});
 
-jQuery(window).ready(function(){
-    jQuery("#img1").live("click",function(){
-                $.ajax({
-                type: "POST",
-                url: "/dialog/",
-                data:{
-                                
-                                venue_id:$(".ui-page-active .venue1").val(),
-                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
-                          }
-});
-})});
-
-jQuery(window).ready(function(){
-    jQuery("#img2").live("click",function(){
-                $.ajax({
-                type: "POST",
-                url: "/dialog/",
-                data:{
-venue_id:$(".ui-page-active .venue2").val(),
-csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
-                          }
-});
-})});
-
 
 
 
