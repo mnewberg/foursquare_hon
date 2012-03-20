@@ -296,15 +296,21 @@ def pickmessage(request):
     target_p=request.session['t_pic']
     target_n=request.session['f_name']
     target_v=request.session['venue']
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue':target_v})
+    v=authenticator.userless_query("/venues/"+item.venue_id)
+    vlat=v['venue']['location']['lat']
+    vlon=v['venue']['location']['lng']
+    venue_name=v['venue']['name']
+
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue':venue_name})
 
 def outreach(request):
     t_handle=request.session['t_handle']
     message=request.GET['message']
+    venue=request.GET['venue']
     uid=random_string(5)
     datarget=user_lookup.objects.get(t_handle=t_handle)
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
-    twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False)
+    twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False, venue_id=venue)
     tweet_response = send_twitter_shout(t_handle,message,uid)
     if tweet_response and sender.phone:
         return render_to_response('sent.html')
