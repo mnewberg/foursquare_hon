@@ -661,3 +661,7 @@
 [Tue Mar 20 11:24:14 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=XG2RLM3A5UUY3HD5VYSOFF3C4XJVBJTMOLHBV4SBQDGO35EB
 [Tue Mar 20 11:24:41 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/gallery/1
 [Tue Mar 20 11:33:17 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=GS4EF1NG2LMKTNLEOM0FNDG1XV3AUK0FBDFGIUNOH30S4VXD
+[Tue Mar 20 11:43:10 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=CKUWXZ3GVCDYYVJISMOLCBO0F30YWA0DDLCP3R5IRGBRJKAI
+[Tue Mar 20 11:44:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=QCZGUY2V15NE1K44AQXAXKH5OKISHGNK4ZJ0T04VOBBUZAFF
+[Tue Mar 20 11:46:34 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=S4321SRB4NAOT0W4AAWHZYS4KZPAEGWVQP31T5RGNSJVTSVA
+[Tue Mar 20 11:46:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/gallery/1
