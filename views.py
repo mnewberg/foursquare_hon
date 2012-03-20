@@ -296,17 +296,13 @@ def pickmessage(request):
     target_p=request.session['t_pic']
     target_n=request.session['f_name']
     target_v=request.session['venue']
-    v=authenticator.userless_query("/venues/"+item.venue_id)
-    vlat=v['venue']['location']['lat']
-    vlon=v['venue']['location']['lng']
-    venue_name=v['venue']['name']
 
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue':venue_name})
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue_id':target_v})
 
 def outreach(request):
     t_handle=request.session['t_handle']
     message=request.GET['message']
-    venue=request.GET['venue']
+    venue=request.GET['venue_id']
     uid=random_string(5)
     datarget=user_lookup.objects.get(t_handle=t_handle)
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
@@ -324,9 +320,16 @@ def onboard(request, uid):
     sender=t.sender
     the_user=user.objects.get(fsq_id=sender)
     msg=t.message
+    venue=t.venue_id
+    
+    v=authenticator.userless_query("/venues/"+venue)
+    vlat=v['venue']['location']['lat']
+    vlon=v['venue']['location']['lng']
+    venue_name=v['venue']['name']
+    
     request.session['uid']=uid
     request.session.set_expiry(0)
-    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg})
+    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name})
 
 def notice(request):
     return render_to_response('warning.html')
