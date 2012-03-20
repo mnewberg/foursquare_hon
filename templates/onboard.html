@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <title>Fourplay</title>
 
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://fgnass.github.com/spin.js/spin.min.js"></script>
+	<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css">
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-	<link rel="stylesheet" href="http://getpostd.com/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<meta name="apple-touch-fullscreen" content="YES" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,15 +17,26 @@
 
 </head>
 <body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
-<div data-role="page" data-theme="a">
-	<div data-role="header" data-theme="c">You've been messaged!</div>
-	{{ first_name }} said...
-<img src="https://is1.4sqi.net/userpix/{{pic}}" style="max-width:280px">
-<br>
-{{ message }}
-<br>
-<a href="/login" data-ajax="false">Message back over anonymous SMS.</a>
-</div>
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-theme="a">
+			<h1 style="letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none;">{{ first_name }} Messaged You!</h1>
+		</div>
+	
+		<div data-role="body" align="center">
+
+			<h1 style="text-transform:uppercase; font-family:Lato; font-size:14px; margin-bottom:20px;">{{ first_name }} saw you check in on Foursquare and was like:</h1>
+			
+			<img src="https://is1.4sqi.net/userpix/{{pic}}" style="max-width:280px; border:2px solid #c42e4d; z-index:-10;">
+			
+			<div class="messagesent">
+				<b id="sentnotch"></b>
+				<h2 id="sentmessage">{{ message }}</h2>
+			</div>
+			<a href="/login" data-ajax="false" data-role="button" data-theme="f">Message back via anonymous SMS</a>
+	
+		</div>
+	
+	</div>
                        
 
 </body>

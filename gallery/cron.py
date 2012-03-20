@@ -14,18 +14,16 @@ token='1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII'
 conn=cloudfiles.get_connection('thenewb','9eddf4532803a3ab2f813773c5514803')
 
 class ExpireRoutes(Job):
-
+    print 'runnin'
     # run every 3000 seconds (5 minutes)
     run_every = 750
-
     def job(self):
+        print 'got further'
         # This will be executed ever 5 mins
         to_expire=routing.objects.filter(time_created__lt=time()-1800)
-
-
         for item in to_expire:
             client.sms.messages.create(to=item.recipient,from_=item.DID,body="*Message from Fourplay* Wrap it up! Your conversation will end in 5 minutes.")
-            
+        print to_expire
         sleep(300)
         for item in to_expire:
             item.delete()

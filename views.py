@@ -271,6 +271,7 @@ def results(request):
 	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
 
 def dialog(request, image):
+    venue=request.POST['venue_id']
     token = user.objects.get(fsq_id=request.session['fsq_id']).token
     t=user_lookup.objects.get(pic_id=image)
     the_id=t.fsq_id
@@ -281,6 +282,7 @@ def dialog(request, image):
         has_twitter=True
         t.t_handle=twitter
         t.save()
+        request.session['venue']=venue
         request.session['f_name']=query.first_name()
         request.session['t_handle']=twitter
         request.session['t_pic']=image
@@ -293,7 +295,8 @@ def pickmessage(request):
     target_t=request.session['t_handle']
     target_p=request.session['t_pic']
     target_n=request.session['f_name']
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n})
+    target_v=request.session['venue']
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue':target_v})
 
 def outreach(request):
     t_handle=request.session['t_handle']

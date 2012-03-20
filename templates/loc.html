@@ -4,8 +4,9 @@
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://fgnass.github.com/spin.js/spin.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style.css" />
-		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/customswatch.css" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
+		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css" />
+<!--		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/customswatch.css" /> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<meta name="apple-touch-fullscreen" content="YES" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -207,7 +208,31 @@ en']").val()
                 });
 })});
 
-		
+jQuery(window).ready(function(){
+    jQuery("#img1").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/dialog/",
+                data:{
+                                
+                                venue_id:$(".ui-page-active .venue1").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                          }
+});
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#img2").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/dialog/",
+                data:{
+venue_id:$(".ui-page-active .venue2").val(),
+csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                          }
+});
+})});
+
 
 
 
