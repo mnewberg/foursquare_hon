@@ -160,15 +160,18 @@ def gallery(request, page):
 	    	for item in herenow:
 			venueName=item['hereNow']['venueName']
                         venueCat=item['hereNow']['venueCat']
+                        finder = psq.UserFinder(authenticator)
 			for entry in item['hereNow']['items']:
 				if entry['user']['gender']==gender:
 					the_id=entry['user']['id']
+                                        query = finder.findUser(token, the_id)
+                                        twitter=query.twitter()
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 						pass
 					elif categorize(venueName):
-						chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n]]
+                                            chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
                                         else:
-                                                backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n]]
+                                            backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n], twitter]
                                         
                                         try: 
                                             user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:])
@@ -203,7 +206,15 @@ def gallery(request, page):
         else:
             image_pair=request.session['chickpix'][int(page)]
             return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
-    
+
+def has_twitter(request):
+    the_id=request.session['the_id']
+    token = user.objects.get(fsq_id=request.session['fsq_id']).token
+    finder = psq.UserFinder(authenticator)
+    query = finder.findUser(token, the_id)
+    twitter=query.twitter()
+    return HttpResponse(twitter)
+
 def vote(request):
         token = user.objects.get(fsq_id=request.session['fsq_id']).token
         pic_id = request.POST['chosen_id']

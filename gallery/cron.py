@@ -6,16 +6,14 @@ import settings
 import commands
 from urllib import urlretrieve
 import pysq.apiv2 as psq
-import cloudfiles
+#import cloudfiles
 
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
-authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
-token='1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII'
-conn=cloudfiles.get_connection('thenewb','9eddf4532803a3ab2f813773c5514803')
+#authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
+#token='1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII'
+#conn=cloudfiles.get_connection('thenewb','9eddf4532803a3ab2f813773c5514803')
 
 class ExpireRoutes(Job):
-    print 'runnin'
-    # run every 3000 seconds (5 minutes)
     run_every = 750
     def job(self):
         print 'got further'
