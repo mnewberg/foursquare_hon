@@ -778,3 +778,4 @@
 [Wed Mar 21 10:39:15 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=M5ZMRVHR5CRA5KDNZRYI0GU0AS4DDMMKCBRWBBKONZ5Q4WTL
 [Wed Mar 21 10:46:54 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=OLTYH30X2CGXSP2KKPMBOTNJ0AFL44UARZCYYBJJDACSGE4K
 [Wed Mar 21 12:09:09 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=HOOH5SWT2KATLVU55ZFU0LT3MQNTOFUAOFFC0JMYG1SGTAZJ
+[Wed Mar 21 15:37:38 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=HMBU5YWKMRXS4KW42VYAJFZBB43RG42UFK4FCVUVFGF30YYQ
