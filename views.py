@@ -167,9 +167,9 @@ def gallery(request, page):
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 						pass
 					elif categorize(venueName):
-                                            chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
+                                            chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n]]
                                         else:
-                                            backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n], twitter]
+                                            backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n]]
                                         
                                         try: 
                                             user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:])

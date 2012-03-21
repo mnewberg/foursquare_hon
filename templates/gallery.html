@@ -85,14 +85,9 @@
 
 <title>Which one?</title>
 </head>
-<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);" class="ui-mobile-viewport">
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 
-<div id="tc_container" style="display: none" data="ih">
-</div>
-<div style="display: none; " id="hiddenlpsubmitdiv">
-</div>
-
-<div data-role="page" data-theme="a" style="background-color: rgb(160, 14, 32); min-height: 320px; " data-url="/gallery/6" data-external-page="true" tabindex="0" class="ui-page ui-body-a ui-page-active">
+<div data-role="page" data-theme="a">
 	<div data-role="header" align="center"> <!--  style="" class="ui-header ui-bar-a" role="banner" -->
 		<h1 style="font-size:16px; font-weight:bold; text-transform:none; width:100%; letter-spacing:0px;" class="ui-title" tabindex="0" role="heading" aria-level="1">Which one?</h1>
 	</div>
@@ -144,6 +139,7 @@
 		<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>
 		<input type="hidden" value="{{chickpix.0.3}}" class="venue1"/>
 		<input type="hidden" value="{{chickpix.1.3}}" class="venue2"/>
+		{% csrf_token %}
 	</div>
         <br clear="all" />
 </div></body></html>
