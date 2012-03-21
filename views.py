@@ -206,7 +206,7 @@ def gallery(request, page):
             return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
 
 def has_twitter(request):
-    pic_id=request.session['pic_id']
+    pic_id=request.GET['pic_id']
     the_id=user_lookup.objects.get(pic_id=pic_id).fsq_id
     token = user.objects.get(fsq_id=request.session['fsq_id']).token
     finder = psq.UserFinder(authenticator)
