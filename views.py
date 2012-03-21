@@ -161,9 +161,9 @@ def gallery(request, page):
 	    	for item in herenow:
 			venueName=item['hereNow']['venueName']
                         venueCat=item['hereNow']['venueCat']
-                        the_id=item['user']['id']
 			for entry in item['hereNow']['items']:
 				if entry['user']['gender']==gender:
+                                        the_id=entry['user']['id']
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 						pass
 					elif categorize(venueName):
