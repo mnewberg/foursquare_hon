@@ -206,11 +206,15 @@ def gallery(request, page):
             return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
 
 def has_twitter(request):
-    the_id=request.session['the_id']
+    pic_id=request.session['pic_id']
+    the_id=user_lookup.objects.get(pic_id=pic_id).fsq_id
     token = user.objects.get(fsq_id=request.session['fsq_id']).token
     finder = psq.UserFinder(authenticator)
     query = finder.findUser(token, the_id)
-    twitter=query.twitter()
+    if query.twitter():
+        twitter=True
+    else:
+        twitter=False
     return HttpResponse(simplejson.dumps({'twitter':twitter}), mimetype='application/javascript')
 
 def vote(request):
