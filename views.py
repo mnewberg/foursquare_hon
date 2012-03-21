@@ -21,6 +21,7 @@ import settings
 from id_gen import random_string
 from shout_twitter import send_twitter_shout
 from sms.text import *
+from django.utils import simplejson
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
@@ -160,12 +161,9 @@ def gallery(request, page):
 	    	for item in herenow:
 			venueName=item['hereNow']['venueName']
                         venueCat=item['hereNow']['venueCat']
-                        finder = psq.UserFinder(authenticator)
+                        
 			for entry in item['hereNow']['items']:
 				if entry['user']['gender']==gender:
-					the_id=entry['user']['id']
-                                        query = finder.findUser(token, the_id)
-                                        twitter=query.twitter()
 					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
 						pass
 					elif categorize(venueName):
@@ -213,7 +211,7 @@ def has_twitter(request):
     finder = psq.UserFinder(authenticator)
     query = finder.findUser(token, the_id)
     twitter=query.twitter()
-    return HttpResponse(twitter)
+    return HttpResponse(simplejson.dumps({'twitter':twitter}), mimetype='application/javascript')
 
 def vote(request):
         token = user.objects.get(fsq_id=request.session['fsq_id']).token

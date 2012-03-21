@@ -35,6 +35,7 @@ urlpatterns = patterns('',
     url(r'^callback$','sms.text.callback'),
     url(r'^incoming$','sms.text.incoming'),
     url(r'^missing$','views.missing'),
+    url(r'^twitter$','views.has_twitter'),
     # Examples:
     # url(r'^$', 'twilio.views.home', name='home'),
     # url(r'^twilio/', include('twilio.foo.urls')),
