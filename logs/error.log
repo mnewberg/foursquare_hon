@@ -919,3 +919,10 @@
 [Thu Mar 22 16:20:10 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/message/iJIJE
 [Thu Mar 22 16:22:58 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/message/iJIJE
 [Thu Mar 22 16:24:35 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/message/iJIJE
+[Thu Mar 22 17:30:00 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=3OV4B3EGMCP0NE4ARFCO1NGEDEG2INTUNNSP3WY3GPN053DQ
+[Thu Mar 22 17:31:57 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/gallery/2
+[Thu Mar 22 17:37:04 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/message/L6Vvu
+[Thu Mar 22 17:37:50 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/loc/?code=Z5TCE3BH3T0EXBUD011L1MXU15EMJU2XTU55BCL44JROERLK
+[Thu Mar 22 17:38:16 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/pickmessage/?venue_id=447bf8f1f964a520ec331fe3&pic_id=YR1IFZTDZPXSPFBM.jpg&from_hon_screen=true
+[Thu Mar 22 17:38:40 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/message/kinhN
+[Thu Mar 22 17:44:23 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images, referer: http://staging.tryfourplay.com/message/kinhN

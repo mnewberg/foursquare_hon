@@ -305,13 +305,19 @@ def dialog(request, image):
     return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name()})
 
 def pickmessage(request):
+    fsq_id=request.session['fsq_id']
+    user=user.objects.get(fsq_id=fsq_id)
+    if len(user.photo)<=4:
+        return render_to_response('error.html')
+    else:
+        pass
     params={}
     params.update(csrf(request))
     if request.GET['from_hon_screen']:
         venue=request.GET['venue_id']
         image=request.GET['pic_id']
         t=user_lookup.objects.get(pic_id=image)
-        token = user.objects.get(fsq_id=request.session['fsq_id']).token
+        token = user.token
         the_id=t.fsq_id
         finder = psq.UserFinder(authenticator)
         query = finder.findUser(token, the_id)
@@ -354,8 +360,10 @@ def onboard(request, uid):
     msg=t.message
     venue=t.venue_id
     
-    location,bio=get_bio(the_user.twitter)
-
+    try:
+        location,bio=get_bio(the_user.twitter)
+    except:
+        location,bio='',''
     v=authenticator.userless_query("/venues/"+venue)
     vlat=v['venue']['location']['lat']
     vlon=v['venue']['location']['lng']
@@ -363,7 +371,7 @@ def onboard(request, uid):
     
     request.session['uid']=uid
     request.session.set_expiry(0)
-    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':lcation, 'bio':bio})
+    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio})
 
 def notice(request):
     return render_to_response('warning.html')
