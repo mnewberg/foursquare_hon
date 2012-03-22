@@ -207,7 +207,7 @@ jQuery(window).ready(function(){
 })});
 
 
-jQuery(document).ready(function(){
+$("#hotornot").live('pageinit',function(){
 		$.getJSON('/twitter/',
 		{'pic_id':$(".ui-page-active .id_val").val()},
 		function(data){
