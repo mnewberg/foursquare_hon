@@ -19,7 +19,7 @@ import re
 from categorize import *
 import settings
 from id_gen import random_string
-from shout_twitter import send_twitter_shout
+from shout_twitter import send_twitter_shout, get_bio
 from sms.text import *
 from django.utils import simplejson
 
@@ -332,13 +332,14 @@ def outreach(request):
     t_handle=request.POST['t_handle']
     message=request.POST['message']
     venue=request.POST['venue_id']
+    f_name=request.POST['f_name']
     v=authenticator.userless_query("/venues/"+venue)
     venue_name=v['venue']['name']
     uid=random_string(5)
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False, venue_id=venue)
-    tweet_response = send_twitter_shout(t_handle,venue_name,uid)
+    tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid)
     if tweet_response and sender.phone:
         return render_to_response('sent.html')
     elif not sender.phone:
@@ -353,6 +354,8 @@ def onboard(request, uid):
     msg=t.message
     venue=t.venue_id
     
+    location,bio=get_bio(the_user.twitter)
+
     v=authenticator.userless_query("/venues/"+venue)
     vlat=v['venue']['location']['lat']
     vlon=v['venue']['location']['lng']
@@ -360,7 +363,7 @@ def onboard(request, uid):
     
     request.session['uid']=uid
     request.session.set_expiry(0)
-    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name})
+    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':lcation, 'bio':bio})
 
 def notice(request):
     return render_to_response('warning.html')

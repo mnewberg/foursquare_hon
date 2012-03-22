@@ -27,6 +27,7 @@
 			<img src="http://staging.tryfourplay.com/static/img/admin/messageicon.png" id="msgicon">
 			<input type="hidden" value="{{venue_id}}" name="venue_id">
 <input type="hidden" value="{{t_handle}}" name="t_handle">
+<input type="hidden" value="{{f_name}}" name="f_name">
 <input type="hidden" value="{{t_pic}}" name="t_pic">
 
 {% csrf_token %}
@@ -41,6 +42,7 @@
 <input type="text" name="message" value="write your own message!" onclick="this.value=''"  data-theme="d"><br>
 <input type="hidden" value="{{venue_id}}" name="venue_id">
 <input type="hidden" value="{{t_handle}}" name="t_handle">
+<input type="hidden" value="{{f_name}}"name="f_name">
 <input type="hidden" value="{{t_pic}}" name="t_pic">
 <input type="submit" value="submit message"  data-theme="f"></div>
 {% csrf_token %}
