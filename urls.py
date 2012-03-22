@@ -5,8 +5,7 @@ from django.views.generic.simple import redirect_to
 from django.contrib import admin
 admin.autodiscover()
 from sms import *
-import django_cron
-django_cron.autodiscover()
+
 
 authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
 
@@ -31,7 +30,7 @@ urlpatterns = patterns('',
     url(r'^notice','views.notice'),
     url(r'^message/(.{1,5})','views.onboard'),
     url(r'^outreach$','views.outreach'),
-    url(r'^pickmessage$','views.pickmessage'),
+    url(r'^pickmessage/$','views.pickmessage'),
     url(r'^callback$','sms.text.callback'),
     url(r'^incoming$','sms.text.incoming'),
     url(r'^missing$','views.missing'),

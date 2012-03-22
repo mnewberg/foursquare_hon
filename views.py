@@ -305,22 +305,40 @@ def dialog(request, image):
     return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name()})
 
 def pickmessage(request):
-    target_t=request.session['t_handle']
-    target_p=request.session['t_pic']
-    target_n=request.session['f_name']
-    target_v=request.session['venue']
+    params={}
+    params.update(csrf(request))
+    if request.GET['from_hon_screen']:
+        venue=request.GET['venue_id']
+        image=request.GET['pic_id']
+        t=user_lookup.objects.get(pic_id=image)
+        token = user.objects.get(fsq_id=request.session['fsq_id']).token
+        the_id=t.fsq_id
+        finder = psq.UserFinder(authenticator)
+        query = finder.findUser(token, the_id)
+        twitter=query.twitter()
+        target_t=twitter
+        target_p=image
+        target_n=query.first_name()
+        target_v=venue
+    else:
+        target_t=request.session['t_handle']
+        target_p=request.session['t_pic']
+        target_n=request.session['f_name']
+        target_v=request.session['venue']
 
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue_id':target_v})
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue_id':target_v, 'csrf':params}, context_instance=RequestContext(request))
 
 def outreach(request):
-    t_handle=request.session['t_handle']
-    message=request.GET['message']
-    venue=request.GET['venue_id']
+    t_handle=request.POST['t_handle']
+    message=request.POST['message']
+    venue=request.POST['venue_id']
+    v=authenticator.userless_query("/venues/"+venue)
+    venue_name=v['venue']['name']
     uid=random_string(5)
-    datarget=user_lookup.objects.get(t_handle=t_handle)
+    datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False, venue_id=venue)
-    tweet_response = send_twitter_shout(t_handle,message,uid)
+    tweet_response = send_twitter_shout(t_handle,venue_name,uid)
     if tweet_response and sender.phone:
         return render_to_response('sent.html')
     elif not sender.phone:

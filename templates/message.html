@@ -16,7 +16,7 @@
 	
 	<div align="center" data-role="body">
 
-		<form action="/outreach" method="get">
+		<form action="/outreach" method="post">
 			<select name="message" data-theme="d">
 				<option value="Me You and Your Chloe Glasses, Go Somewhere Private where we can discuss fashion!!">"Me You and Your Chloe Glasses, Go Somewhere Private where we can discuss fashion!!!"</option>
 				<option value="Let me take you to da mooovies shawtay!">"Let me take you to da mooovies shawtay!"</option>
@@ -26,6 +26,10 @@
 			<b id="notch"></b>
 			<img src="http://staging.tryfourplay.com/static/img/admin/messageicon.png" id="msgicon">
 			<input type="hidden" value="{{venue_id}}" name="venue_id">
+<input type="hidden" value="{{t_handle}}" name="t_handle">
+<input type="hidden" value="{{t_pic}}" name="t_pic">
+
+{% csrf_token %}
 			<a href="javascript:void(0)" onclick="$.mobile.silentScroll(500);" style="font-family:Lato,Helvetica,Arial,sans-serif; font-size:14px; letter-spacing:0px;">OR WRITE YOUR OWN MESSAGE!</a>
 			<!--<input type="text" name="message" value="Or write your own message!" onclick="this.value=''"  data-theme="d"> -->
 			<input type="submit" value="submit message"  data-theme="f">
@@ -33,12 +37,13 @@
 
 	</div>
 <br><br><br><br><br><br><br><br><br><br>
-<div align="center" id="lower"><form  action="/outreach" method="get">	
+<div align="center" id="lower"><form  action="/outreach" method="post">	
 <input type="text" name="message" value="write your own message!" onclick="this.value=''"  data-theme="d"><br>
 <input type="hidden" value="{{venue_id}}" name="venue_id">
-
+<input type="hidden" value="{{t_handle}}" name="t_handle">
+<input type="hidden" value="{{t_pic}}" name="t_pic">
 <input type="submit" value="submit message"  data-theme="f"></div>
-
+{% csrf_token %}
 </form>
 </body>
 
