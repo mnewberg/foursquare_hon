@@ -393,6 +393,6 @@ def missing(request):
     u.phone=re.sub('[^\d.]+','',phone)
     u.save()
     if source=='sender':
-        return HttpResponse('your message has been sent')
+        return render_to_response('sent.html')
     else:
         return HttpResponseRedirect('/login')
