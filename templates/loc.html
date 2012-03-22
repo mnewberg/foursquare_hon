@@ -206,10 +206,31 @@ jQuery(window).ready(function(){
                 });
 })});
 
-// if $.getJSON('/twitter/',{'pic_id':$(".ui-page-active .id_val").val()}) returns False, show greyed out message bubble, else display shaded one
 
-// if $.getJSON('/twitter/',{'pic_id':$(".ui-page-active .id_val2").val()}) returns False, show greyed out message bubble, else display shaded one
+jQuery(window).pageinit(function(){
+		$.getJSON('/twitter/',
+		{'pic_id':$(".ui-page-active .id_val").val()},
+		function(data){
+			console.log(data);
+			if(data.twitter == true){
+				$(".speech-bubble-left").removeClass("speech-bubble-inactive");
+				$(".speech-bubble-left").addClass("speech-bubble-active");
+			}
+		}); 
+		
+			$.getJSON('/twitter/',
+			{'pic_id':$(".ui-page-active .id_val2").val()},
+			function(data){
+				console.log(data);
+				if(data.twitter == true){
+				$(".speech-bubble-right").removeClass("speech-bubble-inactive");
+					$(".speech-bubble-right").addClass("speech-bubble-active");
+				
+				}
+			});
+		
 
+});
 
 	    </script>  
 	</head>
@@ -217,11 +238,13 @@ jQuery(window).ready(function(){
 		<div data-role="page">
 		<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
 			<div class="ui-grid-a">
-				<div class="ui-block-a" style="margin-top:172px;">
-				<button type="button" data-theme="c" id="btnInit" style="height:100px;">Girls</button></div>
-			<div class="ui-grid-b" style="margin-top:172px;">
+				<div class="ui-block-a" style="margin-top:152px;">
+					<button type="button" data-theme="c" id="btnInit" style="height:100px;">Girls</button>
+</div>
+			<div class="ui-grid-b" style="margin-top:152px;">
 				<button type="button" data-theme="c" id="btnInit2" style="height:100px">Guys</button></div>
-<div style="margin-top:90px;font-size:12px;font-family:Helvetica Neue, HelveticaNeue, Arial, san-serif;text-align:center">Please ensure geolocation is enabled in your phone's settings.</div>
+				<hr style="margin-top:105px; box-shadow:0px -1px 3px rgba(0,0,0,0.4); border:0; height:2px; background-color:#78161A;">
+<div style="margin-top:10px;font-size:12px;font-family:Lato, Helvetica Neue, HelveticaNeue, Arial, san-serif;text-align:center; letter-spacing:0px; text-transform:none; color:#ddd; text-shadow:none;">Please ensure geolocation is enabled in your phone's settings.</div>
 
 
 				</div>
