@@ -317,7 +317,7 @@ def pickmessage(request):
         pass
     params={}
     params.update(csrf(request))
-    if request.GET['from_hon_screen']:
+    if request.GET['from_hon_screen']=='true':
         venue=request.GET['venue_id']
         image=request.GET['pic_id']
         t=user_lookup.objects.get(pic_id=image)
