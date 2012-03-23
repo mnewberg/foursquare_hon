@@ -306,8 +306,8 @@ def dialog(request, image):
 
 def pickmessage(request):
     fsq_id=request.session['fsq_id']
-    user=user.objects.get(fsq_id=fsq_id)
-    if len(user.photo)<=4:
+    the_user=user.objects.get(fsq_id=fsq_id)
+    if len(the_user.photo)<=4:
         return render_to_response('error.html')
     else:
         pass
@@ -392,7 +392,11 @@ def checkin(request):
 def missing(request):
     error=False
     phone=request.GET['phone']
-    source=request.GET['user']
+    try:
+        source=request.GET['user']
+    except:
+        source='recipient'
+    
     if len(re.sub('[^\d.]+','',phone))!=10:
         if source=='sender':
             return render_to_response('missing_sender.html',{'error':True})
