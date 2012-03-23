@@ -317,7 +317,7 @@ def pickmessage(request):
         venue=request.GET['venue_id']
         image=request.GET['pic_id']
         t=user_lookup.objects.get(pic_id=image)
-        token = user.token
+        token = the_user.token
         the_id=t.fsq_id
         finder = psq.UserFinder(authenticator)
         query = finder.findUser(token, the_id)
@@ -335,8 +335,8 @@ def pickmessage(request):
     return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue_id':target_v, 'csrf':params}, context_instance=RequestContext(request))
 
 def outreach(request):
-    t_handle=request.POST['t_handle']
     message=request.POST['message']
+    t_handle=request.POST['t_handle']
     venue=request.POST['venue_id']
     f_name=request.POST['f_name']
     v=authenticator.userless_query("/venues/"+venue)

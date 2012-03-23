@@ -67,7 +67,7 @@
 	                          }
 	                });
 	
-		$(".circle-outline").live("click", function(){
+		$(".speech-bubble-active").live("click", function(){
 			window.location = $(this).find('a').attr('href');
 		});
 		
@@ -111,7 +111,7 @@
 		<div class="ui-grid-a">
 		<div class="ui-block-a"> <!-- align="center"-->
                     <h4 class="galleryname" align="center"><!--<a href="http://tryfourplay.com/dialog/R4X1UXRUXHV3KQ2E.jpg" data-rel="dialog" class="ui-link"><img src="./gallery_files/magnify.png" border="0" valign="-2px" style="width:16px;padding-right:10px;margin-left:-30px"></a>--> {{ chickpix.0.1 }}</h4>
-                    <div align="center">
+                    <div align="center" class="overflow">
                             <a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch="" class="ui-link">
                                 <img id="img" src="http://img-s.foursquare.com/userpix_thumbs/{{ chickpix.0.0 }}" class="target galleryimage" align="center" style="border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;">
                             </a>
@@ -123,13 +123,13 @@
 						&nbsp;
                     </div>
                     <div class="circle-outline-larger eye-bubble-active eye-bubble-left fl">
-						<a href="/dialog/{{chickpix.0.0}}?venue_id={{chickpix.0.3}}" data-rel="dialog">&nbsp;</a>
+						<a href="/dialog/{{chickpix.0.0}}?venue_id={{chickpix.0.3}}&from_hon_screen=true" data-rel="dialog">&nbsp;</a>
                     </div>
 		</div>
                 
 		<div class="ui-block-b" align="center">
                     <h4 class="galleryname"><!--<a href="http://tryfourplay.com/dialog/OA25KPXSJAYUU0ZV.jpg" data-rel="dialog" class="ui-link"><img src="./gallery_files/magnify.png" border="0" valign="-2px" style="margin-left:-30px;width:16px;padding-right:10px;"></a>--> {{ chickpix.1.1 }}</h4>
-                    <div align="center">
+                    <div align="center" class="overflow">
                             <a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" class="ui-link">
                                     <img src="http://img-s.foursquare.com/userpix_thumbs/{{ chickpix.1.0 }}" class="target galleryimage" align="center"/>
                             </a>
