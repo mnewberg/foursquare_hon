@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <title>Fourplay</title>
 
-	<script src="http://fgnass.github.com/spin.js/spin.min.js"></script>
+	
 	<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css">
+  <link rel="stylesheet" href="http://getpostd.com/style/add2home.css">
+
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
@@ -16,7 +18,36 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="HandheldFriendly" content="true" />
 
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+var addToHomeConfig = {
+animationIn: 'fade',
+animationOut: 'bubble',
+lifespan:10000,
+expire:1440,
+touchIcon:true,
+message:'<b>Fourplay</b> is a fun way to discover and communicate with nearby people on Foursquare. All messages to {{first_name}} will mask your phone number.'
+};
 </script>
+<script type="application/javascript" src="http://getpostd.com/src/add2home.js" charset="utf-8"></script>
+
+
+
+
 
 </head>
 <body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
@@ -38,8 +69,6 @@
 			<a href="/login" data-ajax="false" data-role="button" data-theme="f">Message back via anonymous SMS</a>
 	
 		</div>
-		<div class="desc">
-		  Fourplay allows people to see who's checked in nearby and figure out the hottest places to go to meet new people. Anyone on Fourplay can send a message to someone checked in nearby on Foursquare and start a conversation over SMS that never reveals either user's phone number. It's free, only lasts 30 minutes, and is totally addicting.  </div>
 	</div>
                        
 
