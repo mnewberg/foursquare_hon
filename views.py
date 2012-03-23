@@ -145,6 +145,10 @@ def gallery(request, page):
 		for item in set(nearby_venues).intersection(set(trending_venues)):
 			del nearby_venues[item]
 		all_venues_nearby = nearby_venues.items() + trending_venues.items()	
+                if len(all_venues_nearby)<16:
+                    return render_to_response ('block.html')
+                else:
+                    pass
 		venue_names=[]
 		chickpix={}
                 backpix={}
@@ -308,7 +312,7 @@ def pickmessage(request):
     fsq_id=request.session['fsq_id']
     the_user=user.objects.get(fsq_id=fsq_id)
     if len(the_user.photo)<=4:
-        return render_to_response('error.html')
+        return render_to_response('error_photo.html')
     else:
         pass
     params={}
