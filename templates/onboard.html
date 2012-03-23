@@ -52,19 +52,26 @@ message:'<b>Fourplay</b> is a fun way to discover and communicate with nearby pe
 </head>
 <body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a">
-		<div data-role="header" data-theme="a">
-			<h1 style="letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none;">{{ first_name }} Messaged You!</h1>
+		<div data-role="header" data-theme="a" align="center">
+			<h1 style="letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none; width:100%" align="center">{{ first_name }} Messaged You!</h1>
 		</div>
 	
 		<div data-role="body" align="center">
-
-			<h1 style="text-transform:uppercase; font-family:Lato; font-size:14px; margin-bottom:20px;">They saw your check in @ {{venue}} and was like:</h1>
-			
+			<div style="width:80%;">
+			<h1 style="text-transform:uppercase; font-family:Lato; font-size:14px; margin-bottom:20px;">{{ first_name }} saw your check in @ {{venue}} and was like:</h1>
+			</div>
 			<img src="https://is1.4sqi.net/userpix/{{pic}}" style="max-width:220px; border:2px solid #c42e4d; z-index:-10;">
 			
 			<div class="messagesent">
 				<b id="sentnotch"></b>
-				<h2 id="sentmessage">{{ message }}</h2><br><h3>{{location}}-{{bio}}
+				<h2 id="sentmessage">{{ message }}</h2><br>
+				<div style="width:80%">
+					<h2 class="aboutheading" align="left">About {{ first_name }}</h2>
+					<ul data-role="listview" data-theme="d">
+						<li><h3 class="aboutinfo"><span style="font-family:Modern Pictograms; font-size:36px; font-weight:normal; margin-right:10px;">,</span>{{location}}</h3></li>
+						<li><div class="ui-li-desc"><h3 style="text-transform:none; letter-spacing:0px;"><span style="font-family:Modern Pictograms; font-size:36px;font-weight:normal; margin-right:10px;">t</span>{{bio}}</h3></div></li>
+					</ul>
+				</div>
 			</div>
 			<a href="/login" data-ajax="false" data-role="button" data-theme="f">Message back via anonymous SMS</a>
 	
