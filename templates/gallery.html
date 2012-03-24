@@ -71,7 +71,7 @@
 			window.location = $(this).find('a').attr('href');
 		});
 		
-		$(".circle-outline-larger").live("click", function(){
+		$(".eye-bubble-active").live("click", function(){
 			window.location = $(this).find('a').attr('href');
 		});
 		
@@ -98,8 +98,16 @@
 
 <div id="hotornot" data-role="page" data-theme="a">
 	<div data-role="header" align="center"> <!--  style="" class="ui-header ui-bar-a" role="banner" -->
-		<h1 style="font-size:16px; font-weight:bold; text-transform:none; width:100%; letter-spacing:0px;" class="ui-title" tabindex="0" role="heading" aria-level="1">Which one?</h1>
+		<h1 style="font-size:16px; font-family:Gotham Medium; font-weight:bold; text-transform:none; width:100%; letter-spacing:0px;" class="ui-title" tabindex="0" role="heading" aria-level="1">Which one?</h1>
 	</div>
+	
+	<div class="notifbg">
+		<div style="opacity:1; background:transparent;">
+			<h1 style="width: 90%; text-transform:none; letter-spacing:0px; text-shadow:0px -1px 1px rgba(0,0,0,0.6); font-family:Gotham; font-size:14px; padding-top:15px; padding-bottom:5px;">Zoom in if you need a closer look ;)</h1>
+		</div>
+	</div>
+	
+	
 	<div data-role="content" id="content2" align="center" class="ui-grid-a ui-content" role="main">
 		
 		{% if page > 4 %}
@@ -123,7 +131,7 @@
 						&nbsp;
                     </div>
                     <div class="circle-outline-larger eye-bubble-active eye-bubble-left fl">
-						<a href="/dialog/{{chickpix.0.0}}?venue_id={{chickpix.0.3}}&from_hon_screen=true" data-rel="dialog">&nbsp;</a>
+						<a href="/dialog/{{chickpix.0.0}}?venue_id={{chickpix.0.3}}&from_hon_screen=true" data-rel="dialog" data-transition="flip">&nbsp;</a>
                     </div>
 		</div>
                 
@@ -140,10 +148,12 @@
                         &nbsp;
                     </div>
                     <div class="circle-outline-larger eye-bubble-active eye-bubble-right fr">
-						<a href="/dialog/{{chickpix.1.0}}?venue_id={{chickpix.1.3}}" data-rel="dialog">&nbsp;</a>
+						<a href="/dialog/{{chickpix.1.0}}?venue_id={{chickpix.1.3}}" data-rel="dialog" data-transition="flip">&nbsp;</a>
                     </div>
 		</div>
-                
+{% if page > 4 %}
+                <a href="/results" data-role="button" data-theme="f" class="ribbon">Venues you'd like </a>
+{% endif %}
 		</div>
 		<input type="hidden" value="{{chickpix.0.0}}" class="id_val"/>
 		<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>

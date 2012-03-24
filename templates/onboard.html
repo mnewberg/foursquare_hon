@@ -53,27 +53,45 @@ message:'<b>Fourplay</b> is a fun way to discover and communicate with nearby pe
 <body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a">
 		<div data-role="header" data-theme="a" align="center">
-			<h1 style="letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none; width:100%" align="center">{{ first_name }} Messaged You!</h1>
+			<h1 style="font-family:Gotham Medium; letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none; width:100%" align="center">{{ first_name }} Messaged You!</h1>
 		</div>
 	
 		<div data-role="body" align="center">
-			<div style="width:80%;">
-			<h1 style="text-transform:uppercase; font-family:Lato; font-size:14px; margin-bottom:20px;">{{ first_name }} saw your check in @ {{venue}} and was like:</h1>
+			<div class="notifbg">
+				<div style="opacity:1; background:transparent;">
+					<h1 style="width: 90%; text-transform:none; letter-spacing:0px; text-shadow:0px -1px 1px rgba(0,0,0,0.6); font-family:Gotham; font-size:14px; padding-top:15px; padding-bottom:5px;">{{ first_name }} saw your check in @ {{venue}} and was like:</h1>
+				</div>
 			</div>
-			<img src="https://is1.4sqi.net/userpix/{{pic}}" style="max-width:220px; border:2px solid #c42e4d; z-index:-10;">
+			<img src="https://is1.4sqi.net/userpix/{{pic}}" style="max-width:255px; z-index:-10; border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;">
 			
 			<div class="messagesent">
 				<b id="sentnotch"></b>
 				<h2 id="sentmessage">{{ message }}</h2><br>
-				<div style="width:80%">
-					<h2 class="aboutheading" align="left">About {{ first_name }}</h2>
+			</div>
+			
+				<div style="width:80%; font-family:Gotham; margin-bottom:40px;">
+					<h2 class="aboutheading" align="left">Who is {{ first_name }}?</h2>
 					<ul data-role="listview" data-theme="d">
-						<li><h3 class="aboutinfo"><span style="font-family:Modern Pictograms; font-size:36px; font-weight:normal; margin-right:10px;">,</span>{{location}}</h3></li>
-						<li><div class="ui-li-desc"><h3 style="text-transform:none; letter-spacing:0px;"><span style="font-family:Modern Pictograms; font-size:36px;font-weight:normal; margin-right:10px;">t</span>{{bio}}</h3></div></li>
+						<li>
+							<div>
+								<div class="abouticon">,</div>
+								<div class="aboutinfo"><span class="aboutinfo">{{location}}</span></div>
+								<div style="clear:both";></div>
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="abouticon">t</div>
+								<div class="aboutinfo"><span class="aboutinfo">{{bio}}</span></div>
+								<div style="clear:both;"></div>
+							</div>
+						</li>
 					</ul>
 				</div>
-			</div>
-			<a href="/login" data-ajax="false" data-role="button" data-theme="f">Message back via anonymous SMS</a>
+				
+			<h2 class="aboutheading">Sounds cool. Continue the convo?</h2>
+
+			<a href="/login" data-ajax="false" data-role="button" data-theme="f" style="margin-bottom:20px;">Message back via anonymous SMS</a>
 	
 		</div>
 	</div>
