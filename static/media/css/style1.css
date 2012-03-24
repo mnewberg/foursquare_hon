@@ -46,9 +46,7 @@
 	margin-bottom:6px;
 } 
 
-.ribbon {
-        padding-top: 15px;
-}
+
 .lower_message {
         margin-top:250px;
 	margin-bottom:250px;
@@ -185,12 +183,14 @@ div.venues-youd-like-button:hover {
 		/*    margin-left: 25px; */
 			float:left;
 		    margin-top: -40px;
+		    margin-bottom: 10px;
 		}
 
 		div.speech-bubble-right {
 		/*    margin-right: 25px; */
 			float:right;
 		    margin-top: -40px;
+		    margin-bottom: 10px;
 		}
 
 		div.speech-bubble-active {
