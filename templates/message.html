@@ -37,8 +37,6 @@
 			<!--<input type="text" name="message" value="Or write your own message!" onclick="this.value=''"  data-theme="d"> -->
 			<input type="submit" value="submit message"  data-theme="f">
 		</form>
-
-	</div>
 <div align="center" class="lower_message"><form  action="/outreach" method="post">	
 <input type="text" name="message" value="write your own message!" onclick="this.value=''"  data-theme="d"><br>
 <input type="hidden" value="{{venue_id}}" name="venue_id">
@@ -46,7 +44,7 @@
 <input type="hidden" value="{{f_name}}" name="f_name">
 <input type="hidden" value="{{t_pic}}" name="t_pic">
 <input type="submit" value="submit message"  data-theme="f"></div>
-{% csrf_token %}
+{% csrf_token %}</div>
 </form>
 </body>
 
