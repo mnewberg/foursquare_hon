@@ -8,14 +8,13 @@
     <input type="text" name="number1" id="number1" maxlength="3" size="3"  /></td><td> - </td><td>
     <input type="text" name="number2" id="number2" maxlength="4" size="5" /></td></tr><tr><td colspan="6">
 <input type="submit" value="submit"></td></tr>
-{% if error %}
-<tr><td>
-<h1>Please enter a valid phone number!</h1></td></tr>
-{% endif %}
 <input type="hidden" name="user" value="sender">
 {% csrf_token %}
 </form>
-</table>
+</table><br>
+{% if error %}
+Please enter a valid phone number!
+{% endif %}
 </div>
 </div>
 </body>

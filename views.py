@@ -339,6 +339,9 @@ def pickmessage(request):
     return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue_id':target_v, 'csrf':params}, context_instance=RequestContext(request))
 
 def outreach(request):
+    params = {}
+    params.update(csrf(request))
+
     message=request.POST['message']
     t_handle=request.POST['t_handle']
     venue=request.POST['venue_id']
@@ -394,6 +397,9 @@ def checkin(request):
         return HttpResponseRedirect('http://tryfourplay.com')
 
 def missing(request):
+    params = {}
+    params.update(csrf(request))
+
     error=False
     phone=request.POST['area_code']+request.POST['number1']+request.POST['number2']
     try:
