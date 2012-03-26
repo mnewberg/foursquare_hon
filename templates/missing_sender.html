@@ -1,15 +1,22 @@
 <html>
 <body>
-<div data-role="page" data-theme="a">
-<div data-role="header" > We need your #!</div>
-<form action="/missing" method="get">
-<input type="text" name="phone"><br>
-<input type="hidden" name="user" value="sender">
-<input type="submit" value="submit">
+<div data-role="page" data-theme="a" id="missingnumber">
+<div data-role="header" align="center" style="line-height:50px; text-align:center;"> We need your #!</div>
+<div align="center" style="padding-top:100px;">
+<form action="/missing" method="post">
+<table align="center"><tr><td> (</td><td><input type="text" name="area_code" id="area_code" maxlength="3" size="3" /></td><td> ) - </td><td>
+    <input type="text" name="number1" id="number1" maxlength="3" size="3"  /></td><td> - </td><td>
+    <input type="text" name="number2" id="number2" maxlength="4" size="5" /></td></tr><tr><td colspan="6">
+<input type="submit" value="submit"></td></tr>
 {% if error %}
-<h1>Please enter a valid phone number!</h1>
+<tr><td>
+<h1>Please enter a valid phone number!</h1></td></tr>
 {% endif %}
+<input type="hidden" name="user" value="sender">
+{% csrf_token %}
 </form>
+</table>
+</div>
 </div>
 </body>
 </html>

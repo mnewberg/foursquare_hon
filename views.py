@@ -353,7 +353,7 @@ def outreach(request):
     if tweet_response and sender.phone:
         return render_to_response('sent.html')
     elif not sender.phone:
-        return render_to_response('missing_sender.html')
+        return render_to_response('missing_sender.html', {'csrf':params}, context_instance=RequestContext(request))
     else:
         return render_to_response('error.html')
 
@@ -395,15 +395,15 @@ def checkin(request):
 
 def missing(request):
     error=False
-    phone=request.GET['phone']
+    phone=request.POST['area_code']+request.POST['number1']+request.POST['number2']
     try:
-        source=request.GET['user']
+        source=request.POST['user']
     except:
         source='recipient'
     
     if len(re.sub('[^\d.]+','',phone))!=10:
         if source=='sender':
-            return render_to_response('missing_sender.html',{'error':True})
+            return render_to_response('missing_sender.html',{'error':True, 'csrf':params}, context_instance=RequestContext(request))
         else:
             return render_to_response('missing.html',{'error':True})
     else:
