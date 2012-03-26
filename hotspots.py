@@ -5,5 +5,5 @@ def hotspots(lat, lon):
 		if haversine(float(lat), float(lon), city[0],city[1])<city[2]:
 			newradius=city[3]
 		else:
-			pass
+			newradius=''
 	return newradius

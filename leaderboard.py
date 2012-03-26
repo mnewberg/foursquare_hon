@@ -10,9 +10,11 @@ def suggested_venues(fsq_id='', lat='', lon='', radius=''):
 		for venue in query:
 	      		if venue.venue_id not in newdict:
 				newdict[venue.venue_id]=[1,[venue.target.pic_id]]              
-			else:
+			elif venue.target.pic_id not in newdict[venue.venue_id][1]:
 				newdict[venue.venue_id][0]+=1
 				newdict[venue.venue_id][1].append(venue.target.pic_id)
+			else:
+				pass
 	else:
 		query = record.objects.filter(time__lt=time(), time__gt=time()-3600).order_by('venue_id')
 		for venue in query:
@@ -25,7 +27,7 @@ def suggested_venues(fsq_id='', lat='', lon='', radius=''):
 				newdict[venue.venue_id][0]+=1
 				newdict[venue.venue_id][1].append(venue.target.pic_id)
 			else:
-				pass					   
+				pass
 	sorted_vals=sorted(newdict.iteritems(), key=operator.itemgetter(1))
 	sorted_vals.reverse()
 	return sorted_vals[:5]

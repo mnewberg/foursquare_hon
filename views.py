@@ -129,8 +129,12 @@ def gallery(request, page):
                         trending_venues[item['id']]=item['name'],item['categories'][0]['name']
                     except:
                         trending_venues[item['id']]=item['name'],''
-                radius=request.GET['radius']
+                browser_radius=request.GET['radius']
 		radius=hotspots(float(lat), float(lon))
+                if not radius:
+                    radius=browser_radius
+                else:
+                    pass
                 request.session['radius']=radius
                 all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
