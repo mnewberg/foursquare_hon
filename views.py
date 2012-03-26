@@ -22,6 +22,7 @@ from id_gen import random_string
 from shout_twitter import send_twitter_shout, get_bio
 from sms.text import *
 from django.utils import simplejson
+from hotspots import hotspots
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
@@ -129,10 +130,7 @@ def gallery(request, page):
                     except:
                         trending_venues[item['id']]=item['name'],''
                 radius=request.GET['radius']
-		if haversine(float(lat), float(lon), 40.7587,-73.984509)<6 and radius<=10000:
-                    radius=2000
-                else:
-                    pass
+		radius=hotspots(float(lat), float(lon))
                 request.session['radius']=radius
                 all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
                 i=0
@@ -145,10 +143,10 @@ def gallery(request, page):
 		for item in set(nearby_venues).intersection(set(trending_venues)):
 			del nearby_venues[item]
 		all_venues_nearby = nearby_venues.items() + trending_venues.items()	
-                if len(all_venues_nearby)<16:
-                    return render_to_response ('block.html')
-                else:
-                    pass
+               ## if len(all_venues_nearby)<16:
+               ##     return render_to_response ('block.html')
+               ## else:
+               ##     pass
 		venue_names=[]
 		chickpix={}
                 backpix={}
