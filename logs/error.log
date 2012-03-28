@@ -959,3 +959,5 @@
 [Fri Mar 23 01:43:17 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=IKVF5VDSTVXJN2OVPQPBLJ4RBOFB03XPII3FC1NA1XJ0C1ZY
 [Sun Mar 25 17:13:07 2012] [error] [client 10.183.253.50] mod_wsgi (pid=7260): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=ZW152L213JXYCG0WPW2NLIH1QXBA5LT2QSHXAEII0K1XBUWJ
 [Sun Mar 25 17:13:07 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=ZW152L213JXYCG0WPW2NLIH1QXBA5LT2QSHXAEII0K1XBUWJ
+[Wed Mar 28 11:19:12 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21747): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/admin/gallery/twitter_outreach/
+[Wed Mar 28 11:19:12 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/admin/gallery/twitter_outreach/
