@@ -217,6 +217,9 @@ $("#hotornot").live('pageinit',function(){
 			if(data.twitter == true){
 				$(".speech-bubble-left").removeClass("speech-bubble-inactive");
 				$(".speech-bubble-left").addClass("speech-bubble-active");
+			} else {
+				$(".speech-bubble-left").removeClass("speech-bubble-active");
+				$(".speech-bubble-left").addClass("speech-bubble-inactive");
 			}
 		}); 
 		
@@ -225,9 +228,11 @@ $("#hotornot").live('pageinit',function(){
 			function(data){
 				console.log(data);
 				if(data.twitter == true){
-				$(".speech-bubble-right").removeClass("speech-bubble-inactive");
+					$(".speech-bubble-right").removeClass("speech-bubble-inactive");
 					$(".speech-bubble-right").addClass("speech-bubble-active");
-				
+				} else {
+					$(".speech-bubble-right").removeClass("speech-bubble-active");
+					$(".speech-bubble-right").addClass("speech-bubble-inactive");
 				}
 			});
 		
@@ -242,20 +247,22 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 	</head>
 	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 		<div data-role="page">
-		<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
-			<div class="ui-grid-a">
-				<div class="ui-block-a" style="margin-top:152px;">
-					<button type="button" data-theme="c" id="btnInit" style="height:100px;">Girls</button>
-</div>
-			<div class="ui-grid-b" style="margin-top:152px;">
-				<button type="button" data-theme="c" id="btnInit2" style="height:100px">Guys</button></div>
+			<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
+				<div class="ui-grid-a">
+					<div class="ui-block-a" style="margin-top:152px;">
+						<button type="button" data-theme="c" id="btnInit">Girls</button>
+					</div>
+				<div class="ui-grid-b" style="margin-top:152px;">
+					<button type="button" data-theme="c" id="btnInit2">Guys</button>
+				</div>
+				
 				<hr style="margin-top:105px; box-shadow:0px -1px 3px rgba(0,0,0,0.2); border:0; height:2px; background-color:#78161A; width:80%;">
-<div style="margin-top:10px;font-size:13px;font-family:Gotham Medium, Lato, Helvetica Neue, HelveticaNeue, Arial, san-serif;text-align:center; letter-spacing:0px; text-transform:none; color:#ddd; text-shadow:none;">Please ensure geolocation is enabled in your phone's settings.</div>
+				
+				<div class="geolocmsg">Please ensure geolocation is enabled in your phone's settings.</div>
 
 
-				</div>
-							
-					
-				</div>
+			</div>			
+		</div>
 	</body>
+	
 	</html>
