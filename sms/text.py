@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from twilio.rest import TwilioRestClient
 import settings
 from models import routing, avail_DIDs, log
-from gallery.models import user, twitter_outreach
+from gallery.models import user, twitter_outreach, user_lookup
 from time import time
 
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
@@ -19,7 +19,11 @@ def advanceDID(phone):
 
 def callback(request):
 	f_id=request.session['fsq_id']
-	uid=request.session['uid']
+	try: 
+		uid=request.session['uid']
+	except:
+		uid=twitter_outreach.objects.filter(m_target=user_lookup.objects.get(fsq_id=f_id), read=False)[0].uid
+		return HttpResponseRedirect("/message/"+uid)
 	outreach=twitter_outreach.objects.get(uid=uid)
 	outreach.read=True
 	outreach.save()

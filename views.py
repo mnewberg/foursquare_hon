@@ -55,30 +55,44 @@ def second(request):
         ## onboarded user wants to unsubscribe, reroute flow
         if 'unsubscribe' in request.session:
             u=user_lookup.objects.get(fsq_id=f_id)
-            t=twitter_outreach.objects.get(m_target=u)
-            if t.m_target.fsq_id==f_id:
-                 u.unsubscribed=True
-                 u.save()
-                 return HttpResponse("Unsubscribe successful")
-            else:
+            try: 
+                t=twitter_outreach.objects.get(m_target=u)
+                if t.m_target.fsq_id==f_id:
+                    u.unsubscribed=True
+                    u.save()
+                    return HttpResponse("Unsubscribe successful")
+                else:
+                    pass
+            except:
                  pass
+        else:
+            pass
         ## onboarded user wants to block particular user, reroute flow
         if 'block' in request.session:
             uid=request.session['uid']
-            t=twitter_outreach.objects.get(uid=uid)
-            u=user_lookup.objects.get(fsq_id=t.m_target.fsq_id)
-            u.blocks.add(user.objects.get(fsq_id=t.sender.fsq_id))
-            u.save()
-            return HttpResponse("You will no longer receive messages from this user")
+            try:
+                t=twitter_outreach.objects.get(uid=uid)
+                if t.m_target.fsq_id==f_id:
+                    u=user_lookup.objects.get(fsq_id=t.m_target.fsq_id)
+                    u.blocks.add(user.objects.get(fsq_id=t.sender.fsq_id))
+                    u.save()
+                    return HttpResponse("You will no longer receive messages from this user")
+                else:
+                    pass
+            except:
+                pass
         else:
             pass
-
 	finder = psq.UserFinder(authenticator)
 	query = finder.findUser(token, f_id)
 	request.session['fsq_id']=f_id
         request.session.set_expiry(0)
         last_name=query.last_name()
         showmessage=True
+        if 'uid' in request.session:
+            uidsesh=True
+        else:
+            uidsesh=False
         try:
             user_look=user_lookup.objects.get(fsq_id=f_id)
             unread=twitter_outreach.objects.filter(m_target=user_look, read=False).count()
@@ -100,9 +114,9 @@ def second(request):
                 has_shared=u.has_shared
                 u.save()
                 return render_to_response('loc.html', {'has_shared':has_shared})
-        elif unread and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
+        elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
-	elif unread>0 and user.objects.filter(fsq_id=f_id).count()==0:
+	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token)
                 if not query.phone():
                     return render_to_response('missing.html')
@@ -400,7 +414,7 @@ def onboard(request, uid):
     venue_name=v['venue']['name']
     
     request.session['uid']=uid
-    request.session.set_expiry(0)
+    request.session.set_expiry(120)
     return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio})
 
 def notice(request):
@@ -447,13 +461,17 @@ def missing(request):
 
 def unsubscribe(request):
     request.session['unsubscribe']=True
-    return HttpResponse("unsubbed")
+    request.session.set_expiry(120)
+    uri = authenticator.authorize_uri()
+    return HttpResponseRedirect(uri)
 
 def block(request):
     uid=request.session['uid']
     request.session['block']=True
+    request.session.set_expiry(120)
     t=twitter_outreach.objects.get(uid=uid)
     u=user_lookup.objects.get(fsq_id=t.m_target.fsq_id)
     u.blocks.add(user.objects.get(fsq_id=t.sender.fsq_id))
     u.save()
-    return HttpResponse("blocked "+t.sender.fsq_id)
+    uri = authenticator.authorize_uri()
+    return HttpResponseRedirect(uri)
