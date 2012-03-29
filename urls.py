@@ -35,6 +35,8 @@ urlpatterns = patterns('',
     url(r'^incoming$','sms.text.incoming'),
     url(r'^missing$','views.missing'),
     url(r'^twitter/$','views.has_twitter'),
+    url(r'^unsub/$','views.unsubscribe'),
+    url(r'^block/$','views.block'),
     # Examples:
     # url(r'^$', 'twilio.views.home', name='home'),
     # url(r'^twilio/', include('twilio.foo.urls')),

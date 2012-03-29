@@ -14,7 +14,8 @@ class recordAdmin(admin.ModelAdmin):
 
 class user_lookupAdmin(admin.ModelAdmin):
     list_display=('pic_id','t_handle')
-
+    filter_horizontal=('blocks',)
+    
 class routingAdmin(admin.ModelAdmin):
     list_display=('sender','recipient','DID')
     list_filter=('sender','DID',)

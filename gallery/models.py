@@ -42,7 +42,7 @@ class user_lookup(models.Model):
 	fsq_id=models.CharField(max_length=30)
 	pic_id=models.CharField(max_length=30, primary_key=True)	
 	unsubscribed=models.BooleanField(default=False)
-	blocks=models.ForeignKey(user)
+	blocks=models.ManyToManyField(user, null=True)
 	def __unicode__(self):
 		return self.fsq_id
 		

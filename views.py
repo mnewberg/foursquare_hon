@@ -52,6 +52,27 @@ def second(request):
 	token=authenticator.set_token(request.GET['code'])
       	da_id=authenticator.query("/users/self", token, None)
 	f_id=da_id['user']['id']
+        ## onboarded user wants to unsubscribe, reroute flow
+        if 'unsubscribe' in request.session:
+            u=user_lookup.objects.get(fsq_id=f_id)
+            t=twitter_outreach.objects.get(m_target=u)
+            if t.m_target.fsq_id==f_id:
+                 u.unsubscribed=True
+                 u.save()
+                 return HttpResponse("Unsubscribe successful")
+            else:
+                 pass
+        ## onboarded user wants to block particular user, reroute flow
+        if 'block' in request.session:
+            uid=request.session['uid']
+            t=twitter_outreach.objects.get(uid=uid)
+            u=user_lookup.objects.get(fsq_id=t.m_target.fsq_id)
+            u.blocks.add(user.objects.get(fsq_id=t.sender.fsq_id))
+            u.save()
+            return HttpResponse("You will no longer receive messages from this user")
+        else:
+            pass
+
 	finder = psq.UserFinder(authenticator)
 	query = finder.findUser(token, f_id)
 	request.session['fsq_id']=f_id
@@ -423,3 +444,16 @@ def missing(request):
         return render_to_response('sent.html')
     else:
         return HttpResponseRedirect('/login')
+
+def unsubscribe(request):
+    request.session['unsubscribe']=True
+    return HttpResponse("unsubbed")
+
+def block(request):
+    uid=request.session['uid']
+    request.session['block']=True
+    t=twitter_outreach.objects.get(uid=uid)
+    u=user_lookup.objects.get(fsq_id=t.m_target.fsq_id)
+    u.blocks.add(user.objects.get(fsq_id=t.sender.fsq_id))
+    u.save()
+    return HttpResponse("blocked "+t.sender.fsq_id)
