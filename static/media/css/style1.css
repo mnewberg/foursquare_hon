@@ -245,9 +245,9 @@ div.venues-youd-like-button:hover {
 		div.eye-bubble-active,
 		div.eye-bubble-inactive:hover {
 		/*    background: #fff url(http://c4261091.r91.cf2.rackcdn.com/Eye.png) center 22px no-repeat; */
-		    background: #fff url(http://c4261091.r91.cf2.rackcdn.com/Eye.png) center no-repeat;
-			background-position:top 5px;
-			background-size:40px;
+			background: #fff url(http://c4261091.r91.cf2.rackcdn.com/Eye.png) center 2px no-repeat;
+			background-position:5px 13px;
+			background-size:35px;
 		}
 
 		div.eye-bubble-inactive {
@@ -1572,6 +1572,7 @@ div.aboutinfo{
 	color: 					#333333 /*{e-body-color}*/;
 	text-shadow: 0 /*{e-body-shadow-x}*/ 1px /*{e-body-shadow-y}*/ 0 /*{e-body-shadow-radius}*/ 	#fff /*{e-body-shadow-color}*/;
 	background: 			#9D0010 /*{e-body-background-color}*/;
+	background: #4b000f;
 	box-shadow:0px 1px 1px rgba(0,0,0,0.4);
 	width:94%!important;
 }

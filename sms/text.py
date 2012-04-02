@@ -44,7 +44,7 @@ def callback(request):
 	else:
 		curr_outgoing_did=avail_DIDs.objects.get(id=1)
 	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body="Message from Fourplay: responding to this number for the next 30 minutes will forward all messages to " + logged_in_user.first_name + ".")
-	return HttpResponse('success')
+	return render_to_response('connecting.html')
 
 @csrf_exempt
 def incoming(request):

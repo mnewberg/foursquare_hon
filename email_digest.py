@@ -7,7 +7,7 @@ from haversine import *
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 
-def email(lat,lon, radius):
+def htmlemail(lat,lon, radius):
 	recipients=user.objects.filter(last_lat__lt=lat+5, last_lat__gt=lat-5, last_lon__lt=lon+5, last_lon__gt=lon-5)
 	recips={}
 	for recipient in recipients:
@@ -46,4 +46,4 @@ def email(lat,lon, radius):
 			pass
 	for item in the_set:
 		the_set[item].append(averages[item])
-	return the_set, recips
+	return the_set
