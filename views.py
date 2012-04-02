@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
-from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach
+from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
@@ -40,6 +40,7 @@ def home(request):
 
 def login(request):
         uri = authenticator.authorize_uri()
+        request.session['invite_code']=request.GET['invite_code']
 	return HttpResponseRedirect(uri)
 
 def scrub(name):
@@ -49,7 +50,11 @@ def scrub(name):
         pass
 
 def second(request):
-	token=authenticator.set_token(request.GET['code'])
+        try:
+            invite_code=request.session['invite_code']
+	except:
+            invite_code=''
+        token=authenticator.set_token(request.GET['code'])
       	da_id=authenticator.query("/users/self", token, None)
 	f_id=da_id['user']['id']
         ## onboarded user wants to unsubscribe, reroute flow
@@ -107,7 +112,7 @@ def second(request):
             user_look=user_lookup.objects.get(fsq_id=f_id)
         except:
             user_look=False
-        if showmessage==False and user_look!=False:
+        if showmessage==False and user_look!=False and invite_codes.objects.filter(code=invite_code).count()==1:
                 u=user.objects.get(fsq_id=f_id)
                 u.token=token
                 u.photo=query.photo()[37:]
@@ -135,10 +140,12 @@ def second(request):
 		u.save()
 		return render_to_response('loc.html', {'has_shared':has_shared})
 ##RETURNING USER
-	else:
+	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
 		return render_to_response('loc.html')
+        else:
+                return render_to_response('wait.html')
 
     
 def gallery(request, page):
