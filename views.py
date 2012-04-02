@@ -40,7 +40,10 @@ def home(request):
 
 def login(request):
         uri = authenticator.authorize_uri()
-        request.session['invite_code']=request.GET['invite_code']
+        try:
+            request.session['invite_code']=request.GET['invite_code']
+        except:
+            pass
 	return HttpResponseRedirect(uri)
 
 def scrub(name):
@@ -394,6 +397,10 @@ def outreach(request):
     venue_name=v['venue']['name']
     uid=random_string(5)
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
+    if datarget.unsubscribed==True:
+        return render_to_respons('error.html')
+    else:
+        pass
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False, venue_id=venue)
     tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid)
