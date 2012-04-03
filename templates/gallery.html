@@ -1,0 +1,170 @@
+
+<!-- saved from url=(0032)http://tryfourplay.com/gallery/6 -->
+<html class="ui-mobile">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://tryfourplay.com/gallery/7">-->
+			
+		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css">
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+		
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="HandheldFriendly" content="true">
+
+		
+	
+	<script>
+
+
+
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-29130143-1']);
+	  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+
+
+	jQuery(window).ready(function(){
+	    jQuery("#person1").live("click",function(){
+	                $.ajax({
+	type: "POST",
+	url: "/rating/",
+	                data:{
+	        chosen_id:$(".ui-page-active .id_val").val(),
+	pic_id2:$(".ui-page-active .id_val2").val(),
+	        venue_id:$(".ui-page-active .venue1").val(),
+	                                venue_id2:$(".ui-page-active .venue2").val(),
+	                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\                                                                    
+	en']").val()
+	                          }
+	});
+	})});
+
+	jQuery(window).ready(function(){
+	    jQuery("#person2").live("click",function(){
+	$.ajax({
+	type: "POST",
+	url: "/rating/",
+	                data:{
+	                chosen_id:$(".ui-page-active .id_val2").val(),
+	        pic_id2:$(".ui-page-active .id_val").val(),
+	                                venue_id2:$(".ui-page-active .venue2").val(),
+	venue_id:$(".ui-page-active .venue1").val(),
+	csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\                                                            
+	en']").val()
+	                          }
+	                });
+	
+		$(".speech-bubble-active").live("click", function(){
+			window.location = $(this).find('a').attr('href');
+		});
+		
+		$(".eye-bubble-active").live("click", function(){
+			window.location = $(this).find('a').attr('href');
+		});
+		
+
+	
+	})});
+
+
+
+
+
+	</script>
+	
+	
+	<style type="text/css">
+
+	
+	
+	</style>
+
+<title>Which one?</title>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+
+<div id="hotornot" data-role="page" data-theme="a">
+	<div data-role="header" align="center"> <!--  style="" class="ui-header ui-bar-a" role="banner" -->
+		<h1 style="font-size:16px; font-family:Gotham Medium; font-weight:bold; text-transform:none; width:100%; letter-spacing:0px;" class="ui-title" tabindex="0" role="heading" aria-level="1">Which one?</h1>
+	</div>
+	
+{% if page < 6 %}
+	<div class="notifbg">
+		<div style="opacity:1; background:transparent;" align="center">
+		  <h1 style="width: 90%; text-transform:none; letter-spacing:0px; text-shadow:0px -1px 1px rgba(0,0,0,0.6); font-family:Gotham; font-size:14px; padding-top:15px; padding-bottom:5px;" align="center">{% if page >= 0 and page < 2 %}Click <img src="http://c4261091.r91.cf2.rackcdn.com/Eye.png" style="max-height:10px;"> if you need a closer look ;){% endif %}{% if page == 2 %}To message someone click <img src="http://c4261091.r91.cf2.rackcdn.com/Speech-Bubble-Active.png" style="max-height:20px;">{% endif %}{% if page >= 3 and page < 6 %}The more you click, the better venue recommendations you'll get!{% endif %}</h1>
+		</div>
+	</div>{% endif %}
+	
+	
+	<div data-role="content" id="content2" align="center" class="ui-grid-a ui-content" role="main">
+		
+		{% if page > 4 %}
+<img id="Image-Maps_9201202271159141" usemap="#Image-Maps_9201202271159141" src="http://c4261091.r91.cf2.rackcdn.com/checkout_corner.png" style="position:absolute;top:0;right:0px;max-width:200px;" border="0" class="ribbon_corner"><map id="_Image-Maps_9201202271159141" name="Image-Maps_9201202271159141">
+<area shape="poly" coords="247,141,1,1,100,1,247,89," onClick="show_confirm()" ></map>
+		{% endif %}
+		
+		
+		<div class="ui-grid-a"  style="margin-bottom:30px;">
+		<div class="ui-block-a"> <!-- align="center"-->
+                    <h4 class="galleryname" align="center"><!--<a href="http://tryfourplay.com/dialog/R4X1UXRUXHV3KQ2E.jpg" data-rel="dialog" class="ui-link"><img src="./gallery_files/magnify.png" border="0" valign="-2px" style="width:16px;padding-right:10px;margin-left:-30px"></a>--> {{ chickpix.0.1 }}</h4>
+                    <div align="center" class="overflow">
+                            <a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" data-prefetch="" class="ui-link">
+                                <img id="img" src="https://is1.4sqi.net/userpix_thumbs/{{ chickpix.0.0 }}" class="target galleryimage" align="center" style="border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;">
+                            </a>
+                            <!--<img src="http://getpostd.com/images/or.png" style="float: right;position:absolute;margin-top:15%;margin-right:-10px;z-index:1000">-->
+                    </div>
+<h6 class="gallerylocation">at {{ chickpix.0.2 }} {{chickpix.0.4}}</h6>
+                    <br><br><br> {% if page > 0 %}
+  					<div class="circle-outline speech-bubble-inactive speech-bubble-left fl"><a href="/pickmessage/?venue_id={{chickpix.0.3}}&pic_id={{chickpix.0.0}}&from_hon_screen=true">
+						&nbsp;
+                    </div>
+                    <div class="circle-outline-larger eye-bubble-active eye-bubble-left fl">
+						<a href="/dialog/{{chickpix.0.0}}?venue_id={{chickpix.0.3}}&from_hon_screen=true" data-rel="dialog" data-transition="flip">&nbsp;</a>
+                    </div> {% endif %}
+		</div>
+                
+		<div class="ui-block-b" align="center">
+                    <h4 class="galleryname"><!--<a href="http://tryfourplay.com/dialog/OA25KPXSJAYUU0ZV.jpg" data-rel="dialog" class="ui-link"><img src="./gallery_files/magnify.png" border="0" valign="-2px" style="margin-left:-30px;width:16px;padding-right:10px;"></a>--> {{ chickpix.1.1 }}</h4>
+                    <div align="center" class="overflow">
+                            <a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" class="ui-link">
+                                    <img src="https://is1.4sqi.net/userpix_thumbs/{{ chickpix.1.0 }}" class="target galleryimage" align="center"/>
+                            </a>
+                    </div>
+					  <h6 class="gallerylocation">at {{chickpix.1.2}} {{ chickpix.1.4 }}</h6>
+                    <br><br><br>
+                   {% if page > 0 %} <div class="circle-outline speech-bubble-inactive speech-bubble-right fr"><a href="/pickmessage/?venue_id={{chickpix.1.3}}&pic_id={{chickpix.1.0}}&from_hon_screen=true">
+                        &nbsp;
+                    </div>
+                    <div class="circle-outline-larger eye-bubble-active eye-bubble-right fr" style="margin-bottom:10px;">
+						<a href="/dialog/{{chickpix.1.0}}?venue_id={{chickpix.1.3}}" data-rel="dialog" data-transition="flip">&nbsp;</a>
+                    </div> {% endif %}
+
+		</div>
+
+{% if page > 1 %}
+                <a href="/results" data-role="button" data-theme="f" class="ribbon" style="padding-top:50px; margin-top:20px;">Venues you'd like</a>
+{% endif %}
+
+
+		</div>
+		<input type="hidden" value="{{chickpix.0.0}}" class="id_val"/>
+		<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>
+		<input type="hidden" value="{{chickpix.0.3}}" class="venue1"/>
+		<input type="hidden" value="{{chickpix.1.3}}" class="venue2"/>
+		{% csrf_token %}
+	</div>
+        <br clear="all" />
+</div></body></html>

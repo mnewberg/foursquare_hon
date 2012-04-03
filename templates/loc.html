@@ -1,0 +1,268 @@
+<html>
+
+<head>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://fgnass.github.com/spin.js/dist/spin.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
+		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css" />
+		
+<!--		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/customswatch.css" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="HandheldFriendly" content="true" />
+
+
+
+<STYLE TYPE="text/css">
+
+
+@media screen and (max-width: 320px) {
+.overflow{ 
+width:120px;
+overflow:hidden;
+align:center;
+}
+
+.target{
+
+margin-left:-40px;
+
+}
+
+.ribbon_corner{
+visibility:hidden;
+}
+
+.dialog_image{
+max-width:180px;
+}
+.poptitle{
+font-size:14px;
+
+}
+}
+@media screen and (min-width:321px){
+.overflow{
+         width:200px;
+         overflow:hidden;
+
+}
+
+.dialog_image{
+max-width:400px;}
+
+.poptitle{
+font-size:16px;}
+
+.ribbon{
+visibility:hidden;
+}
+
+}
+
+</style>
+
+	  <form name="MyForm" id="MyForm" action="/gallery/0" method="get">
+
+		<input type=hidden name="lat" id="lat">
+		<input type=hidden name="lon" id="lon">
+		<input type=hidden name="gender" id="gender">
+		<input type=hidden name="radius" id="radius" value="10000">
+
+	 </form>
+
+	     <script>
+{% if not has_shared %}
+  function show_confirm()
+{
+var r=confirm("Fourplay will now Checkin to the app for friends to see. This checkin may be sent to Twitter or Facebook.");
+if (r==true)
+  {
+  $.mobile.changePage("/results");
+  }
+else
+  {
+  parent.close();
+  }
+}
+
+{% else %}
+
+function show_confirm(){
+$.mobile.changePage("/results");
+}
+
+{% endif %}
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+	
+	        jQuery(window).ready(function(){  
+	            jQuery("#btnInit").click(initiate_geolocation);  
+	        });
+	                jQuery(window).ready(function(){  
+	            jQuery("#btnInit2").click(initiate_geolocation_male);  
+	        });  
+
+
+	        function initiate_geolocation() {  
+	            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
+	        }
+
+
+	        function initiate_geolocation_male() {  
+	            navigator.geolocation.getCurrentPosition(handle_geolocation_query_male,handle_errors);  
+	        }  
+
+
+	        function handle_errors(error)  
+	        {  
+	            switch(error.code)  
+	            {  
+	                case error.PERMISSION_DENIED: alert("you did not share geolocation data!");  
+	                break;  
+
+	                case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+	                break;  
+
+	                case error.TIMEOUT: alert("retrieving position timed out");  
+	                break;  
+
+	                default: alert("unknown error");  
+	                break;  
+	            }  
+	        }
+					
+	
+
+	                function handle_geolocation_query(position){
+	                var lat=position.coords.latitude
+	                var lon=position.coords.longitude 
+				
+
+	                  	$('input[name=lat]').val(lat);
+						$('input[name=lon]').val(lon);
+						$('input[name=gender]').val('female')
+						$('#MyForm').submit();  
+                $.mobile.loadingMessage = "Loading up lots of chicks... please be patient!";
+
+					}
+
+					function handle_geolocation_query_male(position){					
+		                var lat=position.coords.latitude
+		                var lon=position.coords.longitude 
+
+
+	                  	$('input[name=lat]').val(lat);
+						$('input[name=lon]').val(lon);
+						$('input[name=gender]').val('male')
+						$('#MyForm').submit();
+		$.mobile.loadingMessage = "Loading up lots of dudes... please be patient!";
+  
+
+					}
+
+
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val").val(),
+                                pic_id2:$(".ui-page-active .id_val2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                          }
+		});
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+                $.ajax({
+		type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val2").val(),
+                                pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+		                        csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                          }
+                });
+})});
+
+
+$("#hotornot").live('pageinit',function(){
+		$.getJSON('/twitter/',
+		{'pic_id':$(".ui-page-active .id_val").val()},
+		function(data){
+			console.log(data);
+			if(data.twitter == true){
+				$(".speech-bubble-left").removeClass("speech-bubble-inactive");
+				$(".speech-bubble-left").addClass("speech-bubble-active");
+			} else {
+				$(".speech-bubble-left").removeClass("speech-bubble-active");
+				$(".speech-bubble-left").addClass("speech-bubble-inactive");
+			}
+		}); 
+		
+			$.getJSON('/twitter/',
+			{'pic_id':$(".ui-page-active .id_val2").val()},
+			function(data){
+				console.log(data);
+				if(data.twitter == true){
+					$(".speech-bubble-right").removeClass("speech-bubble-inactive");
+					$(".speech-bubble-right").addClass("speech-bubble-active");
+				} else {
+					$(".speech-bubble-right").removeClass("speech-bubble-active");
+					$(".speech-bubble-right").addClass("speech-bubble-inactive");
+				}
+			});
+		
+
+});
+
+$("#missingnumber").live('pageinit',function() {
+$('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');});
+
+
+	    </script>  
+	</head>
+	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+		<div data-role="page">
+			<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
+				<div class="ui-grid-a">
+					<div class="ui-block-a" style="margin-top:152px;">
+						<button type="button" data-theme="c" id="btnInit">Girls</button>
+					</div>
+				<div class="ui-grid-b" style="margin-top:152px;">
+					<button type="button" data-theme="c" id="btnInit2">Guys</button>
+				</div>
+				
+				<hr style="margin-top:105px; box-shadow:0px -1px 3px rgba(0,0,0,0.2); border:0; height:2px; background-color:#78161A; width:80%;">
+				
+				<div class="geolocmsg">Please ensure geolocation is enabled in your phone's settings.</div>
+
+
+			</div>			
+		</div>
+	</body>
+	
+	</html>

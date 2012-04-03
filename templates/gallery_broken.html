@@ -1,0 +1,75 @@
+
+<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://tryfourplay.com/gallery/7">--><base href=".">
+		<script type="text/javascript" async="" src="http://c4261091.r91.cf2.rackcdn.com/ga.js"></script><script src="http://c4261091.r91.cf2.rackcdn.com/jquery-1.7.1.min.js"></script>
+		<script src="http://c4261091.r91.cf2.rackcdn.com/spin.min.js"></script><link type="text/css" rel="stylesheet" href="data:text/css,">
+		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.mobile-1.0.min.js"></script>
+		<link rel="stylesheet" href="http://getpostd.com/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="HandheldFriendly" content="true">
+
+
+<link rel="stylesheet" href="http://c4261091.r91.cf2.rackcdn.com/wes_css.css" />
+
+<title>Which one?</title>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);" class="ui-mobile-viewport">
+
+	<script type="text/javascript" src="js_temp_dump.js"></script>  
+	
+<div id="tc_container" style="display: none" data="ih">
+</div>
+<div style="display: none; " id="hiddenlpsubmitdiv">
+</div>
+<script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); form.lpsubmitorig2(); } } }}catch(e){}</script>
+<div data-role="page" data-theme="a" style="background-color:#A00E20" data-url="/gallery/8" data-external-page="true" tabindex="0" class="ui-page ui-body-a">
+	<div data-role="header" style="" class="ui-header ui-bar-a" role="banner">
+		<h1 style="letter-spacing:1px; font-size:14px; font-weight:bold;" class="ui-title" tabindex="0" role="heading" aria-level="1">Hot or Not?</h1>
+	</div>
+	<div data-role="content" id="content2" align="center" class="ui-grid-a ui-content" role="main">
+		<a href="http://tryfourplay.com/results" class="ui-link">
+                    <!--<img src="./gallery_files/checkout_diag.png" style="position:absolute;top:0;right:0px;max-width:200px;" border="0" class="ribbon_corner">-->
+                     {% if  page > 4 %}
+					<div class="venues-youd-like-button">
+                        Venues You'd Like
+                    </div>
+					{% endif %}
+					{% csrf_token %}
+					
+                </a>
+		<div class="ui-block-a" align="center">
+			<h4 style="text-align:center;margin-top:1px;margin-bottom:12px;">
+                            <!--<a href="http://tryfourplay.com/dialog/S1JHLJHNQVU1VKLN.jpg" data-rel="dialog" class="ui-link">
+                                <img src="./gallery_files/magnify.png" border="0" valign="-2px" style="width:16px;padding-right:10px;margin-left:-30px">
+                            </a>-->
+                            {{ chickpix.0.1 }}
+                        </h4>
+			<div>
+				<a id="person1" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" class="ui-link">
+				<img id="img" src="http://img-s.foursquare.com/userpix_thumbs/{{ chickpix.0.0 }}" class="target" style="height:150px" align="center">
+				</a>
+			</div>
+			<br>
+			<h6 style="word-wrap:break-word;margin-top:2px;max-width:70%;text-align:center">at {{chickpix.0.5}} Park</h6>
+		</div>
+		<div class="ui-block-b" align="center">
+			<h4 style="text-align:center;margin-top:1px;margin-bottom:12px;"><!--<a href="http://tryfourplay.com/dialog/IKE1KFC0N1YFKHKK.jpg" data-rel="dialog" class="ui-link"><img src="./gallery_files/magnify.png" border="0" valign="-2px" style="margin-left:-30px;width:16px;padding-right:10px;"></a>-->{{ chickpix.1.1 }}
+            </h4>
+			<div>
+				<a id="person2" href="/gallery/{{ page|add:"1"  }}" data-transition="slide" class="ui-link">
+				<img src="http://img-s.foursquare.com/userpix_thumbs/{{ chickpix.1.0 }}" style="height:150px" class="target" align="center">
+				</a>
+			</div>
+			<br>
+			<h6 style="margin-top:2px;max-width:70%;text-align:center;word-wrap:break-word;">at  {{ chickpix.1.5 }}</h6>
+		</div>
+		<input type="hidden" value="{{chickpix.0.0}}" class="id_val"/>
+		<input type="hidden" value="{{chickpix.1.0}}" class="id_val2"/>
+		<input type="hidden" value="{{chickpix.0.3}}" class="venue1"/>
+		<input type="hidden" value="{{chickpix.1.3}}" class="venue2"/>
+	</div>
+</div>
+	<br />
+</body></html>

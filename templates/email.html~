@@ -1,0 +1,96 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/email.css">
+
+</head>
+
+<body>
+  <div class="page">
+    
+    <p style="float:left; margin-top:70px; color:#ddd;"><b>Loading wonky? View it in your web browser.</b></p>
+    <img src="http://c4261091.r91.cf2.rackcdn.com/4plogo-noeffect.png" style="float:right; width:200px; margin-top:30px;">
+    
+    <div class="clear"></div>
+
+    <div class="contentcontainer"> <!-- white content background -->
+      
+      <div style="padding:30px;">
+	
+	<div class="ratingpic">
+	  <img src="img.jpg" /> <!-- user's image goes here -->
+	</div>
+	
+	<div class="ratinginfo">
+	  
+	  <h2>Hey there ! Here's how you did this week:</h2>
+	  
+	  <div class="statboxwrapper" style="margin-left:5px;">
+	    <div class="statbox">
+	      <h3>You rated</h3>
+	      <h1></h1>
+	      </div>
+	    </div>
+	  
+	  <div class="statboxwrapper">
+	    <div class="statbox">
+	      <h3>Times shown</h3>
+	      <h1></h1>
+	      </div>
+	    </div>
+	  
+	  <div class="statboxwrapper">
+	    <div class="statbox">
+	      <h3>Liked by</h3>
+	      <h1> rating </h1>
+	      </div>
+	    </div>
+
+
+	  </div>
+	
+	<div class="clear"></div>
+	
+	</div>
+      
+      <hr class="divider" style="margin-top:-10px;">
+      
+      <div class="content">
+	
+	<h2>Hottest venues this week</h2>
+	<p style="margin-top:-10px;">These spots had the most attractive people based on your ratings:</p>
+	
+	{% for venue in dadict.values %}
+	<div class="venuewrapper">
+	  <div class="venuename">
+	    <h2>{{ venue.0 }}</h2>
+	    <p>{{ venue.1 }}</p>
+	    </div>
+	  
+	  <div class="venuepics">
+	    {% for gender, pix in venue.4.1.items %}
+	    <!-- {{gender}} -->   
+	    {% if pix|length > 0 %}
+	    <ul> <!-- girl pictures go here -->
+	      {% for image in pix %}
+	      <li><img src="https://is1.4sqi.net/userpix/"{{image}}>		</li>{% endfor %}
+	      </ul>
+	    {% endif %}
+{% endfor %}	  
+	  <div class="clear"></div>
+	  </div>
+	
+	
+      </div>
+      <hr class="divider" style="margin-top:30px;">
+      
+      <div class="content">
+	<h2>Fourplay Updates and shit</h2>
+	<p>Cuz we gets busy</p>
+	</div>
+
+      </div>
+    </div>
+
+</body>
+</html>

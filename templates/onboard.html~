@@ -1,0 +1,116 @@
+1;2c1;2cß#<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fourplay</title>
+
+<!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);mixpanel.init("bf3249d2a27a620717f9fc097b19b924");</script><!-- end Mixpanel -->
+	
+	<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css">
+  <link rel="stylesheet" href="http://getpostd.com/style/add2home.css">
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="HandheldFriendly" content="true" />
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29130143-1']);
+  _gaq.push(['_setDomainName', 'tryfourplay.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+var addToHomeConfig = {
+animationIn: 'fade',
+animationOut: 'bubble',
+lifespan:10000,
+expire:1440,
+touchIcon:true,
+message:'<b>Fourplay</b> is a fun way to discover and communicate with nearby people on Foursquare. All messages to {{first_name}} will mask your phone number.'
+};
+
+$(document).ready(function(){ mixpanel.track("Page open");});
+$("#message").click(function(){ mixpanel.track("Completed loop");});
+$("#unsub").click(function(){ mixpanel.track("Unsubscribed");});
+$("#block").click(function(){ mixpanel.track("Blocked user");});
+
+</script>
+<script type="application/javascript" src="http://getpostd.com/src/add2home.js" charset="utf-8"></script>
+
+
+
+
+
+</head>
+<body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-theme="a" align="center">
+			<h1 style="font-family:Gotham Medium; letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none; width:100%" align="center">{{ first_name }} Messaged You!</h1>
+		</div>
+	
+		<div data-role="body" align="center">
+			<div class="notifbg">
+				<div style="opacity:1; background:transparent;">
+					<h1 style="width: 90%; text-transform:none; letter-spacing:0px; text-shadow:0px -1px 1px rgba(0,0,0,0.6); font-family:Gotham; font-size:14px; padding-top:15px; padding-bottom:5px;">{{ first_name }} saw your check in @ {{venue}} and was like:</h1>
+				</div>
+			</div>
+			<img src="https://is1.4sqi.net/userpix/{{pic}}" style="max-width:255px; z-index:-10; border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;">
+			
+			<div class="messagesent">
+				<b id="sentnotch"></b>
+				<h2 id="sentmessage">{{ message }}</h2><br>
+			</div>
+			
+				<div style="width:80%; font-family:Gotham; margin-bottom:40px;">
+					<h2 class="aboutheading" align="left">Who is {{ first_name }}?</h2>
+					<ul data-role="listview" data-theme="d"> {{last_checkin}}
+						<li>
+							<div>
+								<div class="abouticon">,</div>
+								<div class="aboutinfo"><span class="aboutinfo">{{location}}</span></div>
+								<div style="clear:both";></div>
+							</div>
+						</li>
+						<li>
+							<div>
+								<div class="abouticon">t</div>
+								<div class="aboutinfo"><span class="aboutinfo">{{bio}}</span></div>
+								<div style="clear:both;"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			<div style="width:80%">
+				<h2 class="aboutheading">The one question remains: will you continue the convo?</h2>
+			</div>
+			<a href="/login" data-role="button" data-theme="f" id="message" data-ajax="false" style="margin-bottom:20px;">Message via anonymous SMS</a>
+<br>
+<hr style="height:1px; color:#fff; background:#fff; border:none; margin-bottom:0px;">
+<div style="background:#4b000f; padding-top:20px;">
+<a href="/block/" id="block" class="aboutheading" data-ajax="false"><img src="http://c4261091.r91.cf2.rackcdn.com/184-warning.png"border="0" valign="middle" style="margin-top:-3px; margin-right:10px;">Block this user</a>
+<br><br>
+<a class="aboutheading" id="unsub" href="/unsub/" data-ajax="false"><img src="http://c4261091.r91.cf2.rackcdn.com/63-runner.png" border="0" valign="middle" style="margin-right:5px;"> Opt-out of all notifications</a>	
+<br><br>
+	</div>
+		</div>
+	</div>
+                       
+
+</body>
+</html>

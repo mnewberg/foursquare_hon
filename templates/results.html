@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://getpostd.com/style1.css" />
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="content">
+			<img src="http://getpostd.com/pyl.png">
+			
+			<div data-role="collapsible-set">
+		
+				{% for key, value in your_venue_names.items %}
+				<div data-role="collapsible" data-icon="plus" data-theme="e" data-content-theme="h">
+					<h5 style="font-size:12px;">{{ key }}</h5>
+					<p align="center">
+						<a href="http://maps.google.com/maps?q={{ value.3 }}+{{ value.1 }}" data-role="button" data-theme="h">{{ value.0 }} . {{ value.1 }}</a></p>
+						<p style="font-size:10px; text-shadow:none; color:#fff; letter-spacing:0px; font-weight:bold; font-family:Gotham Medium;">{{ value.2 }} {% if value.2 > 1 %}people{% else %}person{% endif %} you like:</p>
+						{% for thumb in value.4 %}
+						<a href="/dialog/{{thumb}}?from_hon_screen=False&venue_id={{ value.5 }}" data-rel="dialog"><img src="http://img-s.foursquare.com/userpix_thumbs/{{thumb}}" width="70" height="70" style="padding-left:5px;padding-top:5px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;"></a>
+						{%endfor%}
+				</div>
+				{%endfor%}
+				
+			</div>
+			<br>
+			
+			<hr>
+			<img src="http://getpostd.com/hnv.png" style="margin-left:-9px; max-width:300px">
+			<br>
+
+			<div data-role="collapsible-set">
+			{% for key, value in all_venues.items %}
+					<div data-role="collapsible" data-icon="plus" data-theme="e" data-content-theme="h">
+						<h5 style="font-size:12px;">{{ key }}</h5>
+						<p align="center">
+							<a href="http://maps.google.com/maps?q={{ value.3 }}+{{ value.1 }}" data-role="button" data-theme="h">
+								{{ value.0 }} . {{ value.1 }}
+							</a>
+						</p>
+					</div>
+			{%endfor%}
+			</div>
+		</div>
+
+		<center>
+			<button type="button" onClick="window.history.go(-2)">Back</button>
+		</center>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+<body>
+<div data-role="page" data-theme="a">
+<center>
+<form action="/missing" method="get">
+<input type="text" name="phone" id="phone" maxlength="11" size="12" /> -
+<input type="submit">
+</form>
+{% if error %}
+<br><h1>Please enter a valid phone number!</h1>
+{% endif %}
+</center>
+</div>
+</body>
+</html>

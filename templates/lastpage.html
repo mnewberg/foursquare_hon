@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>You're Done!</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
+
+<STYLE TYPE="text/css">
+.overflow{
+         width:200px;
+         overflow:hidden;
+}
+
+</style>
+
+
+<script>
+jQuery(window).ready(function(){
+    jQuery("#person1").live("click",function(){
+                $.ajax({
+                type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val").val(),
+                                pic_id2:$(".ui-page-active .id_val2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+		 });
+})});
+
+jQuery(window).ready(function(){
+    jQuery("#person2").live("click",function(){
+                $.ajax({
+		 type: "POST",
+                url: "/rating/",
+                data:{
+                                chosen_id:$(".ui-page-active .id_val2").val(),
+                                pic_id2:$(".ui-page-active .id_val").val(),
+                                venue_id2:$(".ui-page-active .venue2").val(),
+                                venue_id:$(".ui-page-active .venue1").val(),
+		                         csrfmiddlewaretoken:$("[name='csrfmiddlewaretok\
+en']").val()
+                          }
+                });
+})});
+
+		 
+
+
+
+
+		     </script>  
+
+
+
+</head> 
+
+<body> 
+ 	<div data-role="header" align="center"> <!--  style="" class="ui-header ui-bar-a" role="banner" -->
+		<h1 style="font-family:Gotham Medium; font-size:16px; font-weight:bold; text-transform:none; width:100%; letter-spacing:0px;" class="ui-title" tabindex="0" role="heading" aria-level="1">You're done!</h1>
+	</div>
+  	<div data-role="content" style="font-family:Gotham Medium,Lato,HelveticaNeue,Helvetica Neue, Helvetica, Arial, sans-serif;color:white; text-transform:none; letter-spacing:0px; text-shadow:none;" align="center">
+		{% if lastpage %}
+			<p>That's all for now folks!</p>
+			See results? <a href="/notice">click here!</a>
+		{% else %}
+
+    	<div><p>Thirsty for more? Let's look further and wider.</p>
+			<br>
+    </div><!-- /content -->
+
+<a href="/gallery/0?lat={{ lat }}&lon={{ lon }}&gender={{ gender }}&radius={{ newradius }}" data-role="button" data-theme="i" class="clickherebutton">Click here</a>{% endif %}</div>
+
+
+	</div>
+</body>
+
+</html>

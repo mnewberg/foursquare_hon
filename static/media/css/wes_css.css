@@ -1,0 +1,256 @@
+
+@media screen and (max-width: 320px) {
+    .overflow{ 
+        width:120px;
+        overflow:hidden;
+        align: center;
+    }
+    
+    .target {
+        margin-left: -40px;
+    }
+    
+    .ribbon_corner{
+        visibility: hidden;
+    }
+    
+    .dialog_image{
+        max-width:180px;
+    }
+    .poptitle{
+        font-size:14px;
+    }
+} /* media, max-width 320 */
+
+
+@media screen and (min-width:321px){
+    .overflow{
+             width:200px;
+             /*overflow:hidden;*/
+    
+    }
+    
+    .dialog_image{
+    max-width:400px;}
+    
+    .poptitle{
+    font-size:16px;}
+    
+    .ribbon{
+    visibility:hidden;
+    }
+}
+
+
+/**
+ * wes@fueled
+ * 
+ */
+
+body,
+.ui-mobile, .ui-mobile .ui-page {
+    background-color: #a00e20;
+}
+
+.fl { float: left; }
+.fr { float: right; }
+
+.ui-header .ui-title {
+    font-size: 24px !important;
+}
+
+/* Location, below name */
+div h6 {
+    margin-top: -8px !important;
+    text-transform: none;
+}
+
+/* Circle without images
+.circle {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: #333;
+}*/
+.circle-outline {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 66px;
+    -moz-border-radius: 66px;
+    -webkit-border-radius: 66px;
+    -khtml-border-radius: 66px;
+    border: #b54351 4px solid;
+    font-size: 20px;
+    color: #888;
+    line-height: 50px;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+}
+
+.circle-outline:hover {
+    border-color: #fff;
+}
+
+.circle-outline-larger {
+    clear: right;
+    width: 84px;
+    height: 84px;
+    display: block;
+    border-radius: 66px;
+    -moz-border-radius: 66px;
+    -webkit-border-radius: 66px;
+    -khtml-border-radius: 66px;
+    border: #b54351 4px solid;
+    font-size: 20px;
+    color: #888;
+    line-height: 50px;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+    clear: none !important;
+}
+
+.circle-outline-larger:hover {
+    border-color: #b54351;
+}
+
+a#person1 img, a#person2 img {
+    height: 150px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0 0 6px 2px #fff;
+    -moz-box-shadow: 0 0 6px 2px #fff;
+    box-shadow: 0 0 6px 2px #fff;
+}
+
+div.ui-block-b h6 {
+    text-transform: none;
+    letter-spacing: 0px;
+}
+
+/* Remove the underline from the venus faux button */
+.ui-body-a .ui-link {
+    text-decoration: none;
+}
+
+div.venues-youd-like-button {
+    background-color: #FFFFFF;
+    border-bottom: medium none;
+    border-radius: 22px 22px 22px 22px;
+    clear: both;
+    color: #000000;
+    float: none;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 20px auto 0;
+    padding: 12px 13px;
+    text-align: center;
+    text-decoration: none;
+    width: 300px;
+}
+
+div.venues-youd-like-button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+
+
+div.speech-bubble-left {
+    margin-left: 25px;
+    margin-top: -10px;
+}
+
+div.speech-bubble-right {
+    margin-right: 25px;
+    margin-top: -10px;
+}
+
+div.speech-bubble-active,
+div.speech-bubble-inactive:hover {
+    background: #fff url(http://c4261091.r91.cf2.rackcdn.com/Speech-Bubble-Active.png) center 12px no-repeat;
+}
+
+div.speech-bubble-inactive {
+    background: transparent url(http://c4261091.r91.cf2.rackcdn.com/Speech-Bubble-Inactive.png) center 12px no-repeat;
+}
+
+
+div.eye-bubble-left {
+    margin-left: 5px;
+    margin-top: -10px;
+}
+
+div.eye-bubble-right {
+    margin-right: 5px;
+    margin-top: -10px;
+}
+
+div.eye-bubble-active,
+div.eye-bubble-inactive:hover {
+    background: #fff url(http://c4261091.r91.cf2.rackcdn.com/Eye.png) center 22px no-repeat;
+}
+
+div.eye-bubble-inactive {
+    background: transparent url(http://c4261091.r91.cf2.rackcdn.com/Eye.png) center 22px no-repeat;
+}
+
+
+/* Large photo */
+
+div.poptitle h4 {
+    color: #fff;
+}
+
+div img.dialog_image {
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px 2px #666;
+}
+
+
+.ui-body-a, .ui-dialog.ui-overlay-a {
+    border-bottom: none;
+}
+
+.ui-btn-up-c, .ui-btn-hover-c, .ui-btn-down-c,
+.ui-collapsible-heading-toggle, .ui-btn, .ui-btn-icon-left, .ui-btn-up-a {
+    background-color: #FCFCFC;
+    background-image: none;
+    border-bottom: medium none;
+    border-radius: 7px 7px 7px 7px;
+    clear: both;
+    color: #000000;
+    float: none;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 20px auto 0;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    width: 95%;
+}
+
+.ui-btn-hidden {
+    background-image: none;
+}
+
+center .ui-btn {
+    width: 92%;
+}
+
+.hnv {
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+/*.ui-btn-up-a {
+    background: #fff none;
+}*/
