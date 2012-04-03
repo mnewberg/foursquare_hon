@@ -48,7 +48,7 @@ def login(request):
 
 def scrub(name):
     try:
-        return re.sub('\&#.*;',' ',name)
+        return re.sub('\\\\U\w*',' ',name)
     except:
         pass
 
@@ -427,9 +427,12 @@ def onboard(request, uid):
     vlon=v['venue']['location']['lng']
     venue_name=v['venue']['name']
     
+    v2=authenticator.query("/users/self",the_user.token, None)
+    last_checkin=v2['user']['checkins']['items'][0]['venue']['name']
+
     request.session['uid']=uid
     request.session.set_expiry(120)
-    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio})
+    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})
 
 def notice(request):
     return render_to_response('warning.html')
