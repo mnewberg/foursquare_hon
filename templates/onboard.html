@@ -78,12 +78,14 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 			</div>
 			
 				<div style="width:80%; font-family:Gotham; margin-bottom:40px;">
-					<h2 class="aboutheading" align="left">Who is {{ first_name }}?</h2><br>Last spotted @ {{last_checkin}}
+					<h2 class="aboutheading" align="left">Who is {{ first_name }}?</h2><!--<br>Last spotted @ {{last_checkin}}-->
 					<ul data-role="listview" data-theme="d"> 
 						<li>
 							<div>
 								<div class="abouticon">,</div>
-								<div class="aboutinfo"><span class="aboutinfo">{{location}}</span></div>
+								<div class="aboutinfo"><span class="aboutinfo">{{location}}</span>
+									<span style="text-transform:uppercase; letter-spacing:0px; font-family:Gotham Bold">
+									(last spotted @ {{ last_checkin }})</span></div>
 								<div style="clear:both";></div>
 							</div>
 						</li>
