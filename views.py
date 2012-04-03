@@ -397,13 +397,11 @@ def outreach(request):
     venue_name=v['venue']['name']
     uid=random_string(5)
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
-    sender=user.objects.get(fsq_id=request.session['fsq_id']
-
-    if datarget.unsubscribed==True or sender in datarget.blocks:
+    sender=user.objects.get(fsq_id=request.session['fsq_id'])
+    if datarget.unsubscribed==True or sender in datarget.blocks.all():
         return render_to_respons('error.html')
     else:
         pass
-    
     twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False, venue_id=venue)
     tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid)
     if tweet_response and sender.phone:
