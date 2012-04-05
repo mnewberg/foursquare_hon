@@ -34,7 +34,7 @@ def postrecv(request):
 def home(request):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
-        return render_to_response('home.html')
+        return render_to_response('desktop.html')
     else:
         return render_to_response('home.html')
 
@@ -257,16 +257,19 @@ def gallery(request, page):
             return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
 
 def has_twitter(request):
-    pic_id=request.GET['pic_id']
-    the_id=user_lookup.objects.get(pic_id=pic_id).fsq_id
-    token = user.objects.get(fsq_id=request.session['fsq_id']).token
-    finder = psq.UserFinder(authenticator)
-    query = finder.findUser(token, the_id)
-    if query.twitter():
-        twitter=True
-    else:
-        twitter=False
-    return HttpResponse(simplejson.dumps({'twitter':twitter}), mimetype='application/javascript')
+    try:
+        pic_id=request.GET['pic_id']
+        the_id=user_lookup.objects.get(pic_id=pic_id).fsq_id
+        token = user.objects.get(fsq_id=request.session['fsq_id']).token
+        finder = psq.UserFinder(authenticator)
+        query = finder.findUser(token, the_id)
+        if query.twitter():
+            twitter=True
+        else:
+            twitter=False
+        return HttpResponse(simplejson.dumps({'twitter':twitter}), mimetype='application/javascript')
+    except:
+        return HttpResponse('')
 
 def vote(request):
         token = user.objects.get(fsq_id=request.session['fsq_id']).token
@@ -438,7 +441,7 @@ def notice(request):
     return render_to_response('warning.html')
 
 def faq(request):
-    return render_to_response('faq.html')
+    return render_to_response('home.html')
 
 def tos(request):
     return render_to_response('tos.html')

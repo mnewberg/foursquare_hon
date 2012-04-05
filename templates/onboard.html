@@ -42,7 +42,7 @@ animationOut: 'bubble',
 lifespan:10000,
 expire:1440,
 touchIcon:true,
-message:'<b>Fourplay</b> is a fun way to discover and communicate with nearby people on Foursquare. All messages to {{first_name}} will mask your phone number.'
+message:'<b>Fourplay</b> is a fun way to discover and communicate with nearby people. All good things start with Fourplay.'
 };
 
 $(document).ready(function(){ mixpanel.track("Page open");});
@@ -61,7 +61,7 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 <body bgcolor="#A00E20" class="content" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 	<div data-role="page" data-theme="a">
 		<div data-role="header" data-theme="a" align="center">
-			<h1 style="font-family:Gotham Medium; letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none; width:100%" align="center">{{ first_name }} Messaged You!</h1>
+			<h1 style="font-family:Gotham Medium; letter-spacing:0px; font-size:16px; font-weight:bold; text-transform:none; width:100%" align="center">{{ first_name }} is using Fourplay!</h1>
 		</div>
 	
 		<div data-role="body" align="center">
@@ -78,12 +78,12 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 			</div>
 			
 				<div style="width:80%; font-family:Gotham; margin-bottom:40px;">
-					<h2 class="aboutheading" align="left">Who is {{ first_name }}?</h2><br>Last spotted @ {{last_checkin}}
+					<h2 class="aboutheading" align="left">Who is {{ first_name }}?</h2>
 					<ul data-role="listview" data-theme="d"> 
 						<li>
 							<div>
 								<div class="abouticon">,</div>
-								<div class="aboutinfo"><span class="aboutinfo">{{location}}</span></div>
+								<div class="aboutinfo"><span class="aboutinfo">{{location}} // <u>last spotted @ {{last_checkin}}</u></span></div>
 								<div style="clear:both";></div>
 							</div>
 						</li>
@@ -100,8 +100,8 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 				<h2 class="aboutheading">The one question remains: will you continue the convo?</h2>
 			</div>
 			<a href="/login" data-role="button" data-theme="f" id="message" data-ajax="false" style="margin-bottom:20px;">Message via anonymous SMS</a>
-<br>
-<hr style="height:1px; color:#fff; background:#fff; border:none; margin-bottom:0px;">
+<img src="http://c4261091.r91.cf2.rackcdn.com/balloon.png" height="32"><span class="aboutheading">You can text w/ {{first_name}} for 30 min without giving up your phone number.</span>
+<br><hr style="height:1px; color:#fff; background:#fff; border:none; margin-bottom:0px;">
 <div style="background:#4b000f; padding-top:20px;">
 <a href="/block/" id="block" class="aboutheading" data-ajax="false"><img src="http://c4261091.r91.cf2.rackcdn.com/184-warning.png"border="0" valign="middle" style="margin-top:-3px; margin-right:10px;">Block this user</a>
 <br><br>
