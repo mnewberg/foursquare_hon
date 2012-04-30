@@ -8,6 +8,13 @@ from time import time
 
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
 
+@csrf_exempt
+def venmo(request):
+	payments=request.POST['payments']
+	print payments
+	return HttpResponse('')
+
+
 def advanceDID(phone):
         try:
 		current_did=routing.objects.filter(recipient=phone).count()

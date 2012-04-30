@@ -4,9 +4,9 @@ import pysq.apiv2 as psq
 from django.views.generic.simple import redirect_to
 from django.contrib import admin
 admin.autodiscover()
-from sms import *
+import websoc
 
-
+from websoc import *
 authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
 
 uri = authenticator.authorize_uri()
@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     url(r'^message/(.{1,5})','views.onboard'),
     url(r'^outreach$','views.outreach'),
     url(r'^pickmessage/$','views.pickmessage'),
+    url(r'^venmo$','sms.text.venmo'),
     url(r'^callback$','sms.text.callback'),
     url(r'^incoming$','sms.text.incoming'),
     url(r'^missing$','views.missing'),
@@ -44,6 +45,8 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
+     url(r'^pusher/auth','websoc.auth'),
+     url(r'^game$','websoc.game'),
      url(r'^admin/', include(admin.site.urls)),
      url(r'^ma/(.*)', 'mobileadmin.sites.MobileAdminSite'),
 )

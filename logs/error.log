@@ -963,3 +963,209 @@
 [Wed Mar 28 11:19:12 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/admin/gallery/twitter_outreach/
 [Thu Mar 29 21:12:20 2012] [error] [client 10.183.253.50] mod_wsgi (pid=2985): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
 [Thu Mar 29 21:12:20 2012] [error] [client 10.183.253.50] IOError: failed to write data
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30712): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 14:45:47 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30713): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 14:45:49 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30712): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 14:56:37 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30713): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:14:15 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30712): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:14:17 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30713): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:14:58 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30712): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:14:59 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30713): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:15:26 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30712): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:28:00 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30713): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Mon Apr 09 15:28:02 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30712): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict), referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs), referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template., referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name), referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name), referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Tue Apr 10 14:51:48 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html, referer: http://staging.tryfourplay.com/loc/?code=UQ4A10WQDL2L35QB3QRMMRYIZMX24O3ANWQKTN4HWAVFLD4I
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30713): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     return callback(request, **param_dict)
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     response = view_func(request, *args, **kwargs)
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     template, origin = find_template(template_name)
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50]     raise TemplateDoesNotExist(name)
+[Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
+[Sat Apr 14 09:18:04 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images/icons-18-black.png, referer: http://staging.tryfourplay.com/static/css/style1.css
+[Sat Apr 14 09:18:50 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images/icons-36-black.png, referer: http://staging.tryfourplay.com/static/css/style1.css
