@@ -1,0 +1,57 @@
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-touch-fullscreen" content="YES" />
+
+<script src="http://js.pusher.com/1.11/pusher.min.js"></script>
+<script>
+Pusher.channel_auth_endpoint = 'http://staging.tryfourplay.com/pusher/auth'
+
+var pusher = new Pusher('890abd57f862ab2712ff'); 
+var channel = pusher.subscribe('private-game');
+channel.bind('client-game', function(data) {
+      document.getElementById("cell"+data.id).innerHTML=data.message
+});
+var myCars=new Array("saab","volvo","bmw");
+function checkinput(ArrayObj,query){
+  var lowerquery=query.value.toLowerCase();
+  var Found = false;
+  for (var i = 0; i < ArrayObj.length; i++){
+    if (ArrayObj[i] == lowerquery){
+	   var da_index = ArrayObj.indexOf(lowerquery);
+      document.getElementById("cell"+da_index).innerHTML=lowerquery;
+	  var triggered = channel.trigger("client-game", {'id':da_index,'message':lowerquery});
+	  document.getElementById('query').value="";
+      var Found = true;
+      break;
+    }
+    else if ((i == (ArrayObj.length - 1)) && (!Found)){
+      if (ArrayObj[i] != lowerquery){
+        return false;
+      }
+    }
+  }
+}
+
+</script>
+</head>
+<body> 
+	AYO CAN YOU GUESS DEEZ THREE CARZ?<br>
+	<input id="query" width="50" onkeyup="checkinput(myCars,this);">
+<table height="200px" border="1">
+	<tr width="100px">
+		<td width="100" id="cell0">
+			</td>
+				</tr>
+				<tr width="100px">
+					<td id="cell1">
+						</td>
+							</tr>
+							<tr width="100px">
+								<td id="cell2">
+									</td>
+										</tr>
+										</table>
+										</body>
+							
+			
