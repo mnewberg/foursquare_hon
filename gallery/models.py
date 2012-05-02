@@ -59,11 +59,18 @@ class venue_ll(models.Model):
 	def __unicode__(self):
                 return self.venue_id
 
+class game(models.Model):
+	gid=models.IntegerField(max_length=3, primary_key=True)
+	name=models.CharField(max_length=100)
+	def __unicode__(self):
+		return self.name
+
 class twitter_outreach(models.Model):
 	m_target=models.ForeignKey(user_lookup, unique=False)
 	sender=models.ForeignKey(user, unique=False)
 	uid=models.CharField(max_length=5, primary_key=True)
 	message=models.CharField(max_length=140)
+	game=models.ForeignKey(game, unique=False)
 	venue_id=models.CharField(max_length=30)
 	read=models.BooleanField()
 	def __unicode__(self):

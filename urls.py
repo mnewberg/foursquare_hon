@@ -46,7 +46,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^pusher/auth','websoc.auth'),
-     url(r'^pusher/presence','websoc.presence_auth'),
      url(r'^game$','websoc.game'),
      url(r'^admin/', include(admin.site.urls)),
      url(r'^ma/(.*)', 'mobileadmin.sites.MobileAdminSite'),

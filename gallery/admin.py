@@ -1,5 +1,5 @@
 from django.contrib import admin
-from gallery.models import user, record, rating, venue_ll, user_lookup, invite_codes, twitter_outreach
+from gallery.models import user, record, rating, venue_ll, user_lookup, invite_codes, twitter_outreach, game
 from sms.models import routing,avail_DIDs,log
 
 
@@ -27,7 +27,7 @@ admin.site.register(venue_ll)
 admin.site.register(user_lookup, user_lookupAdmin)
 admin.site.register(invite_codes)
 admin.site.register(twitter_outreach)
-
+admin.site.register(game)
 admin.site.register(routing, routingAdmin)
 admin.site.register(avail_DIDs)
 admin.site.register(log)

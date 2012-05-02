@@ -155,7 +155,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 
 INSTALLED_APPS = (
-    'mobileadmin',
+    #'mobileadmin',
     'django_cron',
     'django.contrib.auth',
     'django.contrib.contenttypes',
