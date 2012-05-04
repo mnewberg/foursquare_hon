@@ -1169,3 +1169,6 @@
 [Sat Apr 14 09:14:59 2012] [error] [client 10.183.253.50] TemplateDoesNotExist: 500.html
 [Sat Apr 14 09:18:04 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images/icons-18-black.png, referer: http://staging.tryfourplay.com/static/css/style1.css
 [Sat Apr 14 09:18:50 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/css/images/icons-36-black.png, referer: http://staging.tryfourplay.com/static/css/style1.css
+[Wed May 02 16:31:14 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/js/games/1.js, referer: http://staging.tryfourplay.com/game/test
+[Wed May 02 16:31:22 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/js/games/1.js, referer: http://staging.tryfourplay.com/game/test
+[Wed May 02 16:31:28 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/js/game

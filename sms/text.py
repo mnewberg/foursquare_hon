@@ -5,14 +5,9 @@ import settings
 from models import routing, avail_DIDs, log
 from gallery.models import user, twitter_outreach, user_lookup
 from time import time
-
+from django.shortcuts import render_to_response
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
 
-@csrf_exempt
-def venmo(request):
-	payments=request.POST['payments']
-	print payments
-	return HttpResponse('')
 
 
 def advanceDID(phone):
@@ -42,7 +37,9 @@ def callback(request):
 		else:
 			curr_did=avail_DIDs.objects.get(id=1)
 		routing.objects.create(recipient=i[0],sender=i[1],DID=curr_did, time_created=round(time()))
-	message=client.sms.messages.create(to=logged_in_user.phone, from_=curr_did, body="Fourplay here. Please wait while we grab your secret admirerer!")
+	request.session['curr_did']=curr_did
+	request.session['logged_in']=logged_in_user.phone
+	## message=client.sms.messages.create(to=logged_in_user.phone, from_=curr_did, body="Fourplay here. Please wait while we grab your secret admirerer!")
 
    ## now sms the initiator
 
@@ -50,8 +47,12 @@ def callback(request):
 		curr_outgoing_did=advanceDID(logged_in_user.phone)
 	else:
 		curr_outgoing_did=avail_DIDs.objects.get(id=1)
-	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body="Message from Fourplay: responding to this number for the next 30 minutes will forward all messages to " + logged_in_user.first_name + ".")
-	return render_to_response('connecting.html')
+	request.session['curr_outgoing_did']=curr_outgoing_did
+	request.session['other_user']=other_user.phone
+
+	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " wants to play with you at http://staging.tryfourplay.com/game/"+uid)
+	game_id=twitter_outreach.objects.get(uid=uid).game.gid
+	return render_to_response('game.html', {'channel_id':uid,'game_id':game_id})
 
 @csrf_exempt
 def incoming(request):
@@ -62,4 +63,13 @@ def incoming(request):
 	recipient_did=routing.objects.get(sender=the_recipient,recipient=sender).DID.DID
 	message=client.sms.messages.create(to=the_recipient, from_=recipient_did, body=the_message)
 	log.objects.create(time=time(),sender=sender,recipient=the_recipeint,from_did=recipient_did, to_did=the_recipient, message=the_message)
+	return HttpResponse('success')
+
+def endgame(request):
+	curr_did=request.session['curr_did']
+	logged_in=request.session['logged_in']
+	curr_outgoing_did=request.session['curr_outgoing_did']
+	other_user=request.session['other_user']
+	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="game ova")
+	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="game ova")
 	return HttpResponse('success')

@@ -30,7 +30,7 @@ urlpatterns = patterns('',
     url(r'^message/(.{1,5})','views.onboard'),
     url(r'^outreach$','views.outreach'),
     url(r'^pickmessage/$','views.pickmessage'),
-    url(r'^venmo$','sms.text.venmo'),
+    
     url(r'^callback$','sms.text.callback'),
     url(r'^incoming$','sms.text.incoming'),
     url(r'^missing$','views.missing'),
@@ -46,7 +46,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^pusher/auth','websoc.auth'),
-     url(r'^game$','websoc.game'),
+     url(r'^game/(.{1,5})','websoc.game'),
+     url(r'^textall$','sms.text.endgame'),
      url(r'^admin/', include(admin.site.urls)),
      url(r'^ma/(.*)', 'mobileadmin.sites.MobileAdminSite'),
 )
