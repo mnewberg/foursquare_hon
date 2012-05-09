@@ -66,8 +66,8 @@ privateChannel.bind('client-{{channel_id}}-clock', function(){hidePopUpMessage()
 privateChannel.bind('client-{{channel_id}}-game', function(data) {
       document.getElementById("cell"+data.id).innerHTML=data.message
 });
-privateChannel.bind('client-{{game_id}}-game', function(data) {
-      if (data.user != presenceChannel.members.me.id){ document.getElementById('otherscore').innerHTML++}});
+privateChannel.bind('client-{{channel_id}}-game', function(data) {
+      if (data.user != presenceChannel.members.me.id){ document.getElementById('otherscore').innerHTML ++}});
 
 function checkinput(ArrayObj,query){
   var lowerquery=query.value.toLowerCase();
@@ -94,17 +94,17 @@ function checkinput(ArrayObj,query){
 </script>
 <script>
 
-var count=10;
+var count=300;
 function timer()
 {
   count=count-1;
   if (count == 0)
   {
-     
+     var victory = document.getElementById("myscore").innerHTML > document.getElementById("otherscore").innerHTML
      document.getElementById("timer").innerHTML = '0:00';
      clearInterval();
      showPopUpMessage("<p>We DONE</p>");
-     $.get("http://staging.tryfourplay.com/textall",'',function(){alert('sent')});
+     $.get("http://staging.tryfourplay.com/textall",{'victory':victory},function(){alert('sent')});
 
      alert('DONE');
 

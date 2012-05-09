@@ -6,8 +6,22 @@ from models import routing, avail_DIDs, log
 from gallery.models import user, twitter_outreach, user_lookup
 from time import time
 from django.shortcuts import render_to_response
+import re
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
 
+
+def simon(request):
+	return render_to_response('simon2.html')
+
+def xml(request):
+	voice=request.GET['voice']
+	text=re.sub(' ','%20',request.GET['text'])
+	document=open('/var/www/four_staging/foursquare/static/media/test.xml','w')
+	document.write("""<?xml version=\"1.0\" encoding=\"utf-8\"?><Response>
+<Play>http://api.ispeech.org/api/rest?apikey=44ce84e83a1f4e7f676d058a3f6c921a&amp;action=convert&amp;text="""+text+"""&amp;voice="""+voice+"""&amp;format=wav</Play>
+</Response>""")
+	document.close()
+	return HttpResponse('done')
 
 
 def advanceDID(phone):
@@ -49,8 +63,9 @@ def callback(request):
 		curr_outgoing_did=avail_DIDs.objects.get(id=1)
 	request.session['curr_outgoing_did']=curr_outgoing_did
 	request.session['other_user']=other_user.phone
-
-	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " wants to play with you at http://staging.tryfourplay.com/game/"+uid)
+	request.session['other_user_name']=other_user.first_name
+	request.session['logged_in_name']=logged_in_user.first_name
+	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
 	game_id=twitter_outreach.objects.get(uid=uid).game.gid
 	return render_to_response('game.html', {'channel_id':uid,'game_id':game_id})
 
@@ -70,6 +85,16 @@ def endgame(request):
 	logged_in=request.session['logged_in']
 	curr_outgoing_did=request.session['curr_outgoing_did']
 	other_user=request.session['other_user']
-	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="game ova")
-	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="game ova")
+	other_user_name=request.session['other_user_name']
+	logged_in_name=request.session['logged_in_name']
+	winner=request.GET['victory']
+	if winner=='true':
+		logged_in_status='won!!'
+		other_user_status='lost :( .'
+	else:
+		logged_in_status='lost :( .'
+		other_user_status='won!!1'
+
+	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="game ova, you " +logged_in_status)
+	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="game ova, you "+other_user_status)
 	return HttpResponse('success')

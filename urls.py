@@ -7,6 +7,7 @@ admin.autodiscover()
 import websoc
 
 from websoc import *
+from testing import newgallery
 authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
 
 uri = authenticator.authorize_uri()
@@ -21,6 +22,8 @@ urlpatterns = patterns('',
     url(r'^tos$','views.tos'),
     url(r'^login$','views.login'),
     url(r'^loc/$','views.second'),
+    url(r'^newgallery$','testing.newgallery'),
+    url(r'fsq$','testing.ajaxreq'),
     url(r'^gallery/(\d*)$','views.gallery'),
     url(r'^rating/$','views.vote'),
     url(r'^postrecv/$','views.postrecv'),
@@ -49,5 +52,6 @@ urlpatterns = patterns('',
      url(r'^game/(.{1,5})','websoc.game'),
      url(r'^textall$','sms.text.endgame'),
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^ma/(.*)', 'mobileadmin.sites.MobileAdminSite'),
+     url(r'^simon/','sms.text.xml'),
+     url(r'^tts/','sms.text.simon'),
 )
