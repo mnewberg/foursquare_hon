@@ -38,6 +38,7 @@ class user(models.Model):
 		return self.fsq_id
 
 class user_lookup(models.Model):
+	first_name=models.CharField(max_length=20)
 	t_handle=models.CharField(max_length=30, null=True)
 	fsq_id=models.CharField(max_length=30)
 	pic_id=models.CharField(max_length=30, primary_key=True)	

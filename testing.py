@@ -170,9 +170,13 @@ def ajaxreq(request):
                                 chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
                             else:
                                 backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
+                            try:
+                                user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
+                            except:
+                                pass
                     else:
                             pass
             n+=1
     p = pusher.Pusher()
     p['chickpix'].trigger('done', {'chickpix': chickpix, 'backpix':backpix})
-    return
+    return HttpResponse('ok')

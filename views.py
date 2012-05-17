@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
-from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes
+from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes, game
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
@@ -121,7 +121,7 @@ def second(request):
                 u.photo=query.photo()[37:]
                 has_shared=u.has_shared
                 u.save()
-                return render_to_response('loc.html', {'has_shared':has_shared})
+                return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':u.twitter(), 'has_shared':has_shared,'token':token})
         elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
 	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
@@ -141,12 +141,12 @@ def second(request):
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
-		return render_to_response('loc.html', {'has_shared':has_shared})
+		return render_to_response('loc.html', {'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':u.twitter()})
 ##RETURNING USER
 	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
-		return render_to_response('loc.html')
+		return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter()})
         else:
                 return render_to_response('wait.html')
 
@@ -364,45 +364,45 @@ def pickmessage(request):
         pass
     params={}
     params.update(csrf(request))
-    if request.GET['from_hon_screen']=='true':
-        venue=request.GET['venue_id']
-        image=request.GET['pic_id']
-        t=user_lookup.objects.get(pic_id=image)
-        token = the_user.token
-        the_id=t.fsq_id
-        finder = psq.UserFinder(authenticator)
-        query = finder.findUser(token, the_id)
-        twitter=query.twitter()
-        target_t=twitter
-        target_p=image
-        target_n=query.first_name()
-        target_v=venue
-    else:
-        target_t=request.session['t_handle']
-        target_p=request.session['t_pic']
-        target_n=request.session['f_name']
-        target_v=request.session['venue']
+    
+    venue=request.GET['venue_id']
+    image=request.GET['pic_id']
+        
+    t=user_lookup.objects.get(pic_id=image)
+    target_t=t.t_handle
+    target_n=t.first_name
+    target_v=venue
+    
+    games=game.objects.all()
+    #    target_t=request.session['t_handle']
+     #   target_p=request.session['t_pic']
+      #  target_n=request.session['f_name']
+       # target_v=request.session['venue']
 
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':target_p,'f_name':target_n, 'venue_id':target_v, 'csrf':params}, context_instance=RequestContext(request))
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params, 'games':games}, context_instance=RequestContext(request))
 
 def outreach(request):
     params = {}
     params.update(csrf(request))
 
     message=request.POST['message']
+    game_id=request.POST['game_id']
     t_handle=request.POST['t_handle']
     venue=request.POST['venue_id']
     f_name=request.POST['f_name']
     v=authenticator.userless_query("/venues/"+venue)
     venue_name=v['venue']['name']
     uid=random_string(5)
+
+    thegame=game.objects.get(gid=game_id)
+
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     if datarget.unsubscribed==True or sender in datarget.blocks.all():
         return render_to_respons('error.html')
     else:
         pass
-    twitter_outreach.objects.create(m_target=datarget, sender=sender, uid=uid, message=message, read=False, venue_id=venue)
+    twitter_outreach.objects.create(m_target=datarget, sender=sender,game=thegame, uid=uid, message=message, read=False, venue_id=venue)
     tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid)
     if tweet_response and sender.phone:
         return render_to_response('sent.html')
@@ -492,3 +492,12 @@ def block(request):
     u.save()
     uri = authenticator.authorize_uri()
     return HttpResponseRedirect(uri)
+
+
+def updatetwitter(request):
+    fsq_id=request.session['fsq_id']
+    u=user.objects.get(fsq_id=fsq_id)
+    t=request.POST['twitter']
+    u.twitter=t
+    u.save()
+    return HttpResponse('success')

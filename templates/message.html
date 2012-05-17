@@ -17,19 +17,15 @@
 	<div align="center" data-role="body">
 
 		<form action="/outreach" method="post">
-			<select name="message" data-theme="d">
-				<option value="Can iTouch you?">"Can iTouch you?"</option>
-				<option value="Are you on Foodspotting? Your buns look delish">"Are you on Foodspotting? Your buns look delish..."</option>
-				<option value="You must be close because Foursquare says there's a nearby special" selected="selected">"You must be close because Foursquare says there's a nearby special."</option>
-<option value="Your daddy must've been a drug dealer... because you dope.">
-"Your daddy must've been a drug dealer... because you dope."</option>
-				<option value="I don't have Foursquare installed, but do you mind if I check you out?">"I don't have Foursquare installed, but do you mind if I check you out?"</option>
-<option value="I want to give you a +K... in being gorgeous.">"I want to give you a +K... in being gorgeous."</option>
-<option value="Checkin here often? ;)">"Checkin here often? ;)" </option>
-<option value="I less than three you... (I < 3 U)">"I less than three you... (I < 3 U)"</option>
+			<select name="game_id" data-theme="d">
+			  {% for game in games %}
+			  <option value="{{game.gid}}">{{game.name}}</option>
+			  {% endfor %}
 			</select>
 			<b id="notch"></b>
 			<img src="http://staging.tryfourplay.com/static/img/admin/messageicon.png" id="msgicon">
+<div align="center" class="lower_message">
+<input type="text" name="message" value="Write your own message!" onclick="this.value=''"  data-theme="d">
 			<input type="hidden" value="{{venue_id}}" name="venue_id">
 <input type="hidden" value="{{t_handle}}" name="t_handle">
 <input type="hidden" value="{{f_name}}" name="f_name">
@@ -39,14 +35,9 @@
 			<!--<input type="text" name="message" value="Or write your own message!" onclick="this.value=''"  data-theme="d"> -->
 			<input type="submit" value="submit message"  data-theme="f">
 			<a href="javascript:void(0)" onclick="$.mobile.silentScroll(500);" style="font-family:Lato,Helvetica,Arial,sans-serif; font-size:14px; letter-spacing:0px;">OR WRITE YOUR OWN MESSAGE!</a>
-		</form>
-<div align="center" class="lower_message"><form  action="/outreach" method="post">	
-<input type="text" name="message" value="Write your own message!" onclick="this.value=''"  data-theme="d"><br>
-<input type="hidden" value="{{venue_id}}" name="venue_id">
-<input type="hidden" value="{{t_handle}}" name="t_handle">
-<input type="hidden" value="{{f_name}}" name="f_name">
-<input type="hidden" value="{{t_pic}}" name="t_pic">
-<input type="submit" value="submit message"  data-theme="f"></div>
+
+
+
 {% csrf_token %}</div>
 </form>
 </body>

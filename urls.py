@@ -33,7 +33,7 @@ urlpatterns = patterns('',
     url(r'^message/(.{1,5})','views.onboard'),
     url(r'^outreach$','views.outreach'),
     url(r'^pickmessage/$','views.pickmessage'),
-    
+    url(r'^updatetwitter/$','views.updatetwitter'),
     url(r'^callback$','sms.text.callback'),
     url(r'^incoming$','sms.text.incoming'),
     url(r'^missing$','views.missing'),

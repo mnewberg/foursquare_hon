@@ -1,7 +1,7 @@
 <html>
-{% for key,value in bigdict.items %}
+<script>
+var channel = pusher.subscribe('chickpix')
+channel.bind('done',function(data){for (var i in data["chickpix"]){document.write('<img src=http://img-s.foursquare.com/userpix/'+data["chickpix"][i][0])}});
 
-<img src="{{value}}">
-{%endfor%}
 
 </html>

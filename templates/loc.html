@@ -2,9 +2,14 @@
 
 <head>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+
 		<script src="http://fgnass.github.com/spin.js/dist/spin.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
+		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/4sqacplugin.js"></script>
+		<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
 		<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/style1.css" />
 		
@@ -19,7 +24,88 @@
 
 <STYLE TYPE="text/css">
 
+.ui-autocomplete-loading { background: white url('http://jqueryui.com/demos/autocomplete/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+#venue { width: 25em; }
+#venue-label {
+display: block;
+font-weight: bold;
+margin-bottom: 1em;
+}
+#venue-icon {
+float: left;
+height: 32px;
+width: 32px;
+vertical-align: middle;
+}
+#venue-address {
+margin: 0;
+padding: 0;
+}
+#venue-city {
+margin: 0;
+padding: 0;
+}
 
+.ui-menu-item {
+min-height:40px;
+}
+
+.categoryIconContainer {
+border-radius: 3px 3px 3px 3px;
+    float: left;
+    height: 32px;
+    margin-right: 5px;
+    overflow: hidden;
+    width: 32px;
+    vertical-align: middle;
+}
+.autocomplete-name {
+color: #333333;
+    font-weight: bold;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+.autocomplete-detail {
+color: #999999;
+    font-weight: normal;
+    font-size: 13px;
+    margin-left: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+
+#grid {
+
+    line-height: 0;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+}
+#grid img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+
+    #grid {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    }
+}
+@media (max-width: 320px) {
+    #grid {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    }
+}
 @media screen and (max-width: 320px) {
 .overflow{ 
 width:120px;
@@ -66,16 +152,12 @@ visibility:hidden;
 
 </style>
 
-	  <form name="MyForm" id="MyForm" action="/newgallery" method="get">
-
-		<input type=hidden name="lat" id="lat">
-		<input type=hidden name="lon" id="lon">
-		<input type=hidden name="gender" id="gender">
-		<input type=hidden name="radius" id="radius" value="10000">
-
-	 </form>
-
 	     <script>
+var pusher = new Pusher('890abd57f862ab2712ff');
+var channel = pusher.subscribe('chickpix')
+var gallerybody = ""
+channel.bind('done',function(data){for (var i in data["chickpix"]){gallerybody+='<a href=/pickmessage/?pic_id='+data["chickpix"][i][0]+'&venue_id='+data["chickpix"][i][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["chickpix"][i][0]+'></a>'};for (var i in data["backpix"]){gallerybody+='<a href=/pickmessage/?pic_id='+data["backpix"][i][0]+'&venue_id='+data["backpix"][i][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["backpix"][i][0]+'></a>'};document.getElementById('grid').innerHTML = gallerybody;$.mobile.changePage('#newgallery')})
+
 {% if not has_shared %}
   function show_confirm()
 {
@@ -112,9 +194,8 @@ $.mobile.changePage("/results");
 
 
 	
-	        jQuery(window).ready(function(){  
-	            jQuery("#btnInit").click(initiate_geolocation);  
-	        });
+	        $('main').ready(initiate_geolocation);  
+	       
 	                jQuery(window).ready(function(){  
 	            jQuery("#btnInit2").click(initiate_geolocation_male);  
 	        });  
@@ -151,21 +232,15 @@ $.mobile.changePage("/results");
 	
 
 	                function handle_geolocation_query(position){
-	                var lat=position.coords.latitude
-	                var lon=position.coords.longitude 
-				
-
-	                  	$('input[name=lat]').val(lat);
-						$('input[name=lon]').val(lon);
-						$('input[name=gender]').val('female')
-						$('#MyForm').submit();  
-                $.mobile.loadingMessage = "Loading up lots of chicks... please be patient!";
-
-					}
+	                var lat=position.coords.latitude;
+	                var lon=position.coords.longitude;
+                        lookup(lat,lon);
+	                $.get("/fsq",{'lat':lat,'lon':lon,'gender':'female'});}
 
 					function handle_geolocation_query_male(position){					
 		                var lat=position.coords.latitude
 		                var lon=position.coords.longitude 
+                                
 
 
 	                  	$('input[name=lat]').val(lat);
@@ -177,67 +252,29 @@ $.mobile.changePage("/results");
 
 					}
 
-
-jQuery(window).ready(function(){
-    jQuery("#person1").live("click",function(){
-                $.ajax({
-                type: "POST",
-                url: "/rating/",
-                data:{
-                                chosen_id:$(".ui-page-active .id_val").val(),
-                                pic_id2:$(".ui-page-active .id_val2").val(),
-                                venue_id:$(".ui-page-active .venue1").val(),
-                                venue_id2:$(".ui-page-active .venue2").val(),
-                                csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
-                          }
-		});
-})});
-
-jQuery(window).ready(function(){
-    jQuery("#person2").live("click",function(){
-                $.ajax({
-		type: "POST",
-                url: "/rating/",
-                data:{
-                                chosen_id:$(".ui-page-active .id_val2").val(),
-                                pic_id2:$(".ui-page-active .id_val").val(),
-                                venue_id2:$(".ui-page-active .venue2").val(),
-                                venue_id:$(".ui-page-active .venue1").val(),
-		                        csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
-                          }
-                });
-})});
+    function lookup(lat,lon) {
+        $("#venue").foursquareAutocomplete({
+            'latitude': lat,
+            'longitude': lon,
+            'oauth_token': "{{token}}",
+            'minLength': 3,
+            'search': function (event, ui) {
+                $("#venue-name").html(ui.item.name);
+                $("#venue-id").val(ui.item.id);
+                $("#venue-address").html(ui.item.address);
+                $("#venue-cityLine").html(ui.item.cityLine);
+                $("#venue-icon").attr("src", ui.item.photo);
+                return false;
+            },
+            'onError' : function (errorCode, errorType, errorDetail) {
+var message = "Foursquare Error: Code=" + errorCode + ", errorType= " + errorType + ", errorDetail= " + errorDetail;
+log(message);
+            }
+            
+        });
+    };
 
 
-$("#hotornot").live('pageinit',function(){
-		$.getJSON('/twitter/',
-		{'pic_id':$(".ui-page-active .id_val").val()},
-		function(data){
-			console.log(data);
-			if(data.twitter == true){
-				$(".speech-bubble-left").removeClass("speech-bubble-inactive");
-				$(".speech-bubble-left").addClass("speech-bubble-active");
-			} else {
-				$(".speech-bubble-left").removeClass("speech-bubble-active");
-				$(".speech-bubble-left").addClass("speech-bubble-inactive");
-			}
-		}); 
-		
-			$.getJSON('/twitter/',
-			{'pic_id':$(".ui-page-active .id_val2").val()},
-			function(data){
-				console.log(data);
-				if(data.twitter == true){
-					$(".speech-bubble-right").removeClass("speech-bubble-inactive");
-					$(".speech-bubble-right").addClass("speech-bubble-active");
-				} else {
-					$(".speech-bubble-right").removeClass("speech-bubble-active");
-					$(".speech-bubble-right").addClass("speech-bubble-inactive");
-				}
-			});
-		
-
-});
 
 $("#missingnumber").live('pageinit',function() {
 $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');});
@@ -246,23 +283,37 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 	    </script>  
 	</head>
 	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
-		<div data-role="page">
-			<div data-role="content" style="background-image:url('http://getpostd.com/showme.png');background-position: center top;background-repeat:no-repeat;height:480px;">	
-				<div class="ui-grid-a">
-					<div class="ui-block-a" style="margin-top:152px;">
-						<button type="button" data-theme="c" id="btnInit">Girls</button>
-					</div>
-				<div class="ui-grid-b" style="margin-top:152px;">
-					<button type="button" data-theme="c" id="btnInit2">Guys</button>
-				</div>
-				
-				<hr style="margin-top:105px; box-shadow:0px -1px 3px rgba(0,0,0,0.2); border:0; height:2px; background-color:#78161A; width:80%;">
+		<div data-role="page" id="main">
+			<div data-role="content">
+
+					
 				
 				<div class="geolocmsg">Please ensure geolocation is enabled in your phone's settings.</div>
+     <div class="ui-widget">
+        <label for="venue">Venue: </label>
+        <input id="venue"/>
+    </div>
+    <div>
+        <input type="hidden" id="venue-id"/>
+        <div id="venue-name" class="autocomplete-name"></div>
+        <div id="venue-address" class="autocomplete-detail"></div>
+	<div id="venue-cityLine" class="autocomplete-detail"></div>
+	</div>
+<div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div>
+{% if not twitter %}
+<input type="text" id="twitter"></input>
+<input type="submit" value="OK" onclick=$.post('/updatetwitter',{'twitter':document.getElementById('twitter').value})>
+{% endif %}
 
+</div>
 
-			</div>			
-		</div>
+				</div>
+		<div data-role="page" id="newgallery">
+		  <div data-role="content" id="thegallery">
+		    <div id="grid">
+		      </div>
+		    </div>
+</div>
 	</body>
 	
 	</html>

@@ -4,6 +4,11 @@
         <meta name="apple-touch-fullscreen" content="YES" />
 
 <style type="text/css">
+.game td {
+width:100px;
+height:50px;
+}
+
 .modalOverlay
 {
   width:100%;
@@ -52,6 +57,37 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
 </script>
 <script>
+if (typeof labels == "undefined"){ var num_cols=2; var thespan=1;}else{var num_cols=4;var thespan=2;};
+
+function createTable()
+{
+    var num_rows = answers.length/2;
+    var theader = '<table border="1" class="game">\n';
+    var tbody = '';
+    var count= 0
+    var lcount = 0
+    for( var i=0; i<num_rows;i++)
+    {
+        tbody += '<tr>';
+        for( var j=0; j<num_cols;j++)
+        {
+            if (typeof labels != "undefined" && (j==0 || j==num_cols-2)){
+	    tbody += '<td id=label'+lcount+'>';
+            tbody +=labels[lcount]; lcount++ ;}
+	    else { tbody += '<td id=cell'+count+'>';count++;}
+            tbody += '</td>'
+            
+        }
+        tbody += '</tr>\n';
+    }
+    var tfooter = '<tr><td colspan='+thespan+'>My Score</td><td colspan='+thespan+' id=myscore>0</td><tr><td colspan='+thespan+'>Their Score</td><td colspan='+thespan+' id=otherscore>0</td></tr></table>';
+    document.getElementById('wrapper').innerHTML = theader + tbody + tfooter;
+}
+
+</script>
+
+
+<script>
 var elem = document.getElementById('query')
 Pusher.channel_auth_endpoint = 'http://staging.tryfourplay.com/pusher/auth'
 var pusher = new Pusher('890abd57f862ab2712ff'); 
@@ -59,18 +95,23 @@ var privateChannel = pusher.subscribe('private-{{channel_id}}');
 var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 var guessed = new Array();
 
+$(document).ready(function(){document.getElementById('desc').innerHTML=desc});
+
 function startclock(){ var counter = setInterval('timer()',1000);};
 
-presenceChannel.bind('pusher:member_added', function(member) {hidePopUpMessage();alert('we ready to play!'); privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'}); startclock();});
-privateChannel.bind('client-{{channel_id}}-clock', function(){hidePopUpMessage(); startclock()});
+presenceChannel.bind('pusher:member_added', function(member) {hidePopUpMessage();alert('we ready to play!'); privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'}); createTable(); startclock();});
+privateChannel.bind('client-{{channel_id}}-clock', function(){hidePopUpMessage();createTable();startclock()});
 privateChannel.bind('client-{{channel_id}}-game', function(data) {
       document.getElementById("cell"+data.id).innerHTML=data.message
 });
 privateChannel.bind('client-{{channel_id}}-game', function(data) {
       if (data.user != presenceChannel.members.me.id){ document.getElementById('otherscore').innerHTML ++}});
 
-function checkinput(ArrayObj,query){
-  var lowerquery=query.value.toLowerCase();
+
+
+
+function checkinput(ArrayObj,entry){
+  var lowerquery=entry.value.toLowerCase();
   var Found = false;
   for (var i = 0; i < ArrayObj.length; i++){
     if (ArrayObj[i] == lowerquery && guessed.indexOf(lowerquery) == -1){
@@ -155,33 +196,12 @@ function hidePopUpMessage() {
 
 </head>
 <body> 
-	AYO CAN YOU GUESS DEEZ THREE CARZ?<br>
+	<span id="desc"> </span>
 <br>
 <span id="timer" style="font-size:25px;font-weight:bold"></span>
-	<input id="query" width="50" onkeyup="checkinput(answers,this);">
+	<input id="query" width="50" onkeyup="checkinput(answers,this)">
 	<input type="submit" value="clear" onclick="document.getElementById('query').value='';">
-<table height="200px" width="200px"border="1">
-	<tr>
-		<td  id="cell0" width="100px">
-			</td>
-		<td id="cell3"></td>
-				</tr>
-				<tr>
-					<td id="cell1" width="100px">
-						</td>
-					<td id="cell4">
-							</tr>
-							<tr>
-								<td id="cell2" width="100px">
-									</td>
-								<td id="cell5">
-										</tr>
-<tr>
-<td>My Score</td><td id="myscore">0</td></tr>
-<tr>
-<td>Your Score</td><td id="otherscore">0</td>
-</tr>
-										</table>
+										</table><div id="wrapper"> </div>
 										</body>
 							
 			
