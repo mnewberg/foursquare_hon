@@ -235,7 +235,7 @@ $.mobile.changePage("/results");
 	                var lat=position.coords.latitude;
 	                var lon=position.coords.longitude;
                         lookup(lat,lon);
-	                $.get("/fsq",{'lat':lat,'lon':lon,'gender':'female'});}
+	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':'female'},type:"GET",timeout:50000})}
 
 					function handle_geolocation_query_male(position){					
 		                var lat=position.coords.latitude
@@ -302,7 +302,10 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 <div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div>
 {% if not twitter %}
 <input type="text" id="twitter"></input>
-<input type="submit" value="OK" onclick=$.post('/updatetwitter',{'twitter':document.getElementById('twitter').value})>
+
+<input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})>
+
+{% csrf_token %}
 {% endif %}
 
 </div>

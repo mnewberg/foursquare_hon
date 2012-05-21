@@ -10,6 +10,7 @@ import re
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
 
 
+
 def simon(request):
 	return render_to_response('simon2.html')
 
@@ -88,6 +89,13 @@ def endgame(request):
 	other_user_name=request.session['other_user_name']
 	logged_in_name=request.session['logged_in_name']
 	winner=request.GET['victory']
+	locations=twitter_outreach.objects.get(uid=request.session['uid'])
+	logged_in_vid=locations.venue_id
+	other_user_vid=locations.other_venue_id
+	venue_names=[]
+	for i in [logged_in_vid,other_user_vid]:
+		v=authenticator.userless_query("/venues/"+i)
+		venue_names.append(v[0]['venue']['name'])
 	if winner=='true':
 		logged_in_status='won!!'
 		other_user_status='lost :( .'
@@ -95,6 +103,15 @@ def endgame(request):
 		logged_in_status='lost :( .'
 		other_user_status='won!!1'
 
-	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="game ova, you " +logged_in_status)
-	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="game ova, you "+other_user_status)
+	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="Game over, you " +logged_in_status)
+	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="Game over, you "+other_user_status)
 	return HttpResponse('success')
+
+def nudge(request):
+	if 'uid' not in request.session:
+		uid=request.GET['uid']
+		t=twitter_outreach.objects.get(uid=uid)
+		logged_in_user=user.objects.get(fsq_id=t.m_target)
+		other_user=user.objects.get(fsq_id=t.sender)
+		outgoing=routing.objects.get(recipient=logged_in.phone,sender=other_user.phone)
+		message=client.sms.messages.create(to=logged_in.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)

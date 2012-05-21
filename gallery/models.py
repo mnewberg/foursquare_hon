@@ -73,6 +73,7 @@ class twitter_outreach(models.Model):
 	message=models.CharField(max_length=140)
 	game=models.ForeignKey(game, unique=False)
 	venue_id=models.CharField(max_length=30)
+	other_venue_id=models.CharField(max_length=30, null=True)
 	read=models.BooleanField()
 	def __unicode__(self):
 		return self.uid

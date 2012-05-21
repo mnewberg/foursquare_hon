@@ -97,6 +97,8 @@ def second(request):
         request.session.set_expiry(0)
         last_name=query.last_name()
         showmessage=True
+        params = {}
+        params.update(csrf(request))
         if 'uid' in request.session:
             uidsesh=True
         else:
@@ -121,7 +123,7 @@ def second(request):
                 u.photo=query.photo()[37:]
                 has_shared=u.has_shared
                 u.save()
-                return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':u.twitter(), 'has_shared':has_shared,'token':token})
+                return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':u.twitter(), 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
         elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
 	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
@@ -141,12 +143,12 @@ def second(request):
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
-		return render_to_response('loc.html', {'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':u.twitter()})
+		return render_to_response('loc.html', {'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok'})
 ##RETURNING USER
 	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
-		return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter()})
+		return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
         else:
                 return render_to_response('wait.html')
 
@@ -398,6 +400,9 @@ def outreach(request):
 
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
+    
+    
+
     if datarget.unsubscribed==True or sender in datarget.blocks.all():
         return render_to_respons('error.html')
     else:
@@ -429,7 +434,10 @@ def onboard(request, uid):
     
     v2=authenticator.query("/users/self",the_user.token, None)
     last_checkin=v2['user']['checkins']['items'][0]['venue']['name']
-
+    last_checkin_id=['user']['checkins']['items'][0]['venue']['id']
+    t.other_venue_id=last_checkin_id
+    t.save()
+    
     request.session['uid']=uid
     request.session.set_expiry(120)
     return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})

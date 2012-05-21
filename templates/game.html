@@ -9,6 +9,12 @@ width:100px;
 height:50px;
 }
 
+.shroud
+{
+display: none;
+
+}
+
 .modalOverlay
 {
   width:100%;
@@ -56,13 +62,15 @@ height:50px;
 <script src="http://staging.tryfourplay.com/static/js/games/{{game_id}}.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
 </script>
+<script src="http://c4261091.r91.cf2.rackcdn.com/jquery-ui-1.8.20.custom.min.js"></script>
+
 <script>
 if (typeof labels == "undefined"){ var num_cols=2; var thespan=1;}else{var num_cols=4;var thespan=2;};
 
 function createTable()
 {
     var num_rows = answers.length/2;
-    var theader = '<table border="1" class="game">\n';
+    var theader = '<table border="1" id="game" class="game">\n';
     var tbody = '';
     var count= 0
     var lcount = 0
@@ -74,8 +82,8 @@ function createTable()
             if (typeof labels != "undefined" && (j==0 || j==num_cols-2)){
 	    tbody += '<td id=label'+lcount+'>';
             tbody +=labels[lcount]; lcount++ ;}
-	    else { tbody += '<td id=cell'+count+'>';count++;}
-            tbody += '</td>'
+	    else { tbody += '<td id=cell'+count+'><span class="shroud" id=ans'+count+'>';count++;}
+            tbody += '</span></td>'
             
         }
         tbody += '</tr>\n';
@@ -97,13 +105,13 @@ var guessed = new Array();
 
 $(document).ready(function(){document.getElementById('desc').innerHTML=desc});
 
-function startclock(){ var counter = setInterval('timer()',1000);};
+function startclock(){ return setInterval('timer()',1000);};
 
-presenceChannel.bind('pusher:member_added', function(member) {hidePopUpMessage();alert('we ready to play!'); privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'}); createTable(); startclock();});
-privateChannel.bind('client-{{channel_id}}-clock', function(){hidePopUpMessage();createTable();startclock()});
+presenceChannel.bind('pusher:member_added', function(member) {hidePopUpMessage();alert('we ready to play!'); privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'}); createTable(); counter=startclock();});
+privateChannel.bind('client-{{channel_id}}-clock', function(){hidePopUpMessage();createTable();counter=startclock()});
 privateChannel.bind('client-{{channel_id}}-game', function(data) {
-      document.getElementById("cell"+data.id).innerHTML=data.message
-});
+      document.getElementById("ans"+data.id).innerHTML=data.message; $('#ans'+data.id).effect("highlight",{},1000);
+$('#cell'+data.id).effect("highlight",{},1000);});
 privateChannel.bind('client-{{channel_id}}-game', function(data) {
       if (data.user != presenceChannel.members.me.id){ document.getElementById('otherscore').innerHTML ++}});
 
@@ -116,7 +124,9 @@ function checkinput(ArrayObj,entry){
   for (var i = 0; i < ArrayObj.length; i++){
     if (ArrayObj[i] == lowerquery && guessed.indexOf(lowerquery) == -1){
 	   var da_index = ArrayObj.indexOf(lowerquery);
-      document.getElementById("cell"+da_index).innerHTML=lowerquery;
+      document.getElementById("ans"+da_index).innerHTML=lowerquery;
+	$('#ans'+da_index).effect("highlight",{},1000);
+	$('#cell'+da_index).effect("highlight",{},1000);
             guessed.push(lowerquery);
 	  privateChannel.trigger("client-{{channel_id}}-game", {'id':da_index,'message':lowerquery,'user':presenceChannel.members.me.id});
          document.getElementById('myscore').innerHTML++;
@@ -143,7 +153,7 @@ function timer()
   {
      var victory = document.getElementById("myscore").innerHTML > document.getElementById("otherscore").innerHTML
      document.getElementById("timer").innerHTML = '0:00';
-     clearInterval();
+     clearInterval(counter);
      showPopUpMessage("<p>We DONE</p>");
      $.get("http://staging.tryfourplay.com/textall",{'victory':victory},function(){alert('sent')});
 
