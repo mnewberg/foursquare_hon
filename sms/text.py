@@ -1,3 +1,4 @@
+import pysq.apiv2 as psq
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect
 from twilio.rest import TwilioRestClient
@@ -7,7 +8,9 @@ from gallery.models import user, twitter_outreach, user_lookup
 from time import time
 from django.shortcuts import render_to_response
 import re
+
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
+authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 
 
@@ -95,12 +98,12 @@ def endgame(request):
 	venue_names=[]
 	for i in [logged_in_vid,other_user_vid]:
 		v=authenticator.userless_query("/venues/"+i)
-		venue_names.append(v[0]['venue']['name'])
+		venue_names.append(v['venue']['name'])
 	if winner=='true':
 		logged_in_status='won!!'
-		other_user_status='lost :( .'
+		other_user_status='lost :( . How about buying '+logged_in_name+' a drink at '+venue_names[0]+'?'
 	else:
-		logged_in_status='lost :( .'
+		logged_in_status='lost :( . How about buying '+other_user_name+' a drink at '+venue_names[1]+'?'
 		other_user_status='won!!1'
 
 	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="Game over, you " +logged_in_status)
@@ -113,13 +116,8 @@ def nudge(request):
 	logged_in_user=user.objects.get(fsq_id=t.m_target.fsq_id)
 	other_user=t.sender
 	print 'running'
-	if 'uid' not in request.session:
-		
-		print uid
+	if 'uid' not in request.session:	
 		outgoing=routing.objects.get(recipient=logged_in_user.phone,sender=other_user.phone)
-		print other_user
-		print logged_in_user
-		print outgoing
 		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body=other_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
 		status='ok'
 	else:
