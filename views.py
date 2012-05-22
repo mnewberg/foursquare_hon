@@ -427,14 +427,14 @@ def onboard(request, uid):
         location,bio=get_bio(the_user.twitter)
     except:
         location,bio='',''
-    v=authenticator.userless_query("/venues/"+venue)
+    v=authenticator.userless_query("venues/"+venue)
     vlat=v['venue']['location']['lat']
     vlon=v['venue']['location']['lng']
     venue_name=v['venue']['name']
     
     v2=authenticator.query("/users/self",the_user.token, None)
     last_checkin=v2['user']['checkins']['items'][0]['venue']['name']
-    last_checkin_id=['user']['checkins']['items'][0]['venue']['id']
+    last_checkin_id=v2['user']['checkins']['items'][0]['venue']['id']
     t.other_venue_id=last_checkin_id
     t.save()
     

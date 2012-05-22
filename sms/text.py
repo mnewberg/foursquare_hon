@@ -108,10 +108,21 @@ def endgame(request):
 	return HttpResponse('success')
 
 def nudge(request):
+	uid=request.GET['uid']
+	t=twitter_outreach.objects.get(uid=uid)
+	logged_in_user=user.objects.get(fsq_id=t.m_target.fsq_id)
+	other_user=t.sender
+	print 'running'
 	if 'uid' not in request.session:
-		uid=request.GET['uid']
-		t=twitter_outreach.objects.get(uid=uid)
-		logged_in_user=user.objects.get(fsq_id=t.m_target)
-		other_user=user.objects.get(fsq_id=t.sender)
-		outgoing=routing.objects.get(recipient=logged_in.phone,sender=other_user.phone)
-		message=client.sms.messages.create(to=logged_in.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
+		
+		print uid
+		outgoing=routing.objects.get(recipient=logged_in_user.phone,sender=other_user.phone)
+		print other_user
+		print logged_in_user
+		print outgoing
+		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body=other_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
+		status='ok'
+	else:
+		outgoing=routing.objects.get(recipient=other_user.phone,sender=logged_in_user.phone)
+		message=client.sms.messages.create(to=other_user.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
+	return HttpResponse(status)

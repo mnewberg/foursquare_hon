@@ -50,6 +50,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^pusher/auth','websoc.auth'),
      url(r'^game/(.{1,5})','websoc.game'),
+     url(r'^nudge$','sms.text.nudge'),
      url(r'^textall$','sms.text.endgame'),
      url(r'^admin/', include(admin.site.urls)),
      url(r'^simon/','sms.text.xml'),

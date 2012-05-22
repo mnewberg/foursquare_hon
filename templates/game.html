@@ -103,9 +103,10 @@ var privateChannel = pusher.subscribe('private-{{channel_id}}');
 var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 var guessed = new Array();
 
-$(document).ready(function(){document.getElementById('desc').innerHTML=desc});
+$(document).ready(function(){document.getElementById('desc').innerHTML=desc;if (presenceChannel.members.count == 1){$.get('/nudge'),{'uid':'test0'}};});
 
 function startclock(){ return setInterval('timer()',1000);};
+presenceChannel.bind('pusher:subscription_succeeded', function(members){ alert(members.count); if (members.count == 1){$.get('/nudge',{'uid':'{{channel_id}}'})}});
 
 presenceChannel.bind('pusher:member_added', function(member) {hidePopUpMessage();alert('we ready to play!'); privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'}); createTable(); counter=startclock();});
 privateChannel.bind('client-{{channel_id}}-clock', function(){hidePopUpMessage();createTable();counter=startclock()});

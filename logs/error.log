@@ -1209,3 +1209,4 @@
 [Wed May 16 14:24:53 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=CV402WFU35UPRTYKBBKLJ5SWCJZAD0KREK11UMI44FEKJTHN
 [Sun May 20 13:30:41 2012] [error] [client 10.183.253.50] mod_wsgi (pid=17179): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=O3KNAJFXOBQHX0V1XY0MZAJ42IFDS4GA1BMRYBMIN4GYXVE3
 [Sun May 20 13:30:41 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=O3KNAJFXOBQHX0V1XY0MZAJ42IFDS4GA1BMRYBMIN4GYXVE3
+[Mon May 21 15:01:06 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/js/games/1.js, referer: http://staging.tryfourplay.com/game/8PRVI
