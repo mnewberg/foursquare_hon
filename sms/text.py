@@ -69,7 +69,7 @@ def callback(request):
 	request.session['other_user']=other_user.phone
 	request.session['other_user_name']=other_user.first_name
 	request.session['logged_in_name']=logged_in_user.first_name
-	message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
+	#message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
 	game_id=twitter_outreach.objects.get(uid=uid).game.gid
 	return render_to_response('game.html', {'channel_id':uid,'game_id':game_id})
 
