@@ -129,12 +129,12 @@ def second(request):
 	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token)
                 if not query.phone():
-                    return render_to_response('missing_sender.html', context_instance=RequestContext(request))
+                    return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
                 else:
                     return HttpResponseRedirect('/callback')
 	elif unread>0:
                 if not user.objects.get(fsq_id=f_id).phone:
-                    return render_to_response('missing_sender.html', context_instance=RequestContext(request))
+                    return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
 		else:
                     return HttpResponseRedirect('/callback')
 	elif user.objects.filter(fsq_id=f_id).count()==1:
@@ -412,7 +412,7 @@ def outreach(request):
     if tweet_response and sender.phone:
         return render_to_response('sent.html')
     elif not sender.phone:
-        return render_to_response('missing_sender.html', {'csrf':params}, context_instance=RequestContext(request))
+        return render_to_response('missing.html', {'csrf':params,'role':'sender'}, context_instance=RequestContext(request))
     else:
         return render_to_response('error.html')
 
@@ -471,9 +471,9 @@ def missing(request):
     
     if len(re.sub('[^\d.]+','',phone))!=10:
         if source=='sender':
-            return render_to_response('missing_sender.html',{'error':True, 'csrf':params}, context_instance=RequestContext(request))
+            return render_to_response('missing.html',{'error':True, 'csrf':params}, context_instance=RequestContext(request))
         else:
-            return render_to_response('missing_sender.html',{'error':True})
+            return render_to_response('missing.html',{'error':True})
     else:
         pass
     u=user.objects.get(fsq_id=request.session['fsq_id'])
@@ -482,7 +482,7 @@ def missing(request):
     if source=='sender':
         return render_to_response('sent.html')
     else:
-        return HttpResponseRedirect('/login')
+        return HttpResponseRedirect('/callback')
 
 def unsubscribe(request):
     request.session['unsubscribe']=True
