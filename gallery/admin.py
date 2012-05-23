@@ -1,5 +1,5 @@
 from django.contrib import admin
-from gallery.models import user, record, rating, venue_ll, user_lookup, invite_codes, twitter_outreach, game
+from gallery.models import user, record, rating, venue_ll, user_lookup, invite_codes, twitter_outreach, game, queue
 from sms.models import routing,avail_DIDs,log
 
 
@@ -35,3 +35,4 @@ admin.site.register(game)
 admin.site.register(routing, routingAdmin)
 admin.site.register(avail_DIDs)
 admin.site.register(log)
+admin.site.register(queue)

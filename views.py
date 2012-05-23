@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
-from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes, game
+from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes, game, queue
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from randomizer import chunk
@@ -150,6 +150,7 @@ def second(request):
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
 		return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
         else:
+                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_nae()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email())
                 return render_to_response('wait.html')
 
     
