@@ -110,32 +110,27 @@ def oldergallery(request):
 
 
 def ajaxreq(request):
+    p = pusher.Pusher()
     u=user.objects.get(fsq_id=request.session['fsq_id'])
-    #token = '1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII'
     lat=request.GET['lat']
     lon=request.GET['lon']
     gender=request.GET['gender']
     token = u.token
-    HttpResponse('success')
     trending=authenticator.query("/venues/trending", token, {'ll':str(lat)+','+str(lon)})
     trending_venues={}
     nearby_venues={}
+    p['chickpix'].trigger('running', '')
     for item in trending['venues']:
         try:
-            trending_venues[item['id']]=item['name'],item['categories'][0]['name']
+            trending_venues[item['id']]=item['name']
         except:
-            trending_venues[item['id']]=item['name'],''
-    else:
-        pass
+            pass
     radius='1000'
     all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
     i=0
     for item in all_nearby['venues']:
         if item['hereNow']['count']>0:
-            try:
-                nearby_venues[item['id']]=item['name'], item['categories'][0]['name']
-            except:
-                nearby_venues[item['id']]=item['name'],''
+            nearby_venues[item['id']]=item['name']
     for item in set(nearby_venues).intersection(set(trending_venues)):
             del nearby_venues[item]
     all_venues_nearby = nearby_venues.items() + trending_venues.items()
@@ -152,11 +147,9 @@ def ajaxreq(request):
             herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow",token))
             v_ids.append(venue[0])
             herenow[i]['hereNow']['venueName']=venue[1][0]
-            herenow[i]['hereNow']['venueCat']=venue[1][1]
             i = i+1
     for item in herenow:
             venueName=item['hereNow']['venueName']
-            venueCat=item['hereNow']['venueCat']
             for entry in item['hereNow']['items']:
                     if entry['user']['gender']==gender:
                             the_id=entry['user']['id']
@@ -164,12 +157,8 @@ def ajaxreq(request):
                             twitter=query.twitter()
                             if entry['user']['photo'].startswith("https://foursquare.com/img/"):
                                     pass
-                            elif not twitter:
-                                    pass
-                            elif categorize(venueName):
+                            elif twitter:
                                 chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
-                            else:
-                                backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
                             try:
                                 user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
                             except:
@@ -177,6 +166,5 @@ def ajaxreq(request):
                     else:
                             pass
             n+=1
-    p = pusher.Pusher()
-    p['chickpix'].trigger('done', {'chickpix': chickpix, 'backpix':backpix})
+    p['chickpix'].trigger('done', {'chickpix': chickpix})
     return HttpResponse('ok')
