@@ -1244,3 +1244,11 @@
 [Tue May 22 13:20:57 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/debug.py", line 223, in _get_lines_from_file, referer: http://staging.tryfourplay.com/callback
 [Tue May 22 13:20:57 2012] [error] [client 10.183.253.50]     context_line = source[lineno].strip('\\n'), referer: http://staging.tryfourplay.com/callback
 [Tue May 22 13:20:57 2012] [error] [client 10.183.253.50] IndexError: list index out of range, referer: http://staging.tryfourplay.com/callback
+[Sat May 26 16:06:14 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30542): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=NKLLXUDEJTBSSY2TEYTQR20QY3XVLELPO5HU0CUREWPBGFCQ
+[Sat May 26 16:06:14 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=NKLLXUDEJTBSSY2TEYTQR20QY3XVLELPO5HU0CUREWPBGFCQ
+[Sat May 26 16:06:14 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30541): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=NKLLXUDEJTBSSY2TEYTQR20QY3XVLELPO5HU0CUREWPBGFCQ
+[Sat May 26 16:06:14 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=NKLLXUDEJTBSSY2TEYTQR20QY3XVLELPO5HU0CUREWPBGFCQ
+[Tue May 29 19:43:43 2012] [error] [client 10.183.253.50] mod_wsgi (pid=6851): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=WI4JPPN5YA5OF1SVTTMNVRDWLSHLFLEIQQ2UGOV5HNGBXSIV
+[Tue May 29 19:43:43 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=WI4JPPN5YA5OF1SVTTMNVRDWLSHLFLEIQQ2UGOV5HNGBXSIV
+[Tue May 29 19:46:26 2012] [error] [client 10.183.253.50] mod_wsgi (pid=24441): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=VZCP2RTIDJA25OFMX0HH3KLLOZSM4RO3NQ0BBLNMYSRKMKOB
+[Tue May 29 19:46:26 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=VZCP2RTIDJA25OFMX0HH3KLLOZSM4RO3NQ0BBLNMYSRKMKOB

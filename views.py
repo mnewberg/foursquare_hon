@@ -1,3 +1,4 @@
+from sendemail import *
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
@@ -148,9 +149,13 @@ def second(request):
 	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
-		return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
+                welcome_email(query.email(),query.first_name())
+                invite_codes.objects.get(code=invite_code).delete()
+                return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
         else:
-                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_nae()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email())
+                the_code=invite_codes.objects.create(code=random_string(7),quota=1)
+                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email(),allocated_invite=the_code)
+                queue_email(query.email(),query.first_name())
                 return render_to_response('wait.html')
 
     
