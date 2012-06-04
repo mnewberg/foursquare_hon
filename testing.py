@@ -148,6 +148,8 @@ def ajaxreq(request):
             v_ids.append(venue[0])
             herenow[i]['hereNow']['venueName']=venue[1][0]
             i = i+1
+    p['chickpix'].trigger('done','')
+    HttpResponse('200')
     for item in herenow:
             venueName=item['hereNow']['venueName']
             for entry in item['hereNow']['items']:
@@ -159,6 +161,7 @@ def ajaxreq(request):
                                     pass
                             elif twitter:
                                 chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
+                                p['chickpix'].trigger('image',{'entry':chickpix[the_id]})                            
                             try:
                                 user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
                             except:
@@ -166,5 +169,4 @@ def ajaxreq(request):
                     else:
                             pass
             n+=1
-    p['chickpix'].trigger('done', {'chickpix': chickpix})
     return HttpResponse('ok')
