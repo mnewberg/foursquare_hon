@@ -85,5 +85,7 @@ class queue(models.Model):
 	last_name=models.CharField(max_length=30, null=True)
 	email = models.EmailField(max_length=75, null=True)
         allocated_invite=models.ForeignKey(invite_codes)
+	lat = models.FloatField()
+        lon = models.FloatField()
 	def __unicode__(self):
                 return self.fsq_id

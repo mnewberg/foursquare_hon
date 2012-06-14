@@ -2,7 +2,7 @@
 
 # Django settings for twilio project.
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = True
 
 ADMINS = ()

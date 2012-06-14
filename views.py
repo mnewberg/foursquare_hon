@@ -40,6 +40,9 @@ def home(request):
         return render_to_response('home.html')
 
 def login(request):
+        request.session['lat']=request.GET['lat']
+        request.session['lon']=request.GET['lon']
+        request.session.set_expiry(300)
         uri = authenticator.authorize_uri()
         try:
             request.session['invite_code']=request.GET['invite_code']
@@ -154,7 +157,7 @@ def second(request):
                 return render_to_response('loc.html', {'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
         else:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
-                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email(),allocated_invite=the_code)
+                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
                 queue_email(query.email(),query.first_name())
                 return render_to_response('wait.html')
 
