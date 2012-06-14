@@ -211,23 +211,22 @@ $.mobile.changePage("/results");
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+{% if gender == 'male' %}
+var gender='female'
+{% else %}
+var gender='male'
+{% endif %}
 
-	
-	        $('main').ready(initiate_geolocation);  
-	       
-	                jQuery(window).ready(function(){  
-	            jQuery("#btnInit2").click(initiate_geolocation_male);  
-	        });  
+{% if lat and lon %}
+var lat={{lat}}
+var lon={{lon}}
+$('main').ready(geo_preloaded);
+{%else%}
+$('main').ready(initiate_geolocation)	            
+{% endif %}
 
-
-	        function initiate_geolocation() {  
-	            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
+function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
 	        }
-
-
-	        function initiate_geolocation_male() {  
-	            navigator.geolocation.getCurrentPosition(handle_geolocation_query_male,handle_errors);  
-	        }  
 
 
 	        function handle_errors(error)  
@@ -254,28 +253,17 @@ $.mobile.changePage("/results");
 	                var lat=position.coords.latitude;
 	                var lon=position.coords.longitude;
                         lookup(lat,lon);
-	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':'female'},type:"GET",timeout:90000})}
+	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:90000})}
 
-					function handle_geolocation_query_male(position){					
-		                var lat=position.coords.latitude
-		                var lon=position.coords.longitude 
-                                
-
-
-	                  	$('input[name=lat]').val(lat);
-						$('input[name=lon]').val(lon);
-						$('input[name=gender]').val('male')
-						$('#MyForm').submit();
-		$.mobile.loadingMessage = "Loading up lots of dudes... please be patient!";
-  
-
-					}
+                      function geo_preloaded(){
+                         lookup(lat,lon);
+                        $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:90000})}
 
     function lookup(lat,lon) {
         $("#venue").foursquareAutocomplete({
             'latitude': lat,
             'longitude': lon,
-            'oauth_token': "{{token}}",
+            'oauth_token': "TF04SBT33JGTMBXIWADBMVZNQ0GD4AGHFSX2KHXZL03SFXE1",
             'minLength': 3,
             'search': function (event, ui) {
                 $("#venue-name").html(ui.item.name);
@@ -292,6 +280,7 @@ log(message);
             
         });
     };
+					
 
 
 
