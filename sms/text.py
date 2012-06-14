@@ -1,3 +1,4 @@
+import datetime
 import pysq.apiv2 as psq
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect
@@ -12,7 +13,16 @@ import re
 client = TwilioRestClient(settings.ACCOUNT_SID,settings.AUTH_TOKEN)
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
+def transcribe(request):
+	sid=request.POST['TranscriptionSid']
+	text=request.POST['TranscriptionText']
+	url=request.POST['RecordingUrl']
+	print sid, text, url
+	return HttpResponse('ok')
 
+def simon2(request):
+	client.calls.create(from_="+13109123101", to="+14158952957", url="http://staging.tryfourplay.com/static/play.xml")
+	return HttpResponse('ok')
 
 def simon(request):
 	return render_to_response('simon2.html')
@@ -39,6 +49,7 @@ def advanceDID(phone):
 
 def callback(request):
 	f_id=request.session['fsq_id']
+	request.session.set_expiry(datetime.datetime(2012, 12, 12, 0, 0))
 	try: 
 		uid=request.session['uid']
 	except:
@@ -88,9 +99,12 @@ def endgame(request):
 	curr_did=request.session['curr_did']
 	logged_in=request.session['logged_in']
 	curr_outgoing_did=request.session['curr_outgoing_did']
-	other_user=request.session['other_user']
-	other_user_name=request.session['other_user_name']
-	logged_in_name=request.session['logged_in_name']
+	try:
+		other_user=request.session['other_user']
+		other_user_name=request.session['other_user_name']
+		logged_in_name=request.session['logged_in_name']
+	except:
+		return HttpResponse('fail')
 	winner=request.GET['victory']
 	locations=twitter_outreach.objects.get(uid=request.session['uid'])
 	logged_in_vid=locations.venue_id
@@ -115,11 +129,11 @@ def nudge(request):
 	t=twitter_outreach.objects.get(uid=uid)
 	logged_in_user=user.objects.get(fsq_id=t.m_target.fsq_id)
 	other_user=t.sender
-	print 'running'
 	if 'uid' not in request.session:	
 		outgoing=routing.objects.get(recipient=logged_in_user.phone,sender=other_user.phone)
 		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body=other_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
 		status='ok'
+		print status
 	else:
 		outgoing=routing.objects.get(recipient=other_user.phone,sender=logged_in_user.phone)
 		message=client.sms.messages.create(to=other_user.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)

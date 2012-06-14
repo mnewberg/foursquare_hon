@@ -515,3 +515,24 @@ def updatetwitter(request):
     u.twitter=t
     u.save()
     return HttpResponse('success')
+
+
+def handler500(request):
+    """
+    An error handler which exposes the request object to the error template.
+    """
+    from django.template import Context, loader
+    from django.http import HttpResponseServerError
+    from disqus.context_processors import default
+    import logging
+    import sys
+    try:
+        context = default(request)
+    except Exception, e:
+        logging.error(e, exc_info=sys.exc_info(), extra={'request': request})
+        context = {}
+
+    context['request'] = request
+
+    t = loader.get_template('500.html') # You need to create a 500.html template.
+    return HttpResponseServerError(t.render(Context(context)))

@@ -22,7 +22,7 @@ class routingAdmin(admin.ModelAdmin):
 
 class twitter_outreachAdmin(admin.ModelAdmin):
     list_display=('m_target','sender','uid','message','game','venue_id','other_venue_id','read')
-    search_fields = ('m_target',)
+    raw_id_fields = ('m_target',)
 
 admin.site.register(user, userAdmin)
 admin.site.register(record, recordAdmin)

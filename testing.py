@@ -8,6 +8,7 @@ import tweepy
 import simplejson
 from django.http import HttpResponse
 import pusher
+from pyklout import Klout
 
 consumer_key=settings.CONSUMER_KEY
 consumer_secret=settings.CONSUMER_SECRET
@@ -170,3 +171,14 @@ def ajaxreq(request):
                             pass
             n+=1
     return HttpResponse('ok')
+
+
+def klout(request):
+    api=Klout(settings.KLOUT)
+    handle=request.POST['t_handle']
+    the_id=api.identity(str(handle),'twitter')['id']
+    topics=api.topics(the_id)
+    tlist=[]
+    for i in topics:
+        tlist.append(i['displayName'])
+    return HttpResponse(simplejson.dumps({'topics':tlist}),mimetype='application/javascript')

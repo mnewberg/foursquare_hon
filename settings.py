@@ -1,11 +1,11 @@
+
+
 # Django settings for twilio project.
 
-DEBUG = True
-TEMPLATE_DEBUG = False
+DEBUG = False
+TEMPLATE_DEBUG = True
 
-ADMINS = (
-   ('Matt', 'matt@newbergfamily.net'),
-)
+ADMINS = ()
 
 MANAGERS = ADMINS
 
@@ -32,13 +32,15 @@ CLIENT_SECRET='TOXCCMYSGVPM2OAVPR3RIDUM0WFMKVJ4VUFNFSI00QSZF4IH'
 
 CALLBACK_URL='http://staging.tryfourplay.com/loc/'
 
-
+SENTRY_DSN='http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2'
 
 #TWILIO
 ACCOUNT_SID = "AC5b9299999c233e8af8296346a93e74a1"
 
 AUTH_TOKEN = "b6052ac1980c3986c7497bb8fcc9746e"
 
+#KLOUT
+KLOUT = 'cpej5es6neebsajjwqkv2yf2'
 
 #SENDGRID
 EMAIL_HOST = 'smtp.sendgrid.net'
@@ -156,6 +158,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 INSTALLED_APPS = (
     #'mobileadmin',
+    'raven.contrib.django',
+    'sentry',
     'django_cron',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -171,25 +175,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}
+
+
+
+
+
+

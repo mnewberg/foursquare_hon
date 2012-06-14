@@ -103,7 +103,7 @@ var privateChannel = pusher.subscribe('private-{{channel_id}}');
 var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 var guessed = new Array();
 
-$(document).ready(function(){document.getElementById('desc').innerHTML=desc;if (presenceChannel.members.count == 1){$.get('/nudge'),{'uid':'test0'}};});
+$(document).ready(function(){document.getElementById('desc').innerHTML=desc;if (presenceChannel.members.count == 1){$.get('/nudge'),{'uid':'{{channel_id}}'}};});
 
 function startclock(){ return setInterval('timer()',1000);};
 presenceChannel.bind('pusher:subscription_succeeded', function(members){ alert(members.count); if (members.count == 1){$.get('/nudge',{'uid':'{{channel_id}}'})}});
@@ -146,7 +146,7 @@ function checkinput(ArrayObj,entry){
 </script>
 <script>
 
-var count=300;
+var count=100;
 function timer()
 {
   count=count-1;
@@ -209,9 +209,9 @@ function hidePopUpMessage() {
 <body> 
 	<span id="desc"> </span>
 <br>
-<span id="timer" style="font-size:25px;font-weight:bold"></span>
+<span id="timer" style="font-size:25px;font-weight:bold"></span><br><br><br><br>
 	<input id="query" width="50" onkeyup="checkinput(answers,this)">
-	<input type="submit" value="clear" onclick="document.getElementById('query').value='';">
+	<input type="submit" value="clear" onclick="document.getElementById('query').value='';"><br><br>
 										</table><div id="wrapper"> </div>
 										</body>
 							
