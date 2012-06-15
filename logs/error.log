@@ -5193,3 +5193,5 @@
 [Thu Jun 14 11:44:12 2012] [error] [client 10.183.253.50] ValueError: Unable to configure handler 'sentry': Cannot resolve 'sentry.client.handlers.SentryHandler': No module named client
 [Thu Jun 14 17:52:07 2012] [error] [client 10.183.253.50] mod_wsgi (pid=17689): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://staging.tryfourplay.com/loc/?code=JSNUOKPPARNQZDRV0OP1IQLN4NELVNQ32UR32LOJS5UJVIPF
 [Thu Jun 14 17:52:07 2012] [error] [client 10.183.253.50] IOError: failed to write data, referer: http://staging.tryfourplay.com/loc/?code=JSNUOKPPARNQZDRV0OP1IQLN4NELVNQ32UR32LOJS5UJVIPF
+[Fri Jun 15 11:33:23 2012] [error] [client 10.183.253.50] mod_wsgi (pid=1932): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 15 11:33:23 2012] [error] [client 10.183.253.50] IOError: failed to write data

@@ -24,6 +24,7 @@ from shout_twitter import send_twitter_shout, get_bio
 from sms.text import *
 from django.utils import simplejson
 from hotspots import hotspots
+from pyklout import Klout
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
@@ -375,6 +376,7 @@ def dialog(request, image):
     return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name()})
 
 def pickmessage(request):
+    api=Klout(settings.KLOUT)
     fsq_id=request.session['fsq_id']
     the_user=user.objects.get(fsq_id=fsq_id)
     if len(the_user.photo)<=4:
@@ -391,6 +393,13 @@ def pickmessage(request):
     target_t=t.t_handle
     target_n=t.first_name
     target_v=venue
+
+    the_id=api.identity(str(target_t),'twitter')['id']
+    topics=api.topics(the_id)
+    tlist=[]
+
+    for i in topics:
+        tlist.append(i['displayName'])
     
     games=game.objects.all()
     #    target_t=request.session['t_handle']
@@ -398,7 +407,7 @@ def pickmessage(request):
       #  target_n=request.session['f_name']
        # target_v=request.session['venue']
 
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params, 'games':games}, context_instance=RequestContext(request))
+    return render_to_response('message.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params,'topics':tlist,'games':games}, context_instance=RequestContext(request))
 
 def outreach(request):
     params = {}
