@@ -11,7 +11,7 @@
 	</div>
 	<div align="center">
 		<h4 class="messageheading">Say something to {{f_name}}</h4>
-		<img src="https://is1.4sqi.net/userpix/{{t_pic}}" class="messageimage" align="center"><br>Interested in {% for topic in topics %}{{topic}}, {% endfor %}
+		<img src="https://is1.4sqi.net/userpix/{{t_pic}}" class="messageimage" align="center"><br>{% if topics %}Interested in {% for topic in topics %}{% if forloop.last %}& {{topic}}{% else %}{{topic}}, {% endif %}{% endfor %}{% endif %}
 	</div>
 	
 	<div align="center" data-role="body">

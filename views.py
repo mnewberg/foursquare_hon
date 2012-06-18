@@ -394,10 +394,13 @@ def pickmessage(request):
     target_n=t.first_name
     target_v=venue
 
-    the_id=api.identity(str(target_t),'twitter')['id']
-    topics=api.topics(the_id)
-    tlist=[]
-
+    try:
+        the_id=api.identity(str(target_t),'twitter')['id']
+        topics=api.topics(the_id)
+        tlist=[]
+    except:
+        topics=[]
+        tlist=[]
     for i in topics:
         tlist.append(i['displayName'])
     
