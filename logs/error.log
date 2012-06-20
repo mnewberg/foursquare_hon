@@ -5212,3 +5212,95 @@
 [Sat Jun 16 11:00:09 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/debug.py", line 223, in _get_lines_from_file, referer: http://staging.tryfourplay.com/loc/?code=WEM04REDAQLZ1T1NPEXTKYWG2HHB2BUVB0LHOTEH3LGTEJQV
 [Sat Jun 16 11:00:09 2012] [error] [client 10.183.253.50]     context_line = source[lineno].strip('\\n'), referer: http://staging.tryfourplay.com/loc/?code=WEM04REDAQLZ1T1NPEXTKYWG2HHB2BUVB0LHOTEH3LGTEJQV
 [Sat Jun 16 11:00:09 2012] [error] [client 10.183.253.50] IndexError: list index out of range, referer: http://staging.tryfourplay.com/loc/?code=WEM04REDAQLZ1T1NPEXTKYWG2HHB2BUVB0LHOTEH3LGTEJQV
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50] mod_wsgi (pid=3439): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]     __import__(name)
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 61
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]     
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50]    ^
+[Wed Jun 20 12:56:11 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50] mod_wsgi (pid=3440): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]     __import__(name)
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 61
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]     
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50]    ^
+[Wed Jun 20 12:56:12 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50] mod_wsgi (pid=3553): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]     __import__(name)
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 21, in <module>
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50]     url(r'^favicon.ico',redirect_to('http://c15075740.r40.cf2.rackcdn.com/favicon.ico')),
+[Wed Jun 20 12:56:31 2012] [error] [client 10.183.253.50] TypeError: redirect_to() takes at least 2 arguments (1 given)
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50] mod_wsgi (pid=3554): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]     __import__(name)
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 21, in <module>
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50]     url(r'^favicon.ico',redirect_to('http://c15075740.r40.cf2.rackcdn.com/favicon.ico')),
+[Wed Jun 20 12:56:32 2012] [error] [client 10.183.253.50] TypeError: redirect_to() takes at least 2 arguments (1 given)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] mod_wsgi (pid=3553): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     __import__(name)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 21, in <module>
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     url(r'^favicon.ico',redirect_to('http://c15075740.r40.cf2.rackcdn.com/favicon.ico')),
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] TypeError: redirect_to() takes at least 2 arguments (1 given)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] mod_wsgi (pid=3554): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     __import__(name)
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 21, in <module>
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     url(r'^favicon.ico',redirect_to('http://c15075740.r40.cf2.rackcdn.com/favicon.ico')),
+[Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] TypeError: redirect_to() takes at least 2 arguments (1 given)

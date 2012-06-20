@@ -134,13 +134,15 @@ def second(request):
                 u=user.objects.get(fsq_id=f_id)
                 u.token=token
                 u.photo=query.photo()[37:]
+                u.last_lat=lat
+                u.last_lon=lon
                 has_shared=u.has_shared
                 u.save()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':u.twitter(), 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
         elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
 	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token)
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token, gender=query.gender())
                 if not query.phone():
                     return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
                 else:
@@ -153,128 +155,28 @@ def second(request):
 	elif user.objects.filter(fsq_id=f_id).count()==1:
 		u=user.objects.get(fsq_id=f_id)
 		u.token=token
-                u.photo=query.photo()[36:]
+                u.last_lat=lat
+                u.last_lon=lon
+                u.photo=query.photo()[37:]
                 has_shared=u.has_shared
 		u.save()
 		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok'})
 ##RETURNING USER
 	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token)
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token, gender=query.gender())
                 welcome_email(query.email(),query.first_name())
                 invite_codes.objects.get(code=invite_code).delete()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
-        else:
+        elif queue.objects.filter(fsq_id=query.id).count==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
                 queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
                 queue_email(query.email(),query.first_name())
                 return render_to_response('wait.html')
+        else:
+                return render_to_response('wait.html')
 
     
-def gallery(request, page):
-	if page=='0':
-		lat=request.GET['lat']
-		lon=request.GET['lon']
-		gender=request.GET['gender']
-		request.session['gender']=gender
-		request.session['lat']=lat
-		request.session['lon']=lon
-		params = {}
-		params.update(csrf(request))
-		u=user.objects.get(fsq_id=request.session['fsq_id'])
-		token = u.token
-		u.last_lat=lat
-		u.last_lon=lon
-		u.save()
-		trending=authenticator.query("/venues/trending", token, {'ll':str(lat)+','+str(lon)})
-		trending_venues={}
-		nearby_venues={}
-		for item in trending['venues']:
-		    try:
-                        trending_venues[item['id']]=item['name'],item['categories'][0]['name']
-                    except:
-                        trending_venues[item['id']]=item['name'],''
-                browser_radius=request.GET['radius']
-		radius=hotspots(float(lat), float(lon))
-                if not radius:
-                    radius=browser_radius
-                else:
-                    pass
-                request.session['radius']=radius
-                all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
-                i=0
-		for item in all_nearby['venues']:
-		    if item['hereNow']['count']>0:
-                        try:
-                            nearby_venues[item['id']]=item['name'], item['categories'][0]['name']
-                        except:
-                            nearby_venues[item['id']]=item['name'],''
-		for item in set(nearby_venues).intersection(set(trending_venues)):
-			del nearby_venues[item]
-		all_venues_nearby = nearby_venues.items() + trending_venues.items()	
-               ## if len(all_venues_nearby)<16:
-               ##     return render_to_response ('block.html')
-               ## else:
-               ##     pass
-		venue_names=[]
-		chickpix={}
-                backpix={}
-		herenow=[]
-		v_ids=[]
-		i=0
-		n=0
-		for venue in all_venues_nearby:
-			herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow",token))
-			v_ids.append(venue[0])
-			herenow[i]['hereNow']['venueName']=venue[1][0]
-                        herenow[i]['hereNow']['venueCat']=venue[1][1]
-			i = i+1
-	    	for item in herenow:
-			venueName=item['hereNow']['venueName']
-                        venueCat=item['hereNow']['venueCat']
-			for entry in item['hereNow']['items']:
-				if entry['user']['gender']==gender:
-                                        the_id=entry['user']['id']
-					if entry['user']['photo'].startswith("https://foursquare.com/img/"):
-						pass
-					elif categorize(venueName):
-                                            chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n]]
-                                        else:
-                                            backpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n]]
-                                        
-                                        try: 
-                                            user_lookup.objects.create(fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:])
-                                        except:
-                                            pass
-                                        
-                                else:
-					pass
-			n+=1
-		
-		preferred=[list(x) for x in chunk(chickpix.values(), 2)]
-		other=[list(x) for x in chunk(backpix.values(), 2)]
-                random.shuffle(preferred)
-                random.shuffle(other)
-                pairs=preferred+other
-                for item in pairs:
-			if len(item)<2:
-				item.append(pairs[0][0])
-		request.session['chickpix']=pairs
-        else:
-		params = {}
-		params.update(csrf(request))
-        request.session.modified = True
-        if len(request.session['chickpix'])<(int(page)+1):
-            newradius=int(request.session['radius'])+15000
-            request.session['radius']=newradius
-            if newradius>100000:
-                lastpage=True
-            else:
-                lastpage=False
-            return render_to_response('lastpage.html', {'newradius':newradius,'lastpage':lastpage, 'gender':request.session['gender'], 'lat':request.session['lat'], 'lon':request.session['lon']})
-        else:
-            image_pair=request.session['chickpix'][int(page)]
-            return render_to_response ('gallery.html', {'chickpix':image_pair, 'csrf':params, 'page':int(page)}, context_instance=RequestContext(request))
 
 def has_twitter(request):
     pic_id=request.GET['pic_id']

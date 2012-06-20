@@ -1,8 +1,10 @@
-<html>
+<Html>
 
 <head>
-<title>
-</title>
+<!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config".split(" ");
+for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,window.mixpanel||[]);
+mixpanel.init("58e3c644f32d1b4f722dcf78a1e2cf58");</script><!-- end Mixpanel -->
+
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
 
@@ -175,10 +177,11 @@ margin-bottom: -90px;
 var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix')
 var gallerybody = ""
-//channel.bind('done',function(data){for (var i in data["chickpix"]){gallerybody+='<a href=/pickmessage/?pic_id='+data["chickpix"][i][0]+'&venue_id='+data["chickpix"][i][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["chickpix"][i][0]+'></a>'};for (var i in data["backpix"]){gallerybody+='<a href=/pickmessage/?pic_id='+data["backpix"][i][0]+'&venue_id='+data["backpix"][i][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["backpix"][i][0]+'></a>'};document.getElementById('grid').innerHTML = gallerybody;$.mobile.changePage('#newgallery')})
 
-channel.bind('done',function(){$.mobile.changePage('#newgallery')});
-channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
+channel.bind('done',function(){if (typeof origin != 'undefined'){ $.mobile.changePage('#swapgender')}else{$.mobile.changePage('#newgallery')}});
+channel.bind('image',function(data){$('div.ui-page-active').find('#grid')[0].innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
+$('#grid').bind('click', function(){mixpanel.track('clicked-image')});
+
 {% if not has_shared %}
   function show_confirm()
 {
@@ -263,6 +266,8 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
                          lookup(lat,lon);
                         $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:90000})}
 
+function swapgender(){var origin = "original"; $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':'{{sex}}' },type:"GET",timeout:90000})}
+
     function lookup(lat,lon) {
         $("#venue").foursquareAutocomplete({
             'latitude': lat,
@@ -325,10 +330,19 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 				</div>
 		<div data-role="page" id="newgallery">
 		  <div data-role="content" id="thegallery">
+		    <input type="button" onclick="swapgender()">Swap</input>
 		    <div id="grid">
 		      </div>
 		    </div>
 </div>
+
+		<div data-role="page" id="swapgender">
+                  <div data-role="content" id="gallery2">
+                    <div id="grid">
+                      </div>
+                    </div>
+</div>
+
 	</body>
 	
 	</html>
