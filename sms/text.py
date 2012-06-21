@@ -68,6 +68,10 @@ def callback(request):
 		routing.objects.create(recipient=i[0],sender=i[1],DID=curr_did, time_created=round(time()))
 	request.session['curr_did']=curr_did
 	request.session['logged_in']=logged_in_user.phone
+	logged_in_pic=logged_in_user.photo
+	other_user_pic=other_in_user.photo
+	logged_in_name=logged_in_user.first_name
+	other_user_name=other_user.first_name
 	## message=client.sms.messages.create(to=logged_in_user.phone, from_=curr_did, body="Fourplay here. Please wait while we grab your secret admirerer!")
 
    ## now sms the initiator
@@ -82,7 +86,7 @@ def callback(request):
 	request.session['logged_in_name']=logged_in_user.first_name
 	#message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
 	game_id=twitter_outreach.objects.get(uid=uid).game.gid
-	return render_to_response('game.html', {'channel_id':uid,'game_id':game_id})
+	return render_to_response('game.html', {'channel_id':uid,'game_id':game_id,'user1_pic':logged_in_pic,'user1_name':logged_in_name,'user2_pic':other_user_pic,'user2_name':other_user_name})
 
 @csrf_exempt
 def incoming(request):

@@ -178,8 +178,8 @@ var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix')
 var gallerybody = ""
 
-channel.bind('done',function(){if (typeof origin != 'undefined'){ $.mobile.changePage('#swapgender')}else{$.mobile.changePage('#newgallery')}});
-channel.bind('image',function(data){$('div.ui-page-active').find('#grid')[0].innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
+channel.bind('done',function(){$.mobile.changePage('#newgallery')});
+channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 {% if not has_shared %}
@@ -266,7 +266,7 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
                          lookup(lat,lon);
                         $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:90000})}
 
-function swapgender(){var origin = "original"; $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':'{{sex}}' },type:"GET",timeout:90000})}
+//function swapgender(){var origin = "original"; $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':'{{sex}}' },type:"GET",timeout:90000})}
 
     function lookup(lat,lon) {
         $("#venue").foursquareAutocomplete({
@@ -336,12 +336,7 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 		    </div>
 </div>
 
-		<div data-role="page" id="swapgender">
-                  <div data-role="content" id="gallery2">
-                    <div id="grid">
-                      </div>
-                    </div>
-</div>
+		
 
 	</body>
 	
