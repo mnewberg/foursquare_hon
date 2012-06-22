@@ -28,11 +28,6 @@ from pyklout import Klout
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
-def postrecv(request):
-    os.chdir("/var/www/foursquare/")
-    os.system("git pull origin master")
-    return HttpResponse('Vote added')
-
 def home(request):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
@@ -189,93 +184,6 @@ def has_twitter(request):
     else:
         twitter=False
     return HttpResponse(simplejson.dumps({'twitter':twitter}), mimetype='application/javascript')
-
-def vote(request):
-        token = user.objects.get(fsq_id=request.session['fsq_id']).token
-        pic_id = request.POST['chosen_id']
-	pic_id2 = request.POST['pic_id2']
-	venue_id=request.POST['venue_id']
-   	venue_id2=request.POST['venue_id2']
-	thetime=round(time())
-	
-	if rating.objects.filter(pic_id=pic_id).count()==1:
-		r1 = rating.objects.get(pic_id=pic_id)
-		r1.rating += 1
-		r1.total_sets += 1
-	else:
-		r1 = rating(pic_id=pic_id, rating=1, total_sets=1)
-	r1.save()
-	record1=record.objects.create(time=thetime, venue_id=venue_id, target=r1)
-	if rating.objects.filter(pic_id=pic_id2).count()==1:
-		r2 = rating.objects.get(pic_id=pic_id2)
-		r2.total_sets +=1
-	else:        
-		r2 = rating(pic_id=pic_id2, rating=0, total_sets=1)
-	r2.save()
-	record2=record.objects.create(time=thetime, venue_id=venue_id2, target=r2)
-	fsq_user = user.objects.get(fsq_id=request.session['fsq_id'])
-	fsq_user.records.add(record1)
-	fsq_user.save()
-	for place in venue_id, venue_id2:
-            try: 
-                location=authenticator.query("/venues/"+place,token)
-                venue_ll.objects.create(venue_id=place, lat=float(location['venue']['location']['lat']), lon=float(location['venue']['location']['lng']))
-            except:
-                pass
-
-	return HttpResponse('Vote successful')
-
-def results(request):
-        
-	fsq_id=request.session['fsq_id']
-	u=user.objects.get(fsq_id=fsq_id)
-	token = u.token
-
-	if u.has_shared==False:
-            post_data=[('oauth_token',token),('shout','I\'m checking out people nearby on TryFourplay.com! This is nuts.'),('broadcast','public,followers')]
-            urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
-            u.has_shared=True
-            u.save()
-        da_results=suggested_venues(fsq_id)
-	
-        venue_names={}
-        
-	for item in da_results:
-		data=authenticator.query("venues/"+item[0],token)
-		try:
-                    venue_names[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1][0],re.sub(' ','+',data['venue']['location']['address']),item[1][1]]
-                except:
-                    pass
-        global_results=suggested_venues('',request.session['lat'],request.session['lon'],request.session['radius'])
-	all_venues={}
-	for item in global_results:
-		data=authenticator.query("venues/"+item[0],token)
-                try:
-                    all_venues[data['venue']['name']]=[data['venue']['location']['address'], data['venue']['location']['postalCode'], item[1][0],re.sub(' ','+',data['venue']['location']['address']),item[1][1], item[0]]
-                except:
-                    pass
-	return render_to_response('results.html', {'your_venue_names':venue_names, 'all_venues':all_venues})
-
-def dialog(request, image):
-    venue=request.GET['venue_id']
-    token = user.objects.get(fsq_id=request.session['fsq_id']).token
-    t=user_lookup.objects.get(pic_id=image)
-    the_id=t.fsq_id
-    finder = psq.UserFinder(authenticator)
-    query = finder.findUser(token, the_id)
-    twitter=query.twitter()
-    if twitter:
-        has_twitter=True
-        t.t_handle=twitter
-        t.save()
-        request.session['venue']=venue
-        request.session['f_name']=query.first_name()
-        request.session['t_handle']=twitter
-        request.session['t_pic']=image
-    else:
-        has_twitter=False
-
-    return render_to_response('popup.html',{'image':image, 'twitter':has_twitter, 'f_name':query.first_name()})
 
 def pickmessage(request):
     api=Klout(settings.KLOUT)
