@@ -47,6 +47,17 @@ html, body{
 }
 #red{
 	@include gradient( 48px, #ff8282, #ff4545, #930202, #fb8080, 20);
+
+	#logo{
+		width:101px;
+		height:25px;
+		margin:0 auto;
+		background-image:url('../images/logo.png');
+		background-repeat:no-repeat;
+		position:relative;
+		top:11px;
+		z-index:99;
+	}
 }
 #blue{
 	@include gradient( 240px, #8eb4ff, #4986ff, #6699ff, #003194, 17);

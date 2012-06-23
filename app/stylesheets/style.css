@@ -63,8 +63,19 @@ html, body {
   height: 2px;
   z-index: 19;
 }
-
 /* line 51, ../sass/style.scss */
+#red #logo {
+  width: 101px;
+  height: 25px;
+  margin: 0 auto;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 11px;
+  z-index: 99;
+}
+
+/* line 62, ../sass/style.scss */
 #blue {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb4ff), color-stop(50%, #4986ff), color-stop(100%, #8eb4ff));
   background-image: -webkit-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
@@ -113,7 +124,7 @@ html, body {
   z-index: 16;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 #green {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #71e2a1), color-stop(50%, #28c66b), color-stop(100%, #71e2a1));
   background-image: -webkit-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
@@ -162,7 +173,7 @@ html, body {
   z-index: 13;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 #purple {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dd79dd), color-stop(50%, #de52de), color-stop(100%, #dd79dd));
   background-image: -webkit-linear-gradient(top, #dd79dd, #de52de 50%, #dd79dd);
@@ -211,32 +222,32 @@ html, body {
   z-index: 10;
 }
 
-/* line 62, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 .section > div {
   display: table;
   width: 100%;
   height: 100%;
   padding-top: 6px;
 }
-/* line 67, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .section > div p {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-/* line 72, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .section > div .left_arrow {
   cursor: pointer;
   padding-left: 15px;
   padding-right: 25px;
 }
-/* line 77, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .section > div .right_arrow {
   cursor: pointer;
   padding-left: 25px;
   padding-right: 15px;
 }
-/* line 84, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 .section #players {
   display: table;
   vertical-align: middle;
@@ -244,7 +255,7 @@ html, body {
   margin: 0 auto;
   margin-top: 54px;
 }
-/* line 91, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 .section #players #you, .section #players #opponent {
   display: table-cell;
   width: 100px;
@@ -256,7 +267,7 @@ html, body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 99, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 .section #players #vs {
   vertical-align: middle;
   display: table-cell;
