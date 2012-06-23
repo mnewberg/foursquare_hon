@@ -8,26 +8,53 @@
 	<link rel="stylesheet" href="stylesheets/style.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head> 
-<body> 
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);"> 
 <div id="wrapper">
-	<div id="red" class="section"><div id="logo"></div></div>
-	<div id="blue" class="section">
-		<div>
-			<div id="players">
-				<div id="you"></div>
-				<div id="vs">vs</div>
-				<div id="opponent"></div>
+	<div id="waiting_room">
+		<div id="red" class="section"><div id="logo"></div></div>
+		<div id="blue" class="section">
+			<div>
+				<div id="players">
+					<div id="you"></div>
+					<div id="vs">vs</div>
+					<div id="opponent"></div>
+				</div>
 			</div>
 		</div>
+		<div id="green" class="section">
+			<div>
+				<p class="left_arrow"><img src="images/left_arrow.png" /></p>
+				<p>Name as many US states beginning with the letter 'M' as you can.</p>
+				<p class="right_arrow"><img src="images/right_arrow.png" /></p>
+			</div>
+		</div>
+		<div id="purple" class="section"><div><p>Waiting for opponent...</p></div></div>
 	</div>
-	<div id="green" class="section">
-		<div>
-			<p class="left_arrow"><img src="images/left_arrow.png" /></p>
-			<p>Name as many US states beginning with the letter 'M' as you can.</p>
-			<p class="right_arrow"><img src="images/right_arrow.png" /></p>
+	<div id="game">
+		<div id="scoreboard">
+			<div id="time_remaining">0:38</div>
+			<div id="answers_remaining">5/25</div>
+		</div>
+		<div id="game_red" class="section"><div><div id="game_title">States starting with 'M'</div></div></div>
+		<div id="game_you" class="game_player">
+			<div>
+				<div id="game_you" class="player_small"></div>
+				<div id="your_score" class="player_score">3</div>
+				<div id="your_last_guess" class="last_guess">Montanta</div>
+			</div>
+		</div>
+		<div id="game_opponent" class="game_player">
+			<div>
+				<div id="game_opponent" class="player_small"></div>
+				<div id="opponent_score" class="player_score">3</div>
+				<div id="opponent_last_guess" class="last_guess">Mississippi</div>
+			</div>
+		</div>
+		<div id="input_container">
+			<input type="text" id="game_input" name="game_input" />
+			<input type="button" id="clear" value="Clear" />
 		</div>
 	</div>
-	<div id="purple" class="section"><div><p>Waiting for opponent...</p></div></div>
 </div>
 </body>
 </html>

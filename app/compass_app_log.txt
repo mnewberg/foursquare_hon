@@ -155,3 +155,78 @@
 2012-06-23 12:56:32 overwrite stylesheets/style.css 
 2012-06-23 12:56:47 overwrite stylesheets/style.css 
 2012-06-23 12:56:58 overwrite stylesheets/style.css 
+2012-06-23 13:14:17     error sass/style.scss (Line 4: File to import not found or unreadable: partials/game.
+Load paths:
+  C:/Users/Ryan Warner/Documents/GitHub/foursquare/app/sass
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/blueprint/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/compass/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/bootstrap-sass/vendor/assets/stylesheets
+  Compass::SpriteImporter)
+2012-06-23 13:14:17 overwrite stylesheets/style.css 
+2012-06-23 13:15:11     error sass/style.scss (Line 4: File to import not found or unreadable: partials/_game.
+Load paths:
+  C:/Users/Ryan Warner/Documents/GitHub/foursquare/app/sass
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/blueprint/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/compass/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/bootstrap-sass/vendor/assets/stylesheets
+  Compass::SpriteImporter)
+2012-06-23 13:15:11 overwrite stylesheets/style.css 
+2012-06-23 13:15:29 overwrite stylesheets/style.css 
+2012-06-23 13:15:32 identical stylesheets/style.css 
+2012-06-23 13:15:38 identical stylesheets/style.css 
+2012-06-23 13:18:11 overwrite stylesheets/style.css 
+2012-06-23 13:20:58 overwrite stylesheets/style.css 
+2012-06-23 13:29:01 overwrite stylesheets/style.css 
+2012-06-23 13:39:04     error sass/style.scss (Line 21 of sass/partials/_game.scss: (0.08 5px 0px 5px) is not a number for `rgba')
+2012-06-23 13:39:04 overwrite stylesheets/style.css 
+2012-06-23 13:39:23 overwrite stylesheets/style.css 
+2012-06-23 13:40:38 overwrite stylesheets/style.css 
+2012-06-23 13:40:52 overwrite stylesheets/style.css 
+2012-06-23 13:41:05 overwrite stylesheets/style.css 
+2012-06-23 13:41:43 identical stylesheets/style.css 
+2012-06-23 13:41:56 overwrite stylesheets/style.css 
+2012-06-23 13:42:43 overwrite stylesheets/style.css 
+2012-06-23 13:42:53 overwrite stylesheets/style.css 
+2012-06-23 13:43:08 overwrite stylesheets/style.css 
+2012-06-23 13:43:20 overwrite stylesheets/style.css 
+2012-06-23 13:43:50 overwrite stylesheets/style.css 
+2012-06-23 13:45:53 overwrite stylesheets/style.css 
+2012-06-23 13:49:44 overwrite stylesheets/style.css 
+2012-06-23 13:51:32 overwrite stylesheets/style.css 
+2012-06-23 13:52:07 overwrite stylesheets/style.css 
+2012-06-23 14:01:28 overwrite stylesheets/style.css 
+2012-06-23 14:02:07 overwrite stylesheets/style.css 
+2012-06-23 14:02:25 overwrite stylesheets/style.css 
+2012-06-23 14:05:13 overwrite stylesheets/style.css 
+2012-06-23 14:06:44 overwrite stylesheets/style.css 
+2012-06-23 14:06:58 overwrite stylesheets/style.css 
+2012-06-23 14:08:53 overwrite stylesheets/style.css 
+2012-06-23 14:09:08 identical stylesheets/style.css 
+2012-06-23 14:09:25 overwrite stylesheets/style.css 
+2012-06-23 14:13:11 overwrite stylesheets/style.css 
+2012-06-23 14:13:16 overwrite stylesheets/style.css 
+2012-06-23 14:28:07 overwrite stylesheets/style.css 
+2012-06-23 14:37:19 overwrite stylesheets/style.css 
+2012-06-23 14:39:26 overwrite stylesheets/style.css 
+2012-06-23 14:40:32 overwrite stylesheets/style.css 
+2012-06-23 14:42:04 overwrite stylesheets/style.css 
+2012-06-23 14:45:37 overwrite stylesheets/style.css 
+2012-06-23 14:46:13 overwrite stylesheets/style.css 
+2012-06-23 14:47:07 overwrite stylesheets/style.css 
+2012-06-23 14:47:31 overwrite stylesheets/style.css 
+2012-06-23 14:47:47 overwrite stylesheets/style.css 
+2012-06-23 14:50:40 overwrite stylesheets/style.css 
+2012-06-23 14:50:56 overwrite stylesheets/style.css 
+2012-06-23 14:51:25 overwrite stylesheets/style.css 
+2012-06-23 14:51:35 overwrite stylesheets/style.css 
+2012-06-23 14:52:17 overwrite stylesheets/style.css 
+2012-06-23 14:55:19 overwrite stylesheets/style.css 
+2012-06-23 14:56:17 overwrite stylesheets/style.css 
+2012-06-23 14:56:56 overwrite stylesheets/style.css 
+2012-06-23 14:58:13 overwrite stylesheets/style.css 
