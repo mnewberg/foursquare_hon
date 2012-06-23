@@ -5304,3 +5304,6 @@
 [Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 21, in <module>
 [Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50]     url(r'^favicon.ico',redirect_to('http://c15075740.r40.cf2.rackcdn.com/favicon.ico')),
 [Wed Jun 20 12:56:33 2012] [error] [client 10.183.253.50] TypeError: redirect_to() takes at least 2 arguments (1 given)
+[Sat Jun 23 16:03:32 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/media, referer: http://playdo.pe/game/ryan1
+[Sat Jun 23 15:03:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/media, referer: http://playdo.pe/game/ryan1
+[Sat Jun 23 15:03:51 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/media

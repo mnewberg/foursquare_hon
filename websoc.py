@@ -4,7 +4,7 @@ from django.utils import simplejson
 from django.shortcuts import render_to_response
 import json
 import pusher
-from gallery.models import twitter_outreach
+from gallery.models import twitter_outreach, user, user_lookup
 
 from collections import OrderedDict
 import random
@@ -22,5 +22,12 @@ def auth(request):
     return HttpResponse(json.dumps(daresponse))
 
 def game(request, uid):
-    game_id=twitter_outreach.objects.get(uid=uid).game.gid
-    return render_to_response("game.html", {'channel_id':uid,'game_id':game_id})
+    outreach=twitter_outreach.objects.get(uid=uid)
+    game_id=outreach.game.gid
+    user1=outreach.sender
+    user2=user.objects.get(fsq_id=outreach.m_target.fsq_id)
+    user1_name=user1.first_name
+    user1_pic=user1.photo
+    user2_pic=user2.photo
+    user2_name=user2.first_name
+    return render_to_response("newgame.html", {'channel_id':uid,'game_id':game_id,'user1_pic':user1_pic,'user1_name':user1_name,'user2_pic':user2_pic,'user2_name':user2_name})

@@ -86,7 +86,7 @@ def callback(request):
 	request.session['logged_in_name']=logged_in_user.first_name
 	#message=client.sms.messages.create(to=other_user.phone, from_=curr_outgoing_did,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
 	game_id=twitter_outreach.objects.get(uid=uid).game.gid
-	return render_to_response('game.html', {'channel_id':uid,'game_id':game_id,'user1_pic':logged_in_pic,'user1_name':logged_in_name,'user2_pic':other_user_pic,'user2_name':other_user_name})
+	return render_to_response('newgame.html', {'channel_id':uid,'game_id':game_id,'user1_pic':logged_in_pic,'user1_name':logged_in_name,'user2_pic':other_user_pic,'user2_name':other_user_name})
 
 @csrf_exempt
 def incoming(request):

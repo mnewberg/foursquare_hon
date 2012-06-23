@@ -128,7 +128,7 @@ def second(request):
         if showmessage==False and user_look!=False and invite_codes.objects.filter(code=invite_code).count()==1:
                 u=user.objects.get(fsq_id=f_id)
                 u.token=token
-                u.photo=query.photo()[37:]
+                u.photo=query.photo()[36:]
                 u.last_lat=lat
                 u.last_lon=lon
                 has_shared=u.has_shared
