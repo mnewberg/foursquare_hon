@@ -1,0 +1,232 @@
+2012-06-20 15:57:46    create stylesheets/style.css 
+2012-06-20 16:11:29     error sass/style.scss (Line 2: Undefined mixin 'background-image'.)
+2012-06-20 16:11:29 overwrite stylesheets/style.css 
+2012-06-20 16:12:09 overwrite stylesheets/style.css 
+2012-06-20 16:12:27 overwrite stylesheets/style.css 
+2012-06-20 17:40:59 overwrite stylesheets/style.css 
+2012-06-20 17:41:16 overwrite stylesheets/style.css 
+2012-06-20 17:41:20 identical stylesheets/style.css 
+2012-06-20 17:41:38 overwrite stylesheets/style.css 
+2012-06-20 17:42:11 overwrite stylesheets/style.css 
+2012-06-20 17:45:08 overwrite stylesheets/style.css 
+2012-06-20 17:52:14 overwrite stylesheets/style.css 
+2012-06-20 17:52:53 overwrite stylesheets/style.css 
+2012-06-21 09:22:17 overwrite stylesheets/style.css 
+2012-06-21 09:22:40 overwrite stylesheets/style.css 
+2012-06-21 09:23:52 overwrite stylesheets/style.css 
+2012-06-21 09:24:04 overwrite stylesheets/style.css 
+2012-06-21 09:24:25 overwrite stylesheets/style.css 
+2012-06-21 09:24:43 overwrite stylesheets/style.css 
+2012-06-21 09:25:25 overwrite stylesheets/style.css 
+2012-06-21 09:25:48 overwrite stylesheets/style.css 
+2012-06-21 09:26:18 overwrite stylesheets/style.css 
+2012-06-21 09:26:34 overwrite stylesheets/style.css 
+2012-06-21 09:27:22 overwrite stylesheets/style.css 
+2012-06-21 09:27:36     error sass/style.scss (Line 17: Alpha channel 9 must be between 0 and 1 inclusive for `rgba')
+2012-06-21 09:27:36 overwrite stylesheets/style.css 
+2012-06-21 09:27:46 overwrite stylesheets/style.css 
+2012-06-21 09:27:54 overwrite stylesheets/style.css 
+2012-06-21 09:28:01 overwrite stylesheets/style.css 
+2012-06-21 09:28:15 overwrite stylesheets/style.css 
+2012-06-21 09:33:33 overwrite stylesheets/style.css 
+2012-06-21 09:33:50 overwrite stylesheets/style.css 
+2012-06-21 09:34:02 overwrite stylesheets/style.css 
+2012-06-21 09:34:09 overwrite stylesheets/style.css 
+2012-06-21 09:34:24 overwrite stylesheets/style.css 
+2012-06-21 09:34:36 overwrite stylesheets/style.css 
+2012-06-21 09:34:51 overwrite stylesheets/style.css 
+2012-06-21 09:36:20 overwrite stylesheets/style.css 
+2012-06-21 09:36:30 overwrite stylesheets/style.css 
+2012-06-21 09:36:39 overwrite stylesheets/style.css 
+2012-06-21 09:36:48 overwrite stylesheets/style.css 
+2012-06-21 09:36:57 overwrite stylesheets/style.css 
+2012-06-21 09:37:09 overwrite stylesheets/style.css 
+2012-06-21 09:37:18 overwrite stylesheets/style.css 
+2012-06-21 09:37:56 overwrite stylesheets/style.css 
+2012-06-21 09:43:08     error sass/style.scss (Line 7: Undefined mixin 'gradient'.)
+2012-06-21 09:43:08 overwrite stylesheets/style.css 
+2012-06-21 09:43:41 overwrite stylesheets/style.css 
+2012-06-21 09:56:36 overwrite stylesheets/style.css 
+2012-06-21 09:57:33 overwrite stylesheets/style.css 
+2012-06-21 10:00:28     error sass/style.scss (Line 7: Invalid CSS after "..., $shadow-dark ": expected ")", was "$z){")
+2012-06-21 10:00:28 overwrite stylesheets/style.css 
+2012-06-21 10:00:44     error sass/style.scss (Line 33: Undefined variable: "$z-1".)
+2012-06-21 10:00:44 overwrite stylesheets/style.css 
+2012-06-21 10:00:59 overwrite stylesheets/style.css 
+2012-06-21 10:01:29 overwrite stylesheets/style.css 
+2012-06-21 10:01:47 overwrite stylesheets/style.css 
+2012-06-21 10:02:18 overwrite stylesheets/style.css 
+2012-06-21 10:02:35 overwrite stylesheets/style.css 
+2012-06-21 10:03:01 overwrite stylesheets/style.css 
+2012-06-21 10:03:04 overwrite stylesheets/style.css 
+2012-06-21 10:03:15 overwrite stylesheets/style.css 
+2012-06-21 10:03:39 overwrite stylesheets/style.css 
+2012-06-21 10:04:03 overwrite stylesheets/style.css 
+2012-06-21 10:04:10 overwrite stylesheets/style.css 
+2012-06-21 10:04:18 overwrite stylesheets/style.css 
+2012-06-21 10:05:01 overwrite stylesheets/style.css 
+2012-06-21 10:06:03 overwrite stylesheets/style.css 
+2012-06-21 10:06:22 overwrite stylesheets/style.css 
+2012-06-21 10:06:33 overwrite stylesheets/style.css 
+2012-06-21 10:07:00 overwrite stylesheets/style.css 
+2012-06-21 10:07:16 overwrite stylesheets/style.css 
+2012-06-21 10:08:12 overwrite stylesheets/style.css 
+2012-06-21 10:08:33 overwrite stylesheets/style.css 
+2012-06-21 10:08:51 overwrite stylesheets/style.css 
+2012-06-21 10:09:02 overwrite stylesheets/style.css 
+2012-06-21 10:09:15 overwrite stylesheets/style.css 
+2012-06-21 10:09:23 overwrite stylesheets/style.css 
+2012-06-21 10:09:32 overwrite stylesheets/style.css 
+2012-06-21 10:09:47 overwrite stylesheets/style.css 
+2012-06-21 16:22:02 overwrite stylesheets/style.css 
+2012-06-21 16:22:17 overwrite stylesheets/style.css 
+2012-06-21 16:22:59 overwrite stylesheets/style.css 
+2012-06-21 16:24:29 overwrite stylesheets/style.css 
+2012-06-21 16:24:38 overwrite stylesheets/style.css 
+2012-06-21 16:28:05 overwrite stylesheets/style.css 
+2012-06-21 16:29:42 overwrite stylesheets/style.css 
+2012-06-21 16:31:05 identical stylesheets/style.css 
+2012-06-21 16:33:27 overwrite stylesheets/style.css 
+2012-06-21 16:33:30 identical stylesheets/style.css 
+2012-06-21 16:38:35 overwrite stylesheets/style.css 
+2012-06-21 16:38:47 overwrite stylesheets/style.css 
+2012-06-21 16:47:20 overwrite stylesheets/style.css 
+2012-06-21 18:13:27 overwrite stylesheets/style.css 
+2012-06-21 18:14:34 overwrite stylesheets/style.css 
+2012-06-21 18:14:54 overwrite stylesheets/style.css 
+2012-06-21 18:16:34 overwrite stylesheets/style.css 
+2012-06-21 18:16:46 overwrite stylesheets/style.css 
+2012-06-21 18:16:55 overwrite stylesheets/style.css 
+2012-06-21 18:17:04 overwrite stylesheets/style.css 
+2012-06-21 18:17:33 overwrite stylesheets/style.css 
+2012-06-21 18:17:51 overwrite stylesheets/style.css 
+2012-06-21 18:18:27 overwrite stylesheets/style.css 
+2012-06-21 18:18:39 overwrite stylesheets/style.css 
+2012-06-21 18:18:57 overwrite stylesheets/style.css 
+2012-06-21 18:22:36 overwrite stylesheets/style.css 
+2012-06-21 18:23:34 overwrite stylesheets/style.css 
+2012-06-21 18:26:03 overwrite stylesheets/style.css 
+2012-06-21 18:26:34 overwrite stylesheets/style.css 
+2012-06-21 18:27:51 overwrite stylesheets/style.css 
+2012-06-21 18:28:01 overwrite stylesheets/style.css 
+2012-06-21 18:31:55 overwrite stylesheets/style.css 
+2012-06-21 18:42:40 overwrite stylesheets/style.css 
+2012-06-21 18:43:10 overwrite stylesheets/style.css 
+2012-06-21 18:44:19 overwrite stylesheets/style.css 
+2012-06-21 18:45:25 overwrite stylesheets/style.css 
+2012-06-21 18:47:30 overwrite stylesheets/style.css 
+2012-06-21 18:49:51 overwrite stylesheets/style.css 
+2012-06-21 18:50:25 overwrite stylesheets/style.css 
+2012-06-21 18:50:34 overwrite stylesheets/style.css 
+2012-06-21 18:51:01 overwrite stylesheets/style.css 
+2012-06-21 18:51:21 overwrite stylesheets/style.css 
+2012-06-21 19:01:10 overwrite stylesheets/style.css 
+2012-06-21 19:14:45 overwrite stylesheets/style.css 
+2012-06-21 19:15:46 overwrite stylesheets/style.css 
+2012-06-21 19:20:31 overwrite stylesheets/style.css 
+2012-06-23 12:33:32 overwrite stylesheets/style.css 
+2012-06-23 12:33:51 overwrite stylesheets/style.css 
+2012-06-23 12:34:06 overwrite stylesheets/style.css 
+2012-06-23 12:35:49 overwrite stylesheets/style.css 
+2012-06-23 12:36:02 overwrite stylesheets/style.css 
+2012-06-23 12:36:11 overwrite stylesheets/style.css 
+2012-06-23 12:36:40 overwrite stylesheets/style.css 
+2012-06-23 12:36:53 overwrite stylesheets/style.css 
+2012-06-23 12:37:16 overwrite stylesheets/style.css 
+2012-06-23 12:37:29 overwrite stylesheets/style.css 
+2012-06-23 12:37:38 overwrite stylesheets/style.css 
+2012-06-23 12:38:01 overwrite stylesheets/style.css 
+2012-06-23 12:38:07 overwrite stylesheets/style.css 
+2012-06-23 12:38:14 overwrite stylesheets/style.css 
+2012-06-23 12:38:35 overwrite stylesheets/style.css 
+2012-06-23 12:38:55 overwrite stylesheets/style.css 
+2012-06-23 12:39:08 overwrite stylesheets/style.css 
+2012-06-23 12:50:46 overwrite stylesheets/style.css 
+2012-06-23 12:51:19 overwrite stylesheets/style.css 
+2012-06-23 12:51:59 identical stylesheets/style.css 
+2012-06-23 12:54:14 overwrite stylesheets/style.css 
+2012-06-23 12:54:28 overwrite stylesheets/style.css 
+2012-06-23 12:54:37 identical stylesheets/style.css 
+2012-06-23 12:55:02 overwrite stylesheets/style.css 
+2012-06-23 12:55:26 overwrite stylesheets/style.css 
+2012-06-23 12:55:56 overwrite stylesheets/style.css 
+2012-06-23 12:56:14 overwrite stylesheets/style.css 
+2012-06-23 12:56:25 overwrite stylesheets/style.css 
+2012-06-23 12:56:32 overwrite stylesheets/style.css 
+2012-06-23 12:56:47 overwrite stylesheets/style.css 
+2012-06-23 12:56:58 overwrite stylesheets/style.css 
+2012-06-23 13:14:17     error sass/style.scss (Line 4: File to import not found or unreadable: partials/game.
+Load paths:
+  C:/Users/Ryan Warner/Documents/GitHub/foursquare/app/sass
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/blueprint/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/compass/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/bootstrap-sass/vendor/assets/stylesheets
+  Compass::SpriteImporter)
+2012-06-23 13:14:17 overwrite stylesheets/style.css 
+2012-06-23 13:15:11     error sass/style.scss (Line 4: File to import not found or unreadable: partials/_game.
+Load paths:
+  C:/Users/Ryan Warner/Documents/GitHub/foursquare/app/sass
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/blueprint/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_0.12/compass-0.12.1/frameworks/compass/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/Users/RYANWA~1/AppData/Local/Temp/Rar$EXa0.809/compass.app/lib/ruby/compass_extensions/bootstrap-sass/vendor/assets/stylesheets
+  Compass::SpriteImporter)
+2012-06-23 13:15:11 overwrite stylesheets/style.css 
+2012-06-23 13:15:29 overwrite stylesheets/style.css 
+2012-06-23 13:15:32 identical stylesheets/style.css 
+2012-06-23 13:15:38 identical stylesheets/style.css 
+2012-06-23 13:18:11 overwrite stylesheets/style.css 
+2012-06-23 13:20:58 overwrite stylesheets/style.css 
+2012-06-23 13:29:01 overwrite stylesheets/style.css 
+2012-06-23 13:39:04     error sass/style.scss (Line 21 of sass/partials/_game.scss: (0.08 5px 0px 5px) is not a number for `rgba')
+2012-06-23 13:39:04 overwrite stylesheets/style.css 
+2012-06-23 13:39:23 overwrite stylesheets/style.css 
+2012-06-23 13:40:38 overwrite stylesheets/style.css 
+2012-06-23 13:40:52 overwrite stylesheets/style.css 
+2012-06-23 13:41:05 overwrite stylesheets/style.css 
+2012-06-23 13:41:43 identical stylesheets/style.css 
+2012-06-23 13:41:56 overwrite stylesheets/style.css 
+2012-06-23 13:42:43 overwrite stylesheets/style.css 
+2012-06-23 13:42:53 overwrite stylesheets/style.css 
+2012-06-23 13:43:08 overwrite stylesheets/style.css 
+2012-06-23 13:43:20 overwrite stylesheets/style.css 
+2012-06-23 13:43:50 overwrite stylesheets/style.css 
+2012-06-23 13:45:53 overwrite stylesheets/style.css 
+2012-06-23 13:49:44 overwrite stylesheets/style.css 
+2012-06-23 13:51:32 overwrite stylesheets/style.css 
+2012-06-23 13:52:07 overwrite stylesheets/style.css 
+2012-06-23 14:01:28 overwrite stylesheets/style.css 
+2012-06-23 14:02:07 overwrite stylesheets/style.css 
+2012-06-23 14:02:25 overwrite stylesheets/style.css 
+2012-06-23 14:05:13 overwrite stylesheets/style.css 
+2012-06-23 14:06:44 overwrite stylesheets/style.css 
+2012-06-23 14:06:58 overwrite stylesheets/style.css 
+2012-06-23 14:08:53 overwrite stylesheets/style.css 
+2012-06-23 14:09:08 identical stylesheets/style.css 
+2012-06-23 14:09:25 overwrite stylesheets/style.css 
+2012-06-23 14:13:11 overwrite stylesheets/style.css 
+2012-06-23 14:13:16 overwrite stylesheets/style.css 
+2012-06-23 14:28:07 overwrite stylesheets/style.css 
+2012-06-23 14:37:19 overwrite stylesheets/style.css 
+2012-06-23 14:39:26 overwrite stylesheets/style.css 
+2012-06-23 14:40:32 overwrite stylesheets/style.css 
+2012-06-23 14:42:04 overwrite stylesheets/style.css 
+2012-06-23 14:45:37 overwrite stylesheets/style.css 
+2012-06-23 14:46:13 overwrite stylesheets/style.css 
+2012-06-23 14:47:07 overwrite stylesheets/style.css 
+2012-06-23 14:47:31 overwrite stylesheets/style.css 
+2012-06-23 14:47:47 overwrite stylesheets/style.css 
+2012-06-23 14:50:40 overwrite stylesheets/style.css 
+2012-06-23 14:50:56 overwrite stylesheets/style.css 
+2012-06-23 14:51:25 overwrite stylesheets/style.css 
+2012-06-23 14:51:35 overwrite stylesheets/style.css 
+2012-06-23 14:52:17 overwrite stylesheets/style.css 
+2012-06-23 14:55:19 overwrite stylesheets/style.css 
+2012-06-23 14:56:17 overwrite stylesheets/style.css 
+2012-06-23 14:56:56 overwrite stylesheets/style.css 
+2012-06-23 14:58:13 overwrite stylesheets/style.css 
