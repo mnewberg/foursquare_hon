@@ -88,5 +88,7 @@ class queue(models.Model):
         allocated_invite=models.ForeignKey(invite_codes)
 	lat = models.FloatField()
         lon = models.FloatField()
+	token = models.CharField(max_length=60, null=True)
+	has_shared = models.BooleanField()
 	def __unicode__(self):
                 return self.fsq_id

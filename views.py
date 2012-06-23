@@ -163,12 +163,13 @@ def second(request):
                 welcome_email(query.email(),query.first_name())
                 invite_codes.objects.get(code=invite_code).delete()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
-        elif queue.objects.filter(fsq_id=query.id).count==0:
+        elif queue.objects.filter(fsq_id=query.id()).count()==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
-                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
+                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
                 queue_email(query.email(),query.first_name())
                 return render_to_response('wait.html')
         else:
+                print 'uh oh'
                 return render_to_response('wait.html')
 
     
@@ -291,11 +292,14 @@ def tos(request):
     return render_to_response('tos.html')
 
 def checkin(request):        
-        token = user.objects.get(fsq_id=request.session['fsq_id']).token
-        post_data=[('oauth_token',token),('CHECKIN_ID','4f451ed2e4b0f1d45d9062da'),('text','Does this work?')]
-        urllib2.urlopen('https://api.foursquare.com/v2/checkins/4f451ed2e4b0f1d45d9062da/addcomment',urllib.urlencode(post_data))
-        
-        return HttpResponseRedirect('http://tryfourplay.com')
+        fsq_id=request.session['fsq_id']
+        u=queue.objects.get(fsq_id=fsq_id)
+        token = u.token
+        post_data=[('oauth_token',token),('venueId','4fe5e2897b0c9089d7f57194'),('shout','YOU MAKE ME WANNA SHOUT! (teest)'),('broadcast','public,followers')]
+        urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
+        u.has_shared=True
+        u.save()        
+        return HttpResponseRedirect('http://playdo.pe')
 
 def missing(request):
     params = {}
