@@ -3,3 +3,4 @@ settings.py
 *.tar
 #*#
 *mobileadmin/
+compass_app_log.txt
