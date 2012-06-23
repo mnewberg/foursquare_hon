@@ -5329,3 +5329,5 @@
 [Sat Jun 23 15:27:32 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/media
 [Sat Jun 23 15:27:37 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/media
 [Sat Jun 23 17:22:31 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/media
+[Sat Jun 23 17:52:09 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/js/game
+[Sat Jun 23 18:13:24 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media/js/4.js

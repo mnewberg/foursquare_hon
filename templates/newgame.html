@@ -5,8 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="stylesheet" href="../static/stylesheets/style.css" />
+	<link rel="stylesheet" href="../static/media/stylesheets/style.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="/static/media/js/games/{{game_id}}.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;})
+
+function timer(){
+duration=duration-1;
+ var secs=duration%60;
+ if (secs.toString().length < 2)
+ {
+  secs = '0' + secs;
+ }
+ document.getElementById("time_remaining").innerHTML= Math.floor(duration/60) + ":" + secs;
+}
+
+
+</script>
+
 </head> 
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);"> 
 <div id="wrapper">
@@ -24,28 +41,28 @@
 		<div id="green" class="section">
 			<div>
 				<p class="left_arrow"><img src="http://c15075740.r40.cf2.rackcdn.com/left_arrow.png" /></p>
-				<p>Name as many US states beginning with the letter 'M' as you can.</p>
+				<p><span id="cta"></span></p>
 				<p class="right_arrow"><img src="http://c15075740.r40.cf2.rackcdn.com/right_arrow.png" /></p>
 			</div>
 		</div>
-		<div id="purple" class="section"><div><p>Waiting for opponent...</p></div></div>
+		<div id="purple" class="section"><div><p>Waiting for {{user2_name}}...</p></div></div>
 	</div>
 	<div id="game">
 		<div id="scoreboard">
 			<div id="time_remaining">0:38</div>
 			<div id="answers_remaining">5/25</div>
 		</div>
-		<div id="game_red" class="section"><div><div id="game_title">States starting with 'M'</div></div></div>
+		<div id="game_red" class="section"><div><div id="game_title"></div></div></div>
 		<div id="game_you" class="game_player">
 			<div>
-				<div id="game_you" class="player_small"></div>
+				<div id="game_you" class="player_small" style="background-image:url('https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}')"></div>
 				<div id="your_score" class="player_score">3</div>
 				<div id="your_last_guess" class="last_guess">Montanta</div>
 			</div>
 		</div>
 		<div id="game_opponent" class="game_player">
 			<div>
-				<div id="game_opponent" class="player_small"></div>
+				<div id="game_opponent" class="player_small" style="background-image:url('https://is1.4sqi.net/userpix_thumbs/{{user2_pic}}')"></div>
 				<div id="opponent_score" class="player_score">3</div>
 				<div id="opponent_last_guess" class="last_guess">Mississippi</div>
 			</div>
