@@ -1,0 +1,265 @@
+/* line 2, ../sass/style.scss */
+html, body {
+  background-color: #fff;
+  margin: 0;
+  top: 0;
+  height: 100%;
+  min-height: 480px;
+}
+
+/* line 42, ../sass/style.scss */
+#wrapper {
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+}
+
+/* line 48, ../sass/style.scss */
+#red {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8282), color-stop(50%, #ff4545), color-stop(100%, #ff8282));
+  background-image: -webkit-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
+  background-image: -moz-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
+  background-image: -o-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
+  background-image: -ms-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
+  background-image: linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
+  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  height: 48px;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+/* line 20, ../sass/style.scss */
+#red:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  height: 1px;
+  z-index: 21;
+}
+/* line 30, ../sass/style.scss */
+#red:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #930202), color-stop(50%, #fb8080), color-stop(100%, #930202));
+  background-image: -webkit-linear-gradient(left, #930202, #fb8080 50%, #930202);
+  background-image: -moz-linear-gradient(left, #930202, #fb8080 50%, #930202);
+  background-image: -o-linear-gradient(left, #930202, #fb8080 50%, #930202);
+  background-image: -ms-linear-gradient(left, #930202, #fb8080 50%, #930202);
+  background-image: linear-gradient(left, #930202, #fb8080 50%, #930202);
+  height: 2px;
+  z-index: 19;
+}
+
+/* line 51, ../sass/style.scss */
+#blue {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb4ff), color-stop(50%, #4986ff), color-stop(100%, #8eb4ff));
+  background-image: -webkit-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
+  background-image: -moz-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
+  background-image: -o-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
+  background-image: -ms-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
+  background-image: linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
+  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  height: 240px;
+  width: 100%;
+  position: relative;
+  z-index: 17;
+}
+/* line 20, ../sass/style.scss */
+#blue:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  height: 1px;
+  z-index: 18;
+}
+/* line 30, ../sass/style.scss */
+#blue:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #6699ff), color-stop(50%, #003194), color-stop(100%, #6699ff));
+  background-image: -webkit-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
+  background-image: -moz-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
+  background-image: -o-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
+  background-image: -ms-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
+  background-image: linear-gradient(left, #6699ff, #003194 50%, #6699ff);
+  height: 2px;
+  z-index: 16;
+}
+
+/* line 54, ../sass/style.scss */
+#green {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #71e2a1), color-stop(50%, #28c66b), color-stop(100%, #71e2a1));
+  background-image: -webkit-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
+  background-image: -moz-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
+  background-image: -o-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
+  background-image: -ms-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
+  background-image: linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
+  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  height: 120px;
+  width: 100%;
+  position: relative;
+  z-index: 14;
+}
+/* line 20, ../sass/style.scss */
+#green:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  height: 1px;
+  z-index: 15;
+}
+/* line 30, ../sass/style.scss */
+#green:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #a5ffcb), color-stop(50%, #029346), color-stop(100%, #a5ffcb));
+  background-image: -webkit-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
+  background-image: -moz-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
+  background-image: -o-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
+  background-image: -ms-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
+  background-image: linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
+  height: 2px;
+  z-index: 13;
+}
+
+/* line 57, ../sass/style.scss */
+#purple {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dd79dd), color-stop(50%, #de52de), color-stop(100%, #dd79dd));
+  background-image: -webkit-linear-gradient(top, #dd79dd, #de52de 50%, #dd79dd);
+  background-image: -moz-linear-gradient(top, #dd79dd, #de52de 50%, #dd79dd);
+  background-image: -o-linear-gradient(top, #dd79dd, #de52de 50%, #dd79dd);
+  background-image: -ms-linear-gradient(top, #dd79dd, #de52de 50%, #dd79dd);
+  background-image: linear-gradient(top, #dd79dd, #de52de 50%, #dd79dd);
+  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
+  height: 72px;
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+/* line 20, ../sass/style.scss */
+#purple:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+  height: 1px;
+  z-index: 12;
+}
+/* line 30, ../sass/style.scss */
+#purple:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: inherit;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ff83ff), color-stop(50%, #912c91), color-stop(100%, #ff83ff));
+  background-image: -webkit-linear-gradient(left, #ff83ff, #912c91 50%, #ff83ff);
+  background-image: -moz-linear-gradient(left, #ff83ff, #912c91 50%, #ff83ff);
+  background-image: -o-linear-gradient(left, #ff83ff, #912c91 50%, #ff83ff);
+  background-image: -ms-linear-gradient(left, #ff83ff, #912c91 50%, #ff83ff);
+  background-image: linear-gradient(left, #ff83ff, #912c91 50%, #ff83ff);
+  height: 2px;
+  z-index: 10;
+}
+
+/* line 62, ../sass/style.scss */
+.section > div {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding-top: 6px;
+}
+/* line 67, ../sass/style.scss */
+.section > div p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 72, ../sass/style.scss */
+.section > div .left_arrow {
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 25px;
+}
+/* line 77, ../sass/style.scss */
+.section > div .right_arrow {
+  cursor: pointer;
+  padding-left: 25px;
+  padding-right: 15px;
+}
+/* line 84, ../sass/style.scss */
+.section #players {
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 54px;
+}
+/* line 91, ../sass/style.scss */
+.section #players #you, .section #players #opponent {
+  display: table-cell;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 99, ../sass/style.scss */
+.section #players #vs {
+  vertical-align: middle;
+  display: table-cell;
+  width: 100px;
+  height: 100px;
+}
