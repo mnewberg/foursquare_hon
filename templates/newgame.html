@@ -9,8 +9,9 @@
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="/static/js/games/{{game_id}}.js"></script>
 	<script type="text/javascript">
-$(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;})
-
+$(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;$('#count')[0].innerHTML=Object.keys(answers).length;})
+for (var index in answers){answers[index].push(index.toLowerCase())};
+var guessed=[]
 function timer(){
 duration=duration-1;
  var secs=duration%60;
@@ -20,6 +21,20 @@ duration=duration-1;
  }
  document.getElementById("time_remaining").innerHTML= Math.floor(duration/60) + ":" + secs;
 }
+
+function checkinput(ArrayObj,entry){
+  var lowerquery=entry.value.toLowerCase();
+  var Found = false;
+  for (var entry in ArrayObj)
+{ for (var i = 0; i<ArrayObj[entry].length;i++){ 
+if (ArrayObj[entry][i] == lowerquery && guessed.indexOf(entry)==-1){
+           $('#your_last_guess')[0].innerHTML=entry;
+	   $('#your_score')[0].innerHTML++;
+           $('#guessed')[0].innerHTML++;
+document.getElementById('game_input').value="";
+guessed.push(entry);}}}}
+
+
 
 
 </script>
@@ -50,14 +65,14 @@ duration=duration-1;
 	<div id="game">
 		<div id="scoreboard">
 			<div id="time_remaining">0:38</div>
-			<div id="answers_remaining">5/25</div>
+			<div id="answers_remaining"><span id="guessed">0</span>/<span id="count"></span></div>
 		</div>
 		<div id="game_red" class="section"><div><div id="game_title"></div></div></div>
 		<div id="game_you" class="game_player">
 			<div>
 				<div id="game_you" class="player_small" style="background-image:url('https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}')"></div>
-				<div id="your_score" class="player_score">3</div>
-				<div id="your_last_guess" class="last_guess">Montanta</div>
+				<div id="your_score" class="player_score">0</div>
+				<div id="your_last_guess" class="last_guess"></div>
 			</div>
 		</div>
 		<div id="game_opponent" class="game_player">
@@ -68,8 +83,8 @@ duration=duration-1;
 			</div>
 		</div>
 		<div id="input_container">
-			<input type="text" id="game_input" name="game_input" />
-			<input type="button" id="clear" value="Clear" />
+			<input type="text" id="game_input" name="game_input" onkeyup="checkinput(answers,this)" />
+			<input type="button" id="clear" value="Clear" onclick="$('#game_input')[0].value=''" />
 		</div>
 	</div>
 </div>
