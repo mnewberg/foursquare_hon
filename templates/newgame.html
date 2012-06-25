@@ -15,7 +15,7 @@ var pusher = new Pusher('890abd57f862ab2712ff');
 var privateChannel = pusher.subscribe('private-{{channel_id}}');
 var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 
-privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_last_guess')[0].innerHTML=data.answer;$('#opponent_score')[0].innerHTML++;$('#guessed')[0].innerHTML++});
+privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_last_guess')[0].innerHTML=data.answer;$('#opponent_score')[0].innerHTML++;$('#guessed')[0].innerHTML++;guessed.push(data.answer);});
 
 $(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;$('#count')[0].innerHTML=Object.keys(answers).length;})
 for (var index in answers){answers[index].push(index.toLowerCase())};

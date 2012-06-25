@@ -30,4 +30,9 @@ def game(request, uid):
     user1_pic=user1.photo
     user2_pic=user2.photo
     user2_name=user2.first_name
+    if request.session['logged_in_pic']:
+        user1_pic=user2.photo
+        user2_pic=user2.photo
+    else:
+        pass
     return render_to_response("newgame.html", {'channel_id':uid,'game_id':game_id,'user1_pic':user1_pic,'user1_name':user1_name,'user2_pic':user2_pic,'user2_name':user2_name})
