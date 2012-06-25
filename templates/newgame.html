@@ -8,13 +8,25 @@
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="/static/js/games/{{game_id}}.js"></script>
+	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
 	<script type="text/javascript">
+Pusher.channel_auth_endpoint = 'http://staging.tryfourplay.com/pusher/auth'
+var pusher = new Pusher('890abd57f862ab2712ff');
+var privateChannel = pusher.subscribe('private-{{channel_id}}');
+var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
+
+privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_last_guess')[0].innerHTML=data.answer;$('#opponent_score')[0].innerHTML++;$('#guessed')[0].innerHTML++});
+
 $(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;$('#count')[0].innerHTML=Object.keys(answers).length;})
 for (var index in answers){answers[index].push(index.toLowerCase())};
 var guessed=[]
+
+function startclock(){setInterval('timer()',1000)};
+
 function timer(){
 duration=duration-1;
  var secs=duration%60;
+if (secs==0){$('#time_remaining')[0].innerHTML='0:0';clearInterval(startclock())};
  if (secs.toString().length < 2)
  {
   secs = '0' + secs;
@@ -31,6 +43,7 @@ if (ArrayObj[entry][i] == lowerquery && guessed.indexOf(entry)==-1){
            $('#your_last_guess')[0].innerHTML=entry;
 	   $('#your_score')[0].innerHTML++;
            $('#guessed')[0].innerHTML++;
+privateChannel.trigger("client-{{channel_id}}-game", {'answer':entry,'user':presenceChannel.members.me.id});
 document.getElementById('game_input').value="";
 guessed.push(entry);}}}}
 
@@ -64,7 +77,7 @@ guessed.push(entry);}}}}
 	</div>
 	<div id="game">
 		<div id="scoreboard">
-			<div id="time_remaining">0:38</div>
+			<div id="time_remaining"></div>
 			<div id="answers_remaining"><span id="guessed">0</span>/<span id="count"></span></div>
 		</div>
 		<div id="game_red" class="section"><div><div id="game_title"></div></div></div>
@@ -78,8 +91,8 @@ guessed.push(entry);}}}}
 		<div id="game_opponent" class="game_player">
 			<div>
 				<div id="game_opponent" class="player_small" style="background-image:url('https://is1.4sqi.net/userpix_thumbs/{{user2_pic}}')"></div>
-				<div id="opponent_score" class="player_score">3</div>
-				<div id="opponent_last_guess" class="last_guess">Mississippi</div>
+				<div id="opponent_score" class="player_score">0</div>
+				<div id="opponent_last_guess" class="last_guess"></div>
 			</div>
 		</div>
 		<div id="input_container">
