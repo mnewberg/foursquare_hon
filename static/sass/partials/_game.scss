@@ -3,12 +3,12 @@
 }
 
 #scoreboard{
-	width:80px;
-	height:70px;
-	background-color:#999;
+	width:147px;
+	height:108px;
+	background-image:url('scoreboard.png');
 	position:absolute;
-	top:52px;
-	left:230px;
+	top:36px;
+	left:193px;
 }
 
 #game_red{
@@ -26,9 +26,13 @@
 
 .game_player{
 	height:62px;
+	display:table;
+	vertical-align:middle;
+	width:100%;
 	@include background-image(linear-gradient(top, #f8f8f8, #d7d7d7 ));
 	>div{
-		display:table;
+		display:table-cell;
+		vertical-align:middle;
 	}
 }
 
@@ -49,7 +53,7 @@
 		@include border-radius(5px);
 		border: 1px solid #b4b4b4;
 		@include background-image(linear-gradient(top, #f2f2f2, #fff ));
-		@include box-shadow(inset rgba(0,0,0,.15) 0px 0px 15px);
+		@include box-shadow(inset rgba(0,0,0,.15) 0px 0px 15px, rgba(255,255,255,1) 0px 1px 0px);
 	}
 
 	#clear{
