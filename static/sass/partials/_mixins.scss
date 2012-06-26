@@ -1,0 +1,45 @@
+@mixin white_font(){
+	font-family:Helvetica, Arial;
+	font-weight:bold;
+	color:#f8f2f2;
+	@include text-shadow(rgba(0,0,0,.35) 0px 1px 1px);
+}
+
+@mixin dark_font(){
+	font-family:Helvetica, Arial;
+	font-weight:bold;
+	color:#685f5f;
+	@include text-shadow(rgba(255,255,255,1) 0px 1px 1px);
+}
+
+@mixin gradient($height, $main-light, $main-dark, $shadow-light, $shadow-dark, $z){
+	@include background-image(linear-gradient(top, $main-light, $main-dark 50%, $main-light));
+	@include box-shadow( 0px 5px 6px -3px rgba(0,0,0,.7));
+	height:$height;
+	//height:$height;
+	width:100%;
+	position:relative;
+	z-index:$z;
+
+	&:before{
+		content:" ";
+		display:block;
+		position:absolute;
+		bottom:0px;
+		width:inherit;
+		@include background-image(linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8) 50%, rgba(255,255,255,0)));
+		height:1px;
+		z-index:$z + 1;
+	}
+	&:after{
+		content:" ";
+		display:block;
+		position:absolute;
+		bottom:-2px;
+		width:inherit;
+		@include background-image(linear-gradient(left, $shadow-light, $shadow-dark 50%, $shadow-light));
+		//@include box-shadow(inset 0px 0px 4px 0px rgba(0,0,0,.6));
+		height:2px;
+		z-index:$z - 1;
+	}
+}

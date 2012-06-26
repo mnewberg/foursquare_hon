@@ -1,0 +1,72 @@
+//Waiting Room
+
+#red{
+	@include gradient( 48px, #ff8282, #ff4545, #930202, #fb8080, 20);
+
+	#logo{
+		width:101px;
+		height:25px;
+		margin:0 auto;
+		background-image:url('http://c15075740.r40.cf2.rackcdn.com/logo.png');
+		background-repeat:no-repeat;
+		position:relative;
+		top:11px;
+		z-index:99;
+	}
+}
+#blue{
+	@include gradient( 240px, #8eb4ff, #4986ff, #6699ff, #003194, 17);
+}
+#green{
+	@include gradient( 120px, #71e2a1, #28c66b, #a5ffcb, #029346, 14);
+}
+#purple{
+	@include gradient( 72px, #dd79dd, #de52de, #ff83ff, #912c91, 11);
+}
+
+.section{
+	>div{
+		display:table;
+		width:100%;
+		height:100%;
+		padding-top:6px;
+		p{
+			display:table-cell;
+			vertical-align: middle; 
+  			text-align: center;
+		}
+		.left_arrow{
+			cursor: pointer;
+			padding-left:15px;
+			padding-right:25px;
+		}
+		.right_arrow{
+			cursor: pointer;
+			padding-left:25px;
+			padding-right:15px;
+		}
+	}
+
+	#players{
+			display:table;
+			vertical-align: middle; 
+  			text-align: center;
+  			margin:0 auto;
+  			margin-top:54px;
+
+  			#you, #opponent{
+  				display:table-cell;
+  				width:100px;
+  				height:100px;
+  				background-color:#ccc;
+  				@include border-radius(10px);
+  			}
+
+  			#vs{
+  				vertical-align:middle;
+  				display:table-cell;
+  				width:100px;
+  				height:100px;
+  			}
+	}
+}
