@@ -35,12 +35,17 @@
 #input_container{
 	height:45px;
 	border-top:1px solid #c6c6c6;
+	display:table-cell;
+	vertical-align:middle;
+	width:480px;
+	text-align:center;
 	@include background-image(linear-gradient(top, #f6f6f6, #e2e2e2 ));
 	@include box-shadow(inset rgba(0,0,0,.08) 0px 5px 5px, inset #fff 0px 1px 0px);
 
 	#game_input{
 		width:200px;
-		height:30px;
+		height:26px;
+		margin-right:10px;
 		@include border-radius(5px);
 		border: 1px solid #b4b4b4;
 		@include background-image(linear-gradient(top, #f2f2f2, #fff ));
