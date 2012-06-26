@@ -137,7 +137,7 @@ def second(request):
         elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
 	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token, gender=query.gender())
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 if not query.phone():
                     return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
                 else:
@@ -152,14 +152,14 @@ def second(request):
 		u.token=token
                 u.last_lat=lat
                 u.last_lon=lon
-                u.photo=query.photo()[37:]
+                u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
 		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok'})
 ##RETURNING USER
 	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[37:], has_shared=False, token=token, gender=query.gender())
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 welcome_email(query.email(),query.first_name())
                 invite_codes.objects.get(code=invite_code).delete()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
@@ -267,7 +267,7 @@ def onboard(request, uid):
         location,bio=get_bio(the_user.twitter)
     except:
         location,bio='',''
-    v=authenticator.userless_query("venues/"+venue)
+    v=authenticator.query("venues/"+venue,the_user.token,None)
     vlat=v['venue']['location']['lat']
     vlon=v['venue']['location']['lng']
     venue_name=v['venue']['name']
