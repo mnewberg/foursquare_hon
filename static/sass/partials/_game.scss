@@ -1,7 +1,10 @@
 #game{
 	position:relative;
+	//opacity:0;
 }
-
+input:focus {
+    outline: none;
+}
 #scoreboard{
 	width:147px;
 	height:108px;
@@ -46,20 +49,48 @@
 	@include background-image(linear-gradient(top, #f6f6f6, #e2e2e2 ));
 	@include box-shadow(inset rgba(0,0,0,.08) 0px 5px 5px, inset #fff 0px 1px 0px);
 
-	#game_input{
+	#input_bg{
+		float:left;
 		width:200px;
 		height:26px;
 		margin-right:10px;
+		margin-left:12px;
+		position:relative;
+		display:inline-block;
 		@include border-radius(5px);
 		border: 1px solid #b4b4b4;
 		@include background-image(linear-gradient(top, #f2f2f2, #fff ));
 		@include box-shadow(inset rgba(0,0,0,.15) 0px 0px 15px, rgba(255,255,255,1) 0px 1px 0px);
+
+		#helper_text{
+			position: absolute;
+			color:#ccc;
+			text-shadow:none;
+			font-weight:normal;
+			font-size:14px;
+			height:26px;
+			line-height:26px;
+			margin-left:7px;
+		}
+
+		#game_input{
+			position: absolute;
+			border:0;
+			background-color:transparent;
+			width:185px;
+			left:0px;
+			padding-left:6px;
+			height:24px;
+		}
 	}
 
 	#clear{
+		display:inline-block;
+		float:left;
 		cursor:pointer;
 		@include white_font();
-		height:30px;
+		height:26px;
+		line-height:26px;
 		width:80px;
 		border: 1px solid #bd5656;
 		@include border-radius(5px);

@@ -284,6 +284,11 @@
 }
 
 /* line 5, ../sass/partials/_game.scss */
+input:focus {
+  outline: none;
+}
+
+/* line 8, ../sass/partials/_game.scss */
 #scoreboard {
   width: 147px;
   height: 108px;
@@ -293,7 +298,7 @@
   left: 193px;
 }
 
-/* line 14, ../sass/partials/_game.scss */
+/* line 17, ../sass/partials/_game.scss */
 #game_red {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8282), color-stop(50%, #ff4545), color-stop(100%, #ff8282));
   background-image: -webkit-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
@@ -346,18 +351,18 @@
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 17, ../sass/partials/_game.scss */
+/* line 20, ../sass/partials/_game.scss */
 #game_red > div {
   display: table;
 }
-/* line 20, ../sass/partials/_game.scss */
+/* line 23, ../sass/partials/_game.scss */
 #game_red #game_title {
   display: table-cell;
   width: 100%;
   text-align: center;
 }
 
-/* line 27, ../sass/partials/_game.scss */
+/* line 30, ../sass/partials/_game.scss */
 .game_player {
   height: 62px;
   display: table;
@@ -370,13 +375,13 @@
   background-image: -ms-linear-gradient(top, #f8f8f8, #d7d7d7);
   background-image: linear-gradient(top, #f8f8f8, #d7d7d7);
 }
-/* line 33, ../sass/partials/_game.scss */
+/* line 36, ../sass/partials/_game.scss */
 .game_player > div {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 39, ../sass/partials/_game.scss */
+/* line 42, ../sass/partials/_game.scss */
 #input_container {
   height: 45px;
   border-top: 1px solid #c6c6c6;
@@ -394,11 +399,15 @@
   -moz-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
   box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
 }
-/* line 49, ../sass/partials/_game.scss */
-#input_container #game_input {
+/* line 52, ../sass/partials/_game.scss */
+#input_container #input_bg {
+  float: left;
   width: 200px;
   height: 26px;
   margin-right: 10px;
+  margin-left: 12px;
+  position: relative;
+  display: inline-block;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -415,14 +424,38 @@
   -moz-box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 15px, white 0px 1px 0px;
   box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 15px, white 0px 1px 0px;
 }
-/* line 59, ../sass/partials/_game.scss */
+/* line 65, ../sass/partials/_game.scss */
+#input_container #input_bg #helper_text {
+  position: absolute;
+  color: #ccc;
+  text-shadow: none;
+  font-weight: normal;
+  font-size: 14px;
+  height: 26px;
+  line-height: 26px;
+  margin-left: 7px;
+}
+/* line 76, ../sass/partials/_game.scss */
+#input_container #input_bg #game_input {
+  position: absolute;
+  border: 0;
+  background-color: transparent;
+  width: 185px;
+  left: 0px;
+  padding-left: 6px;
+  height: 24px;
+}
+/* line 87, ../sass/partials/_game.scss */
 #input_container #clear {
+  display: inline-block;
+  float: left;
   cursor: pointer;
   font-family: Helvetica, Arial;
   font-weight: bold;
   color: #f8f2f2;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
-  height: 30px;
+  height: 26px;
+  line-height: 26px;
   width: 80px;
   border: 1px solid #bd5656;
   -webkit-border-radius: 5px;
@@ -440,7 +473,7 @@
   -moz-box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
   box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
 }
-/* line 69, ../sass/partials/_game.scss */
+/* line 100, ../sass/partials/_game.scss */
 #input_container #clear:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff7070), color-stop(100%, #d45c5c));
   background-image: -webkit-linear-gradient(top, #ff7070, #d45c5c);
@@ -450,7 +483,7 @@
   background-image: linear-gradient(top, #ff7070, #d45c5c);
 }
 
-/* line 75, ../sass/partials/_game.scss */
+/* line 106, ../sass/partials/_game.scss */
 .player_small {
   display: table-cell;
   width: 35px;
@@ -466,7 +499,7 @@
   background-color: #ccc;
 }
 
-/* line 84, ../sass/partials/_game.scss */
+/* line 115, ../sass/partials/_game.scss */
 .player_score {
   display: table-cell;
   text-align: center;
@@ -480,7 +513,7 @@
   border-radius: 5px;
 }
 
-/* line 93, ../sass/partials/_game.scss */
+/* line 124, ../sass/partials/_game.scss */
 #your_score {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #71e2a1), color-stop(50%, #28c66b), color-stop(100%, #71e2a1));
   background-image: -webkit-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
@@ -535,7 +568,7 @@
   border-radius: 5px;
 }
 
-/* line 97, ../sass/partials/_game.scss */
+/* line 128, ../sass/partials/_game.scss */
 #opponent_score {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb4ff), color-stop(50%, #4986ff), color-stop(100%, #8eb4ff));
   background-image: -webkit-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
@@ -590,7 +623,7 @@
   border-radius: 5px;
 }
 
-/* line 102, ../sass/partials/_game.scss */
+/* line 133, ../sass/partials/_game.scss */
 .last_guess {
   display: table-cell;
   font-family: Helvetica, Arial;
