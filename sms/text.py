@@ -135,10 +135,10 @@ def nudge(request):
 	other_user=t.sender
 	if 'uid' not in request.session:	
 		outgoing=routing.objects.get(recipient=logged_in_user.phone,sender=other_user.phone)
-		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body=other_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
-		status='ok'
-		print status
+		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body=other_user.first_name + " is waiting to play with you at http://playdo.pe/game/"+uid)
+		status='logged in user'
 	else:
 		outgoing=routing.objects.get(recipient=other_user.phone,sender=logged_in_user.phone)
-		message=client.sms.messages.create(to=other_user.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://staging.tryfourplay.com/game/"+uid)
+		message=client.sms.messages.create(to=other_user.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://playdo.pe/game/"+uid)
+		status='logged out user'
 	return HttpResponse(status)

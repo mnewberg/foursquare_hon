@@ -12,23 +12,30 @@
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
 	<script type="text/javascript">
 	
-Pusher.channel_auth_endpoint = 'http://staging.tryfourplay.com/pusher/auth'
+Pusher.channel_auth_endpoint = 'http://playdo.pe/pusher/auth'
 var pusher = new Pusher('890abd57f862ab2712ff');
 var privateChannel = pusher.subscribe('private-{{channel_id}}');
 var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 
 privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_last_guess')[0].innerHTML=data.answer;$('#opponent_score')[0].innerHTML++;$('#guessed')[0].innerHTML++;guessed.push(data.answer);});
 
-$(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;$('#count')[0].innerHTML=Object.keys(answers).length;})
+presenceChannel.bind('pusher:member_added',function(){waiting_room_to_game();counter=startclock();privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'})});
+
+privateChannel.bind('client-{{channel_id}}-clock', function(){waiting_room_to_game();counter=startclock();});
+
+presenceChannel.bind('pusher:subscription_succeeded', function(members){if (members.count == 1){$.get('/nudge',{'uid':'{{channel_id}}'})}});
+
+$(document).ready(function(){$('#game_title')[0].innerHTML=title;$('#cta')[0].innerHTML=cta;$('#count')[0].innerHTML=Object.keys(answers).length;$('#noun')[0].innerHTML=noun;if (presenceChannel.members.count == 1){$.get('/nudge',{'uid':'{{channel_id}}'})}});
+
+
 for (var index in answers){answers[index].push(index.toLowerCase())};
 var guessed=[]
 
 function startclock(){setInterval('timer()',1000)};
-
 function timer(){
 duration=duration-1;
  var secs=duration%60;
-if (secs==0){$('#time_remaining')[0].innerHTML='0:0';clearInterval(startclock())};
+if (duration==0){$('#time_remaining')[0].innerHTML='0:0';clearInterval(counter);var victory = document.getElementById("myscore").innerHTML > document.getElementById("otherscore").innerHTML;$.get('/textall',{'victory':victory});};
  if (secs.toString().length < 2)
  {
   secs = '0' + secs;
@@ -99,7 +106,7 @@ guessed.push(entry);}}}}
 		</div>
 		<div id="input_container">
 			<div id="input_bg">
-				<div id="helper_text">Make a guess</div>
+				<div id="helper_text">Guess a <span id="noun"></span></div>
 				<input type="text" id="game_input" name="game_input" onkeyup="checkinput(answers,this)" />
 			</div>
 			
