@@ -35,7 +35,7 @@ function startclock(){setInterval('timer()',1000)};
 function timer(){
 duration=duration-1;
  var secs=duration%60;
-if (secs==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;$.get('/textall',{'victory':victory});};
+if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;$.get('/textall',{'victory':victory});};
  if (secs.toString().length < 2)
  {
   secs = '0' + secs;
