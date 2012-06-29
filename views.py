@@ -150,8 +150,11 @@ def second(request):
 	elif user.objects.filter(fsq_id=f_id).count()==1:
 		u=user.objects.get(fsq_id=f_id)
 		u.token=token
-                u.last_lat=lat
-                u.last_lon=lon
+                try:
+					u.last_lat=lat
+                	u.last_lon=lon
+				except:
+					pass
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()

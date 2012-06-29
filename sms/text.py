@@ -118,11 +118,11 @@ def endgame(request):
 		v=authenticator.userless_query("/venues/"+i)
 		venue_names.append(v['venue']['name'])
 	if winner=='true':
-		logged_in_status='won!!'
-		other_user_status='lost :( . How about buying '+logged_in_name+' a drink at '+venue_names[0]+'?'
+		logged_in_status='beat '+other_user_name+'!!All messages sent to this # for the next hour will go to '+other_user_name+'.'
+		other_user_status='lost :( . How about buying '+logged_in_name+' a drink nearby at '+venue_names[0]+'?'
 	else:
-		logged_in_status='lost :( . How about buying '+other_user_name+' a drink at '+venue_names[1]+'?'
-		other_user_status='won!!1'
+		logged_in_status='lost :( . How about buying '+other_user_name+' a drink nearby at '+venue_names[1]+'?'
+		other_user_status='beat '+logged_in_name+'!!All messages sent to this # for the next hour will go to '+other_user_name+'.'
 
 	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="Game over, you " +logged_in_status)
 	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="Game over, you "+other_user_status)
