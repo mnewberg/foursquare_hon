@@ -257,6 +257,10 @@ def outreach(request):
         return render_to_response('error.html')
 
 def onboard(request, uid):
+	user_agent = get_user_agent(request)
+    if is_desktop(user_agent):
+        return render_to_response('desktop.html')
+    else:    
     t=twitter_outreach.objects.get(uid=uid)
     sender=t.sender
     the_user=user.objects.get(fsq_id=sender)
