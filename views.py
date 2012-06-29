@@ -148,10 +148,10 @@ def second(request):
 		u=user.objects.get(fsq_id=f_id)
 		u.token=token
                 try:
-					u.last_lat=lat
-                	u.last_lon=lon
-				except:
-					pass
+                    u.last_lat=lat
+                    u.last_lon=lon
+                except:
+                    pass
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
@@ -240,9 +240,6 @@ def outreach(request):
 
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
-    
-    
-
     if datarget.unsubscribed==True or sender in datarget.blocks.all():
         return render_to_respons('error.html')
     else:
@@ -257,16 +254,16 @@ def outreach(request):
         return render_to_response('error.html')
 
 def onboard(request, uid):
-	user_agent = get_user_agent(request)
+    user_agent = get_user_agent(request)
     if is_desktop(user_agent):
         return render_to_response('desktop.html')
     else:    
+        pass
     t=twitter_outreach.objects.get(uid=uid)
     sender=t.sender
     the_user=user.objects.get(fsq_id=sender)
     msg=t.message
     venue=t.venue_id
-    
     try:
         location,bio=get_bio(the_user.twitter)
     except:

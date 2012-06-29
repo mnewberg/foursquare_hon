@@ -5460,3 +5460,574 @@
 [Wed Jun 27 16:19:20 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://staging.tryfourplay.com/game/danew
 [Wed Jun 27 22:59:12 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
 [Thu Jun 28 00:17:16 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jun 28 16:04:02 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/loc/?code=UOQLU2UGZTMLOTD3AAVL1S33WZUALZXHYRAIYEYSFQG25YJ3
+[Fri Jun 29 12:33:24 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=QJGHNHAASQLPWX2ZM4PI0WADNFB2PW20FS0G23Z0WM0TKKLB
+[Fri Jun 29 12:36:11 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=5ZZZ3WQXL0NMZWZINMQW52XVBPVFLFIBKO2JCBGB4SRBWKCC
+[Fri Jun 29 12:41:19 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=NFO3LFRXXQQ4U3ELJSXUYKR0XFNZJ5QASZNOVVEJH3YACQDD
+[Fri Jun 29 12:41:51 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=NFO3LFRXXQQ4U3ELJSXUYKR0XFNZJ5QASZNOVVEJH3YACQDD
+[Fri Jun 29 12:50:41 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 13:38:55 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 13:39:27 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 13:46:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 13:47:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 13:48:25 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 14:16:00 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 14:16:07 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12491): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 14:18:26 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12492): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 14:48:39 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12491): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     u.last_lon=lon, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]                  ^, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12492): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]     u.last_lon=lon, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50]                  ^, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:07:52 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level, referer: http://playdo.pe/game/danew
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12491): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 15:08:14 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12492): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 15:08:18 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12491): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:02:14 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12492): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:40:45 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12491): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:40:48 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12492): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:54:39 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50] mod_wsgi (pid=12491): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:54:47 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19200): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19201): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19200): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:55:05 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19201): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 152
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]     u.last_lon=lon
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50]                  ^
+[Fri Jun 29 16:55:06 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19353): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:20 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19354): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19353): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19354): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19353): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:21 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19354): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19353): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19354): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19353): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:22 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19354): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19353): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19354): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 261
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]     if is_desktop(user_agent):
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50]                              ^
+[Fri Jun 29 16:56:23 2012] [error] [client 10.183.253.50] IndentationError: unindent does not match any outer indentation level
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19513): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 264
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     t=twitter_outreach.objects.get(uid=uid)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     ^
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50] IndentationError: expected an indented block
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19514): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 264
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     t=twitter_outreach.objects.get(uid=uid)
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50]     ^
+[Fri Jun 29 16:57:15 2012] [error] [client 10.183.253.50] IndentationError: expected an indented block
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19513): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 264
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     t=twitter_outreach.objects.get(uid=uid)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     ^
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] IndentationError: expected an indented block
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] mod_wsgi (pid=19514): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     import views
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 264
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     t=twitter_outreach.objects.get(uid=uid)
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     ^
+[Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] IndentationError: expected an indented block
