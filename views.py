@@ -5,14 +5,12 @@ import pysq.apiv2 as psq
 from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes, game, queue
 from django.template import RequestContext
 from django.core.context_processors import csrf
-from randomizer import chunk
 import os
 import random
 from time import time
 import datetime
 from leaderboard import suggested_venues
 from django.template.defaultfilters import stringfilter
-from haversine import *
 import urllib
 import urllib2
 from detection import *
@@ -23,7 +21,6 @@ from id_gen import random_string
 from shout_twitter import send_twitter_shout, get_bio
 from sms.text import *
 from django.utils import simplejson
-from hotspots import hotspots
 from pyklout import Klout
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
