@@ -267,7 +267,7 @@ def onboard(request, uid):
         location,bio=get_bio(the_user.twitter)
     except:
         location,bio='',''
-    v=authenticator.query("venues/"+venue,the_user.token,None)
+    v=authenticator.userless_query("venues/"+venue)
     vlat=v['venue']['location']['lat']
     vlon=v['venue']['location']['lng']
     venue_name=v['venue']['name']
