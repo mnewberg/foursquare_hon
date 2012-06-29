@@ -272,8 +272,6 @@ def onboard(request, uid):
     except:
         location,bio='',''
     v=authenticator.userless_query("venues/"+venue)
-    vlat=v['venue']['location']['lat']
-    vlon=v['venue']['location']['lng']
     venue_name=v['venue']['name']
     
     v2=authenticator.query("/users/self",the_user.token, None)

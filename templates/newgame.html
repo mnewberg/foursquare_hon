@@ -21,7 +21,7 @@ privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_la
 
 presenceChannel.bind('pusher:member_added',function(){waiting_room_to_game();counter=startclock();privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'})});
 
-privateChannel.bind('client-{{channel_id}}-clock', function(){waiting_room_to_game();counter=startclock();});
+privateChannel.bind('client-{{channel_id}}-clock', function(){waiting_room_to_game();setTimeout(function() { window.scrollTo(0, 1) }, 100);counter=startclock();});
 
 presenceChannel.bind('pusher:subscription_succeeded', function(members){if (members.count == 1){$.get('/nudge',{'uid':'{{channel_id}}'})}});
 
