@@ -6031,3 +6031,4 @@
 [Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     t=twitter_outreach.objects.get(uid=uid)
 [Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     ^
 [Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] IndentationError: expected an indented block
+[Sun Jul 01 15:53:24 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=5HWABMRKAX111405RTSGNJWBSEZXMB03BMJ0VSZNU435CPJL

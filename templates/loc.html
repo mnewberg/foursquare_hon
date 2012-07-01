@@ -272,7 +272,7 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
         $("#venue").foursquareAutocomplete({
             'latitude': lat,
             'longitude': lon,
-            'oauth_token': "TF04SBT33JGTMBXIWADBMVZNQ0GD4AGHFSX2KHXZL03SFXE1",
+            'oauth_token': "{{token}}",
             'minLength': 3,
             'search': function (event, ui) {
                 $("#venue-name").html(ui.item.name);
