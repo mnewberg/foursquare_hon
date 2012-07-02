@@ -2,3 +2,4 @@ var answers={'Rio de Janeiro':['rio'],'Sochi':[],'London':[],'Vancouver':[],'Bei
 var noun='city'
 var title='Olympics hosts by city'
 var cta='List each city from 1980-2016 where the Olympics were held/are planning to be held!'
+var duration=240

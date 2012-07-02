@@ -2,3 +2,4 @@ var answers={'Motorino':[],'Di Fara':['difara','dafara'],'Paulie Gee\'s':['pauli
 var noun='pizza spot'
 var title='The best pizza spots in NYC'
 var cta='Guess the most critically acclaimed pizza places Brooklyn and Manhattan.'
+var duration=270

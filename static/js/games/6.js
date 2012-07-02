@@ -2,3 +2,4 @@ var answers={'American Folk Art Museum':['american folk art','folk art'], 'Ameri
 var noun='museum'
 var title='Notable museums in New York City'
 var cta='Name the most well-respected museums in NYC'
+var duration=240

@@ -5,3 +5,4 @@ var answers = {'Lady Gaga':['gaga','gagga'],'Justin Bieber':['bieber','beiber','
 var noun='celeb'
 var title='Most popular celebs on twitter'
 var cta = "Can you list the celebs on twitter with the most followers?"
+var duration=240

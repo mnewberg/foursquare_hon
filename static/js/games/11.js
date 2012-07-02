@@ -2,3 +2,4 @@ var answers={'Raising Arizona',[],'Texas Chainsaw Massacre',['texas chainsaw'],'
 var noun='movie'}
 var title='Movies with US States in the Title'
 var cta='Name these well-known films with American states in the title.'
+var duration=240

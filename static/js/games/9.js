@@ -2,3 +2,4 @@ var answers={'Masta Ace':['master ace'],'Mos Def':['mos def'],'Notorious B.I.G.'
 var noun='rapper'
 var title='Brooklyn-bred Rappers'
 var cta='Name the most famous rappers originating from Brooklyn.'
+var duration=210
