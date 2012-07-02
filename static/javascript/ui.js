@@ -9,7 +9,7 @@ $(document).ready(function() {
 	});
 	$('#game_input').on('blur', function(){
 		if($('#game_input').val() == ''){
-			$('#helper_text').html('Make a guess');
+			$('#helper_text').html('Guess a '+noun);
 		}
 	});
 
