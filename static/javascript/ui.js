@@ -6,16 +6,13 @@ $(document).ready(function() {
 
 	$('#game_input').on('focus', function(){
 		$('#helper_text').html('');
+		window.scrollTo(0, 0);
 	});
 	$('#game_input').on('blur', function(){
 		if($('#game_input').val() == ''){
 			$('#helper_text').html('Guess a '+noun);
 		}
 	});
-
-	$('#game_input').on('focus', function(){
-		window.scrollTo(0, 0);
-	}
 
 	$('#clear').on('click', function(){
 		$('#game_input').val('');
