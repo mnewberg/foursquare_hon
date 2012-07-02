@@ -13,10 +13,10 @@ $(document).ready(function() {
 		}
 	});
 
-// 	$('#clear').on('click', function(){
-// 		$('#game_input').val('');
-// 		$('#game_input').focus();
-// 	});
+	$('#clear').on('click', function(){
+		$('#game_input').val('');
+		$('#game_input').focus();
+	});
 
 });
 
