@@ -17,7 +17,7 @@ $(document).ready(function() {
 	$('#clear').on('click', function(){
 		$('#game_input').val('');
 		$('#game_input').focus();
-		//window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 	});
 
 });
