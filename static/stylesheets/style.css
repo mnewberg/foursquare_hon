@@ -74,7 +74,7 @@
   -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  height: 127px;
+  height: 155px;
   width: 100%;
   position: relative;
   z-index: 17;
@@ -128,7 +128,7 @@
   -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  height: 120px;
+  height: 95px;
   width: 100%;
   position: relative;
   z-index: 14;
@@ -182,7 +182,7 @@
   -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  height: 72px;
+  height: 59px;
   width: 100%;
   position: relative;
   z-index: 11;
@@ -256,7 +256,7 @@
   vertical-align: middle;
   text-align: center;
   margin: 0 auto;
-  margin-top: 54px;
+  margin-top: 35px;
 }
 /* line 57, ../sass/partials/_waiting_room.scss */
 .section #players #you, .section #players #opponent {

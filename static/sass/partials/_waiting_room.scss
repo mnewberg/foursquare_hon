@@ -15,13 +15,13 @@
 	}
 }
 #blue{
-	@include gradient( 127px, #8eb4ff, #4986ff, #6699ff, #003194, 17);
+	@include gradient( 155px, #8eb4ff, #4986ff, #6699ff, #003194, 17);
 }
 #green{
-	@include gradient( 120px, #71e2a1, #28c66b, #a5ffcb, #029346, 14);
+	@include gradient( 95px, #71e2a1, #28c66b, #a5ffcb, #029346, 14);
 }
 #purple{
-	@include gradient( 72px, #dd79dd, #de52de, #ff83ff, #912c91, 11);
+	@include gradient( 59px, #dd79dd, #de52de, #ff83ff, #912c91, 11);
 }
 
 .section{
@@ -52,7 +52,7 @@
 			vertical-align: middle; 
   			text-align: center;
   			margin:0 auto;
-  			margin-top:54px;
+  			margin-top:35px;
 
   			#you, #opponent{
   				display:table-cell;
