@@ -13,9 +13,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$('#game_input').on('focus', function(){
+		window.scrollTo(0, 0);
+	}
+
 	$('#clear').on('click', function(){
 		$('#game_input').val('');
 		$('#game_input').focus();
+		//window.scrollTo(0, 0);
 	});
 
 });
