@@ -27,7 +27,7 @@ import subprocess
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 def postrecv(request):
-    subprocess.call(['./pull.sh'])
+    subprocess.call(['/var/www/four_staging/foursquare/pull.sh'])
     print 'pull'
     return HttpResponse('pull')
 	
