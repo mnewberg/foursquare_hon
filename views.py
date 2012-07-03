@@ -26,8 +26,7 @@ from pyklout import Klout
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 def postrecv(request):
-    os.chdir("/var/www/four_staging/foursquare")
-    os.system("sudo git pull origin staging")
+    os.system('cd /var/www/four_staging/foursquare; git pull origin staging')
     print 'pull'
     return HttpResponse('pull')
 	
