@@ -15,13 +15,13 @@
 	}
 }
 #blue{
-	@include gradient( 171px, #8eb4ff, #4986ff, #6699ff, #003194, 17);
+	@include gradient( 200px, #8eb4ff, #4986ff, #6699ff, #003194, 17);
 }
 #green{
-	@include gradient( 95px, #71e2a1, #28c66b, #a5ffcb, #029346, 14);
+	@include gradient( 110px, #71e2a1, #28c66b, #a5ffcb, #029346, 14);
 }
 #purple{
-	@include gradient( 55px, #dd79dd, #de52de, #ff83ff, #912c91, 11);
+	@include gradient( 65px, #dd79dd, #de52de, #ff83ff, #912c91, 11);
 }
 
 .section{
