@@ -485,7 +485,7 @@ input:focus {
   background-image: linear-gradient(top, #ff7070, #d45c5c);
 }
 
-/* line 107, ../sass/partials/_game.scss */
+/* line 109, ../sass/partials/_game.scss */
 .player_small {
   display: table-cell;
   width: 35px;
@@ -501,7 +501,7 @@ input:focus {
   background-color: #ccc;
 }
 
-/* line 116, ../sass/partials/_game.scss */
+/* line 118, ../sass/partials/_game.scss */
 .player_score {
   display: table-cell;
   text-align: center;
@@ -515,7 +515,7 @@ input:focus {
   border-radius: 5px;
 }
 
-/* line 125, ../sass/partials/_game.scss */
+/* line 127, ../sass/partials/_game.scss */
 #your_score {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #71e2a1), color-stop(50%, #28c66b), color-stop(100%, #71e2a1));
   background-image: -webkit-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
@@ -570,7 +570,7 @@ input:focus {
   border-radius: 5px;
 }
 
-/* line 129, ../sass/partials/_game.scss */
+/* line 131, ../sass/partials/_game.scss */
 #opponent_score {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb4ff), color-stop(50%, #4986ff), color-stop(100%, #8eb4ff));
   background-image: -webkit-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
@@ -625,7 +625,7 @@ input:focus {
   border-radius: 5px;
 }
 
-/* line 134, ../sass/partials/_game.scss */
+/* line 136, ../sass/partials/_game.scss */
 .last_guess {
   display: table-cell;
   font-family: Helvetica, Arial;
