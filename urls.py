@@ -5,6 +5,7 @@ from django.views.generic.simple import redirect_to
 from django.contrib import admin
 admin.autodiscover()
 import websoc
+import random
 
 from websoc import *
 from testing import newgallery
