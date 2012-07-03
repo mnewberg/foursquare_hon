@@ -447,7 +447,11 @@ input:focus {
   padding-left: 6px;
   height: 24px;
 }
-/* line 88, ../sass/partials/_game.scss */
+/* line 87, ../sass/partials/_game.scss */
+#input_container #test {
+  display: block;
+}
+/* line 90, ../sass/partials/_game.scss */
 #input_container #clear {
   display: inline-block;
   float: left;
@@ -475,7 +479,7 @@ input:focus {
   -moz-box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
   box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
 }
-/* line 101, ../sass/partials/_game.scss */
+/* line 103, ../sass/partials/_game.scss */
 #input_container #clear:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff7070), color-stop(100%, #d45c5c));
   background-image: -webkit-linear-gradient(top, #ff7070, #d45c5c);
@@ -485,7 +489,7 @@ input:focus {
   background-image: linear-gradient(top, #ff7070, #d45c5c);
 }
 
-/* line 109, ../sass/partials/_game.scss */
+/* line 111, ../sass/partials/_game.scss */
 .player_small {
   display: table-cell;
   width: 35px;
@@ -501,7 +505,7 @@ input:focus {
   background-color: #ccc;
 }
 
-/* line 118, ../sass/partials/_game.scss */
+/* line 120, ../sass/partials/_game.scss */
 .player_score {
   display: table-cell;
   text-align: center;
@@ -515,7 +519,7 @@ input:focus {
   border-radius: 5px;
 }
 
-/* line 127, ../sass/partials/_game.scss */
+/* line 129, ../sass/partials/_game.scss */
 #your_score {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #71e2a1), color-stop(50%, #28c66b), color-stop(100%, #71e2a1));
   background-image: -webkit-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
@@ -570,7 +574,7 @@ input:focus {
   border-radius: 5px;
 }
 
-/* line 131, ../sass/partials/_game.scss */
+/* line 133, ../sass/partials/_game.scss */
 #opponent_score {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb4ff), color-stop(50%, #4986ff), color-stop(100%, #8eb4ff));
   background-image: -webkit-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
@@ -625,7 +629,7 @@ input:focus {
   border-radius: 5px;
 }
 
-/* line 136, ../sass/partials/_game.scss */
+/* line 138, ../sass/partials/_game.scss */
 .last_guess {
   display: table-cell;
   font-family: Helvetica, Arial;
