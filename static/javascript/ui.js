@@ -26,6 +26,7 @@ function waiting_room_to_game(){
 	$('#game').animate({
     	opacity: 1
     });
+    $('#game').css('height','auto');
 	$('#waiting_room').slideUp('slow', function() {
 	    // Animation complete.
 	});
