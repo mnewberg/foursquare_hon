@@ -22,11 +22,12 @@ from shout_twitter import send_twitter_shout, get_bio
 from sms.text import *
 from django.utils import simplejson
 from pyklout import Klout
+import subprocess
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 def postrecv(request):
-    os.system('cd /var/www/four_staging/foursquare; git pull origin staging')
+    subprocess.call(['./pull.sh'])
     print 'pull'
     return HttpResponse('pull')
 	
