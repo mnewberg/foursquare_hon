@@ -27,9 +27,9 @@ authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, 
 
 def postrecv(request):
     os.chdir("/var/www/four_staging/foursquare")
-	os.system("git pull origin staging")
-	print 'pull'
-	return HttpResponse('pull')
+    os.system("git pull origin staging")
+    print 'pull'
+    return HttpResponse('pull')
 	
 def home(request):
     user_agent = get_user_agent(request)
