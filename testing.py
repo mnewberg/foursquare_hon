@@ -10,6 +10,7 @@ from django.http import HttpResponse
 import pusher
 from pyklout import Klout
 
+## this is some of the setup 
 consumer_key=settings.CONSUMER_KEY
 consumer_secret=settings.CONSUMER_SECRET
 access_token=settings.ACCESS_TOKEN
