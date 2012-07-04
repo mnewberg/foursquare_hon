@@ -322,8 +322,10 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 
 <input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})>
 
-{% csrf_token %}
 {% endif %}
+
+{% csrf_token %}
+
 
 </div>
 
