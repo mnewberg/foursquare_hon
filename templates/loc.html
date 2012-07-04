@@ -260,11 +260,11 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
 	                var lat=position.coords.latitude;
 	                var lon=position.coords.longitude;
                         lookup(lat,lon);
-	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:100000})}
+	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:100000,})}
 
                       function geo_preloaded(){
                          lookup(lat,lon);
-                        $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:100000})}
+                        $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:100000, success: function(data){alert('success');},error: function(data){alert('error');},timeout: function(data){alert('timeout')}})}
 
 //function swapgender(){var origin = "original"; $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':'{{sex}}' },type:"GET",timeout:90000})}
 
