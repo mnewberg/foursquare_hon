@@ -102,7 +102,7 @@ def ajaxreq(request):
                     else:
                             pass
             n+=1
-    return HttpResponse('ok')
+    return HttpResponse(simplejson.dumps({'status':'ok'}), mimetype='application/javascript')
 
 
 
