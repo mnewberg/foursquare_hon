@@ -1,3 +1,8 @@
+@font-face {
+  font-family: dsdigital;
+  src: url("../fonts/dsdigital.TTF");
+}
+
 /* line 3, ../sass/partials/_waiting_room.scss */
 #red {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8282), color-stop(50%, #ff4545), color-stop(100%, #ff8282));
@@ -225,32 +230,54 @@
   border-radius: 5px;
 }
 
-/* line 28, ../sass/partials/_waiting_room.scss */
+/* line 27, ../sass/partials/_waiting_room.scss */
+#carousel_inner {
+  width: 204px;
+  overflow: hidden;
+  float: left;
+  height: 102px;
+  line-height: 102px;
+  text-align: center;
+}
+
+/* line 35, ../sass/partials/_waiting_room.scss */
+#carousel_ul {
+  position: relative;
+  left: -204px;
+  width: 9999px;
+}
+/* line 40, ../sass/partials/_waiting_room.scss */
+#carousel_ul li {
+  float: left;
+  width: 204px;
+}
+
+/* line 48, ../sass/partials/_waiting_room.scss */
 .section > div {
   display: table;
   width: 100%;
   height: 100%;
   padding-top: 6px;
 }
-/* line 33, ../sass/partials/_waiting_room.scss */
+/* line 53, ../sass/partials/_waiting_room.scss */
 .section > div p {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-/* line 38, ../sass/partials/_waiting_room.scss */
+/* line 58, ../sass/partials/_waiting_room.scss */
 .section > div .left_arrow {
   cursor: pointer;
   padding-left: 15px;
   padding-right: 25px;
 }
-/* line 43, ../sass/partials/_waiting_room.scss */
+/* line 63, ../sass/partials/_waiting_room.scss */
 .section > div .right_arrow {
   cursor: pointer;
   padding-left: 25px;
   padding-right: 15px;
 }
-/* line 50, ../sass/partials/_waiting_room.scss */
+/* line 70, ../sass/partials/_waiting_room.scss */
 .section #players {
   display: table;
   vertical-align: middle;
@@ -258,7 +285,7 @@
   margin: 0 auto;
   margin-top: 35px;
 }
-/* line 57, ../sass/partials/_waiting_room.scss */
+/* line 77, ../sass/partials/_waiting_room.scss */
 .section #players #you, .section #players #opponent {
   display: table-cell;
   width: 100px;
@@ -270,7 +297,7 @@
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 65, ../sass/partials/_waiting_room.scss */
+/* line 85, ../sass/partials/_waiting_room.scss */
 .section #players #vs {
   vertical-align: middle;
   display: table-cell;
@@ -281,16 +308,15 @@
 /* line 1, ../sass/partials/_game.scss */
 #game {
   position: relative;
-  opacity: 0;
-  height: 0;
+  opacity: 1;
 }
 
-/* line 6, ../sass/partials/_game.scss */
+/* line 5, ../sass/partials/_game.scss */
 input:focus {
   outline: none;
 }
 
-/* line 9, ../sass/partials/_game.scss */
+/* line 8, ../sass/partials/_game.scss */
 #scoreboard {
   width: 147px;
   height: 108px;
@@ -299,8 +325,28 @@ input:focus {
   top: 36px;
   left: 193px;
 }
+/* line 16, ../sass/partials/_game.scss */
+#scoreboard #time_remaining {
+  font-family: dsdigital;
+  position: absolute;
+  font-size: 27px;
+  left: 41px;
+  top: 23px;
+  text-shadow: none;
+}
+/* line 25, ../sass/partials/_game.scss */
+#scoreboard #answers_remaining {
+  font-family: dsdigital;
+  position: absolute;
+  font-size: 17px;
+  left: 33px;
+  top: 60px;
+  text-shadow: none;
+  text-align: center;
+  width: 79px;
+}
 
-/* line 18, ../sass/partials/_game.scss */
+/* line 38, ../sass/partials/_game.scss */
 #game_red {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8282), color-stop(50%, #ff4545), color-stop(100%, #ff8282));
   background-image: -webkit-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
@@ -353,18 +399,18 @@ input:focus {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 21, ../sass/partials/_game.scss */
+/* line 41, ../sass/partials/_game.scss */
 #game_red > div {
   display: table;
 }
-/* line 24, ../sass/partials/_game.scss */
+/* line 44, ../sass/partials/_game.scss */
 #game_red #game_title {
   display: table-cell;
   width: 100%;
   text-align: center;
 }
 
-/* line 31, ../sass/partials/_game.scss */
+/* line 51, ../sass/partials/_game.scss */
 .game_player {
   height: 62px;
   display: table;
@@ -377,13 +423,13 @@ input:focus {
   background-image: -ms-linear-gradient(top, #f8f8f8, #d7d7d7);
   background-image: linear-gradient(top, #f8f8f8, #d7d7d7);
 }
-/* line 37, ../sass/partials/_game.scss */
+/* line 57, ../sass/partials/_game.scss */
 .game_player > div {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 43, ../sass/partials/_game.scss */
+/* line 63, ../sass/partials/_game.scss */
 #input_container {
   height: 45px;
   border-top: 1px solid #c6c6c6;
@@ -401,7 +447,7 @@ input:focus {
   -moz-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
   box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
 }
-/* line 53, ../sass/partials/_game.scss */
+/* line 73, ../sass/partials/_game.scss */
 #input_container #input_bg {
   float: left;
   width: 200px;
@@ -426,7 +472,7 @@ input:focus {
   -moz-box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 15px, white 0px 1px 0px;
   box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 15px, white 0px 1px 0px;
 }
-/* line 66, ../sass/partials/_game.scss */
+/* line 86, ../sass/partials/_game.scss */
 #input_container #input_bg #helper_text {
   position: absolute;
   color: #ccc;
@@ -437,7 +483,7 @@ input:focus {
   line-height: 26px;
   margin-left: 7px;
 }
-/* line 77, ../sass/partials/_game.scss */
+/* line 97, ../sass/partials/_game.scss */
 #input_container #input_bg #game_input {
   position: absolute;
   border: 0;
@@ -447,11 +493,7 @@ input:focus {
   padding-left: 6px;
   height: 24px;
 }
-/* line 87, ../sass/partials/_game.scss */
-#input_container #test {
-  display: block;
-}
-/* line 90, ../sass/partials/_game.scss */
+/* line 108, ../sass/partials/_game.scss */
 #input_container #clear {
   display: inline-block;
   float: left;
@@ -479,7 +521,7 @@ input:focus {
   -moz-box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
   box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
 }
-/* line 103, ../sass/partials/_game.scss */
+/* line 121, ../sass/partials/_game.scss */
 #input_container #clear:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff7070), color-stop(100%, #d45c5c));
   background-image: -webkit-linear-gradient(top, #ff7070, #d45c5c);
@@ -489,9 +531,9 @@ input:focus {
   background-image: linear-gradient(top, #ff7070, #d45c5c);
 }
 
-/* line 111, ../sass/partials/_game.scss */
+/* line 129, ../sass/partials/_game.scss */
 .player_small {
-  display: table-cell;
+  display: inline-block;
   width: 35px;
   height: 35px;
   -webkit-border-radius: 5px;
@@ -499,17 +541,21 @@ input:focus {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  -webkit-box-shadow: black 0px 1px 1px;
-  -moz-box-shadow: black 0px 1px 1px;
-  box-shadow: black 0px 1px 1px;
-  background-color: #ccc;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 1px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.75) 0px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 1px 2px;
+  float: left;
+  position: relative;
+  margin-left: 15px;
+  margin-right: 8px;
+  overflow: hidden;
+  margin-top: 2px;
 }
 
-/* line 120, ../sass/partials/_game.scss */
+/* line 143, ../sass/partials/_game.scss */
 .player_score {
-  display: table-cell;
+  display: inline-block;
   text-align: center;
-  vertical-align: middle;
   width: 28px;
   height: 28px;
   -webkit-border-radius: 5px;
@@ -517,129 +563,37 @@ input:focus {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+  line-height: 39px;
+  float: left;
+  margin-right: 12px;
 }
 
-/* line 129, ../sass/partials/_game.scss */
+/* line 154, ../sass/partials/_game.scss */
 #your_score {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #71e2a1), color-stop(50%, #28c66b), color-stop(100%, #71e2a1));
-  background-image: -webkit-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
-  background-image: -moz-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
-  background-image: -o-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
-  background-image: -ms-linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
-  background-image: linear-gradient(top, #71e2a1, #28c66b 50%, #71e2a1);
-  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  height: 28px;
-  width: 100%;
-  position: relative;
-  z-index: 14;
-  width: 28px;
-}
-/* line 23, ../sass/partials/_mixins.scss */
-#your_score:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  width: inherit;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  height: 1px;
-  z-index: 15;
-}
-/* line 33, ../sass/partials/_mixins.scss */
-#your_score:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  bottom: -2px;
-  width: inherit;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #a5ffcb), color-stop(50%, #029346), color-stop(100%, #a5ffcb));
-  background-image: -webkit-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
-  background-image: -moz-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
-  background-image: -o-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
-  background-image: -ms-linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
-  background-image: linear-gradient(left, #a5ffcb, #029346 50%, #a5ffcb);
-  height: 2px;
-  z-index: 13;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  background-image: url("../images/green_score.png");
+  width: 35px;
+  height: 39px;
 }
 
-/* line 133, ../sass/partials/_game.scss */
+/* line 159, ../sass/partials/_game.scss */
 #opponent_score {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb4ff), color-stop(50%, #4986ff), color-stop(100%, #8eb4ff));
-  background-image: -webkit-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
-  background-image: -moz-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
-  background-image: -o-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
-  background-image: -ms-linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
-  background-image: linear-gradient(top, #8eb4ff, #4986ff 50%, #8eb4ff);
-  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.7);
-  height: 28px;
-  width: 100%;
-  position: relative;
-  z-index: 17;
-  width: 28px;
-}
-/* line 23, ../sass/partials/_mixins.scss */
-#opponent_score:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  width: inherit;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  background-image: linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
-  height: 1px;
-  z-index: 18;
-}
-/* line 33, ../sass/partials/_mixins.scss */
-#opponent_score:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  bottom: -2px;
-  width: inherit;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #6699ff), color-stop(50%, #003194), color-stop(100%, #6699ff));
-  background-image: -webkit-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
-  background-image: -moz-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
-  background-image: -o-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
-  background-image: -ms-linear-gradient(left, #6699ff, #003194 50%, #6699ff);
-  background-image: linear-gradient(left, #6699ff, #003194 50%, #6699ff);
-  height: 2px;
-  z-index: 16;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  background-image: url("../images/blue_score.png");
+  width: 35px;
+  height: 39px;
 }
 
-/* line 138, ../sass/partials/_game.scss */
+/* line 165, ../sass/partials/_game.scss */
 .last_guess {
-  display: table-cell;
+  display: inline-block;
   font-family: Helvetica, Arial;
   font-weight: bold;
   color: #685f5f;
   text-shadow: white 0px 1px 1px;
-  vertical-align: middle;
+  line-height: 39px;
+  height: 39px;
 }
 
-/* line 6, ../sass/style.scss */
+/* line 7, ../sass/style.scss */
 html, body {
   background-color: #fff;
   margin: 0 auto;
@@ -649,7 +603,14 @@ html, body {
   max-width: 320px;
 }
 
-/* line 17, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 22, ../sass/style.scss */
 #wrapper {
   font-family: Helvetica, Arial;
   font-weight: bold;

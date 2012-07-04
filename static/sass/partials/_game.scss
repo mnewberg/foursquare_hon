@@ -1,7 +1,6 @@
 #game{
 	position:relative;
-	opacity:0;
-	height:0;
+	opacity:1;
 }
 input:focus {
     outline: none;
@@ -13,6 +12,27 @@ input:focus {
 	position:absolute;
 	top:36px;
 	left:193px;
+
+	#time_remaining{
+		font-family:dsdigital;
+		position:absolute;
+		font-size:27px;
+		left:41px;
+		top:23px;
+		@include text-shadow(none);
+	}
+
+	#answers_remaining{
+		font-family:dsdigital;
+		position:absolute;
+		font-size:17px;
+		left:33px;
+		top:60px;
+		@include text-shadow(none);
+		text-align:center;
+		width:79px;
+
+	}
 }
 
 #game_red{
@@ -79,14 +99,12 @@ input:focus {
 			border:0;
 			background-color:transparent;
 			width:185px;
-			left:0px;
+			left:0px;	
 			padding-left:6px;
 			height:24px;
 		}
 	}
-#test{
-	display:block;
-}
+
 	#clear{
 		display:inline-block;
 		float:left;
@@ -109,34 +127,44 @@ input:focus {
 
 
 .player_small{
-	display:table-cell;
+	display:inline-block;
 	width:35px;
 	height:35px;
 	@include border-radius(5px);
-	@include box-shadow(rgba(0,0,0,1) 0px 1px 1px);
-	background-color:#ccc;
+	@include box-shadow(rgba(0,0,0,.75) 0px 1px 2px);
+	float:left;
+	position:relative;
+	margin-left:15px;
+	margin-right:8px;
+	overflow:hidden;
+	margin-top:2px;
 }
 
 .player_score{
-	display:table-cell;
+	display:inline-block;
 	text-align:center;
-	vertical-align:middle;
 	width:28px;
 	height:28px;
 	@include border-radius(5px);
+	line-height:39px;
+	float:left;
+	margin-right:12px;
 }
 
 #your_score{
-	@include gradient( 28px, #71e2a1, #28c66b, #a5ffcb, #029346, 14);
-	width:28px;
+	background-image:url('../images/green_score.png');
+	width:35px;
+	height:39px;
 }
 #opponent_score{
-	@include gradient( 28px, #8eb4ff, #4986ff, #6699ff, #003194, 17);
-	width:28px;
+	background-image:url('../images/blue_score.png');
+	width:35px;
+	height:39px;
 }
 
 .last_guess{
-	display:table-cell;
+	display:inline-block;
 	@include dark_font();
-	vertical-align:middle;
+	line-height:39px;
+	height:39px;
 }

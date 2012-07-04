@@ -7,7 +7,7 @@ admin.autodiscover()
 import websoc
 
 from websoc import *
-from testing import newgallery
+from ajaxreqs import ajaxreq
 authenticator = psq.FSAuthenticator('W1EKUBNDSX3ROZJB5HCIIDZPIHNM5FPUSEYWW03GA5WTLC0G','TN2N44EY3SQ0M43TIV2KZKDH5NKHJ4ROWM5Z5W0G1KL1UXEP','http://tryfourplay.com/loc/')
 
 uri = authenticator.authorize_uri()
@@ -23,8 +23,8 @@ urlpatterns = patterns('',
     url(r'^tos$','views.tos'),
     url(r'^login$','views.login'),
     url(r'^loc/$','views.second'),
-    url(r'^newgallery$','testing.newgallery'),
-    url(r'^fsq$','testing.ajaxreq'),
+    # url(r'^newgallery$','ajaxreqs.newgallery'),
+    url(r'^fsq$','ajaxreqs.ajaxreq'),
     url(r'^message/(.{1,5})','views.onboard'),
     url(r'^checkin$','views.checkin'),
     url(r'^outreach$','views.outreach'),
