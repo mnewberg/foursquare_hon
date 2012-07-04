@@ -21,52 +21,59 @@ $(document).ready(function() {
 	});
 
 
+	//GAME HINT CAROUSEL ============= {
 
-        //move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
-        $('#carousel_ul li:first').before($('#carousel_ul li:last'));
+	    //move the last list item before the first item so that the user can click forward or back
+	    $('#carousel_ul li:first').before($('#carousel_ul li:last'));
 
-        //when user clicks the image for sliding right
-        $('.right_arrow img').click(function(){
+	    //right arrow click
+	    $('.right_arrow img').click(function(){
+	        //get the width of the items
+	        	var item_width = $('#carousel_ul li').outerWidth();
 
-            //get the width of the items ( i like making the jquery part dynamic, so if you change the width in the css you won't have o change it here too ) '
-            var item_width = $('#carousel_ul li').outerWidth();
+	        //calculate the new left indent of the unordered list
+	        	var left_indent = parseInt($('#carousel_ul').css('left')) - item_width;
 
-            //calculate the new left indent of the unordered list
-            var left_indent = parseInt($('#carousel_ul').css('left')) - item_width;
+	        //make the sliding effect using jquery's anumate function '
+	            $('#carousel_ul').animate({
+	            	'left' : left_indent
+	            }, 500, function(){
+	                //get the first list item and put it after the last list item
+	                	$('#carousel_ul li:last').after($('#carousel_ul li:first'));
 
-            //make the sliding effect using jquery's anumate function '
-            $('#carousel_ul').animate({
-            	'left' : left_indent
-            }, 500, function(){
-                //get the first list item and put it after the last list item
-                $('#carousel_ul li:last').after($('#carousel_ul li:first'));
+	                //set left indent
+	                	$('#carousel_ul').css({'left' : '-204px'});
+	            });
+	    });
 
-                //and get the left indent to the default -210px
-                $('#carousel_ul').css({'left' : '-204px'});
-            });
-        });
+	    //left arrow click
+	    $('.left_arrow img').click(function(){
+	    	//get the width of the items
+	        	var item_width = $('#carousel_ul li').outerWidth();
 
-        //when user clicks the image for sliding left
-        $('.left_arrow img').click(function(){
+	        //calculate the new left indent of the unordered list
+	        	var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
 
-            var item_width = $('#carousel_ul li').outerWidth();
+	        $('#carousel_ul').animate({
+	        	'left' : left_indent
+	        }, 500, function(){
+	            //get the first list item and put it after the last list item
+	            	$('#carousel_ul li:first').before($('#carousel_ul li:last'));
 
-            /* same as for sliding right except that it's current left indent + the item width (for the sliding right it's - item_width) */
-            var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
+	            //set left indent
+	            	$('#carousel_ul').css({'left' : '-204px'});
+	        });
+	    });
 
-            $('#carousel_ul').animate({
-            	'left' : left_indent
-            }, 500, function(){
-	            /* when sliding to left we are moving the last item before the first item */
-	            $('#carousel_ul li:first').before($('#carousel_ul li:last'));
-
-	            /* and again, when we make that change we are setting the left indent of our unordered list to the default -210px */
-	            $('#carousel_ul').css({'left' : '-204px'});
-            });
-
-        });
+	//GAME HINT CAROUSEL ============= }
 
 });
+
+function game_over(){
+	$('#lightbox').animate({
+    	opacity: 1
+    });
+}
 
 function waiting_room_to_game(){
 	$('#game').animate({
