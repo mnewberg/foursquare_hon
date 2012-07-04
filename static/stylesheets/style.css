@@ -608,9 +608,9 @@ input:focus {
   background-image: -o-linear-gradient(top, #f6f6f6, #e2e2e2);
   background-image: -ms-linear-gradient(top, #f6f6f6, #e2e2e2);
   background-image: linear-gradient(top, #f6f6f6, #e2e2e2);
-  -webkit-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
-  -moz-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
-  box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px, 0px 5px 6px -3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px, 0px 5px 6px -3px rgba(0, 0, 0, 0.8);
+  box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px, 0px 5px 6px -3px rgba(0, 0, 0, 0.8);
 }
 /* line 129, ../sass/partials/_game.scss */
 #input_container #input_bg {
@@ -782,4 +782,14 @@ ul {
   color: #f8f2f2;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
   overflow: hidden;
+  width: 320px;
+  height: 100%;
+}
+
+/* line 29, ../sass/style.scss */
+#filler {
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/bgnoise.jpg");
+  background-repeat: repeat;
 }
