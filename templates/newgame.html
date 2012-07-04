@@ -35,7 +35,7 @@ function startclock(){setInterval('timer()',1000)};
 function timer(){
 duration=duration-1;
  var secs=duration%60;
-if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;$.get('/textall',{'victory':victory});};
+if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;end_game();$.get('/textall',{'victory':victory});};
  if (secs.toString().length < 2)
  {
   secs = '0' + secs;
@@ -81,8 +81,8 @@ guessed.push(entry);}}}}
 				<div id='carousel_inner'>
 					<ul id="carousel_ul">
 						<li><p id="cta">aksjhd as daksjdh askdjhaskjdh asdkajshd aksdjhak sdkashd ak sdhsjsa</p></li>
-						<li><p>test2</p></li>
-						<li><p>test3</p></li>
+						<li><p>Guess as much as you want until something is correct</p></li>
+						<li><p>Chat with your opponent after the game!</p></li>
 					</ul>
 				</div>
 				<p class="right_arrow"><img src="http://c15075740.r40.cf2.rackcdn.com/right_arrow.png" /></p>
@@ -107,14 +107,14 @@ guessed.push(entry);}}}}
 		<div id="game_red" class="section"><div><div id="game_title"></div></div></div>
 		<div id="game_you" class="game_player">
 			<div>
-				<img src="https://is1.4sqi.net/userpix_thumbs/JNCBCMQ435FFCV2H.jpg" id="game_opponent" class="player_small" />
+				<img src="https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}" id="game_opponent" class="player_small" />
 				<div id="your_score" class="player_score">0</div>
 				<div id="your_last_guess" class="last_guess">Broadway</div>
 			</div>
 		</div>
 		<div id="game_opponent" class="game_player">
 			<div>
-				<img src="https://is1.4sqi.net/userpix_thumbs/JNCBCMQ435FFCV2H.jpg" id="game_opponent" class="player_small" />
+				<img src="https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}" id="game_opponent" class="player_small" />
 				<div id="opponent_score" class="player_score">0</div>
 				<div id="opponent_last_guess" class="last_guess">Test</div>
 			</div>
@@ -127,6 +127,9 @@ guessed.push(entry);}}}}
 			
 			<div id="clear">Clear</div>
 		</div>
+	</div>
+	<div id="filler">
+
 	</div>
 </div>
 </body>
