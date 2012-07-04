@@ -179,7 +179,8 @@ var channel = pusher.subscribe('chickpix')
 var gallerybody = ""
 
 channel.bind('done',function(){$.mobile.changePage('#newgallery')});
-channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><form action="/pickmessage" method="POST"><input type="hidden" name="pic_id" value='+data["entry"][0]+'><input type="hidden" name="venue_id" value='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+' onclick=submit()><h2><span>'+data["entry"][1]+'</span></h2></div>'});
+channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
+
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 {% if not has_shared %}
@@ -321,10 +322,10 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 <input type="text" id="twitter"></input>
 
 <input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})>
+{% csrf_token %}
 
 {% endif %}
 
-{% csrf_token %}
 
 
 </div>
