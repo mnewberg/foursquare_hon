@@ -70,6 +70,7 @@ $(document).ready(function() {
 });
 
 function game_over(){
+	$('#lightbox').css('display', 'table');
 	$('#lightbox').animate({
     	opacity: 1
     });

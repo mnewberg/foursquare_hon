@@ -14,7 +14,8 @@ input:focus {
 	background-color:rgba(0,0,0,.70);
 	position:absolute;
 	z-index: 100;
-	display:table;
+	display:none;
+	opacity:0;
 	text-align:center;
 
 	#modal_cell{
