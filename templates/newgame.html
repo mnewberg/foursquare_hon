@@ -78,7 +78,13 @@ guessed.push(entry);}}}}
 		<div id="green" class="section">
 			<div>
 				<p class="left_arrow"><img src="http://c15075740.r40.cf2.rackcdn.com/left_arrow.png" /></p>
-				<p><span id="cta"></span></p>
+				<div id='carousel_inner'>
+					<ul id="carousel_ul">
+						<li id="cta">test1</li>
+						<li>test2</li>
+						<li>test3</li>
+					</ul>
+				</div>
 				<p class="right_arrow"><img src="http://c15075740.r40.cf2.rackcdn.com/right_arrow.png" /></p>
 			</div>
 		</div>
@@ -86,28 +92,28 @@ guessed.push(entry);}}}}
 	</div>
 	<div id="game">
 		<div id="scoreboard">
-			<div id="time_remaining"></div>
+			<div id="time_remaining">00:00</div>
 			<div id="answers_remaining"><span id="guessed">0</span>/<span id="count"></span></div>
 		</div>
 		<div id="game_red" class="section"><div><div id="game_title"></div></div></div>
 		<div id="game_you" class="game_player">
 			<div>
-				<div id="game_you" class="player_small" style="background-image:url('https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}')"></div>
+				<img src="https://is1.4sqi.net/userpix_thumbs/JNCBCMQ435FFCV2H.jpg" id="game_opponent" class="player_small" />
 				<div id="your_score" class="player_score">0</div>
-				<div id="your_last_guess" class="last_guess"></div>
+				<div id="your_last_guess" class="last_guess">Broadway</div>
 			</div>
 		</div>
 		<div id="game_opponent" class="game_player">
 			<div>
-				<div id="game_opponent" class="player_small" style="background-image:url('https://is1.4sqi.net/userpix_thumbs/{{user2_pic}}')"></div>
+				<img src="https://is1.4sqi.net/userpix_thumbs/JNCBCMQ435FFCV2H.jpg" id="game_opponent" class="player_small" />
 				<div id="opponent_score" class="player_score">0</div>
-				<div id="opponent_last_guess" class="last_guess"></div>
+				<div id="opponent_last_guess" class="last_guess">Test</div>
 			</div>
 		</div>
 		<div id="input_container">
 			<div id="input_bg">
 				<div id="helper_text">Guess a <span id="noun"></span></div>
-				<input type="text" id="game_input" name="game_input" onkeyup="checkinput(answers,this)" onFocus="window.scrollTo(0,0);" />
+				<input type="text" id="game_input" name="game_input" onkeyup="checkinput(answers,this)" />
 			</div>
 			
 			<div id="clear">Clear</div>

@@ -24,6 +24,26 @@
 	@include gradient( 62px, #dd79dd, #de52de, #ff83ff, #912c91, 11);
 }
 
+#carousel_inner{
+	width:204px;
+	overflow:hidden;
+	float:left;
+	height:102px;
+	line-height:102px;
+	text-align:center;
+}
+#carousel_ul{
+	position:relative;
+	left:-204px;
+	width:9999px;
+
+	li{
+		float:left;
+		width:204px;
+	}
+
+}
+
 .section{
 	>div{
 		display:table;
