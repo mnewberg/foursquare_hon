@@ -29,7 +29,6 @@
 	overflow:hidden;
 	float:left;
 	height:102px;
-	line-height:102px;
 	text-align:center;
 }
 #carousel_ul{
@@ -40,6 +39,14 @@
 	li{
 		float:left;
 		width:204px;
+		display:table;
+		height:100px;
+
+		p{
+			display:table-cell;
+			vertical-align:middle;
+			text-align:center;
+		}
 	}
 
 }
