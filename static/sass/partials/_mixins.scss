@@ -12,6 +12,29 @@
 	@include text-shadow(rgba(255,255,255,1) 0px 1px 1px);
 }
 
+@mixin white_font(){
+	font-family:Helvetica, Arial;
+	font-weight:bold;
+	color:#f8f2f2;
+	@include text-shadow(rgba(0,0,0,.35) 0px 1px 1px);
+}
+
+@mixin button(){
+		cursor:pointer;
+		@include white_font();
+		height:26px;
+		line-height:26px;
+		width:80px;
+		border: 1px solid #bd5656;
+		@include border-radius(5px);
+		@include background-image(linear-gradient(top, #ff6666, #d25454 ));
+		@include box-shadow(inset rgba(255,255,255,.5) 0px 1px 0px, rgba(255,255,255,1) 0px 1px 0px);
+
+		&:hover{
+			@include background-image(linear-gradient(top, lighten(#ff6666,2%), lighten(#d25454, 2%) ));
+		}
+}
+
 @mixin gradient($height, $main-light, $main-dark, $shadow-light, $shadow-dark, $z){
 	@include background-image(linear-gradient(top, $main-light, $main-dark 50%, $main-light));
 	@include box-shadow( 0px 5px 6px -3px rgba(0,0,0,.7));
