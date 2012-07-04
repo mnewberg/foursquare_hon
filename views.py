@@ -161,7 +161,7 @@ def second(request):
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
-		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok'})
+		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok','csrf':params}, context_instance=RequestContext(request))
 ##RETURNING USER
 	elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
