@@ -332,17 +332,18 @@ input:focus {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   z-index: 100;
-  display: table;
+  display: none;
+  opacity: 0;
   text-align: center;
 }
-/* line 20, ../sass/partials/_game.scss */
+/* line 21, ../sass/partials/_game.scss */
 #lightbox #modal_cell {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
   height: 100%;
 }
-/* line 26, ../sass/partials/_game.scss */
+/* line 27, ../sass/partials/_game.scss */
 #lightbox #modal_cell #modal {
   display: inline-block;
   text-align: center;
@@ -366,7 +367,7 @@ input:focus {
   -moz-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.8);
 }
-/* line 35, ../sass/partials/_game.scss */
+/* line 36, ../sass/partials/_game.scss */
 #lightbox #modal_cell #modal .modal_header {
   -webkit-border-radius: 10px 10px 0px 0px;
   -moz-border-radius: 10px 10px 0px 0px;
@@ -424,7 +425,7 @@ input:focus {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 39, ../sass/partials/_game.scss */
+/* line 40, ../sass/partials/_game.scss */
 #lightbox #modal_cell #modal .modal_header #game_over {
   width: 100%;
   text-align: center;
@@ -434,11 +435,11 @@ input:focus {
   color: #f8f2f2;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
 }
-/* line 47, ../sass/partials/_game.scss */
+/* line 48, ../sass/partials/_game.scss */
 #lightbox #modal_cell #modal #game_over_text {
   padding: 20px 10px 10px 10px;
 }
-/* line 51, ../sass/partials/_game.scss */
+/* line 52, ../sass/partials/_game.scss */
 #lightbox #modal_cell #modal #okay {
   cursor: pointer;
   font-family: Helvetica, Arial;
@@ -477,7 +478,7 @@ input:focus {
   background-image: linear-gradient(top, #ff7070, #d45c5c);
 }
 
-/* line 60, ../sass/partials/_game.scss */
+/* line 61, ../sass/partials/_game.scss */
 #scoreboard {
   width: 147px;
   height: 108px;
@@ -486,7 +487,7 @@ input:focus {
   top: 36px;
   left: 193px;
 }
-/* line 68, ../sass/partials/_game.scss */
+/* line 69, ../sass/partials/_game.scss */
 #scoreboard #time_remaining {
   font-family: dsdigital;
   position: absolute;
@@ -498,7 +499,7 @@ input:focus {
   width: 79px;
   text-align: center;
 }
-/* line 80, ../sass/partials/_game.scss */
+/* line 81, ../sass/partials/_game.scss */
 #scoreboard #answers_remaining {
   font-family: dsdigital;
   position: absolute;
@@ -510,7 +511,7 @@ input:focus {
   width: 79px;
 }
 
-/* line 93, ../sass/partials/_game.scss */
+/* line 94, ../sass/partials/_game.scss */
 #game_red {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8282), color-stop(50%, #ff4545), color-stop(100%, #ff8282));
   background-image: -webkit-linear-gradient(top, #ff8282, #ff4545 50%, #ff8282);
@@ -563,18 +564,18 @@ input:focus {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 96, ../sass/partials/_game.scss */
+/* line 97, ../sass/partials/_game.scss */
 #game_red > div {
   display: table;
 }
-/* line 99, ../sass/partials/_game.scss */
+/* line 100, ../sass/partials/_game.scss */
 #game_red #game_title {
   display: table-cell;
   width: 100%;
   text-align: center;
 }
 
-/* line 106, ../sass/partials/_game.scss */
+/* line 107, ../sass/partials/_game.scss */
 .game_player {
   height: 62px;
   display: table;
@@ -587,13 +588,13 @@ input:focus {
   background-image: -ms-linear-gradient(top, #f8f8f8, #d7d7d7);
   background-image: linear-gradient(top, #f8f8f8, #d7d7d7);
 }
-/* line 112, ../sass/partials/_game.scss */
+/* line 113, ../sass/partials/_game.scss */
 .game_player > div {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 118, ../sass/partials/_game.scss */
+/* line 119, ../sass/partials/_game.scss */
 #input_container {
   height: 45px;
   border-top: 1px solid #c6c6c6;
@@ -611,7 +612,7 @@ input:focus {
   -moz-box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
   box-shadow: inset rgba(0, 0, 0, 0.08) 0px 5px 5px, inset white 0px 1px 0px;
 }
-/* line 128, ../sass/partials/_game.scss */
+/* line 129, ../sass/partials/_game.scss */
 #input_container #input_bg {
   float: left;
   width: 200px;
@@ -636,7 +637,7 @@ input:focus {
   -moz-box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 15px, white 0px 1px 0px;
   box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 15px, white 0px 1px 0px;
 }
-/* line 141, ../sass/partials/_game.scss */
+/* line 142, ../sass/partials/_game.scss */
 #input_container #input_bg #helper_text {
   position: absolute;
   color: #ccc;
@@ -647,7 +648,7 @@ input:focus {
   line-height: 26px;
   margin-left: 7px;
 }
-/* line 152, ../sass/partials/_game.scss */
+/* line 153, ../sass/partials/_game.scss */
 #input_container #input_bg #game_input {
   position: absolute;
   border: 0;
@@ -657,7 +658,7 @@ input:focus {
   padding-left: 6px;
   height: 24px;
 }
-/* line 163, ../sass/partials/_game.scss */
+/* line 164, ../sass/partials/_game.scss */
 #input_container #clear {
   display: inline-block;
   float: left;
@@ -685,7 +686,7 @@ input:focus {
   -moz-box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
   box-shadow: inset rgba(255, 255, 255, 0.5) 0px 1px 0px, white 0px 1px 0px;
 }
-/* line 176, ../sass/partials/_game.scss */
+/* line 177, ../sass/partials/_game.scss */
 #input_container #clear:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff7070), color-stop(100%, #d45c5c));
   background-image: -webkit-linear-gradient(top, #ff7070, #d45c5c);
@@ -695,7 +696,7 @@ input:focus {
   background-image: linear-gradient(top, #ff7070, #d45c5c);
 }
 
-/* line 184, ../sass/partials/_game.scss */
+/* line 185, ../sass/partials/_game.scss */
 .player_small {
   display: inline-block;
   width: 35px;
@@ -716,7 +717,7 @@ input:focus {
   margin-top: 2px;
 }
 
-/* line 198, ../sass/partials/_game.scss */
+/* line 199, ../sass/partials/_game.scss */
 .player_score {
   display: inline-block;
   text-align: center;
@@ -732,21 +733,21 @@ input:focus {
   margin-right: 12px;
 }
 
-/* line 209, ../sass/partials/_game.scss */
+/* line 210, ../sass/partials/_game.scss */
 #your_score {
   background-image: url("../images/green_score.png");
   width: 35px;
   height: 39px;
 }
 
-/* line 214, ../sass/partials/_game.scss */
+/* line 215, ../sass/partials/_game.scss */
 #opponent_score {
   background-image: url("../images/blue_score.png");
   width: 35px;
   height: 39px;
 }
 
-/* line 220, ../sass/partials/_game.scss */
+/* line 221, ../sass/partials/_game.scss */
 .last_guess {
   display: inline-block;
   font-family: Helvetica, Arial;
