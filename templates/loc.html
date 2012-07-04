@@ -179,7 +179,7 @@ var channel = pusher.subscribe('chickpix')
 var gallerybody = ""
 
 channel.bind('done',function(){$.mobile.changePage('#newgallery')});
-channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
+channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image onclick=$.post("/pickmessage",{pic_id='+data["entry"][0]+', venue_id='+data["entry"][3]+',csrfmiddlewaretoken:'+document.getElementsByName('csrfmiddlewaretoken')[0].value+'})><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'><h2><span>'+data["entry"][1]+'</span></h2></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 {% if not has_shared %}
