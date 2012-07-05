@@ -203,8 +203,8 @@ def pickmessage(request):
     params={}
     params.update(csrf(request))
     
-    venue=request.POST['venue_id']
-    image=request.POST['pic_id']
+    venue=request.GET['venue_id']
+    image=request.GET['pic_id']
         
     t=user_lookup.objects.get(pic_id=image)
     target_t=t.t_handle
