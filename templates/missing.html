@@ -6,6 +6,13 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="format-detection" content="telephone=no">
 	<meta name="HandheldFriendly" content="true" />
+	
+	<script type="text/javascript">
+$(document).ready(function() {
+    $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');
+});
+</script>
+	
 	</head>
 <body>
 <div data-role="page" data-theme="a" id="missingnumber">
