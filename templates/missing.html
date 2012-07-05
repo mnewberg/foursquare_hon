@@ -9,8 +9,12 @@
 	<meta name="HandheldFriendly" content="true" />
 	
 	<script type="text/javascript">
-$(document).ready(function() {
- $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');});
+	$(document).ready(function() {
+	    // This example achieves the same result as Step 3 under Basic Usage.
+	    $('#area_code').autotab({ target: 'number1', format: 'numeric' });
+	    $('#number1').autotab({ target: 'number2', format: 'numeric', previous: 'area_code' });
+	    $('#number2').autotab({ previous: 'number1', format: 'numeric' });
+	});
 </script>
 	
 	</head>
