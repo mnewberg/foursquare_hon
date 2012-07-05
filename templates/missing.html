@@ -1,7 +1,7 @@
 <html>
 <head>
-	<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<meta name="apple-touch-fullscreen" content="YES" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,9 +11,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 	    // This example achieves the same result as Step 3 under Basic Usage.
-	    $('#area_code').autotab({ target: 'number1', format: 'numeric' });
-	    $('#number1').autotab({ target: 'number2', format: 'numeric', previous: 'area_code' });
-	    $('#number2').autotab({ previous: 'number1', format: 'numeric' });
+	    $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');
 	});
 </script>
 	
