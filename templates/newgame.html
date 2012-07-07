@@ -12,7 +12,7 @@
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
 	<script type="text/javascript">
 	
-Pusher.channel_auth_endpoint = 'http://playdo.pe/pusher/auth'
+Pusher.channel_auth_endpoint = '/pusher/auth'
 var pusher = new Pusher('890abd57f862ab2712ff');
 var privateChannel = pusher.subscribe('private-{{channel_id}}');
 var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
@@ -80,8 +80,8 @@ guessed.push(entry);}}}}
 				<p class="left_arrow"><img src="http://c15075740.r40.cf2.rackcdn.com/left_arrow.png" /></p>
 				<div id='carousel_inner'>
 					<ul id="carousel_ul">
-						<li><p id="cta">aksjhd as daksjdh askdjhaskjdh asdkajshd aksdjhak sdkashd ak sdhsjsa</p></li>
-						<li><p>Guess as much as you want until something is correct</p></li>
+						<li><p id="cta"></p></li>
+						<li><p>Keep guessing until something is correct</p></li>
 						<li><p>Chat with your opponent after the game!</p></li>
 					</ul>
 				</div>
