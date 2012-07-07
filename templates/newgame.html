@@ -35,7 +35,7 @@ function startclock(){setInterval('timer()',1000)};
 function timer(){
 duration=duration-1;
  var secs=duration%60;
-if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;end_game();$.get('/textall',{'victory':victory});};
+if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;game_over();$.get('/textall',{'victory':victory});};
  if (secs.toString().length < 2)
  {
   secs = '0' + secs;
@@ -114,7 +114,7 @@ guessed.push(entry);}}}}
 		</div>
 		<div id="game_opponent" class="game_player">
 			<div>
-				<img src="https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}" id="game_opponent" class="player_small" />
+				<img src="https://is1.4sqi.net/userpix_thumbs/{{user2_pic}}" id="game_opponent" class="player_small" />
 				<div id="opponent_score" class="player_score">0</div>
 				<div id="opponent_last_guess" class="last_guess">Test</div>
 			</div>
