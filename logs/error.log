@@ -6169,3 +6169,140 @@
 [Wed Jul 04 13:11:34 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=M3PLV2XUFJQD5BKJG4VY1G2URDXQUX0HSI2LTJZQYE0HEVII
 [Wed Jul 04 14:47:11 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=OBGBCXZFPVAFOS3XIVYTI0SGK23DYLTQDDAL5PHRDKTKUZDB
 [Wed Jul 04 14:51:57 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=OCIJETDGCYLMWPMVSQLOAEVDMZOPDEXWAGQY21FSYZOHJZ05
+[Wed Jul 04 15:39:27 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/message/XUsSA
+[Wed Jul 04 15:39:27 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/message/XUsSA
+[Wed Jul 04 15:39:27 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/message/XUsSA
+[Wed Jul 04 15:40:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/message/XUsSA
+[Wed Jul 04 15:40:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/message/XUsSA
+[Wed Jul 04 15:40:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://tryfourplay.com/message/XUsSA
+[Thu Jul 05 17:13:24 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jul 05 17:15:03 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jul 05 17:23:47 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jul 05 17:25:57 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jul 05 17:37:29 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jul 05 18:13:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/danew
+[Thu Jul 05 17:20:53 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=WWDA3YD2ZMMBCBL2LB1MGX1I2RTB2FWL3V5ATM2X5J33NHZG
+[Thu Jul 05 18:34:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=WWDA3YD2ZMMBCBL2LB1MGX1I2RTB2FWL3V5ATM2X5J33NHZG
+[Thu Jul 05 18:34:48 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=WWDA3YD2ZMMBCBL2LB1MGX1I2RTB2FWL3V5ATM2X5J33NHZG
+[Thu Jul 05 18:35:02 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=WWDA3YD2ZMMBCBL2LB1MGX1I2RTB2FWL3V5ATM2X5J33NHZG
+[Thu Jul 05 19:26:07 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/message/ryan1
+[Fri Jul 06 14:23:42 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://whatispolymath.com/iconcourse/icon.html
+[Fri Jul 06 14:23:42 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://whatispolymath.com/iconcourse/icon.html
+[Fri Jul 06 15:42:45 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media
+[Fri Jul 06 15:42:45 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://staging.tryfourplay.com/static/conf.xml
+[Mon Jul 09 15:28:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://staging.tryfourplay.com/
+[Mon Jul 09 15:28:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://staging.tryfourplay.com/
+[Mon Jul 09 17:28:53 2012] [error] [client 68.173.34.88] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://staging.tryfourplay.com/
+[Mon Jul 09 17:28:53 2012] [error] [client 68.173.34.88] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://staging.tryfourplay.com/
+[Mon Jul 09 16:31:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 16:31:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:06:13 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:06:13 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:07:53 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:07:53 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:10:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:10:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:13:53 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:13:53 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:14:55 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:14:55 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:26:56 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:26:56 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:52:32 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:52:33 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:53:59 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:53:59 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:56:59 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 22:56:59 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:01:04 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:01:04 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:02:15 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:02:15 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:03:11 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:03:11 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:03:33 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:03:33 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:04:04 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:04:04 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:04:33 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:04:33 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:06:23 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:06:23 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:06:46 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:06:46 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:10:32 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 09 23:10:32 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 09:11:13 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 09:11:13 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 10:54:07 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 10:54:07 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 10:59:58 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 10:59:58 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:00:27 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:00:27 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:08:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:08:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:08:44 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:08:44 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:09:55 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:09:55 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:10:39 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:10:39 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:14:39 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:14:39 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:30:12 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:30:12 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46] mod_wsgi (pid=12190): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     if resolver.urlconf_module is None:
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     __import__(name)
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     import views
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/views.py", line 371
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]     print u.token
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46]         ^
+[Tue Jul 10 12:30:19 2012] [error] [client 107.23.0.46] SyntaxError: invalid syntax
+[Tue Jul 10 11:30:51 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:30:51 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:31:24 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:31:24 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:32:36 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:32:36 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:37:03 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:37:03 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:44:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:44:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:45:58 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:45:58 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:48:19 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:48:19 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:49:01 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:49:01 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:51:23 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:51:23 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:54:23 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:54:23 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:54:53 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:54:53 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:55:55 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:55:56 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:56:26 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:56:26 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:57:18 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:57:18 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:59:10 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 11:59:11 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 12:02:10 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 12:02:10 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 14:18:14 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 14:18:14 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 14:18:40 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 14:18:40 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
