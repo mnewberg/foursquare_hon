@@ -363,11 +363,11 @@ def updatetwitter(request):
 def hook(request):
 	t=request.POST['checkin']
 	s=request.POST['secret']
-	if s=='KZWMIIPTVKBCIGM42TC33P0R5QAQVSNSBSCGO3C11GH0RN1P':
-		u=user.objects.get(fsq_id=t['user']['id'])
-		authenticator.query("/checkins/"+t['id']+"/reply",u.token,{"text":"hi","url":"playdo.pe"})
-	else:
-		pass
+	# if s=='KZWMIIPTVKBCIGM42TC33P0R5QAQVSNSBSCGO3C11GH0RN1P':
+	# 	u=user.objects.get(fsq_id=t['user']['id'])
+	# 	authenticator.query("/checkins/"+t['id']+"/reply",u.token,{"text":"hi","url":"playdo.pe"})
+	# else:
+	# 	pass
 	return HttpResponse('OK')
 
 
