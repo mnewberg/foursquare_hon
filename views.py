@@ -23,6 +23,7 @@ from sms.text import *
 from django.utils import simplejson
 from pyklout import Klout
 import subprocess
+from django.views.decorators.csrf import csrf_exempt
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
@@ -358,6 +359,7 @@ def updatetwitter(request):
     u.save()
     return HttpResponse('success')
 
+@csrf_exempt
 def hook(request):
 	t=request.POST['id']
 	print t
