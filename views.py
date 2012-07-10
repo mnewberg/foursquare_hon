@@ -24,8 +24,6 @@ from django.utils import simplejson
 from pyklout import Klout
 import subprocess
 from django.views.decorators.csrf import csrf_exempt
-import json
-import ast 
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
@@ -363,16 +361,14 @@ def updatetwitter(request):
 
 @csrf_exempt
 def hook(request):
-        data=request.POST["checkin"]
-        s=request.POST["secret"]
-        dic=json.loads(data)
-        print dic['user']['id']
-        try:
-            u=user.objects.get(fsq_id=dic['user']['id'])
-            post_data=[('oauth_token',str(u.token)),('text','teest'),('url','http://playdo.pe')]
-            urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'+dic['id']+'/reply'),urllib.urlencode(post_data))
-        except:
-            pass
+    s=request.POST["secret"]
+    dic=json.loads(data)
+    try:
+        u=user.objects.get(fsq_id=dic['user']['id'])
+        post_data=[('oauth_token',str(u.token)),('text','teest'),('url','http://playdo.pe')]
+        urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+    except:
+        pass
 	return HttpResponse('OK')
 
 
