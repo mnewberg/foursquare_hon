@@ -358,6 +358,10 @@ def updatetwitter(request):
     u.save()
     return HttpResponse('success')
 
+def hook(request):
+	t=request.POST['id']
+	print t
+
 
 def handler500(request):
     """
