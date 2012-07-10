@@ -363,6 +363,7 @@ def updatetwitter(request):
 def hook(request):
 	t=request.POST['checkin']
 	print t
+	return 'OK'
 
 
 def handler500(request):
