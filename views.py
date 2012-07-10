@@ -362,7 +362,8 @@ def updatetwitter(request):
 @csrf_exempt
 def hook(request):
 	t=request.POST['checkin']
-	print t
+	s=request.POST['secret']
+	print s
 	return HttpResponse('OK')
 
 
