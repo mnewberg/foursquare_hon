@@ -71,8 +71,7 @@ def second(request):
 			f_id=request.session['the_id']
 			u=user.objects.get(fsq_id)
 			return render_to_response('loc.html', {'from_4app':true,'sex':u.gender, 'twitter':u.twitter(),'token':u.token,'csrf':params}, context_instance=RequestContext(request))
-			
-        try:
+		try:
             invite_code=request.session['invite_code']
 		except:
             invite_code=''
