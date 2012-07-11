@@ -51,7 +51,7 @@ def login(request):
 				f_id=d['checkin']['user']['id']
 				request.session['fsq_message']=f_id
 			else:
-            	pass
+				pass
         uri = authenticator.authorize_uri()
         try:
             request.session['invite_code']=request.GET['invite_code']
