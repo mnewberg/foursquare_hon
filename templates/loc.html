@@ -179,7 +179,7 @@ var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix')
 var gallerybody = ""
 
-{% if from4_app %}
+{% if from_4app %}
 $(document).ready(function(){$.mobile.changePage('#newgallery')})
 {% endif %}
 channel.bind('done',function(){$.mobile.changePage('#newgallery')});

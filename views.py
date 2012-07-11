@@ -45,13 +45,15 @@ def login(request):
             request.session['lat']=request.GET['lat']
             request.session['lon']=request.GET['lon']
         except:
-			if 'checkins' in request.GET:
-				cid=request.GET['checkins']
+			if 'fsqCallback' in request.GET:
+				dastring=request.GET['fsqCallback']
+                                cid=dastring[22:46]
 				d=authenticator.query("/checkins/"+cid,'1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII')
-				f_id=d['checkin']['user']['id']
-				request.session['fsq_message']=f_id
+                                f_id=d['checkin']['user']['id']
+                                request.session['f_id']=f_id
+                                return HttpResponseRedirect('/loc')
 			else:
-				pass
+				print 'problem'
         uri = authenticator.authorize_uri()
         try:
             request.session['invite_code']=request.GET['invite_code']
@@ -66,26 +68,30 @@ def scrub(name):
         pass
 
 def second(request):
-		#user coming from foursquare.app
-		if f_id in request.session:
-			f_id=request.session['the_id']
-			u=user.objects.get(fsq_id)
-			return render_to_response('loc.html', {'from_4app':true,'sex':u.gender, 'twitter':u.twitter(),'token':u.token,'csrf':params}, context_instance=RequestContext(request))
-		try:
+      params = {}
+      params.update(csrf(request))
+      #user coming from foursquare.app
+      if 'f_id' in request.session:
+          f_id=request.session['f_id']
+          u=user.objects.get(fsq_id=f_id)
+          return render_to_response('loc.html', {'from_4app':True,'sex':u.gender, 'twitter':u.twitter,'token':u.token,'csrf':params}, context_instance=RequestContext(request))
+      else:
+          pass
+      try:
             invite_code=request.session['invite_code']
-		except:
+      except:
             invite_code=''
-        try:
+      try:
             lat=request.session['lat']
             lon=request.session['lon']
-        except:
-            lat=''
-            lon=''
-        token=authenticator.set_token(request.GET['code'])
-      	da_id=authenticator.query("/users/self", token, None)
-		f_id=da_id['user']['id']
+      except:
+            lat=0
+            lon=0
+      token=authenticator.set_token(request.GET['code'])
+      da_id=authenticator.query("/users/self", token, None)
+      f_id=da_id['user']['id']
         ## onboarded user wants to unsubscribe, reroute flow
-        if 'unsubscribe' in request.session:
+      if 'unsubscribe' in request.session:
             u=user_lookup.objects.get(fsq_id=f_id)
             try:
                 t=twitter_outreach.objects.get(m_target=u)
@@ -97,10 +103,10 @@ def second(request):
                     pass
             except:
                  pass
-        else:
+      else:
             pass
         ## onboarded user wants to block particular user, reroute flow
-        if 'block' in request.session:
+      if 'block' in request.session:
             uid=request.session['uid']
             try:
                 t=twitter_outreach.objects.get(uid=uid)
@@ -113,35 +119,35 @@ def second(request):
                     pass
             except:
                 pass
-        else:
+      else:
             pass
-		finder = psq.UserFinder(authenticator)
-		query = finder.findUser(token, f_id)
-		request.session['fsq_id']=f_id
-        request.session.set_expiry(0)
-        last_name=query.last_name()
-        showmessage=True
-        params = {}
-        params.update(csrf(request))
-        if 'uid' in request.session:
+      finder = psq.UserFinder(authenticator)
+      query = finder.findUser(token, f_id)
+      request.session['fsq_id']=f_id
+      request.session.set_expiry(0)
+      last_name=query.last_name()
+      showmessage=True
+      params = {}
+      params.update(csrf(request))
+      if 'uid' in request.session:
             uidsesh=True
-        else:
+      else:
             uidsesh=False
-        try:
+      try:
             user_look=user_lookup.objects.get(fsq_id=f_id)
             unread=twitter_outreach.objects.filter(m_target=user_look, read=False).count()
-        except:
+      except:
             showmessage=False
             unread=False
-        try:
+      try:
             last_name=scrub(last_name)
-        except:
+      except:
             pass
-        try:
+      try:
             user_look=user_lookup.objects.get(fsq_id=f_id)
-        except:
+      except:
             user_look=False
-        if showmessage==False and user_look!=False and invite_codes.objects.filter(code=invite_code).count()==1:
+      if showmessage==False and user_look!=False and invite_codes.objects.filter(code=invite_code).count()==1:
                 u=user.objects.get(fsq_id=f_id)
                 u.token=token
                 u.photo=query.photo()[36:]
@@ -150,20 +156,20 @@ def second(request):
                 has_shared=u.has_shared
                 u.save()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':u.twitter(), 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
-        elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
+      elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
-	elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
+      elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
 		sobjects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 if not query.phone():
                     return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
                 else:
                     return HttpResponseRedirect('/callback')
-	elif unread>0:
+      elif unread>0:
                 if not user.objects.get(fsq_id=f_id).phone:
                     return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
 		else:
                     return HttpResponseRedirect('/callback')
-	elif user.objects.filter(fsq_id=f_id).count()==1:
+      elif user.objects.filter(fsq_id=f_id).count()==1:
 		u=user.objects.get(fsq_id=f_id)
 		u.token=token
                 try:
@@ -176,18 +182,18 @@ def second(request):
 		u.save()
 		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok','csrf':params}, context_instance=RequestContext(request))
 ##RETURNING USER
-	elif invite_codes.objects.filter(code=invite_code).count()==1:
+      elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 welcome_email(query.email(),query.first_name())
                 invite_codes.objects.get(code=invite_code).delete()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
-        elif queue.objects.filter(fsq_id=query.id()).count()==0:
+      elif queue.objects.filter(fsq_id=query.id()).count()==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
                 queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
                 queue_email(query.email(),query.first_name())
                 return render_to_response('wait.html')
-        else:
+      else:
                 print 'uh oh'
                 return render_to_response('wait.html')
     
