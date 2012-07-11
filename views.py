@@ -1,5 +1,5 @@
 from sendemail import *
-from django.http import HttpResponse, HttpResponseRedirect 
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 import pysq.apiv2 as psq
 from gallery.models import user, rating, record, user_lookup, venue_ll, twitter_outreach, invite_codes, game, queue
@@ -32,7 +32,7 @@ def postrecv(request):
     subprocess.call(['/var/www/four_staging/foursquare/pull.sh'])
     print 'pull'
     return HttpResponse('pull')
-	
+
 def home(request):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
@@ -45,7 +45,13 @@ def login(request):
             request.session['lat']=request.GET['lat']
             request.session['lon']=request.GET['lon']
         except:
-            pass
+			if 'checkins' in request.GET:
+				cid=request.GET['checkins']
+				d=authenticator.query("/checkins/"+cid,'1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII')
+				f_id=d['checkin']['user']['id']
+				request.session['fsq_message']=f_id
+			else:
+            	pass
         uri = authenticator.authorize_uri()
         try:
             request.session['invite_code']=request.GET['invite_code']
@@ -60,9 +66,15 @@ def scrub(name):
         pass
 
 def second(request):
+		#user coming from foursquare.app
+		if f_id in request.session:
+			f_id=request.session['the_id']
+			u=user.objects.get(fsq_id)
+			return render_to_response('loc.html', {'from_4app':true,'sex':u.gender, 'twitter':u.twitter(),'token':u.token,'csrf':params}, context_instance=RequestContext(request))
+			
         try:
             invite_code=request.session['invite_code']
-	except:
+		except:
             invite_code=''
         try:
             lat=request.session['lat']
@@ -72,11 +84,11 @@ def second(request):
             lon=''
         token=authenticator.set_token(request.GET['code'])
       	da_id=authenticator.query("/users/self", token, None)
-	f_id=da_id['user']['id']
+		f_id=da_id['user']['id']
         ## onboarded user wants to unsubscribe, reroute flow
         if 'unsubscribe' in request.session:
             u=user_lookup.objects.get(fsq_id=f_id)
-            try: 
+            try:
                 t=twitter_outreach.objects.get(m_target=u)
                 if t.m_target.fsq_id==f_id:
                     u.unsubscribed=True
@@ -104,9 +116,9 @@ def second(request):
                 pass
         else:
             pass
-	finder = psq.UserFinder(authenticator)
-	query = finder.findUser(token, f_id)
-	request.session['fsq_id']=f_id
+		finder = psq.UserFinder(authenticator)
+		query = finder.findUser(token, f_id)
+		request.session['fsq_id']=f_id
         request.session.set_expiry(0)
         last_name=query.last_name()
         showmessage=True
@@ -121,7 +133,7 @@ def second(request):
             unread=twitter_outreach.objects.filter(m_target=user_look, read=False).count()
         except:
             showmessage=False
-            unread=False 
+            unread=False
         try:
             last_name=scrub(last_name)
         except:
@@ -179,8 +191,8 @@ def second(request):
         else:
                 print 'uh oh'
                 return render_to_response('wait.html')
-
     
+
 
 def has_twitter(request):
     pic_id=request.GET['pic_id']
@@ -207,12 +219,12 @@ def pickmessage(request):
     
     venue=request.GET['venue_id']
     image=request.GET['pic_id']
-        
+    
     t=user_lookup.objects.get(pic_id=image)
     target_t=t.t_handle
     target_n=t.first_name
     target_v=venue
-
+    
     try:
         the_id=api.identity(str(target_t),'twitter')['id']
         topics=api.topics(the_id)
@@ -228,13 +240,13 @@ def pickmessage(request):
      #   target_p=request.session['t_pic']
       #  target_n=request.session['f_name']
        # target_v=request.session['venue']
-
+    
     return render_to_response('message.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params,'topics':tlist,'games':games}, context_instance=RequestContext(request))
 
 def outreach(request):
     params = {}
     params.update(csrf(request))
-
+    
     message=request.POST['message']
     game_id=request.POST['game_id']
     t_handle=request.POST['t_handle']
@@ -243,9 +255,9 @@ def outreach(request):
     v=authenticator.userless_query("/venues/"+venue)
     venue_name=v['venue']['name']
     uid=random_string(5)
-
+    
     thegame=game.objects.get(gid=game_id)
-
+    
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     if datarget.unsubscribed==True or sender in datarget.blocks.all():
@@ -265,7 +277,7 @@ def onboard(request, uid):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
         return render_to_response('desktop.html')
-    else:    
+    else:
         pass
     t=twitter_outreach.objects.get(uid=uid)
     sender=t.sender
@@ -298,20 +310,20 @@ def faq(request):
 def tos(request):
     return render_to_response('tos.html')
 
-def checkin(request):        
+def checkin(request):
         fsq_id=request.session['fsq_id']
         u=queue.objects.get(fsq_id=fsq_id)
         token = u.token
         post_data=[('oauth_token',token),('venueId','4fe5e2897b0c9089d7f57194'),('shout','YOU MAKE ME WANNA SHOUT! (teest)'),('broadcast','public,followers')]
         urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
         u.has_shared=True
-        u.save()        
+        u.save()
         return HttpResponseRedirect('http://playdo.pe')
 
 def missing(request):
     params = {}
     params.update(csrf(request))
-
+    
     error=False
     phone=request.POST['area_code']+request.POST['number1']+request.POST['number2']
     try:
@@ -383,7 +395,7 @@ def recentcheckin(request):
 	else:
 		status=false
 	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
-	
+
 
 
 def handler500(request):
@@ -400,8 +412,8 @@ def handler500(request):
     except Exception, e:
         logging.error(e, exc_info=sys.exc_info(), extra={'request': request})
         context = {}
-
+    
     context['request'] = request
-
+    
     t = loader.get_template('500.html') # You need to create a 500.html template.
     return HttpResponseServerError(t.render(Context(context)))

@@ -179,7 +179,9 @@ var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix')
 var gallerybody = ""
 
-$(document).ready(function(){$.get("/recentcheckin", function(data){if (data.recent){$.mobile.changePage('#newgallery')}})}
+{% if from4_app %}
+$(document).ready(function(){$.mobile.changePage('#newgallery')})
+{% endif %}
 channel.bind('done',function(){$.mobile.changePage('#newgallery')});
 channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
 
