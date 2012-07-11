@@ -6032,3 +6032,368 @@
 [Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50]     ^
 [Fri Jun 29 16:57:16 2012] [error] [client 10.183.253.50] IndentationError: expected an indented block
 [Sun Jul 01 15:53:24 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/media, referer: http://playdo.pe/loc/?code=5HWABMRKAX111405RTSGNJWBSEZXMB03BMJ0VSZNU435CPJL
+[Tue Jul 10 18:02:47 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 18:02:47 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data)), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]                                                                    ^, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30453): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data)), referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50]                                                                    ^, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:06:58 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax, referer: http://playdo.pe/game/danew
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 19:13:57 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46] mod_wsgi (pid=30453): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     if resolver.urlconf_module is None:
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     __import__(name)
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     import views
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46]                                                                    ^
+[Tue Jul 10 19:24:24 2012] [error] [client 107.23.0.46] SyntaxError: invalid syntax
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 19:40:44 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 20:03:50 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30453): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 20:06:25 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     if resolver.urlconf_module is None:
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     __import__(name)
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     import views
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46]                                                                    ^
+[Tue Jul 10 20:51:52 2012] [error] [client 107.23.0.46] SyntaxError: invalid syntax
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30453): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 21:59:08 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 22:08:59 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50] mod_wsgi (pid=30453): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     import views
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50]                                                                    ^
+[Tue Jul 10 23:00:48 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46] mod_wsgi (pid=30452): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     if resolver.urlconf_module is None:
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     __import__(name)
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     import views
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46]                                                                    ^
+[Tue Jul 10 23:02:13 2012] [error] [client 107.23.0.46] SyntaxError: invalid syntax
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46] mod_wsgi (pid=30453): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     if resolver.urlconf_module is None:
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     self._urlconf_module = import_module(self.urlconf_name)
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     __import__(name)
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     import views
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]   File "/var/www/four_staging/foursquare/views.py", line 369
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]     urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'dic['id']'/reply'),urllib.urlencode(post_data))
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46]                                                                    ^
+[Tue Jul 10 23:02:35 2012] [error] [client 107.23.0.46] SyntaxError: invalid syntax
+[Tue Jul 10 22:03:25 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 22:03:25 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7596): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:03:28 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7597): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:04:22 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 22:05:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 22:05:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7791): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:05:05 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7792): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:05:07 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 22:05:47 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 22:05:47 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7939): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:05:50 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7944): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:05:53 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46] mod_wsgi (pid=7939): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46] Traceback (most recent call last):
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     response = self.get_response(request)
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 218, in handle_uncaught_exception
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     return callback(request, **param_dict)
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/decorators.py", line 93, in _wrapped_view
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     response = view_func(request, *args, **kwargs)
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/views/defaults.py", line 30, in server_error
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     t = loader.get_template(template_name) # You need to create a 500.html template.
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 157, in get_template
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     template, origin = find_template(template_name)
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/template/loader.py", line 138, in find_template
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46]     raise TemplateDoesNotExist(name)
+[Tue Jul 10 23:05:55 2012] [error] [client 107.23.0.46] TemplateDoesNotExist: 500.html
+[Tue Jul 10 22:07:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Jul 10 22:07:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Wed Jul 11 07:55:10 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Wed Jul 11 07:55:11 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
