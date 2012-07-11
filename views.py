@@ -367,7 +367,7 @@ def hook(request):
     dic=json.loads(data)
     try:
         u=user.objects.get(fsq_id=dic['user']['id'])
-        post_data=[('oauth_token',str(u.token)),('text','Play a game with nearby people! Click here...'),('url','http://playdo.pe')]
+        post_data=[('oauth_token',str(u.token)),('text','Play a game with nearby people! Click here...'),('url','http://playdo.pe/login')]
         urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'+dic['id']+'/reply'),urllib.urlencode(post_data))
     except:
         pass
