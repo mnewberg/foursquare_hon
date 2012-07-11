@@ -373,6 +373,18 @@ def hook(request):
         pass
     return HttpResponse('OK')
 
+def recentcheckin(request):
+	the_id=request.session['fsq_id']
+	u=user.objects.get(fsq_id=the_id)
+	finder=finder = psq.UserFinder(authenticator)
+	query=finder.findUser(u.token,the_id)
+	if time.time()-q.data['checkins']['items'][0]['createdAt'] < 3600:
+		status=true
+	else:
+		status=false
+	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
+	
+
 
 def handler500(request):
     """
