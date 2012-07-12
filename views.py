@@ -25,7 +25,7 @@ from pyklout import Klout
 import subprocess
 from django.views.decorators.csrf import csrf_exempt
 import json
-
+import time
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 
 def postrecv(request):
@@ -48,9 +48,13 @@ def login(request):
 			if 'fsqCallback' in request.GET:
 				dastring=request.GET['fsqCallback']
                                 cid=dastring[22:46]
+                                request.session['callback']=cid
 				d=authenticator.query("/checkins/"+cid,'1A0ESOQC4W2RIGY442CJTKKFJEM04BYCEHSG0SNCVIWMKPII')
                                 f_id=d['checkin']['user']['id']
-                                request.session['f_id']=f_id
+                                request.session['fsq_id']=f_id
+                                request.session['lat']=d['checkin']['venue']['location']['lat']
+                                request.session['lon']=d['checkin']['venue']['location']['lng']
+
                                 return HttpResponseRedirect('/loc')
 			else:
 				print 'problem'
@@ -68,25 +72,25 @@ def scrub(name):
         pass
 
 def second(request):
+      try:
+          lat=request.session['lat']
+          lon=request.session['lon']
+      except:
+          lat=0
+          lon=0
       params = {}
       params.update(csrf(request))
       #user coming from foursquare.app
-      if 'f_id' in request.session:
-          f_id=request.session['f_id']
+      if 'callback' in request.session:
+          f_id=request.session['fsq_id']
           u=user.objects.get(fsq_id=f_id)
-          return render_to_response('loc.html', {'from_4app':True,'sex':u.gender, 'twitter':u.twitter,'token':u.token,'csrf':params}, context_instance=RequestContext(request))
+          return render_to_response('loc.html', {'from_4app':True,'sex':u.gender, 'twitter':u.twitter,'token':u.token,'csrf':params,'lat':lat,'lon':lon}, context_instance=RequestContext(request))
       else:
           pass
       try:
             invite_code=request.session['invite_code']
       except:
             invite_code=''
-      try:
-            lat=request.session['lat']
-            lon=request.session['lon']
-      except:
-            lat=0
-            lon=0
       token=authenticator.set_token(request.GET['code'])
       da_id=authenticator.query("/users/self", token, None)
       f_id=da_id['user']['id']
@@ -395,7 +399,7 @@ def recentcheckin(request):
 	u=user.objects.get(fsq_id=the_id)
 	finder=finder = psq.UserFinder(authenticator)
 	query=finder.findUser(u.token,the_id)
-	if time.time()-q.data['checkins']['items'][0]['createdAt'] < 3600:
+	if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
 		status=true
 	else:
 		status=false
@@ -422,3 +426,15 @@ def handler500(request):
     
     t = loader.get_template('500.html') # You need to create a 500.html template.
     return HttpResponseServerError(t.render(Context(context)))
+
+def recentcheckin(request):
+    the_id=request.session['fsq_id']
+    u=user.objects.get(fsq_id=the_id)
+    finder=finder = psq.UserFinder(authenticator)
+    query=finder.findUser(u.token,the_id)
+    if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
+        status=True
+    else:
+        status=False
+        return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
+
