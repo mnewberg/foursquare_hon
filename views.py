@@ -436,5 +436,5 @@ def recentcheckin(request):
         status=True
     else:
         status=False
-        return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
+	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
 
