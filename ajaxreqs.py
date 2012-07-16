@@ -86,22 +86,19 @@ def ajaxreq(request):
     for item in herenow:
             venueName=item['hereNow']['venueName']
             for entry in item['hereNow']['items']:
-                    if entry['user']['gender']==gender:
-                            the_id=entry['user']['id']
-                            query = finder.findUser(token, the_id)
-                            twitter=query.twitter()
-                            if entry['user']['photo'].startswith("https://foursquare.com/img/"):
-                                    pass
-                            elif twitter:
-                                chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
-                                p['chickpix'].trigger('image',{'entry':chickpix[the_id]})                            
-                            try:
-                                user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
-                            except:
-                                pass
-                    else:
-                            pass
-            n+=1
+                  the_id=entry['user']['id']
+                  query = finder.findUser(token, the_id)
+                  twitter=query.twitter()
+                  if entry['user']['photo'].startswith("https://foursquare.com/img/"):
+                          pass
+                  elif twitter:
+                      chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
+                      p['chickpix'].trigger('image',{'entry':chickpix[the_id]})                            
+                  try:
+                      user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
+                  except:
+                      pass
+			n+=1
     return HttpResponse(simplejson.dumps({'status':'ok'}), mimetype='application/javascript')
 
 
