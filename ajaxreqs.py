@@ -98,7 +98,7 @@ def ajaxreq(request):
                       user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
                   except:
                       pass
-			n+=1
+            n+=1
     return HttpResponse(simplejson.dumps({'status':'ok'}), mimetype='application/javascript')
 
 

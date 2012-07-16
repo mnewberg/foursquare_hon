@@ -6803,3 +6803,28 @@
 [Thu Jul 12 12:27:03 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
 [Thu Jul 12 12:27:31 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
 [Thu Jul 12 12:27:31 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Jul 13 13:16:13 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Jul 13 13:16:13 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Sun Jul 15 01:21:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 16 10:30:46 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 16 10:30:47 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50] mod_wsgi (pid=6921): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     __import__(name)
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 10, in <module>
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     from ajaxreqs import ajaxreq
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/ajaxreqs.py", line 101
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]     n+=1
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50]    ^
+[Mon Jul 16 11:32:21 2012] [error] [client 10.183.253.50] IndentationError: unexpected indent
+[Mon Jul 16 10:40:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 16 10:40:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
