@@ -6,9 +6,10 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
+	<script type="text/javascript" src="../static/javascript/mixp.js"></script>
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/ui.js"></script>
-	<script src="/static/js/games/{{game_id}}.js"></script>
+	<script src="../static/js/games/{{game_id}}.js"></script>
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
 	<script type="text/javascript">
 	
@@ -19,7 +20,8 @@ var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 
 privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_last_guess')[0].innerHTML=data.answer;$('#opponent_score')[0].innerHTML++;$('#guessed')[0].innerHTML++;guessed.push(data.answer);});
 
-presenceChannel.bind('pusher:member_added',function(){waiting_room_to_game();counter=startclock();privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'})});
+presenceChannel.bind('pusher:member_added',function(){waiting_room_to_game();counter=startclock();privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'});mixpanel.track('game-started')});
+});
 
 privateChannel.bind('client-{{channel_id}}-clock', function(){waiting_room_to_game();setTimeout(function() { window.scrollTo(0, 1) }, 100);counter=startclock();});
 
@@ -56,13 +58,10 @@ privateChannel.trigger("client-{{channel_id}}-game", {'answer':entry,'user':pres
 document.getElementById('game_input').value="";
 guessed.push(entry);}}}}
 
-
-
-
 </script>
 
 </head> 
-<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);"> 
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100); mixpanel.identify("{{token}}");"> 
 <div id="wrapper">
 	<div id="waiting_room">
 		<div id="red" class="section"><div id="logo"></div></div>
