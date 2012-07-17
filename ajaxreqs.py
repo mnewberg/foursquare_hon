@@ -9,7 +9,7 @@ import simplejson
 from django.http import HttpResponse
 import pusher
 from pyklout import Klout
-
+from background import postpone
 
 # consumer_key=settings.CONSUMER_KEY
 # consumer_secret=settings.CONSUMER_SECRET
@@ -41,13 +41,18 @@ pusher.secret='00d5dd3756b1594826f2'
 #                 bigdict[result.from_user_id]=re.sub('_normal','',result.profile_image_url)
 #     return render_to_response('newgallery.html',{'bigdict':bigdict})
 
-
+@postpone
 def ajaxreq(request):
-    p = pusher.Pusher()
-    u=user.objects.get(fsq_id=request.session['fsq_id'])
-    lat=request.GET['lat']
+	lat=request.GET['lat']
     lon=request.GET['lon']
-    gender=request.GET['gender']
+	fsq_id=request.session['fsq_id']
+	nearby(fsq_id,lat,lon)
+	return HttpResponse('OK!')
+    
+
+def nearby(fsq_id,lat,lon):
+    p = pusher.Pusher()
+    u=user.objects.get(fsq_id=fsq_id)
     token = u.token
     trending=authenticator.query("/venues/trending", token, {'ll':str(lat)+','+str(lon)})
     trending_venues={}
