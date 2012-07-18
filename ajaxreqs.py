@@ -44,7 +44,7 @@ pusher.secret='00d5dd3756b1594826f2'
 @postpone
 def ajaxreq(request):
 	lat=request.GET['lat']
-    lon=request.GET['lon']
+	lon=request.GET['lon']
 	fsq_id=request.session['fsq_id']
 	nearby(fsq_id,lat,lon)
 	return HttpResponse('OK!')
