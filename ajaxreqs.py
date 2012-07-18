@@ -104,7 +104,7 @@ def nearby(fsq_id,lat,lon):
                   except:
                       pass
             n+=1
-    return HttpResponse(simplejson.dumps({'status':'ok'}), mimetype='application/javascript')
+    return 'Ok'
 
 
 
