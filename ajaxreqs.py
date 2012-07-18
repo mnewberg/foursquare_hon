@@ -41,7 +41,7 @@ pusher.secret='00d5dd3756b1594826f2'
 #                 bigdict[result.from_user_id]=re.sub('_normal','',result.profile_image_url)
 #     return render_to_response('newgallery.html',{'bigdict':bigdict})
 
-@postpone
+
 def ajaxreq(request):
 	lat=request.GET['lat']
 	lon=request.GET['lon']
@@ -49,7 +49,7 @@ def ajaxreq(request):
 	nearby(fsq_id,lat,lon)
 	return HttpResponse('OK!')
     
-
+@postpone
 def nearby(fsq_id,lat,lon):
     p = pusher.Pusher()
     u=user.objects.get(fsq_id=fsq_id)
