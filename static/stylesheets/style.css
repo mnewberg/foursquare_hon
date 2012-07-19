@@ -819,7 +819,7 @@ header {
 
 /* line 56, ../sass/partials/_on_board.scss */
 #location_info {
-  background-image: url("../images/location_info.png");
+  background: url("../images/location_info.png") center no-repeat;
   width: 261px;
   height: 52px;
   position: relative;
@@ -830,18 +830,38 @@ header {
 
 /* line 66, ../sass/partials/_on_board.scss */
 #map_pin {
-  background-image: url("../images/map_pin.png");
+  background: url("../images/map_pin.png") center no-repeat;
+  width: 32px;
+  height: 25px;
+  position: relative;
+  float: left;
+  padding: 5px 10px 10px 5px;
+}
+
+/* line 75, ../sass/partials/_on_board.scss */
+#location.text {
+  width: 200px;
+  height: 42px;
+  line-height: 42px;
+  float: left;
+  padding-top: 4px;
+}
+
+/* line 83, ../sass/partials/_on_board.scss */
+#arrow {
+  background-image: url("../images/arrow.png");
   width: 27px;
   height: 30px;
   position: relative;
+  float: right;
 }
 
-/* line 73, ../sass/partials/_on_board.scss */
+/* line 91, ../sass/partials/_on_board.scss */
 footer {
   position: relative;
 }
 
-/* line 82, ../sass/partials/_on_board.scss */
+/* line 100, ../sass/partials/_on_board.scss */
 #stop #stop_sign {
   background-image: url("../images/stop_sign.png");
   width: 320px;

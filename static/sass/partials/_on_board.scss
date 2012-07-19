@@ -54,7 +54,7 @@ header{
 
 
 #location_info{
-	background-image:url('../images/location_info.png');
+	background:url('../images/location_info.png') center no-repeat;
 	width:261px;
 	height:52px;
 	position:relative;
@@ -64,10 +64,28 @@ header{
 }
 
 #map_pin{
-	background-image:url('../images/map_pin.png');
+	background:url('../images/map_pin.png') center no-repeat;
+	width:32px;
+	height:25px;
+	position:relative;
+	float:left;
+	padding:5px 10px 10px 5px;
+}
+
+#location.text{
+	width:200px;
+	height:42px;
+	line-height:42px;
+	float:left;
+	padding-top:4px;
+}
+
+#arrow{
+	background-image:url('../images/arrow.png');
 	width:27px;
 	height:30px;
 	position:relative;
+	float:right;
 }
 
 footer{
