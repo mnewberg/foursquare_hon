@@ -6875,3 +6875,5 @@
 [Thu Jul 19 11:19:35 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew
 [Thu Jul 19 11:24:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew
 [Thu Jul 19 11:25:37 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew
+[Thu Jul 19 11:48:35 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Thu Jul 19 14:59:35 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew
