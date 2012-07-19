@@ -6869,3 +6869,9 @@
 [Wed Jul 18 12:38:19 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Wed Jul 18 12:50:16 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Wed Jul 18 15:20:50 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Wed Jul 18 21:21:25 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Thu Jul 19 10:09:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Thu Jul 19 10:09:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Thu Jul 19 11:19:35 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew
+[Thu Jul 19 11:24:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew
+[Thu Jul 19 11:25:37 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/stop_sign.png, referer: http://playdo.pe/message/danew

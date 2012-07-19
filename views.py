@@ -308,7 +308,7 @@ def onboard(request, uid):
     
     request.session['uid']=uid
     request.session.set_expiry(120)
-    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})
+    return render_to_response('on_board.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})
 
 def notice(request):
     return render_to_response('warning.html')
