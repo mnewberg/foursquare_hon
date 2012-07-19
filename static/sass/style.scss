@@ -1,8 +1,9 @@
 @import "compass";
-@import "partials/_fonts";
-@import "partials/_mixins";
-@import "partials/_waiting_room";
-@import "partials/_game";
+@import "partials/fonts";
+@import "partials/mixins";
+@import "partials/waiting_room";
+@import "partials/game";
+@import "partials/on_board";
 
 html, body{
 	background-color:#fff;

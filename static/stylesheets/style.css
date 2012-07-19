@@ -758,7 +758,98 @@ input:focus {
   height: 39px;
 }
 
-/* line 7, ../sass/style.scss */
+/* line 2, ../sass/partials/_on_board.scss */
+#on_board_wrapper {
+  background: url("../images/corrugation.jpg") repeat;
+  background-position-y: -2px;
+  height: 412px;
+  width: 320px;
+  margin: 0 auto;
+  position: absolute;
+}
+
+/* line 10, ../sass/partials/_on_board.scss */
+header {
+  background-image: url("../images/header.jpg");
+  width: 100%;
+  height: 43px;
+  position: relative;
+  top: 0px;
+}
+
+/* line 18, ../sass/partials/_on_board.scss */
+#picture {
+  background-image: url("../images/picture.jpg");
+  width: 100%;
+  height: 190px;
+  position: relative;
+  top: 0px;
+}
+
+/* line 26, ../sass/partials/_on_board.scss */
+#punch_out {
+  background-image: url("../images/punch_out.png");
+  width: 320px;
+  height: 35px;
+  position: relative;
+  margin-top: -29px;
+}
+
+/* line 34, ../sass/partials/_on_board.scss */
+#play {
+  background-image: url("../images/play.png");
+  width: 105px;
+  height: 57px;
+  position: relative;
+  top: 0px;
+  margin: -36px auto -19px;
+  left: 1px;
+}
+
+/* line 45, ../sass/partials/_on_board.scss */
+#game_animation {
+  background-image: url("../images/game_animation.png");
+  width: 261px;
+  height: 95px;
+  position: relative;
+  top: 0px;
+  margin: 0 auto;
+  left: -2px;
+}
+
+/* line 56, ../sass/partials/_on_board.scss */
+#location_info {
+  background-image: url("../images/location_info.png");
+  width: 261px;
+  height: 52px;
+  position: relative;
+  top: 0px;
+  left: -2px;
+  margin: 0 auto;
+}
+
+/* line 66, ../sass/partials/_on_board.scss */
+#map_pin {
+  background-image: url("../images/map_pin.png");
+  width: 27px;
+  height: 30px;
+  position: relative;
+}
+
+/* line 73, ../sass/partials/_on_board.scss */
+footer {
+  position: relative;
+}
+
+/* line 82, ../sass/partials/_on_board.scss */
+#stop #stop_sign {
+  background-image: url("../images/stop_sign.png");
+  width: 320px;
+  height: 35px;
+  position: relative;
+}
+
+/* line 8, ../sass/style.scss */
 html, body {
   background-color: #fff;
   margin: 0 auto;
@@ -768,14 +859,14 @@ html, body {
   max-width: 320px;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 17, ../sass/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 23, ../sass/style.scss */
 #wrapper {
   font-family: Helvetica, Arial;
   font-weight: bold;
@@ -786,7 +877,7 @@ ul {
   height: 100%;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 30, ../sass/style.scss */
 #filler {
   height: 100%;
   width: 100%;

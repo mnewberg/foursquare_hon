@@ -1,0 +1,88 @@
+//On Board
+#on_board_wrapper{
+	background:url('../images/corrugation.jpg') repeat;
+	background-position-y:-2px;
+	height:412px;
+	width:320px;
+	margin:0 auto;
+	position:absolute;
+}
+header{
+	background-image:url('../images/header.jpg');
+	width:100%;
+	height:43px;
+	position:relative;
+	top:0px;
+}
+
+#picture{
+	background-image:url('../images/picture.jpg');
+	width:100%;
+	height:190px;
+	position:relative;
+	top:0px;
+}
+
+#punch_out{
+	background-image:url('../images/punch_out.png');
+	width:320px;
+	height:35px;
+	position:relative;
+	margin-top:-29px;
+}
+
+#play{
+	background-image:url('../images/play.png');
+	width:105px;
+	height:57px;
+	position:relative;
+	top:0px;
+	margin:-36px auto -19px;
+	left:1px;
+}
+
+
+#game_animation{
+	background-image:url('../images/game_animation.png');
+	width:261px;
+	height:95px;
+	position:relative;
+	top:0px;
+	margin:0 auto;
+	left:-2px;
+}
+
+
+#location_info{
+	background-image:url('../images/location_info.png');
+	width:261px;
+	height:52px;
+	position:relative;
+	top:0px;
+	left:-2px;
+	margin:0 auto;
+}
+
+#map_pin{
+	background-image:url('../images/map_pin.png');
+	width:27px;
+	height:30px;
+	position:relative;
+}
+
+footer{
+	position:relative;
+	.text{
+
+	}
+}
+
+#stop{
+
+	#stop_sign{
+		background-image:url('../images/stop_sign.png');
+		width:320px;
+		height:35px;
+		position:relative;
+	}
+}
