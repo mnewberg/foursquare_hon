@@ -308,7 +308,7 @@ def onboard(request, uid):
     
     request.session['uid']=uid
     request.session.set_expiry(120)
-    return render_to_response('onboard.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})
+    return render_to_response('on_board.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})
 
 def notice(request):
     return render_to_response('warning.html')
@@ -438,3 +438,15 @@ def recentcheckin(request):
         status=False
 	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
 
+def record(request):
+    pic_id=request.GET['pic_id']
+    fsq_id=request.session['fsq_id']
+    try:
+        r=ratings.objects.get(pic_id=pic_id)
+        r.rating+=1
+    except:
+        r=rating.objects.create(pic_id=pic_id)
+        r.rating=1
+    u=user.objects.get(fsq_id=fsq_id)
+    u.records.add(record.objects.create(target=r))
+    return HttpResponse('OK')
