@@ -26,6 +26,7 @@ body{
 	width:320px;
 	margin:0 auto;
 	position:absolute;
+	overflow:hidden;
 }
 header{
 	background-image:url('../images/header.png');
@@ -35,7 +36,60 @@ header{
 	top:0px;
 	z-index:2;
 }
+#screens{
+	width:640px;
+	height:150px;
+}
+#screen_1{
+	float:left;
+	width:320px;
+	height:147px;
+}
+#screen_2{
+	float:left;
+	width:320px;
+	height:147px;
+}
+#twitter_bio{
+	background-image:url('../images/twitter_bio.png');
+	width:261px;
+	height:150px;
+	position:relative;
+	top:0px;
+	margin:0 auto;
+	left:-2px;
+	>div{
+		position:absolute;
+		top:30px;
+		left:18px;
+	}
 
+	#name{
+		font-family:Helvetica;
+		font-weight:bold;
+		font-size:18px;
+		color:#4f4f4f;
+	}
+	#twitter_handle{
+		color:#7b7b7b;
+		font-size:14px;
+	}
+	#bio{
+		color:#7b7b7b;
+		font-size:12px;
+		margin-top:15px;
+		width:225px;
+		height:50px;
+	}
+}
+#back_arrow{
+	position:absolute;
+	background-image:url('../images/back_arrow.png');
+	width:36px;
+	height:37px;
+	left:198px;
+	cursor:pointer;
+}
 #picture{
 	background:url('../images/picture.jpg') no-repeat center;
 	width:100%;
@@ -122,6 +176,7 @@ header{
 	float:right;
 	top:13px;
 	right:15px;
+	cursor:pointer;
 }
 
 footer{

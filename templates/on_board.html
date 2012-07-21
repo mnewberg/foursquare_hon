@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="../static/javascript/ui.js"></script>
+	<script type="text/javascript" src="../static/javascript/on_board_ui.js"></script>
 </head> 
 <body> 
 <div id="on_board_wrapper">
@@ -16,7 +16,8 @@
 	</div>
 	<div id="punch_out"></div>
 	<div id="play">Play!</div>
-	<div id="bottom">
+	<div id="screens">
+	<div id="screen_1">
 		<div id="game_animation">
 
 		</div>
@@ -27,17 +28,29 @@
 			</div>
 			<div id="arrow"></div>
 		</div>
-		<footer>
-			<div id="stop_sign">
-				<span class="text">Block this person.</span>
-				<div class="icon"></div>
-			</div>
-			<div id="block">
-				<span class="text">Block this person.</span>
-				<div class="icon"></div>
-			</div>
-		</footer>
 	</div>
+	<div id="screen_2">
+		<div id="twitter_bio">
+			<div>
+			<div id="back_arrow"></div>
+			<div id="name">Lorem Ipsum</div>
+			<div id="twitter_handle">@loremipsum</div>
+			<div id="bio">Lorem ipsum dalor sit amit</div>
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	<footer>
+		<div id="stop_sign">
+			<span class="text">Block this person.</span>
+			<div class="icon"></div>
+		</div>
+		<div id="block">
+			<span class="text">Block this person.</span>
+			<div class="icon"></div>
+		</div>
+	</footer>
 </div>
 </body>
 </html>

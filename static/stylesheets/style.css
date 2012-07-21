@@ -776,9 +776,10 @@ body a {
   width: 320px;
   margin: 0 auto;
   position: absolute;
+  overflow: hidden;
 }
 
-/* line 30, ../sass/partials/_on_board.scss */
+/* line 31, ../sass/partials/_on_board.scss */
 header {
   background-image: url("../images/header.png");
   width: 100%;
@@ -789,6 +790,73 @@ header {
 }
 
 /* line 39, ../sass/partials/_on_board.scss */
+#screens {
+  width: 640px;
+  height: 150px;
+}
+
+/* line 43, ../sass/partials/_on_board.scss */
+#screen_1 {
+  float: left;
+  width: 320px;
+  height: 147px;
+}
+
+/* line 48, ../sass/partials/_on_board.scss */
+#screen_2 {
+  float: left;
+  width: 320px;
+  height: 147px;
+}
+
+/* line 53, ../sass/partials/_on_board.scss */
+#twitter_bio {
+  background-image: url("../images/twitter_bio.png");
+  width: 261px;
+  height: 150px;
+  position: relative;
+  top: 0px;
+  margin: 0 auto;
+  left: -2px;
+}
+/* line 61, ../sass/partials/_on_board.scss */
+#twitter_bio > div {
+  position: absolute;
+  top: 30px;
+  left: 18px;
+}
+/* line 67, ../sass/partials/_on_board.scss */
+#twitter_bio #name {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 18px;
+  color: #4f4f4f;
+}
+/* line 73, ../sass/partials/_on_board.scss */
+#twitter_bio #twitter_handle {
+  color: #7b7b7b;
+  font-size: 14px;
+}
+/* line 77, ../sass/partials/_on_board.scss */
+#twitter_bio #bio {
+  color: #7b7b7b;
+  font-size: 12px;
+  margin-top: 15px;
+  width: 225px;
+  height: 50px;
+}
+
+/* line 85, ../sass/partials/_on_board.scss */
+#back_arrow {
+  position: absolute;
+  background-image: url("../images/back_arrow.png");
+  width: 36px;
+  height: 37px;
+  left: 198px;
+  cursor: pointer;
+}
+
+/* line 93, ../sass/partials/_on_board.scss */
 #picture {
   background: url("../images/picture.jpg") no-repeat center;
   width: 100%;
@@ -799,7 +867,7 @@ header {
   z-index: 1;
 }
 
-/* line 49, ../sass/partials/_on_board.scss */
+/* line 103, ../sass/partials/_on_board.scss */
 #punch_out {
   background-image: url("../images/punch_out.png");
   width: 320px;
@@ -809,7 +877,7 @@ header {
   z-index: 2;
 }
 
-/* line 58, ../sass/partials/_on_board.scss */
+/* line 112, ../sass/partials/_on_board.scss */
 #play {
   background-image: url("../images/play.png");
   width: 105px;
@@ -826,7 +894,7 @@ header {
   line-height: 57px;
 }
 
-/* line 77, ../sass/partials/_on_board.scss */
+/* line 131, ../sass/partials/_on_board.scss */
 #game_animation {
   background-image: url("../images/game_animation.png");
   width: 261px;
@@ -837,7 +905,7 @@ header {
   left: -2px;
 }
 
-/* line 88, ../sass/partials/_on_board.scss */
+/* line 142, ../sass/partials/_on_board.scss */
 #location_info {
   background: url("../images/location_info.png") center no-repeat;
   width: 261px;
@@ -848,7 +916,7 @@ header {
   margin: 0 auto;
 }
 
-/* line 98, ../sass/partials/_on_board.scss */
+/* line 152, ../sass/partials/_on_board.scss */
 #map_pin {
   background: url("../images/map_pin.png") center no-repeat;
   width: 32px;
@@ -859,7 +927,7 @@ header {
   margin-left: 9px;
 }
 
-/* line 108, ../sass/partials/_on_board.scss */
+/* line 162, ../sass/partials/_on_board.scss */
 #location.text {
   width: 170px;
   height: 42px;
@@ -871,7 +939,7 @@ header {
   font-size: 12px;
 }
 
-/* line 117, ../sass/partials/_on_board.scss */
+/* line 171, ../sass/partials/_on_board.scss */
 #arrow {
   background-image: url("../images/arrow.png");
   width: 27px;
@@ -880,20 +948,21 @@ header {
   float: right;
   top: 13px;
   right: 15px;
+  cursor: pointer;
 }
 
-/* line 127, ../sass/partials/_on_board.scss */
+/* line 182, ../sass/partials/_on_board.scss */
 footer {
   position: relative;
   text-align: center;
 }
 
-/* line 135, ../sass/partials/_on_board.scss */
+/* line 190, ../sass/partials/_on_board.scss */
 #stop_sign {
   display: inline-block;
   margin-right: 18px;
 }
-/* line 138, ../sass/partials/_on_board.scss */
+/* line 193, ../sass/partials/_on_board.scss */
 #stop_sign .icon {
   background-image: url("../images/stop_sign.png");
   width: 22px;
@@ -903,7 +972,7 @@ footer {
   float: left;
   margin-left: 5px;
 }
-/* line 147, ../sass/partials/_on_board.scss */
+/* line 202, ../sass/partials/_on_board.scss */
 #stop_sign .text {
   color: #7b7b7b;
   font-family: helvetica;
@@ -912,11 +981,11 @@ footer {
   float: left;
 }
 
-/* line 154, ../sass/partials/_on_board.scss */
+/* line 209, ../sass/partials/_on_board.scss */
 #block {
   display: inline-block;
 }
-/* line 156, ../sass/partials/_on_board.scss */
+/* line 211, ../sass/partials/_on_board.scss */
 #block .icon {
   background-image: url("../images/circle_x.png");
   width: 22px;
@@ -926,7 +995,7 @@ footer {
   float: left;
   margin-left: 5px;
 }
-/* line 165, ../sass/partials/_on_board.scss */
+/* line 220, ../sass/partials/_on_board.scss */
 #block .text {
   color: #7b7b7b;
   font-family: helvetica;
