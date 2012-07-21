@@ -37,9 +37,10 @@ header{
 }
 
 #picture{
-	background-image:url('../images/picture.jpg');
+	background:url('../images/picture.jpg') no-repeat center;
 	width:100%;
 	height:190px;
+	background-size: auto 190px;
 	position:relative;
 	margin-top:-5px;
 	z-index:1;
