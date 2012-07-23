@@ -258,11 +258,11 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
 	                var lat=position.coords.latitude;
 	                var lon=position.coords.longitude;
                         lookup(lat,lon);
-	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:100000,})}
+	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000,})}
 
                       function geo_preloaded(){
                          lookup(lat,lon);
-                        $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon,'gender':gender},type:"GET",timeout:100000}); 
+                        $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000});}
 
 
     function lookup(lat,lon) {

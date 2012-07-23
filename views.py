@@ -94,10 +94,6 @@ def second(request):
       token=authenticator.set_token(request.GET['code'])
       da_id=authenticator.query("/users/self", token, None)
       f_id=da_id['user']['id']
-      if time.time()-da_id['checkins']['items'][0]['createdAt'] < 3600:
-          recentcheckin=True
-      else:
-          recentcheckin=False
         ## onboarded user wants to unsubscribe, reroute flow
       if 'unsubscribe' in request.session:
             u=user_lookup.objects.get(fsq_id=f_id)
@@ -137,6 +133,10 @@ def second(request):
       showmessage=True
       params = {}
       params.update(csrf(request))
+      if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
+          recentcheckin=True
+      else:
+          recentcheckin=False
       if 'uid' in request.session:
             uidsesh=True
       else:
