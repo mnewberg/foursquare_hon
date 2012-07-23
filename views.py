@@ -94,6 +94,10 @@ def second(request):
       token=authenticator.set_token(request.GET['code'])
       da_id=authenticator.query("/users/self", token, None)
       f_id=da_id['user']['id']
+      if time.time()-da_id['checkins']['items'][0]['createdAt'] < 3600:
+          recentcheckin=True
+      else:
+          recentcheckin=False
         ## onboarded user wants to unsubscribe, reroute flow
       if 'unsubscribe' in request.session:
             u=user_lookup.objects.get(fsq_id=f_id)
@@ -159,7 +163,7 @@ def second(request):
                 u.last_lon=lon
                 has_shared=u.has_shared
                 u.save()
-                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':u.twitter(), 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
+                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':u.twitter(),'recentcheckin':recentcheckin, 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
       elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
       elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
@@ -184,14 +188,14 @@ def second(request):
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
-		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok','csrf':params}, context_instance=RequestContext(request))
+		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok','recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
 ##RETURNING USER
       elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 welcome_email(query.email(),query.first_name())
                 invite_codes.objects.get(code=invite_code).delete()
-                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'csrf':params}, context_instance=RequestContext(request))
+                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
       elif queue.objects.filter(fsq_id=query.id()).count()==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
                 queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
@@ -203,17 +207,6 @@ def second(request):
     
 
 
-def has_twitter(request):
-    pic_id=request.GET['pic_id']
-    the_id=user_lookup.objects.get(pic_id=pic_id).fsq_id
-    token = user.objects.get(fsq_id=request.session['fsq_id']).token
-    finder = psq.UserFinder(authenticator)
-    query = finder.findUser(token, the_id)
-    if query.twitter():
-        twitter=True
-    else:
-        twitter=False
-    return HttpResponse(simplejson.dumps({'twitter':twitter}), mimetype='application/javascript')
 
 def pickmessage(request):
     api=Klout(settings.KLOUT)
@@ -409,10 +402,10 @@ def recentcheckin(request):
 	finder=finder = psq.UserFinder(authenticator)
 	query=finder.findUser(u.token,the_id)
 	if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
-		status=true
+		status=True
 	else:
-		status=false
-	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
+		status=False
+	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/json')
 
 
 
@@ -435,28 +428,3 @@ def handler500(request):
     
     t = loader.get_template('500.html') # You need to create a 500.html template.
     return HttpResponseServerError(t.render(Context(context)))
-
-def recentcheckin(request):
-    the_id=request.session['fsq_id']
-    u=user.objects.get(fsq_id=the_id)
-    finder=finder = psq.UserFinder(authenticator)
-    query=finder.findUser(u.token,the_id)
-    if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
-        status=True
-    else:
-        status=False
-	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
-
-def rate(request):
-    pic_id=request.GET['pic_id']
-    fsq_id=request.session['fsq_id']
-    try:
-        r=rating.objects.get(pic_id=pic_id)
-        r.rating+=1
-        r.save()
-    except:
-        r=rating.objects.create(pic_id=pic_id,rating=1)
-    u=user.objects.get(fsq_id=fsq_id)
-    rec=record.objects.create(target=r,time=int(time.time()))
-    u.records.add(rec)
-    return HttpResponse('OK')
