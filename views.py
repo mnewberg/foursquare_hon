@@ -228,6 +228,15 @@ def pickmessage(request):
     
     venue=request.GET['venue_id']
     image=request.GET['pic_id']
+    try:
+        r=rating.objects.get(pic_id=image)
+        r.rating+=1
+        r.save()
+    except:
+        r=rating.objects.create(pic_id=image,rating=1)
+    u=user.objects.get(fsq_id=fsq_id)
+    rec=record.objects.create(target=r,time=int(time.time()))
+    u.records.add(rec)
     
     t=user_lookup.objects.get(pic_id=image)
     target_t=t.t_handle
