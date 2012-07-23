@@ -62,7 +62,7 @@ def nearby(fsq_id,lat,lon):
             trending_venues[item['id']]=item['name']
         except:
             pass
-    radius='1000'
+    radius='2000'
     all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
     i=0
     for item in all_nearby['venues']:
@@ -85,6 +85,7 @@ def nearby(fsq_id,lat,lon):
             v_ids.append(venue[0])
             herenow[i]['hereNow']['venueName']=venue[1][0]
             i = i+1
+    p['chickpix'].trigger('done','')
     for item in herenow:
             venueName=item['hereNow']['venueName']
             for entry in item['hereNow']['items']:
@@ -101,6 +102,7 @@ def nearby(fsq_id,lat,lon):
                   except:
                       pass
 	    n+=1
+    ## nobody nearby
     if n==0:
 	    p['chickpix'].trigger('crickets','')
     return 'Ok'
