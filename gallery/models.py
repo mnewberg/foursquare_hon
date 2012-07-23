@@ -11,7 +11,7 @@ class record(models.Model):
 	target=models.ForeignKey(rating, null=True)
 	time=models.IntegerField(max_length=20)
 	def __unicode__(self):
-		return self.venue_id
+		return self.target.pic_id
 	
 	
 class user(models.Model):

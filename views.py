@@ -438,15 +438,16 @@ def recentcheckin(request):
         status=False
 	return HttpResponse(simplejson.dumps({'recent':status}), mimetype='application/javascript')
 
-def record(request):
+def rate(request):
     pic_id=request.GET['pic_id']
     fsq_id=request.session['fsq_id']
     try:
-        r=ratings.objects.get(pic_id=pic_id)
+        r=rating.objects.get(pic_id=pic_id)
         r.rating+=1
+        r.save()
     except:
-        r=rating.objects.create(pic_id=pic_id)
-        r.rating=1
+        r=rating.objects.create(pic_id=pic_id,rating=1)
     u=user.objects.get(fsq_id=fsq_id)
-    u.records.add(record.objects.create(target=r))
+    rec=record.objects.create(target=r,time=int(time.time()))
+    u.records.add(rec)
     return HttpResponse('OK')

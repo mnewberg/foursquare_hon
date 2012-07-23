@@ -39,6 +39,7 @@ urlpatterns = patterns('',
     url(r'^unsub/$','views.unsubscribe'),
     url(r'^block/$','views.block'),
     url(r'^git/$','views.postrecv'),
+    url(r'^record$','views.rate'),
     # Examples:
     # url(r'^$', 'twilio.views.home', name='home'),
     # url(r'^twilio/', include('twilio.foo.urls')),
