@@ -1029,10 +1029,9 @@ ul {
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
   overflow: hidden;
   width: 320px;
-  height: 100%;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 #filler {
   height: 100%;
   width: 100%;
