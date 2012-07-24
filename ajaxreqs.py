@@ -85,7 +85,7 @@ def nearby(fsq_id,lat,lon):
             v_ids.append(venue[0])
             herenow[i]['hereNow']['venueName']=venue[1][0]
             i = i+1
-    p['chickpix'].trigger('done','')
+    p['chickpix-'+token].trigger('done','')
     for item in herenow:
             venueName=item['hereNow']['venueName']
             for entry in item['hereNow']['items']:
@@ -96,7 +96,7 @@ def nearby(fsq_id,lat,lon):
                           pass
                   elif twitter:
                       chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
-                      p['chickpix'].trigger('image',{'entry':chickpix[the_id]})                            
+                      p['chickpix-'+token].trigger('image',{'entry':chickpix[the_id]})                            
                   try:
                       user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
                   except:
@@ -104,7 +104,7 @@ def nearby(fsq_id,lat,lon):
 	    n+=1
     ## nobody nearby
     if n==0:
-	    p['chickpix'].trigger('crickets','')
+	    p['chickpix-'+token].trigger('crickets','')
     return 'Ok'
 
 
