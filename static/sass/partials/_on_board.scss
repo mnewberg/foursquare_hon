@@ -44,6 +44,32 @@ header{
 	float:left;
 	width:320px;
 	height:147px;
+	#scene_1{
+		#input{
+			background: url('../images/input.png') no-repeat;
+			width:200px;
+			height:33px;
+			position:relative;
+			margin:0 auto;
+			top:30px;
+
+			#animation_text{
+				position:absolute;
+				line-height:33px;
+				margin-left:7px;
+				color:#c4c4c4;
+				font-size:14px;
+			}
+		}
+		.text{
+			color:#7b7b7b;
+			font-size:12px;
+			width:100%;
+			text-align:center;
+			position:absolute;
+			top:68px;
+		}
+	}
 }
 #screen_2{
 	float:left;
@@ -166,6 +192,7 @@ header{
 	float:left;
 	padding-top:4px;
 	@include font();
+	overflow:hidden;
 }
 
 #arrow{
