@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/4sqacplugin.js"></script>
 		<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
 
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
+		<link Href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
 		<link rel="stylesheet" href="/static/css/style1.css" />
 		
 	<!--<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/customswatch.css" /> -->
@@ -181,7 +181,7 @@ var gallerybody = ""
 {% if from_4app %}
 $(document).ready(function(){$.mobile.changePage('#newgallery')})
 {% endif %}
-channel.bind('done',function(){$.mobile.changePage('#newgallery')});
+channel.bind('done',function(){$('#link')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
 channel.bind('image',function(data){document.getElementById('grid').innerHTML+='<div id=image><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><h2><span>'+data["entry"][1]+'</span></h2></div>'});
 
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
@@ -302,7 +302,7 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 {% csrf_token %}
 
 {% endif %}
-
+<div id="link"></div>
 
 
 </div>

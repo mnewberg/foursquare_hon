@@ -6,12 +6,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
-	<script type="text/javascript" src="../static/javascript/mixp.js"></script>
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/ui.js"></script>
 	<script src="../static/js/games/{{game_id}}.js"></script>
 	<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
-	<script type="text/javascript">
+	
+                <!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tagset_config".split(" ");for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);mixpanel.init("58e3c644f32d1b4f722dcf78a1e2cf58");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+
 	
 Pusher.channel_auth_endpoint = '/pusher/auth'
 var pusher = new Pusher('890abd57f862ab2712ff');
@@ -21,7 +24,6 @@ var presenceChannel = pusher.subscribe('presence-{{channel_id}}');
 privateChannel.bind('client-{{channel_id}}-game', function(data){$('#opponent_last_guess')[0].innerHTML=data.answer;$('#opponent_score')[0].innerHTML++;$('#guessed')[0].innerHTML++;guessed.push(data.answer);});
 
 presenceChannel.bind('pusher:member_added',function(){waiting_room_to_game();counter=startclock();privateChannel.trigger("client-{{channel_id}}-clock",{'state':'start'});mixpanel.track('game-started')});
-});
 
 privateChannel.bind('client-{{channel_id}}-clock', function(){waiting_room_to_game();setTimeout(function() { window.scrollTo(0, 1) }, 100);counter=startclock();});
 
