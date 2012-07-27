@@ -84,7 +84,7 @@ def second(request):
       if 'callback' in request.session:
           f_id=request.session['fsq_id']
           u=user.objects.get(fsq_id=f_id)
-          return render_to_response('loc.html', {'from_4app':True,'sex':u.gender, 'twitter':u.twitter,'token':u.token,'csrf':params,'lat':lat,'lon':lon}, context_instance=RequestContext(request))
+          return render_to_response('loc.html', {'from_4app':True,'sex':u.gender, 'twitter':u.twitter,'token':u.token,'csrf':params,'lat':lat,'lon':lon,'phone':u.phone}, context_instance=RequestContext(request))
       else:
           pass
       try:
@@ -163,7 +163,7 @@ def second(request):
                 u.last_lon=lon
                 has_shared=u.has_shared
                 u.save()
-                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':u.twitter(),'recentcheckin':recentcheckin, 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
+                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':u.twitter(),'recentcheckin':recentcheckin,'phone':u.phone, 'has_shared':has_shared,'token':token,'csrf':params}, context_instance=RequestContext(request))
       elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
       elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
@@ -188,14 +188,14 @@ def second(request):
                 u.photo=query.photo()[36:]
                 has_shared=u.has_shared
 		u.save()
-		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':'ok','recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
+		return render_to_response('loc.html', {'lat':lat,'lon':lon,'has_shared':has_shared,'sex':query.gender(),'token':token, 'twitter':u.twitter,'phone':u.phone,'recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
 ##RETURNING USER
       elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
 		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 welcome_email(query.email(),query.first_name())
                 invite_codes.objects.get(code=invite_code).delete()
-                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token, 'twitter':query.twitter(),'recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
+                return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token,'phone':query.phone(), 'twitter':query.twitter(),'recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
       elif queue.objects.filter(fsq_id=query.id()).count()==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
                 queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
