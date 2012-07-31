@@ -1031,6 +1031,85 @@ footer {
   float: left;
 }
 
+/* line 15, ../sass/partials/_photo_grid.scss */
+body {
+  font-family: helvetica;
+}
+/* line 17, ../sass/partials/_photo_grid.scss */
+body a {
+  color: #fe4e4e;
+  text-decoration: underline;
+}
+
+/* line 22, ../sass/partials/_photo_grid.scss */
+body, html {
+  height: 100% !important;
+}
+
+/* line 25, ../sass/partials/_photo_grid.scss */
+#fixed_bg {
+  width: 100%;
+  height: 100%;
+  background: url("../images/corrugation.jpg") repeat;
+  position: fixed;
+}
+
+/* line 31, ../sass/partials/_photo_grid.scss */
+#photo_grid_wrapper {
+  height: 412px;
+  width: 320px;
+  margin: 0 auto;
+  position: absolute;
+}
+/* line 38, ../sass/partials/_photo_grid.scss */
+#photo_grid_wrapper header {
+  background-image: url("../images/blank_header.png");
+  width: 320px;
+  height: 43px;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+
+/* line 48, ../sass/partials/_photo_grid.scss */
+#left_col, #right_col {
+  margin-left: 16px;
+  float: left;
+  width: 137px;
+  position: relative;
+  height: 100%;
+  display: inline-block;
+}
+
+/* line 58, ../sass/partials/_photo_grid.scss */
+.photo {
+  position: relative;
+  display: inline-block;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 14px;
+}
+/* line 64, ../sass/partials/_photo_grid.scss */
+.photo img {
+  position: relative;
+  vertical-align: top;
+}
+
+/* line 71, ../sass/partials/_photo_grid.scss */
+.name {
+  width: 100%;
+  height: 22px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0px;
+  text-align: center;
+  color: #7b7b7b;
+  font-family: helvetica;
+  font-size: 15px;
+  line-height: 22px;
+}
+
 /* line 8, ../sass/style.scss */
 html, body {
   background-color: #fff;

@@ -1,0 +1,83 @@
+//On Board
+
+@mixin font(){
+	color:#7b7b7b;
+	font-family:helvetica;
+	font-size:12px;
+}
+
+@mixin small_text(){
+	color:#7b7b7b;
+	font-family:helvetica;
+	font-size:10px;
+}
+
+body{
+	font-family:helvetica;
+	a{
+		color:#fe4e4e;
+		text-decoration:underline;
+	}
+}
+body, html{
+	height:100% !important;
+}
+#fixed_bg{
+	width:100%;
+	height:100%;
+	background:url('../images/corrugation.jpg') repeat;
+	position: fixed;
+}
+#photo_grid_wrapper{
+	
+	height:412px;
+	width:320px;
+	margin:0 auto;
+	position:absolute;
+
+	header{
+		background-image:url('../images/blank_header.png');
+		width:320px;
+		height:43px;
+		position:fixed;
+		top:0px;
+		z-index:2;
+	}
+}
+
+#left_col, #right_col{
+	margin-left:16px;
+	float:left;
+	width:137px;
+	position: relative;
+	height:100%;
+	display:inline-block;
+
+}
+
+.photo{
+	position: relative;
+	display:inline-block;
+	@include box-shadow(0px 0px 6px rgba(0,0,0,.4));
+	margin-bottom:14px;
+
+	img{
+		//width:137px;
+		position: relative;
+		vertical-align: top;
+	}
+}
+
+.name{
+	width:100%;
+	height:22px;
+	position: absolute;
+	background-color:rgba(255,255,255,.8);
+	bottom:0px;
+	text-align:center;
+	color:#7b7b7b;
+	font-family:helvetica;
+	font-size:15px;
+	line-height:22px;
+
+}
