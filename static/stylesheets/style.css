@@ -1078,17 +1078,17 @@ body, html {
 }
 
 /* line 51, ../sass/partials/_photo_grid.scss */
-#left_col, #right_col {
-  margin-left: 16px;
-  float: left;
-  width: 137px;
+#the_grid {
+  margin: 0 auto;
+  width: 100%;
   position: relative;
   height: 100%;
-  display: inline-block;
   margin-top: 50px;
+  margin-left: -6px;
+  text-align: center;
 }
 
-/* line 62, ../sass/partials/_photo_grid.scss */
+/* line 61, ../sass/partials/_photo_grid.scss */
 .photo {
   position: relative;
   display: inline-block;
@@ -1096,6 +1096,7 @@ body, html {
   -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 14px;
+  margin-left: 12px;
 }
 /* line 68, ../sass/partials/_photo_grid.scss */
 .photo img {
@@ -1103,7 +1104,7 @@ body, html {
   vertical-align: top;
 }
 
-/* line 75, ../sass/partials/_photo_grid.scss */
+/* line 74, ../sass/partials/_photo_grid.scss */
 .name {
   width: 100%;
   height: 22px;
@@ -1117,7 +1118,161 @@ body, html {
   line-height: 22px;
 }
 
-/* line 8, ../sass/style.scss */
+/* line 88, ../sass/partials/_photo_grid.scss */
+#back_button {
+  background-image: url("../images/back.png");
+  width: 61px;
+  height: 30px;
+  float: left;
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  text-indent: 7px;
+  line-height: 28px;
+}
+
+/* line 102, ../sass/partials/_photo_grid.scss */
+#picture {
+  width: 320px;
+  height: 190px;
+  background-image: url("../images/picture.jpg");
+  position: relative;
+  margin-top: -5px;
+}
+
+/* line 110, ../sass/partials/_photo_grid.scss */
+#name {
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  text-align: center;
+  line-height: 25px;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #685f5f;
+  text-shadow: white 0px 1px 1px;
+}
+
+/* line 15, ../sass/partials/_pick_a_game.scss */
+body {
+  font-family: helvetica;
+}
+/* line 17, ../sass/partials/_pick_a_game.scss */
+body a {
+  color: #fe4e4e;
+  text-decoration: underline;
+}
+
+/* line 22, ../sass/partials/_pick_a_game.scss */
+body, html {
+  height: 100% !important;
+}
+
+/* line 26, ../sass/partials/_pick_a_game.scss */
+#pick_game_wrapper {
+  height: 412px;
+  width: 320px;
+  margin: 0 auto;
+  position: absolute;
+}
+/* line 33, ../sass/partials/_pick_a_game.scss */
+#pick_game_wrapper header {
+  background-image: url("../images/blank_header.png");
+  width: 320px;
+  height: 43px;
+  position: relative;
+  top: 0px;
+  z-index: 2;
+  line-height: 38px;
+  text-align: center;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+}
+
+/* line 46, ../sass/partials/_pick_a_game.scss */
+#left_col, #right_col {
+  margin-left: 16px;
+  float: left;
+  width: 137px;
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+/* line 57, ../sass/partials/_pick_a_game.scss */
+.photo {
+  position: relative;
+  display: inline-block;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 14px;
+}
+/* line 63, ../sass/partials/_pick_a_game.scss */
+.photo img {
+  position: relative;
+  vertical-align: top;
+}
+
+/* line 70, ../sass/partials/_pick_a_game.scss */
+#back_button {
+  background-image: url("../images/back.png");
+  width: 61px;
+  height: 30px;
+  float: left;
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  text-indent: 7px;
+  line-height: 28px;
+}
+
+/* line 84, ../sass/partials/_pick_a_game.scss */
+#picture {
+  width: 320px;
+  height: 190px;
+  background-image: url("../images/picture.jpg");
+  position: relative;
+  margin-top: -5px;
+}
+
+/* line 92, ../sass/partials/_pick_a_game.scss */
+#name {
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  text-align: center;
+  line-height: 25px;
+  color: #7b7b7b;
+  font-family: helvetica;
+  font-size: 15px;
+  font-weight: normal;
+  bottom: 0px;
+  position: absolute;
+}
+
+/* line 105, ../sass/partials/_pick_a_game.scss */
+.name {
+  width: 100%;
+  height: 22px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0px;
+  text-align: center;
+  color: #7b7b7b;
+  font-family: helvetica;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* line 9, ../sass/style.scss */
 html, body {
   background-color: #fff;
   margin: 0 auto;
@@ -1127,14 +1282,14 @@ html, body {
   max-width: 320px;
 }
 
-/* line 17, ../sass/style.scss */
+/* line 18, ../sass/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 23, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
 #wrapper {
   font-family: Helvetica, Arial;
   font-weight: bold;
@@ -1144,7 +1299,7 @@ ul {
   width: 320px;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 30, ../sass/style.scss */
 #filler {
   height: 100%;
   width: 100%;
