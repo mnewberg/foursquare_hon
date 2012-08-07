@@ -79,42 +79,6 @@ color: #999999;
     }
 
 
-#grid {
-
-    line-height: 0;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 10px;
-    -moz-column-count: 3;
-    -moz-column-gap: 10px;
-    column-count: 3;
-    column-gap: 10px;
-}
-#grid img {
-    width: 100% !important;
-    height: auto !important;
-    margin-bottom: 10px;
-}
-@media (max-width: 480px) {
-
-    #grid {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-    }
-}
-@media (max-width: 320px) {
-    #grid {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
-    }
-}
-@media screen and (max-width: 320px) {
-.overflow{ 
-width:120px;
-overflow:hidden;
-align:center;
-}
 
 .target{
 
@@ -184,8 +148,7 @@ var gallerybody = ""
 $(document).ready(function(){$.mobile.changePage('#newgallery')})
 {% endif %}
 channel.bind('done',function(){$('#link')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
-channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='
-<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'<img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'><div class=name>'+data["entry"][1]+'</div></a></div>'});
+channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'><div class=name>'+data["entry"][1]+'</div></a></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 
