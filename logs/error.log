@@ -6991,3 +6991,15 @@
 [Thu Jul 26 04:58:28 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Thu Jul 26 15:11:05 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Fri Jul 27 07:02:24 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Jul 27 12:24:47 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Sat Jul 28 15:50:05 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://translate.googleusercontent.com/translate_c?hl=es&prev=/search%3Fq%3Dmike%2Bkarpenko%26hl%3Des%26safe%3Doff%26biw%3D1536%26bih%3D674%26prmd%3Dimvnso&rurl=translate.google.com&sl=en&u=http://playdo.pe/&usg=ALkJrhgMdZ6wAdUwc9SXl7WhXgUKrgLAcg
+[Sun Jul 29 01:21:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Mon Jul 30 08:13:26 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Tue Jul 31 10:04:18 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Thu Aug 02 11:49:41 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Thu Aug 02 21:33:23 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 03 19:20:27 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Sun Aug 05 01:21:02 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Sun Aug 05 10:14:46 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Mon Aug 06 09:45:08 2012] [error] [client 10.183.253.50] Invalid URI in request GET /../static/javascript/mixp.js HTTP/1.1
+[Mon Aug 06 14:44:59 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
