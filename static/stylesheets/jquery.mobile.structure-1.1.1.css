@@ -51,6 +51,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-header .ui-btn-icon-notext { top: 6px; }
 .ui-header .ui-title, .ui-footer .ui-title { min-height: 1.1em; text-align: center; font-size: 16px; display: block; margin: .6em 30% .8em; padding: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; outline: 0 !important; }
 .ui-footer .ui-title { margin: .6em 15px .8em; }
+.ui-content { border-width: 0; overflow: visible; overflow-x: hidden; }
 .ui-icon { width: 18px; height: 18px; }
 .ui-nojs { position: absolute; left: -9999px; }
 .ui-hide-label label.ui-input-text, .ui-hide-label label.ui-select, .ui-hide-label label.ui-slider, .ui-hide-label label.ui-submit, .ui-hide-label .ui-controlgroup-label,
@@ -812,7 +813,12 @@ label.ui-submit { font-size: 16px; line-height: 1.4; font-weight: normal; margin
 	z-index: 10; 
 	padding: 0;
 }
-
+.ui-dialog .ui-footer {
+	padding: 0 15px; 
+}
+.ui-dialog .ui-content { 
+	padding: 15px; 
+}
 .ui-dialog { 
 	margin-top: -15px;
 }
