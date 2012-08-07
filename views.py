@@ -252,7 +252,7 @@ def pickmessage(request):
       #  target_n=request.session['f_name']
        # target_v=request.session['venue']
     
-    return render_to_response('message.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params,'topics':tlist,'games':games}, context_instance=RequestContext(request))
+    return render_to_response('pick_a_game.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params,'topics':tlist,'games':games}, context_instance=RequestContext(request))
 
 def outreach(request):
     params = {}

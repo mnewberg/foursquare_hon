@@ -884,7 +884,6 @@ header {
 
 /* line 119, ../sass/partials/_on_board.scss */
 #picture {
-  background: url("../images/picture.jpg") no-repeat center;
   width: 100%;
   height: 190px;
   background-size: auto 190px;
