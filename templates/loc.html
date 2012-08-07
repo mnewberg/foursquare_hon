@@ -184,9 +184,8 @@ var gallerybody = ""
 $(document).ready(function(){$.mobile.changePage('#newgallery')})
 {% endif %}
 channel.bind('done',function(){$('#link')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
-channel.bind('image',function(data){document.getElementById('grid').innerHTML+='
-<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'<img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a>
-	<div class=name>'+data["entry"][1]+'</div>'});
+channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='
+<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'<img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'><div class=name>'+data["entry"][1]+'</div></a></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 
