@@ -1136,7 +1136,6 @@ body, html {
 #picture {
   width: 320px;
   height: 190px;
-  background-image: url("../images/picture.jpg");
   position: relative;
   margin-top: -5px;
 }
@@ -1237,7 +1236,6 @@ body, html {
 #picture {
   width: 320px;
   height: 190px;
-  background-image: url("../images/picture.jpg");
   position: relative;
   margin-top: -5px;
 }
