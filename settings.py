@@ -176,6 +176,25 @@ INSTALLED_APPS = (
 )
 
 
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "sentry": {
+            "class": "sentry.client.handlers.SentryHandler",
+            "level": "ERROR",
+        }
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["sentry"],
+            "level": "ERROR",
+            "propagate": True
+        }
+    },
+}
+
+
 
 
 
