@@ -1,5 +1,7 @@
 from raven.handlers.logging import SentryHandler
+from raven.conf import setup_logging
 handler = 'http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2'
+
 # Django settings for twilio project.
 
 DEBUG = False
@@ -182,8 +184,7 @@ LOGGING = {
     "handlers": {
         "sentry": {
             "class": "raven.contrib.django.logging.SentryHandler",
-            "level": "ERROR",
-			"dsn":"http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2",
+            "level": "ERROR"
         }
     },
     "loggers": {

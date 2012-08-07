@@ -7024,3 +7024,118 @@
 [Tue Aug 07 08:55:31 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
 [Tue Aug 07 09:59:25 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Tue Aug 07 09:59:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/stylesheets/images, referer: http://playdo.pe/loc/?code=P21F0AATUC00ZUXHPP3YGMWFG5AODZ0N2HYPMWRZSELHTOIS
+[Tue Aug 07 10:18:38 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:18:38 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50] mod_wsgi (pid=28240): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     self.load_middleware()
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     self._setup()
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     self._wrapped = Settings(settings_module)
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 139, in __init__
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     logging_config_func(self.LOGGING)
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/config.py", line 776, in dictConfig
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     dictConfigClass(config).configure()
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/config.py", line 575, in configure
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50]     '%r: %s' % (name, e))
+[Tue Aug 07 11:18:40 2012] [error] [client 10.183.253.50] ValueError: Unable to configure handler 'sentry': __init__() got an unexpected keyword argument 'dsn'
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50] mod_wsgi (pid=28241): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     self.load_middleware()
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     self._setup()
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     self._wrapped = Settings(settings_module)
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 139, in __init__
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     logging_config_func(self.LOGGING)
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/config.py", line 776, in dictConfig
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     dictConfigClass(config).configure()
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/config.py", line 575, in configure
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50]     '%r: %s' % (name, e))
+[Tue Aug 07 11:18:41 2012] [error] [client 10.183.253.50] ValueError: Unable to configure handler 'sentry': __init__() got an unexpected keyword argument 'dsn'
+[Tue Aug 07 10:20:03 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:20:04 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50] mod_wsgi (pid=28438): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     self.load_middleware()
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     self._setup()
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     self._wrapped = Settings(settings_module)
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 87, in __init__
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     mod = importlib.import_module(self.SETTINGS_MODULE)
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     __import__(name)
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/settings.py", line 3, in <module>
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50]     setup_logging(handler)
+[Tue Aug 07 10:20:11 2012] [error] [client 10.183.253.50] NameError: name 'setup_logging' is not defined
+[Tue Aug 07 10:20:51 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:20:51 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:20:58 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50] mod_wsgi (pid=28596): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 209, in handle_uncaught_exception
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     'request':request
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1158, in error
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     self._log(ERROR, msg, args, **kwargs)
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1250, in _log
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     self.handle(record)
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1260, in handle
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     self.callHandlers(record)
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1299, in callHandlers
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50]     if record.levelno >= hdlr.level:
+[Tue Aug 07 11:21:10 2012] [error] [client 10.183.253.50] AttributeError: 'str' object has no attribute 'level'
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50] mod_wsgi (pid=28597): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 153, in get_response
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 209, in handle_uncaught_exception
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     'request':request
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1158, in error
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     self._log(ERROR, msg, args, **kwargs)
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1250, in _log
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     self.handle(record)
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1260, in handle
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     self.callHandlers(record)
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/__init__.py", line 1299, in callHandlers
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50]     if record.levelno >= hdlr.level:
+[Tue Aug 07 11:21:15 2012] [error] [client 10.183.253.50] AttributeError: 'str' object has no attribute 'level'
+[Tue Aug 07 10:22:22 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:22:22 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50] mod_wsgi (pid=28754): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 250, in __call__
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     self.load_middleware()
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 39, in load_middleware
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/functional.py", line 276, in __getattr__
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     self._setup()
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 42, in _setup
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     self._wrapped = Settings(settings_module)
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/conf/__init__.py", line 139, in __init__
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     logging_config_func(self.LOGGING)
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/config.py", line 776, in dictConfig
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     dictConfigClass(config).configure()
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]   File "/usr/lib/python2.7/logging/config.py", line 575, in configure
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50]     '%r: %s' % (name, e))
+[Tue Aug 07 11:22:27 2012] [error] [client 10.183.253.50] ValueError: Unable to configure handler 'sentry': __init__() got an unexpected keyword argument 'dsn'
+[Tue Aug 07 10:22:59 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 10:22:59 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Tue Aug 07 12:01:12 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Tue Aug 07 12:04:45 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
