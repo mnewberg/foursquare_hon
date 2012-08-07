@@ -1170,8 +1170,6 @@ body, html {
 
 /* line 26, ../sass/partials/_pick_a_game.scss */
 #pick_game_wrapper {
-  height: 412px;
-  width: 320px;
   margin: 0 auto;
   position: absolute;
 }
