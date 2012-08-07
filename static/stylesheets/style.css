@@ -1176,8 +1176,6 @@ body, html {
 /* line 33, ../sass/partials/_pick_a_game.scss */
 #pick_game_wrapper header {
   background-image: url("../images/blank_header.png");
-  width: 320px;
-  height: 43px;
   position: relative;
   top: 0px;
   z-index: 2;
