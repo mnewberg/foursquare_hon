@@ -42,6 +42,9 @@ body, html{
 		position:fixed;
 		top:0px;
 		z-index:2;
+		line-height:38px;
+		text-align:center;
+		@include white_font();
 	}
 }
 
@@ -52,6 +55,7 @@ body, html{
 	position: relative;
 	height:100%;
 	display:inline-block;
+	margin-top:50px;
 
 }
 
