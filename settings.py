@@ -181,7 +181,7 @@ LOGGING = {
     "disable_existing_loggers": False,
     "handlers": {
         "sentry": {
-            "class": "sentry.client.handlers.SentryHandler",
+            "class": "raven.contrib.django.logging.SentryHandler",
             "level": "ERROR",
         }
     },
