@@ -1,7 +1,3 @@
-from raven.handlers.logging import SentryHandler
-from raven.conf import setup_logging
-handler = 'http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2'
-
 # Django settings for twilio project.
 
 DEBUG = False
@@ -35,6 +31,11 @@ CLIENT_SECRET='TOXCCMYSGVPM2OAVPR3RIDUM0WFMKVJ4VUFNFSI00QSZF4IH'
 CALLBACK_URL='http://playdo.pe/loc/'
 
 SENTRY_DSN='http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2'
+
+RAVEN_CONFIG = {
+    'dsn': 'http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2',
+}
+
 
 #TWILIO
 ACCOUNT_SID = "AC5b9299999c233e8af8296346a93e74a1"

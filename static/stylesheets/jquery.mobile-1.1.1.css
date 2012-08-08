@@ -1951,9 +1951,6 @@ label.ui-submit { font-size: 16px; line-height: 1.4; font-weight: normal; margin
 .ui-dialog .ui-footer {
 	padding: 0 15px; 
 }
-.ui-dialog .ui-content { 
-	padding: 15px; 
-}
 .ui-dialog { 
 	margin-top: -15px;
 }

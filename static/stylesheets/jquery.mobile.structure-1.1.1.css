@@ -51,7 +51,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-header .ui-btn-icon-notext { top: 6px; }
 .ui-header .ui-title, .ui-footer .ui-title { min-height: 1.1em; text-align: center; font-size: 16px; display: block; margin: .6em 30% .8em; padding: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; outline: 0 !important; }
 .ui-footer .ui-title { margin: .6em 15px .8em; }
-.ui-content { border-width: 0; overflow: visible; overflow-x: hidden; padding: 15px; }
+.ui-content { border-width: 0; overflow: visible; overflow-x: hidden; }
 .ui-icon { width: 18px; height: 18px; }
 .ui-nojs { position: absolute; left: -9999px; }
 .ui-hide-label label.ui-input-text, .ui-hide-label label.ui-select, .ui-hide-label label.ui-slider, .ui-hide-label label.ui-submit, .ui-hide-label .ui-controlgroup-label,
@@ -995,3 +995,9 @@ span.ui-slider-label { position: absolute; text-align: center; width: 100%; over
 span.ui-slider-label-a { z-index: 1; left: 0; text-indent: -1.5em; }
 span.ui-slider-label-b { z-index: 0; right: 0; text-indent: 1.5em;}
 .ui-slider-inline { width: 120px; display: inline-block; }
+
+
+.ui-icon-loading {
+    background: url(images/ajax-loader.gif);
+    background-size: 46px 46px;
+}

@@ -96,12 +96,12 @@ def nearby(fsq_id,lat,lon):
                           pass
                   elif twitter:
                       chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
-                      p['chickpix-'+token].trigger('image',{'entry':chickpix[the_id]})                            
+                      p['chickpix-'+token].trigger('image',{'entry':chickpix[the_id]})                   
+		      n+=1
                   try:
                       user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
                   except:
                       pass
-	    n+=1
     ## nobody nearby
     if n==0:
 	    p['chickpix-'+token].trigger('crickets','')
