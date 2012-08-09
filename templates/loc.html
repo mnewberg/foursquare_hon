@@ -280,34 +280,39 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 	</head>
 	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 		<div data-role="page" id="main">
-			<div data-role="content">
+			<div data-role="content">	
 
-					
-				
-				<div class="geolocmsg">Please ensure geolocation is enabled in your phone's settings.</div>
+				<header>Please update some info</header>
+				<div id="info_box">
+					<div id="exclamation"></div>
+					<div class="text">
 {% if not recentcheckin %}
-     <div class="ui-widget">
-        <label for="venue">Venue: </label>
-        <input id="venue"/>
-    </div>
-    <div>
+
+<div class="info_header">Where are you?</div>
+<div class="input">
+	<input id="venue" />
+	<div>Venue name</div>
+</div>
         <input type="hidden" id="venue-id"/>
         <div id="venue-name" class="autocomplete-name"></div>
         <div id="venue-address" class="autocomplete-detail"></div>
 	<div id="venue-cityLine" class="autocomplete-detail"></div>
-	</div>
-<div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div>
+<!-- <div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div> -->
 {% endif %}
 {% if not twitter %}
-<input type="text" id="twitter"></input>
-
-<input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})>
+<div class="info_header">Twitter handle</div>
+<div class="input">
+	<input type="text" id="twitter" />
+	<div>@</div>
+</div>
+<!-- <input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})> -->
 {% csrf_token %}
 
 {% endif %}
+</div>
+<div id="button">Let's Play</div>
+</div>
 <div id="link"></div>
-
-
 </div>
 
 				</div>
