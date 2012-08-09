@@ -884,6 +884,7 @@ header {
 
 /* line 119, ../sass/partials/_on_board.scss */
 #picture {
+  background: url("../images/picture.jpg") no-repeat center;
   width: 100%;
   height: 190px;
   background-size: auto 190px;
@@ -1053,16 +1054,18 @@ body, html {
   position: fixed;
 }
 
-/* line 31, ../sass/partials/_photo_grid.scss
+/* line 31, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper {
   height: 412px;
   width: 320px;
   margin: 0 auto;
-  position: absolute; 
-}*/
+  position: absolute;
+}
 /* line 38, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper header {
   background-image: url("../images/blank_header.png");
+  width: 320px;
+  height: 43px;
   position: fixed;
   top: 0px;
   z-index: 2;
@@ -1099,8 +1102,6 @@ body, html {
 .photo img {
   position: relative;
   vertical-align: top;
-  width:100%;
-  height:auto !important;
 }
 
 /* line 74, ../sass/partials/_photo_grid.scss */
@@ -1136,6 +1137,7 @@ body, html {
 #picture {
   width: 320px;
   height: 190px;
+  background-image: url("../images/picture.jpg");
   position: relative;
   margin-top: -5px;
 }
@@ -1153,29 +1155,26 @@ body, html {
   text-shadow: white 0px 1px 1px;
 }
 
-/* line 15, ../sass/partials/_pick_a_game.scss */
-body {
-  font-family: helvetica;
-}
-/* line 17, ../sass/partials/_pick_a_game.scss */
-body a {
-  color: #fe4e4e;
-  text-decoration: underline;
-}
-
-/* line 22, ../sass/partials/_pick_a_game.scss */
-body, html {
-  height: 100% !important;
-}
-
-/* line 26, ../sass/partials/_pick_a_game.scss */
+/* line 16, ../sass/partials/_pick_a_game.scss */
 #pick_game_wrapper {
+  height: 412px;
+  width: 320px;
   margin: 0 auto;
   position: absolute;
 }
-/* line 33, ../sass/partials/_pick_a_game.scss */
+/* line 23, ../sass/partials/_pick_a_game.scss */
+#pick_game_wrapper a {
+  font-family: Helvetica, Arial;
+  font-weight: normal;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+  text-decoration: none;
+}
+/* line 28, ../sass/partials/_pick_a_game.scss */
 #pick_game_wrapper header {
   background-image: url("../images/blank_header.png");
+  width: 320px;
+  height: 43px;
   position: relative;
   top: 0px;
   z-index: 2;
@@ -1186,8 +1185,15 @@ body, html {
   color: #f8f2f2;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
 }
+/* line 40, ../sass/partials/_pick_a_game.scss */
+#pick_game_wrapper #footer {
+  width: 261px;
+  position: relative;
+  margin: 0 auto;
+  top: 50px;
+}
 
-/* line 46, ../sass/partials/_pick_a_game.scss */
+/* line 48, ../sass/partials/_pick_a_game.scss */
 #left_col, #right_col {
   margin-left: 16px;
   float: left;
@@ -1198,7 +1204,7 @@ body, html {
   margin-top: 50px;
 }
 
-/* line 57, ../sass/partials/_pick_a_game.scss */
+/* line 59, ../sass/partials/_pick_a_game.scss */
 .photo {
   position: relative;
   display: inline-block;
@@ -1207,13 +1213,13 @@ body, html {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 14px;
 }
-/* line 63, ../sass/partials/_pick_a_game.scss */
+/* line 65, ../sass/partials/_pick_a_game.scss */
 .photo img {
   position: relative;
   vertical-align: top;
 }
 
-/* line 70, ../sass/partials/_pick_a_game.scss */
+/* line 72, ../sass/partials/_pick_a_game.scss */
 #back_button {
   background-image: url("../images/back.png");
   width: 61px;
@@ -1228,22 +1234,26 @@ body, html {
   line-height: 28px;
 }
 
-/* line 84, ../sass/partials/_pick_a_game.scss */
+/* line 86, ../sass/partials/_pick_a_game.scss */
 #picture {
   width: 320px;
   height: 190px;
+  background-image: url("../images/picture.jpg");
   position: relative;
   margin-top: -5px;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* line 92, ../sass/partials/_pick_a_game.scss */
+/* line 95, ../sass/partials/_pick_a_game.scss */
 #name {
   height: 25px;
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   text-align: center;
   line-height: 25px;
-  color: #7b7b7b;
+  color: #6c6c6c;
   font-family: helvetica;
   font-size: 15px;
   font-weight: normal;
@@ -1251,7 +1261,7 @@ body, html {
   position: absolute;
 }
 
-/* line 105, ../sass/partials/_pick_a_game.scss */
+/* line 108, ../sass/partials/_pick_a_game.scss */
 .name {
   width: 100%;
   height: 22px;
@@ -1263,6 +1273,72 @@ body, html {
   font-family: helvetica;
   font-size: 15px;
   line-height: 22px;
+}
+
+/* line 122, ../sass/partials/_pick_a_game.scss */
+#interests {
+  background-image: url("../images/box_middle.png");
+  background-repeat: repeat-y;
+  width: 261px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 14px;
+  top: 23px;
+  height: 74px;
+}
+/* line 77, ../sass/partials/_mixins.scss */
+#interests:before {
+  content: '';
+  display: block;
+  background-image: url("../images/box.png");
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: -14px;
+}
+/* line 87, ../sass/partials/_mixins.scss */
+#interests:after {
+  content: '';
+  display: block;
+  background-image: url("../images/box.png");
+  background-position: 0px -14px;
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: 100%;
+}
+/* line 97, ../sass/partials/_mixins.scss */
+#interests .text {
+  margin: 0 auto;
+  width: 233px;
+  position: relative;
+  color: #6c6c6c;
+  font-size: 14px;
+}
+
+/* line 129, ../sass/partials/_pick_a_game.scss */
+#select {
+  background-image: url("../images/select.png");
+  width: 190px;
+  height: 45px;
+  position: relative;
+  float: left;
+}
+
+/* line 137, ../sass/partials/_pick_a_game.scss */
+#send_button {
+  background-image: url("../images/send_button.png");
+  width: 63px;
+  height: 40px;
+  position: relative;
+  float: right;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
 }
 
 /* line 9, ../sass/style.scss */
