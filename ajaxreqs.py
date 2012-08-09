@@ -10,17 +10,24 @@ from django.http import HttpResponse
 import pusher
 from pyklout import Klout
 from background import postpone
+import bitly_api
+import re
 
-# consumer_key=settings.CONSUMER_KEY
-# consumer_secret=settings.CONSUMER_SECRET
-# access_token=settings.ACCESS_TOKEN
-# access_token_secret=settings.ACCESS_TOKEN_SECRET
-# auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-# auth.set_access_token(access_token, access_token_secret)
-# api = tweepy.API(auth)
+consumer_key=settings.CONSUMER_KEY
+consumer_secret=settings.CONSUMER_SECRET
+access_token=settings.ACCESS_TOKEN
+access_token_secret=settings.ACCESS_TOKEN_SECRET
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 finder = psq.UserFinder(authenticator)
+
+bitly_key='R_4d6d45ada0e0b63358e51af5161c0074'
+bitly_user='thenewb'
+
+bitly=bitly_api.bitly_api.Connection(bitly_user,bitly_key)
 
 pusher.app_id='19318'
 pusher.key='890abd57f862ab2712ff'
@@ -109,33 +116,34 @@ def nearby(fsq_id,lat,lon):
 
 @postpone
 def new_nearby(the_id,lat,lon):
-	u=user.object.get(fsq_id=the_id)
+	p = pusher.Pusher()
+	p['error'].trigger('hit','')
+	lat=str(lat)
+	lon=str(lon)
+	u=user.objects.get(fsq_id=the_id)
 	token=u.token
+	print token
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
-		dalist=[]
-		chickpix={}
 		d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
+		print d
 		try:
 			signature=re.findall('\^?s=.{27}',d)[0][2:]
-		    checkin=re.findall('checkin/.{0,24}',d)[0][8:]
+			checkin=re.findall('checkin/.{0,24}',d)[0][8:]
 			entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
 			p['chickpix-'+token].trigger('done','')
-			fname=entry['user']['firstName']
-			fsq_id=entry['user']['id']
-			pic_id=entry['user']['photo'][36:]
-			twitter=entry['user']['contact']['twitter']
+			chickpix={}
+			fname=entry['checkin']['user']['firstName']
+			fsq_id=entry['checkin']['user']['id']
+			pic_id=entry['checkin']['user']['photo'][36:]
+			twitter=entry['checkin']['user']['contact']['twitter']
 			venue_id=entry['checkin']['venue']['id']
 			venue_name=entry['checkin']['venue']['name']
 			chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
 			p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
 			try:
-	            user_lookup.objects.create(first_name=first_name,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
+				user_lookup.objects.create(first_name=fname,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
 			except:
 				pass
 		except:
-				pass
-		return 'Ok'
-
-
-
-
+				p['chickpix-'+token].trigger('crickets','')
+	return 'Ok'
