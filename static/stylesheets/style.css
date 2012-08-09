@@ -1542,7 +1542,89 @@ body, html {
   top: 0px;
 }
 
-/* line 10, ../sass/style.scss */
+/* line 2, ../sass/partials/_loading.scss */
+#loading_wrapper {
+  text-align: center;
+  height: 412px;
+  width: 320px;
+  margin: 0 auto;
+  position: absolute;
+}
+/* line 9, ../sass/partials/_loading.scss */
+#loading_wrapper a {
+  font-family: Helvetica, Arial;
+  font-weight: normal;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+  text-decoration: none;
+}
+/* line 14, ../sass/partials/_loading.scss */
+#loading_wrapper header {
+  background-image: url("../images/header.png");
+  width: 320px;
+  height: 43px;
+  position: relative;
+  top: 0px;
+  z-index: 2;
+  line-height: 38px;
+  text-align: center;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+}
+
+/* line 29, ../sass/partials/_loading.scss */
+#finding {
+  background-image: url("../images/box_middle.png");
+  background-repeat: repeat-y;
+  width: 261px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 14px;
+  text-align: center;
+  top: 23px;
+}
+/* line 77, ../sass/partials/_mixins.scss */
+#finding:before {
+  content: '';
+  display: block;
+  background-image: url("../images/box.png");
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: -14px;
+}
+/* line 87, ../sass/partials/_mixins.scss */
+#finding:after {
+  content: '';
+  display: block;
+  background-image: url("../images/box.png");
+  background-position: 0px -14px;
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: 100%;
+}
+/* line 97, ../sass/partials/_mixins.scss */
+#finding .text {
+  margin: 0 auto;
+  width: 233px;
+  position: relative;
+  color: #6c6c6c;
+  font-size: 14px;
+}
+/* line 34, ../sass/partials/_loading.scss */
+#finding .text {
+  text-align: center;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #685f5f;
+  text-shadow: white 0px 1px 1px;
+  font-weight: bold;
+}
+
+/* line 11, ../sass/style.scss */
 html, body {
   background-color: #fff;
   margin: 0 auto;
@@ -1552,14 +1634,14 @@ html, body {
   max-width: 320px;
 }
 
-/* line 19, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 #wrapper {
   font-family: Helvetica, Arial;
   font-weight: bold;
@@ -1569,7 +1651,7 @@ ul {
   width: 320px;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 #filler {
   height: 100%;
   width: 100%;
