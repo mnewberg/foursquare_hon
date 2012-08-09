@@ -1,0 +1,40 @@
+
+#loading_wrapper{
+	text-align:center;
+	height:412px;
+	width:320px;
+	margin:0 auto;
+	position:absolute;
+
+	a{
+		@include white_font_normal();
+		text-decoration:none;
+	}
+
+	header{
+		background-image:url('../images/header.png');
+		width:320px;
+		height:43px;
+		position:relative;
+		top:0px;
+		z-index:2;
+		line-height:38px;
+		text-align:center;
+		@include white_font();
+	}
+
+
+}
+
+#finding{
+	@include white_box();
+	text-align:center;
+	top:23px;
+
+	.text{
+		text-align:center;
+		@include dark_font();
+		font-weight:bold;
+	}
+	
+}
