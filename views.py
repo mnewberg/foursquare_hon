@@ -27,6 +27,14 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import time
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
+consumer_key=settings.CONSUMER_KEY
+consumer_secret=settings.CONSUMER_SECRET
+access_token=settings.ACCESS_TOKEN
+access_token_secret=settings.ACCESS_TOKEN_SECRET
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+
 
 def postrecv(request):
     subprocess.call(['/var/www/four_staging/foursquare/pull.sh'])
@@ -214,6 +222,7 @@ def second(request):
 
 def pickmessage(request):
     api=Klout(settings.KLOUT)
+	t_api = tweepy.API(auth)
     fsq_id=request.session['fsq_id']
     the_user=user.objects.get(fsq_id=fsq_id)
     if len(the_user.photo)<=4:
@@ -244,7 +253,9 @@ def pickmessage(request):
         the_id=api.identity(str(target_t),'twitter')['id']
         topics=api.topics(the_id)
         tlist=[]
+		t_bio=''
     except:
+		t_bio=t_api.get_user(screen_name=target_t).description
         topics=[]
         tlist=[]
     for i in topics:
@@ -256,7 +267,7 @@ def pickmessage(request):
       #  target_n=request.session['f_name']
        # target_v=request.session['venue']
     
-    return render_to_response('pick_a_game.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params,'topics':tlist,'games':games}, context_instance=RequestContext(request))
+    return render_to_response('pick_a_game.html', {'t_handle':target_t,'t_pic':image,'f_name':target_n, 'venue_id':target_v, 'csrf':params,'topics':tlist,'games':games,'t_bio':t_bio}, context_instance=RequestContext(request))
 
 def outreach(request):
     params = {}
