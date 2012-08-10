@@ -199,7 +199,7 @@ def second(request):
       elif queue.objects.filter(fsq_id=query.id()).count()==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
                 queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
-                if len(query.photo())<=4:
+                if len(re.findall('blank',query.photo()))>0:
                     photo=False
                 else:
                     photo=True
