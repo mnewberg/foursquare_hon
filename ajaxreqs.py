@@ -123,27 +123,35 @@ def new_nearby(the_id,lat,lon):
 	u=user.objects.get(fsq_id=the_id)
 	token=u.token
 	print token
+	found=[]
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
 		d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
 		print d
-		try:
-			signature=re.findall('\^?s=.{27}',d)[0][2:]
-			checkin=re.findall('checkin/.{0,24}',d)[0][8:]
-			entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
-			p['chickpix-'+token].trigger('done','')
-			chickpix={}
-			fname=entry['checkin']['user']['firstName']
-			fsq_id=entry['checkin']['user']['id']
-			pic_id=entry['checkin']['user']['photo'][36:]
-			twitter=entry['checkin']['user']['contact']['twitter']
-			venue_id=entry['checkin']['venue']['id']
-			venue_name=entry['checkin']['venue']['name']
-			chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
-			p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
-			try:
-				user_lookup.objects.create(first_name=fname,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
-			except:
+		if i.from_user not in found:
+			if len(found)==2:
+				p['chickpix-'+token].trigger('done','')
+			else:
 				pass
-		except:
-				p['chickpix-'+token].trigger('crickets','')
+			try:
+				signature=re.findall('\^?s=.{27}',d)[0][2:]
+				checkin=re.findall('checkin/.{0,24}',d)[0][8:]
+				entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
+				found.append(i.from_user)
+				chickpix={}
+				fname=entry['checkin']['user']['firstName']
+				fsq_id=entry['checkin']['user']['id']
+				pic_id=entry['checkin']['user']['photo'][36:]
+				twitter=entry['checkin']['user']['contact']['twitter']
+				venue_id=entry['checkin']['venue']['id']
+				venue_name=entry['checkin']['venue']['name']
+				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
+				p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
+				try:
+					user_lookup.objects.create(first_name=fname,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
+				except:
+					pass
+			except:
+					p['chickpix-'+token].trigger('crickets','')
+		else:
+			pass
 	return 'Ok'
