@@ -140,10 +140,11 @@ def new_nearby(the_id,lat,lon):
 				chickpix={}
 				fname=entry['checkin']['user']['firstName']
 				fsq_id=entry['checkin']['user']['id']
-				pic_id=entry['checkin']['user']['photo'][36:]
+				pic_id=entry['checkin']['user']['photo']
 				if len(re.findall('blank',pic_id))>0:
 					continue
 				else:
+					pic_id=pic_id[36:]
 					pass
 				twitter=entry['checkin']['user']['contact']['twitter']
 				venue_id=entry['checkin']['venue']['id']
