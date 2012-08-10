@@ -7328,3 +7328,47 @@
 [Thu Aug 09 07:57:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Thu Aug 09 07:58:41 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Thu Aug 09 08:00:20 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 10 09:30:08 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 09:30:08 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 09:30:12 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 10 09:33:36 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 09:33:36 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50] mod_wsgi (pid=11316): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     import views
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 202
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]     if len(re.findall('blank',query.photo())>0:
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50]                                               ^
+[Fri Aug 10 10:33:44 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50] mod_wsgi (pid=11317): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     import views
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 202
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]     if len(re.findall('blank',query.photo())>0:
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50]                                               ^
+[Fri Aug 10 10:33:48 2012] [error] [client 10.183.253.50] SyntaxError: invalid syntax
+[Fri Aug 10 09:34:09 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 09:34:09 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 10:34:10 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/

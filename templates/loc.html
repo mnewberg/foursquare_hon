@@ -185,8 +185,8 @@ var gallerybody = ""
 {% if from_4app %}
 $(document).ready(function(){$.mobile.changePage('#newgallery')})
 {% endif %}
-channel.bind('done',function(){$('#link')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
-channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'><div class=name>'+data["entry"][1]+'</div></a></div>'});
+channel.bind('done',function(){$('#button')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
+channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 
@@ -269,11 +269,11 @@ log(message);
         });
     };
 					
-
-
-
 $("#missingnumber").live('pageinit',function() {
 $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');});
+
+
+function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'}){% endif %}{% if not twitter %}$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}{% if not phone %}$.post('/phone/',{'twitter':document.getElementById('phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %} }
 
 
 	    </script>  
@@ -281,8 +281,13 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 		<div data-role="page" id="main">
 			<div data-role="content">	
+<<<<<<< HEAD
 
 				<header></header>
+=======
+				<header></header>
+<div id="fixed_bg"></div>
+>>>>>>> a8b8e16bf1ed76ca4eba37771142aa1e93d8f520
 				<div id="info_box">
 					<div id="exclamation"></div>
 					<div class="text">
@@ -306,12 +311,11 @@ $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');})
 	<div>@</div>
 </div>
 <!-- <input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})> -->
-{% csrf_token %}
-
 {% endif %}
+{% csrf_token %}
 </div>
-<div id="button">Let's Play</div>
-</div></div>
+<div id="button" onclick="submit()">Let's Play</div>
+</div>
 <div id="link"></div>
 </div>
 
