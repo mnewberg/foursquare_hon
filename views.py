@@ -26,6 +26,8 @@ import subprocess
 from django.views.decorators.csrf import csrf_exempt
 import json
 import time
+import tweepy
+
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 consumer_key=settings.CONSUMER_KEY
 consumer_secret=settings.CONSUMER_SECRET
@@ -222,7 +224,7 @@ def second(request):
 
 def pickmessage(request):
     api=Klout(settings.KLOUT)
-	t_api = tweepy.API(auth)
+    t_api = tweepy.API(auth)
     fsq_id=request.session['fsq_id']
     the_user=user.objects.get(fsq_id=fsq_id)
     if len(the_user.photo)<=4:
@@ -248,16 +250,15 @@ def pickmessage(request):
     target_t=t.t_handle
     target_n=t.first_name
     target_v=venue
-    
+    t_bio=t_api.get_user(screen_name=target_t).description
     try:
         the_id=api.identity(str(target_t),'twitter')['id']
         topics=api.topics(the_id)
         tlist=[]
-		t_bio=''
     except:
-		t_bio=t_api.get_user(screen_name=target_t).description
         topics=[]
         tlist=[]
+        
     for i in topics:
         tlist.append(i['displayName'])
     

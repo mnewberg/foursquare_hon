@@ -146,7 +146,7 @@ def new_nearby(the_id,lat,lon):
 				else:
 					pic_id=pic_id[36:]
 					pass
-				twitter=entry['checkin']['user']['contact']['twitter']
+				twitter=i.from_user
 				venue_id=entry['checkin']['venue']['id']
 				venue_name=entry['checkin']['venue']['name']
 				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]

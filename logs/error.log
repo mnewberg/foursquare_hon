@@ -7385,3 +7385,139 @@
 [Fri Aug 10 12:52:38 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
 [Fri Aug 10 12:52:38 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
 [Fri Aug 10 13:52:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 10 13:06:03 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:06:03 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21185): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'.
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50] Traceback (most recent call last):
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     response = self.get_response(request)
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name)
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     __import__(name)
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     import views
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 225
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]     t_api = tweepy.API(auth)
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50]    ^
+[Fri Aug 10 14:06:56 2012] [error] [client 10.183.253.50] IndentationError: unexpected indent
+[Fri Aug 10 13:07:26 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:07:26 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21348): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 256, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]     t_bio='', referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50]    ^, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:30 2012] [error] [client 10.183.253.50] IndentationError: unexpected indent, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21349): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 256, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]     t_bio='', referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50]    ^, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:07:34 2012] [error] [client 10.183.253.50] IndentationError: unexpected indent, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 13:08:15 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:08:15 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21509): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 34, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50]     auth = tweepy.OAuthHandler(consumer_key, consumer_secret), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:21 2012] [error] [client 10.183.253.50] NameError: name 'tweepy' is not defined, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21510): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 34, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50]     auth = tweepy.OAuthHandler(consumer_key, consumer_secret), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:24 2012] [error] [client 10.183.253.50] NameError: name 'tweepy' is not defined, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50] mod_wsgi (pid=21509): Exception occurred processing WSGI script '/var/www/apache/django_staging.wsgi'., referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50] Traceback (most recent call last):, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/wsgi.py", line 272, in __call__, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     response = self.get_response(request), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 169, in get_response, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     response = self.handle_uncaught_exception(request, resolver, sys.exc_info()), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/handlers/base.py", line 214, in handle_uncaught_exception, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     if resolver.urlconf_module is None:, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/core/urlresolvers.py", line 274, in _get_urlconf_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     self._urlconf_module = import_module(self.urlconf_name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/usr/local/lib/python2.7/dist-packages/Django-1.3.1-py2.7.egg/django/utils/importlib.py", line 35, in import_module, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     __import__(name), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/urls.py", line 2, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     import views, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]   File "/var/www/four_staging/foursquare/views.py", line 34, in <module>, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50]     auth = tweepy.OAuthHandler(consumer_key, consumer_secret), referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 14:08:30 2012] [error] [client 10.183.253.50] NameError: name 'tweepy' is not defined, referer: http://playdo.pe/loc/?code=IUIEBPAXMTG4NSNNWLJDF21YNMHTUW3CYTRLBM2JSWVK5L1C
+[Fri Aug 10 13:08:58 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:08:58 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:17:07 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:17:08 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:17:28 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:17:28 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:19:06 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:19:06 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:21:34 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:21:34 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:23:00 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 10 13:27:22 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:27:22 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:27:29 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 10 13:36:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 13:36:35 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:53:44 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:53:44 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 10 14:53:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://staging.playdo.pe/
+[Fri Aug 10 21:55:40 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 10 22:45:05 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Sat Aug 11 00:38:40 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js
+[Sat Aug 11 10:00:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Sat Aug 11 10:00:43 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Sat Aug 11 13:28:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: https://playdo.pe/
