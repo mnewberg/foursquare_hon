@@ -286,7 +286,6 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 				<div id="info_box">
 					<div id="exclamation"></div>
 					<div class="text">
-{% if not recentcheckin %}
 
 <div class="info_header">Where are you?</div>
 <div class="input">
@@ -298,7 +297,6 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
         <div id="venue-address" class="autocomplete-detail"></div>
 	<div id="venue-cityLine" class="autocomplete-detail"></div>
 <!-- <div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div> -->
-{% endif %}
 {% if not twitter %}
 <div class="info_header">Twitter handle</div>
 <div class="input">
