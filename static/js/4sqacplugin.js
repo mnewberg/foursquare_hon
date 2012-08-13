@@ -94,7 +94,6 @@
     /// Builds out the <select> portion of autocomplete control
     function getAutocompleteText(item) {
         var text = "<div>";
-        text += "<div class='categoryIconContainer'><img src='" + (item.photo == "" ? "" : item.photo) + "' /></div>";
         text += "<div class='autocomplete-name'>" + item.name + "</div>";
         if (item.address == "" && item.cityLine == "")
             text += "<div class='autocomplete-detail'>&nbsp;</div>";
