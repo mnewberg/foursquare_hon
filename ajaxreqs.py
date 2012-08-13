@@ -124,11 +124,12 @@ def new_nearby(the_id,lat,lon):
 	token=u.token
 	print token
 	found=[]
+	request.session['chickpix']={}
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
 		d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
 		print d
 		if i.from_user not in found:
-			if len(found)==2:
+			if len(found)==10:
 				p['chickpix-'+token].trigger('done','')
 			else:
 				pass
@@ -150,7 +151,8 @@ def new_nearby(the_id,lat,lon):
 				venue_id=entry['checkin']['venue']['id']
 				venue_name=entry['checkin']['venue']['name']
 				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
-				p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
+				request.session['chickpix'].append((fsq_id,chickpix[fsq_id]))
+				#p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
 				try:
 					user_lookup.objects.create(first_name=fname,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
 				except:
@@ -160,3 +162,9 @@ def new_nearby(the_id,lat,lon):
 		else:
 			pass
 	return 'Ok'
+
+
+def get_page(request):
+	d=request.session[:10]
+	del request.session[:10]
+	return HttpResponse(simplejson.dumps({'d':d}),mimetype='application/json')
