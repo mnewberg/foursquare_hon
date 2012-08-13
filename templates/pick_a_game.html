@@ -18,7 +18,7 @@
 			<div id="name">{{f_name}}</div>
 		</div>
 		<div id="interests">
-			<div class="text">{% if topics %}{{f_name}} is interested in {% for topic in topics|slice:":5" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}{% else %}About {{f_name}}: {{t_bio}}{% endif %}
+			<div class="text">{% if topics %}{{f_name}} is interested in {% for topic in topics|slice:":5" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}<br>{{ t_bio }}{% else %}About {{f_name}}: {{t_bio}}{% endif %}
 </div>
 		</div>
 		<div id="footer">
