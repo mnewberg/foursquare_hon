@@ -1056,12 +1056,15 @@ body, html {
 
 /* line 31, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper {
+  height: 412px;
+  width: 320px;
   margin: 0 auto;
   position: absolute;
 }
 /* line 38, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper header {
   background-image: url("../images/blank_header.png");
+  width: 320px;
   height: 43px;
   position: fixed;
   top: 0px;
@@ -1077,7 +1080,7 @@ body, html {
 /* line 51, ../sass/partials/_photo_grid.scss */
 #the_grid {
   margin: 0 auto;
-  width: 100%
+  width: 100%;
   position: relative;
   height: 100%;
   margin-top: 50px;
@@ -1099,8 +1102,6 @@ body, html {
 .photo img {
   position: relative;
   vertical-align: top;
-  width:100%;
-  height: auto !important;
 }
 
 /* line 74, ../sass/partials/_photo_grid.scss */
@@ -1623,7 +1624,206 @@ body, html {
   font-weight: bold;
 }
 
-/* line 11, ../sass/style.scss */
+/* line 2, ../sass/partials/_thanks.scss */
+#thanks_wrapper {
+  text-align: center;
+  height: 412px;
+  width: 320px;
+  margin: 0 auto;
+  position: absolute;
+}
+/* line 9, ../sass/partials/_thanks.scss */
+#thanks_wrapper a {
+  font-family: Helvetica, Arial;
+  font-weight: normal;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+  text-decoration: none;
+}
+
+/* line 15, ../sass/partials/_thanks.scss */
+#speech_bub {
+  text-align: center;
+  margin-bottom: 14px;
+  background-image: url("../images/box_middle.png");
+  background-repeat: repeat-y;
+  width: 261px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+/* line 25, ../sass/partials/_thanks.scss */
+#speech_bub:before {
+  content: '';
+  display: block;
+  background-image: url("../images/speech_bub.png");
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: -14px;
+}
+/* line 35, ../sass/partials/_thanks.scss */
+#speech_bub:after {
+  content: '';
+  display: block;
+  background-image: url("../images/speech_bub.png");
+  background-position: 0px -14px;
+  width: 261px;
+  height: 48px;
+  position: absolute;
+  top: 100%;
+}
+/* line 45, ../sass/partials/_thanks.scss */
+#speech_bub .text {
+  margin: 0 auto;
+  width: 233px;
+  position: relative;
+  color: #6c6c6c;
+  font-size: 14px;
+}
+/* line 53, ../sass/partials/_thanks.scss */
+#speech_bub .bold.text {
+  color: #7b7b7b;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 14px;
+}
+/* line 59, ../sass/partials/_thanks.scss */
+#speech_bub .text {
+  text-align: center;
+  color: #7b7b7b;
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+/* line 67, ../sass/partials/_thanks.scss */
+#no_photo {
+  background-image: url("../images/box_middle.png");
+  background-repeat: repeat-y;
+  width: 261px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 14px;
+  margin-bottom: 25px;
+  top: 0px !important;
+  margin-top: 30px;
+}
+/* line 77, ../sass/partials/_mixins.scss */
+#no_photo:before {
+  content: '';
+  display: block;
+  background-image: url("../images/box.png");
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: -14px;
+}
+/* line 87, ../sass/partials/_mixins.scss */
+#no_photo:after {
+  content: '';
+  display: block;
+  background-image: url("../images/box.png");
+  background-position: 0px -14px;
+  width: 261px;
+  height: 14px;
+  position: absolute;
+  top: 100%;
+}
+/* line 97, ../sass/partials/_mixins.scss */
+#no_photo .text {
+  margin: 0 auto;
+  width: 233px;
+  position: relative;
+  color: #6c6c6c;
+  font-size: 14px;
+}
+/* line 73, ../sass/partials/_thanks.scss */
+#no_photo #exclamation_icon {
+  background-image: url("../images/exclamation_icon.png");
+  width: 33px;
+  height: 34px;
+  position: relative;
+  float: left;
+  margin-left: 12px;
+  margin-right: 6px;
+  margin-top: -1px;
+}
+/* line 84, ../sass/partials/_thanks.scss */
+#no_photo #text {
+  position: relative;
+  text-align: left;
+  color: #7b7b7b;
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+/* line 92, ../sass/partials/_thanks.scss */
+#face {
+  background-image: url("../images/face.png");
+  width: 119px;
+  height: 83px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+
+/* line 100, ../sass/partials/_thanks.scss */
+#send_button {
+  background-image: url("../images/send_button.png");
+  width: 63px;
+  height: 40px;
+  position: relative;
+  float: right;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+/* line 113, ../sass/partials/_thanks.scss */
+.button {
+  background: url("../images/button_middle.png") repeat;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-family: Helvetica, Arial;
+  font-weight: bold;
+  color: #f8f2f2;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 11px;
+}
+/* line 124, ../sass/partials/_thanks.scss */
+.button:before {
+  content: '';
+  display: block;
+  float: right;
+  background-image: url("../images/button_sides.png");
+  width: 12px;
+  height: 40px;
+  position: absolute;
+  left: -12px;
+}
+/* line 134, ../sass/partials/_thanks.scss */
+.button:after {
+  content: '';
+  display: block;
+  float: left;
+  background-image: url("../images/button_sides.png");
+  background-position: -12px 0px;
+  width: 12px;
+  height: 40px;
+  position: absolute;
+  left: 100%;
+  top: 0px;
+}
+
+/* line 12, ../sass/style.scss */
 html, body {
   background-color: #fff;
   margin: 0 auto;
@@ -1633,14 +1833,14 @@ html, body {
   max-width: 320px;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 26, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 #wrapper {
   font-family: Helvetica, Arial;
   font-weight: bold;
@@ -1650,7 +1850,7 @@ ul {
   width: 320px;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 #filler {
   height: 100%;
   width: 100%;

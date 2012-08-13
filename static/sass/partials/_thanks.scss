@@ -1,0 +1,146 @@
+
+#thanks_wrapper{
+	text-align:center;
+	height:412px;
+	width:320px;
+	margin:0 auto;
+	position:absolute;
+
+	a{
+		@include white_font_normal();
+		text-decoration:none;
+	}
+}
+
+#speech_bub{
+	text-align:center;
+	margin-bottom:14px;
+	background-image:url('../images/box_middle.png');
+	background-repeat:repeat-y;
+	width:261px;
+	position:relative;
+	margin:0 auto;
+	margin-top:30px;
+
+	&:before{
+		content:'';
+		display:block;
+		background-image:url('../images/speech_bub.png');
+		width:261px;
+		height:14px;
+		position:absolute;
+		top:-14px;
+
+	}
+	&:after{
+		content:'';
+		display:block;
+		background-image:url('../images/speech_bub.png');
+		background-position:0px -14px;
+		width:261px;
+		height:48px;
+		position:absolute;
+		top:100%;
+	}
+	.text{
+		margin:0 auto;
+		width:233px;
+		position:relative;
+		color:#6c6c6c;
+		font-size:14px;
+	}
+
+	.bold.text{
+		color:#7b7b7b;
+		font-weight:bold;
+		font-family:Helvetica;
+		font-size:14px;
+	}
+	.text{
+		text-align:center;
+		color:#7b7b7b;
+		font-family:Helvetica;
+		font-size:14px;
+	}
+}
+
+#no_photo{
+	@include white_box();
+	margin-bottom:25px;
+	top:0px !important;
+	margin-top:30px;
+
+	#exclamation_icon{
+		background-image:url('../images/exclamation_icon.png');
+		width:33px;
+		height:34px;
+		position:relative;
+		float:left;
+		margin-left:12px;
+		margin-right:6px;
+		margin-top:-1px;
+	}
+
+	#text{
+		position:relative;
+		text-align:left;
+		color:#7b7b7b;
+		font-family:Helvetica;
+		font-size:12px;
+	}
+}
+#face{
+	background-image:url('../images/face.png');
+	width:119px;
+	height:83px;
+	position:relative;
+	margin:0 auto;
+	margin-top:35px;
+}
+#send_button{
+	background-image:url('../images/send_button.png');
+	width:63px;
+	height:40px;
+	position:relative;
+	float:right;
+	@include white_font();
+	text-align:center;
+	line-height:40px;
+	cursor:pointer;
+}
+
+
+.button{
+		background:url('../images/button_middle.png') repeat;
+		display:inline-block;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		@include white_font();
+		position:relative;
+		margin:0 auto;
+		margin-top:11px;
+
+		&:before{
+			content:'';
+			display:block;
+			float:right;
+			background-image:url('../images/button_sides.png');
+			width:12px;
+			height:40px;
+			position:absolute;
+			left:-12px;
+		}
+		&:after{
+			content:'';
+			display:block;
+			float:left;
+			background-image:url('../images/button_sides.png');
+			background-position:-12px 0px;
+			width:12px;
+			height:40px;
+			position:absolute;
+			left:100%;
+			top:0px;
+		}
+	}
