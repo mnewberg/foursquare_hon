@@ -214,10 +214,10 @@ def second(request):
                 else:
                     photo=True
                 queue_email(query.email(),query.first_name())
-                return render_to_response('wait.html',{'photo':photo})
+                return render_to_response('thank_you.html',{'photo':photo})
       else:
                 print 'uh oh'
-                return render_to_response('wait.html')
+                return render_to_response('thank_you.html')
     
 
 

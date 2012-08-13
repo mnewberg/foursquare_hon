@@ -13,10 +13,12 @@
 			<div class="text">We'll let you know as soon as we have room for you to play.</div>
 		</div>
 		<div id="face"></div>
+		{% if not photo %}
 		<div id="no_photo">
 			<div id="exclamation_icon"></div>
-			<div id="text">You must upload a profile <br />picture to play!</div>
+			<div id="text">You must have a foursquare profile <br />picture to play! Pick one now</div>
 		</div>
+		{% endif %}
 		<div class="button">Get faster access, check into this app!</div>
 	</div>
 </body>
