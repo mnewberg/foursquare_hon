@@ -12,10 +12,6 @@ from pyklout import Klout
 from background import postpone
 import bitly_api
 import re
-import logging
-from django.contrib.sessions.backends.db import SessionStore
-
-logger=logging.getLogger('django.request')
 
 consumer_key=settings.CONSUMER_KEY
 consumer_secret=settings.CONSUMER_SECRET
@@ -31,7 +27,7 @@ finder = psq.UserFinder(authenticator)
 bitly_key='R_4d6d45ada0e0b63358e51af5161c0074'
 bitly_user='thenewb'
 
-bitly=bitly_api.Connection(bitly_user,bitly_key)
+bitly=bitly_api.bitly_api.Connection(bitly_user,bitly_key)
 
 pusher.app_id='19318'
 pusher.key='890abd57f862ab2712ff'
@@ -57,9 +53,7 @@ def ajaxreq(request):
 	lat=request.GET['lat']
 	lon=request.GET['lon']
 	fsq_id=request.session['fsq_id']
-	request.session['chickpix']=[]
-	key=request.session.session_key
-	new_nearby(key,fsq_id,lat,lon)
+	new_nearby(fsq_id,lat,lon)
 	return HttpResponse('OK!')
     
 @postpone
@@ -121,24 +115,19 @@ def nearby(fsq_id,lat,lon):
     return 'Ok'
 
 @postpone
-def new_nearby(key,the_id,lat,lon):
+def new_nearby(the_id,lat,lon):
 	p = pusher.Pusher()
 	p['error'].trigger('hit','')
 	lat=str(lat)
 	lon=str(lon)
 	u=user.objects.get(fsq_id=the_id)
 	token=u.token
+	print token
 	found=[]
-	logger.error('before loop')
-	chickpix={}
-
+	request.session['chickpix']={}
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
-		try: 
-			e=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])
-			d=e[0]['long_url']
-		except:
-			logger.error('There was a bitly error', exc_info=True, extra={'stack': True,'url':i.entities['urls'][0]['expanded_url']})
-			pass
+		d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
+		print d
 		if i.from_user not in found:
 			if len(found)==10:
 				p['chickpix-'+token].trigger('done','')
@@ -149,6 +138,7 @@ def new_nearby(key,the_id,lat,lon):
 				checkin=re.findall('checkin/.{0,24}',d)[0][8:]
 				entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
 				found.append(i.from_user)
+				chickpix={}
 				fname=entry['checkin']['user']['firstName']
 				fsq_id=entry['checkin']['user']['id']
 				pic_id=entry['checkin']['user']['photo']
@@ -161,30 +151,20 @@ def new_nearby(key,the_id,lat,lon):
 				venue_id=entry['checkin']['venue']['id']
 				venue_name=entry['checkin']['venue']['name']
 				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
-				p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
-				try:
-					s = SessionStore(session_key=key)
-					s['chickpix'].append(chickpix[fsq_id])
-					s.save()
-				except:
-					logger.error('chickpix',exc_info=True,extra={'stack':True,})
+				request.session['chickpix'].append((fsq_id,chickpix[fsq_id]))
+				#p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
 				try:
 					user_lookup.objects.create(first_name=fname,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
 				except:
 					pass
 			except:
-					logger.error('There was a parsing error', exc_info=True, extra={'stack': True,'url':i.entities['urls']})
-
+					p['chickpix-'+token].trigger('crickets','')
 		else:
 			pass
 	return 'Ok'
 
 
 def get_page(request):
-	d=request.session['chickpix'][:10]
-	del request.session['chickpix'][:10]
-	if request.session['chickpix']=='':
-		done=True
-	else:
-		done=False
-	return HttpResponse(simplejson.dumps({'d':d,'done':done}),mimetype='application/json')
+	d=request.session[:10]
+	del request.session[:10]
+	return HttpResponse(simplejson.dumps({'d':d}),mimetype='application/json')
