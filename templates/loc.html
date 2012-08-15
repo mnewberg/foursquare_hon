@@ -196,7 +196,7 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 //infinite scroll
 var ajaxOK = true;
-$(window).on('scroll', function () {
+$(newgallery).on('scroll', function () {
     var yDistance = $('html, body').scrollTop();
 
     //here you can check how far down the user is and do your AJAX call
