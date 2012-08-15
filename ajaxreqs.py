@@ -57,6 +57,7 @@ def ajaxreq(request):
 	lat=request.GET['lat']
 	lon=request.GET['lon']
 	fsq_id=request.session['fsq_id']
+	request.session['chickpix']=[]
 	key=request.session.session_key
 	new_nearby(key,fsq_id,lat,lon)
 	return HttpResponse('OK!')
@@ -130,13 +131,16 @@ def new_nearby(key,the_id,lat,lon):
 	found=[]
 	logger.error('before loop')
 	chickpix={}
+
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
 		try: 
-			d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
+			e=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])
+			d=e[0]['long_url']
 		except:
-			logger.error('There was a bitly error', exc_info=True, extra={'stack': True})
+			logger.error('There was a bitly error', exc_info=True, extra={'stack': True,'url':i.entities['urls'][0]['expanded_url']})
+			pass
 		if i.from_user not in found:
-			if len(found)==2:
+			if len(found)==10:
 				p['chickpix-'+token].trigger('done','')
 			else:
 				pass
@@ -145,7 +149,6 @@ def new_nearby(key,the_id,lat,lon):
 				checkin=re.findall('checkin/.{0,24}',d)[0][8:]
 				entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
 				found.append(i.from_user)
-				chickpix={}
 				fname=entry['checkin']['user']['firstName']
 				fsq_id=entry['checkin']['user']['id']
 				pic_id=entry['checkin']['user']['photo']
@@ -161,7 +164,7 @@ def new_nearby(key,the_id,lat,lon):
 				p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
 				try:
 					s = SessionStore(session_key=key)
-					s['chickpix']=chickpix
+					s['chickpix'].append(chickpix[fsq_id])
 					s.save()
 				except:
 					logger.error('chickpix',exc_info=True,extra={'stack':True,})
@@ -170,12 +173,18 @@ def new_nearby(key,the_id,lat,lon):
 				except:
 					pass
 			except:
-					p['chickpix-'+token].trigger('crickets','')
+					logger.error('There was a parsing error', exc_info=True, extra={'stack': True,'url':i.entities['urls']})
+
 		else:
 			pass
 	return 'Ok'
 
 
 def get_page(request):
-	d=request.session['chickpix']
-	return HttpResponse(simplejson.dumps({'d':d.items()[:10]}),mimetype='application/json')
+	d=request.session['chickpix'][:10]
+	del request.session['chickpix'][:10]
+	if request.session['chickpix']=='':
+		done=True
+	else:
+		done=False
+	return HttpResponse(simplejson.dumps({'d':d,'done':done}),mimetype='application/json')
