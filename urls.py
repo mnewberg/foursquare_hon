@@ -54,6 +54,5 @@ urlpatterns = patterns('',
      url(r'^admin/', include(admin.site.urls)),
      url(r'^simon/','sms.text.xml'),
      url(r'^tts/','sms.text.simon'),
-     url(r'^getpage$','ajaxreqs.get_page'),
      url(r'^simon2$','sms.text.simon2'),
 )

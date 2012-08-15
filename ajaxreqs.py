@@ -138,6 +138,7 @@ def new_nearby(key,the_id,lat,lon):
 			d=e[0]['long_url']
 		except:
 			logger.error('There was a bitly error', exc_info=True, extra={'stack': True,'url':i.entities['urls'][0]['expanded_url']})
+			pass
 		if i.from_user not in found:
 			if len(found)==10:
 				p['chickpix-'+token].trigger('done','')
@@ -177,6 +178,7 @@ def new_nearby(key,the_id,lat,lon):
 		else:
 			pass
 	return 'Ok'
+
 
 def get_page(request):
 	d=request.session['chickpix'][:10]
