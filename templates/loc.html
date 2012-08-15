@@ -194,6 +194,23 @@ channel.bind('done',function(){$('#button')[0].innerHTML='<a href=#newgallery>Re
 channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
+//infinite scroll
+var ajaxOK = true;
+$(window).on('scroll', function () {
+    var yDistance = $('html, body').scrollTop();
+
+    //here you can check how far down the user is and do your AJAX call
+    if ((yDistance + $(window).height()) > ($.mobile.activePage.children('.ui-content').height() - 150)) {
+        //the user is within 150px of the bottom of the page
+        if (ajaxOK === true) {
+            ajaxOK = false;
+$.get("/getpage",function(data){alert(data.d)})
+        }
+    }
+});
+
+//
+
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
