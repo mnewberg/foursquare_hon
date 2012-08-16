@@ -161,3 +161,42 @@
 	line-height:40px;
 	cursor:pointer;
 }
+
+#pick_a_game_modal{
+	width:100%;
+	height:100%;
+	position: absolute;
+	background-color:rgba(0,0,0,.7);
+	z-index:5;
+
+	#success{
+		position:relative;
+		margin:0 auto;
+		@include white-box();
+
+		.text{
+			text-align:center;
+		}
+
+		#tick{
+			width:29px;
+			height:24px;
+			background-image:url('../images/tick.png');
+			position: relative;
+			margin:0 auto;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+	}
+	#button_wrap{
+		text-align:center;
+		position: relative;
+		margin-top:20px;
+	}
+	#okay{
+		@include red_button();
+		position:relative;
+		margin:0 auto;
+
+	}
+}

@@ -3,9 +3,18 @@
 	<head> 
 	<title>Playdope</title> 
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
-	<script type="text/javascript" src="../static/javascript/on_board_ui.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../static/javascript/pick_a_game_ui.js"></script>
 </head> 
 <body>
+	<div id="pick_a_game_modal">
+		<div id="success">
+			<div class="text">Challenge successfully sent!</div>
+			<div id="tick"></div>
+			<div class="text">You will recieve an SMS text message when Lorem is ready to play.</div>
+		</div>
+		<div id="button_wrap"><div id="okay">Okay</div></div>
+	</div>
 	<div id="fixed_bg"></div>
 	<div id="pick_game_wrapper">
 		<header>
