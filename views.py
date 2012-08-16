@@ -274,7 +274,7 @@ def outreach(request):
     params = {}
     params.update(csrf(request))
     
-    message=request.POST['message']
+    #message=request.POST['message']
     game_id=request.POST['game_id']
     t_handle=request.POST['t_handle']
     venue=request.POST['venue_id']
