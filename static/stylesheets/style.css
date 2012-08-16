@@ -1097,18 +1097,10 @@ body, html {
 }
 /* line 67, ../sass/partials/_photo_grid.scss */
 .photo img {
-<<<<<<< HEAD
-
-position: relative;
-vertical-align: top;
-width:100%;
-height: auto !important;
-=======
   position: relative;
   vertical-align: top;
   width: 100%;
   height: auto !important;
->>>>>>> 1f82cfe51f4ea5cf25a4d58fe76ea1f99a326b8f
 }
 
 /* line 75, ../sass/partials/_photo_grid.scss */
@@ -1513,7 +1505,19 @@ height: auto !important;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
 }
 
-/* line 29, ../sass/partials/_gather_info.scss */
+/* line 28, ../sass/partials/_gather_info.scss */
+#logo {
+  width: 101px;
+  height: 25px;
+  margin: 0 auto;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 8px;
+  z-index: 99;
+}
+
+/* line 38, ../sass/partials/_gather_info.scss */
 #back_button {
   background-image: url("../images/back.png");
   width: 61px;
@@ -1528,7 +1532,7 @@ height: auto !important;
   line-height: 28px;
 }
 
-/* line 43, ../sass/partials/_gather_info.scss */
+/* line 52, ../sass/partials/_gather_info.scss */
 #info_box {
   background-image: url("../images/box_middle.png");
   background-repeat: repeat-y;
@@ -1568,11 +1572,11 @@ height: auto !important;
   color: #6c6c6c;
   font-size: 14px;
 }
-/* line 48, ../sass/partials/_gather_info.scss */
+/* line 57, ../sass/partials/_gather_info.scss */
 #info_box .text {
   text-align: center;
 }
-/* line 53, ../sass/partials/_gather_info.scss */
+/* line 62, ../sass/partials/_gather_info.scss */
 #info_box .input {
   background-image: url("../images/input2.png");
   width: 200px;
@@ -1582,7 +1586,7 @@ height: auto !important;
   text-align: center;
   margin-bottom: 25px;
 }
-/* line 62, ../sass/partials/_gather_info.scss */
+/* line 71, ../sass/partials/_gather_info.scss */
 #info_box .input input {
   background: transparent;
   position: absolute;
@@ -1594,7 +1598,7 @@ height: auto !important;
   color: #6c6c6c;
   top: 5px;
 }
-/* line 74, ../sass/partials/_gather_info.scss */
+/* line 83, ../sass/partials/_gather_info.scss */
 #info_box .input div {
   color: #c4c4c4;
   font-size: 14px;
@@ -1606,7 +1610,7 @@ height: auto !important;
   text-indent: 10px;
 }
 
-/* line 87, ../sass/partials/_gather_info.scss */
+/* line 96, ../sass/partials/_gather_info.scss */
 #exclamation {
   background-image: url("../images/exclamation.png");
   width: 38px;
@@ -1617,7 +1621,7 @@ height: auto !important;
   margin-bottom: -18px;
 }
 
-/* line 96, ../sass/partials/_gather_info.scss */
+/* line 105, ../sass/partials/_gather_info.scss */
 #send_button {
   background-image: url("../images/send_button.png");
   width: 63px;
@@ -1633,7 +1637,7 @@ height: auto !important;
   cursor: pointer;
 }
 
-/* line 108, ../sass/partials/_gather_info.scss */
+/* line 117, ../sass/partials/_gather_info.scss */
 .info_header {
   font-family: Helvetica, Arial;
   font-weight: bold;
@@ -1642,7 +1646,7 @@ height: auto !important;
   margin-bottom: 15px;
 }
 
-/* line 112, ../sass/partials/_gather_info.scss */
+/* line 121, ../sass/partials/_gather_info.scss */
 #button {
   background: url("../images/button_middle.png") repeat;
   display: inline-block;
@@ -1657,7 +1661,7 @@ height: auto !important;
   margin: 0 auto;
   margin-top: 11px;
 }
-/* line 123, ../sass/partials/_gather_info.scss */
+/* line 132, ../sass/partials/_gather_info.scss */
 #button:before {
   content: '';
   display: block;
@@ -1668,7 +1672,7 @@ height: auto !important;
   position: absolute;
   left: -12px;
 }
-/* line 133, ../sass/partials/_gather_info.scss */
+/* line 142, ../sass/partials/_gather_info.scss */
 #button:after {
   content: '';
   display: block;
@@ -1682,7 +1686,7 @@ height: auto !important;
   top: 0px;
 }
 
-/* line 147, ../sass/partials/_gather_info.scss */
+/* line 156, ../sass/partials/_gather_info.scss */
 #venue-dropdown-wrapper {
   display: inline-block;
   position: absolute;
@@ -1691,7 +1695,7 @@ height: auto !important;
   width: 100%;
 }
 
-/* line 154, ../sass/partials/_gather_info.scss */
+/* line 163, ../sass/partials/_gather_info.scss */
 #venue-dropdown {
   width: 198px;
   margin: 0 auto;
@@ -1708,7 +1712,7 @@ height: auto !important;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px;
 }
 
-/* line 163, ../sass/partials/_gather_info.scss */
+/* line 172, ../sass/partials/_gather_info.scss */
 .arrow-up {
   margin: 0 auto;
   width: 0;
@@ -1718,11 +1722,11 @@ height: auto !important;
   border-bottom: 3px solid #cbcbcb;
 }
 
-/* line 173, ../sass/partials/_gather_info.scss */
+/* line 182, ../sass/partials/_gather_info.scss */
 .ui-menu {
   list-style-type: none;
 }
-/* line 175, ../sass/partials/_gather_info.scss */
+/* line 184, ../sass/partials/_gather_info.scss */
 .ui-menu li {
   width: 100%;
   padding-left: 10px;
@@ -1735,23 +1739,23 @@ height: auto !important;
   background: -ms-linear-gradient(#fcfcfc, #f6f6f6);
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
-/* line 182, ../sass/partials/_gather_info.scss */
+/* line 191, ../sass/partials/_gather_info.scss */
 .ui-menu li a {
   text-decoration: none;
 }
-/* line 185, ../sass/partials/_gather_info.scss */
+/* line 194, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-name {
   text-shadow: white 0px 1px 1px;
   font-size: 13px !important;
   color: #969696 !important;
 }
-/* line 190, ../sass/partials/_gather_info.scss */
+/* line 199, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;
   color: #bbbbbb !important;
 }
-/* line 195, ../sass/partials/_gather_info.scss */
+/* line 204, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;
