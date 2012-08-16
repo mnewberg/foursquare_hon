@@ -1097,10 +1097,18 @@ body, html {
 }
 /* line 67, ../sass/partials/_photo_grid.scss */
 .photo img {
+<<<<<<< HEAD
+
+position: relative;
+vertical-align: top;
+width:100%;
+height: auto !important;
+=======
   position: relative;
   vertical-align: top;
   width: 100%;
   height: auto !important;
+>>>>>>> 1f82cfe51f4ea5cf25a4d58fe76ea1f99a326b8f
 }
 
 /* line 75, ../sass/partials/_photo_grid.scss */

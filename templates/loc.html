@@ -195,19 +195,10 @@ channel.bind('image',function(data){document.getElementById('the_grid').innerHTM
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 //infinite scroll
-var ajaxOK= true;
-$(window).on('scroll', function () {
-    //here you can check how far down the user is and do your AJAX call
-    if ($(window).scrollTop() >= $(document).height() - $.mobile.activePage.height() - 150) {
-        //the user is within 150px of the bottom of the page
-        if ($.mobile.activePage[0].id=='newgallery' && ajaxOK) { ajaxOK=false;
-$.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};document.getElementById('the_grid').innerHTML=newhtml;ajaxOK=true;})
-        }
-    }
-});)
-
-//
-
+var ajaxOK = true;
+$(window).on('scroll', function () { 
+if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height()) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
+ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};document.getElementById('the_grid').innerHTML+=newhtml;ajaxOK=true;})}})
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
