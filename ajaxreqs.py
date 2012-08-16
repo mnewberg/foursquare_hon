@@ -160,7 +160,10 @@ def new_nearby(key,the_id,lat,lon):
 				venue_id=entry['checkin']['venue']['id']
 				venue_name=entry['checkin']['venue']['name']
 				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
-				p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
+				if len(found)<=10:
+					p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
+				else:
+					pass
 				try:
 					s = SessionStore(session_key=key)
 					s['chickpix'].append(chickpix[fsq_id])
