@@ -25,7 +25,16 @@
 
 
 }
-
+#logo {
+  width: 101px;
+  height: 25px;
+  margin: 0 auto;
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  position: relative;
+  top: 8px;
+  z-index: 99;
+}
 #back_button{
 	background-image:url('../images/back.png');
 	width:61px;

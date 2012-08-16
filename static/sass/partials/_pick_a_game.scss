@@ -168,7 +168,11 @@
 	position: absolute;
 	background-color:rgba(0,0,0,.7);
 	z-index:5;
-
+	display:table;
+	#modal_wrap{
+		display:table-cell;
+		vertical-align:middle;
+	}
 	#success{
 		position:relative;
 		margin:0 auto;
