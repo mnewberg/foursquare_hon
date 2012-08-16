@@ -7,13 +7,13 @@
 	<script type="text/javascript" src="../static/javascript/pick_a_game_ui.js"></script>
 </head> 
 <body>
-	<div id="pick_a_game_modal">
+	<div id="pick_a_game_modal" style="visibility:hidden">
 		<div id="success">
 			<div class="text">Challenge successfully sent!</div>
 			<div id="tick"></div>
-			<div class="text">You will recieve an SMS text message when Lorem is ready to play.</div>
+			<div class="text">You will recieve an SMS text message when {{f_name}} is ready to play.</div>
 		</div>
-		<div id="button_wrap"><div id="okay">Okay</div></div>
+		<div id="button_wrap"><div id="okay" onclick="$.mobile.changePage('#newgallery')">Okay</div></div>
 	</div>
 	<div id="fixed_bg"></div>
 	<div id="pick_game_wrapper">
@@ -46,7 +46,7 @@
 			<input type="hidden" value="{{t_pic}}" name="t_pic">
 
 			{% csrf_token %}
-			<input type="submit" id="send_button" onclick="mixpanel.track('sent-invite')">Send</input>
+			<div id="send_button" onclick="mixpanel.track('sent-invite')">Send</div>
 		</div>
 	</div>
 </body>
