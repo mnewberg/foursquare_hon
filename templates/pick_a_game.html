@@ -49,7 +49,7 @@ $('#select').textinput({ preventFocusZoom: true });
 			<input type="hidden" value="{{t_pic}}" name="t_pic">
 
 			{% csrf_token %}
-			<div id="send_button" onclick="$.post('/outreach',{'venue_id':venue_id,'t_handle':t_handle,'f_name':f_name,'t_pic':t_pic,'game_id':game.gid,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value};$('#pick_a_game_modal').show();mixpanel.track('sent-invite')">Send</div>
+			<div id="send_button" onclick="$.post('/outreach',{'venue_id':venue_id,'t_handle':t_handle,'f_name':f_name,'t_pic':t_pic,'game_id':game.gid,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});$('#pick_a_game_modal').show();mixpanel.track('sent-invite')">Send</div>
 		</div>
 	</div>
 </body>
