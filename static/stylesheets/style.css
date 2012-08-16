@@ -1324,8 +1324,25 @@ body, html {
   position: relative;
   float: left;
 }
+/* line 136, ../sass/partials/_pick_a_game.scss */
+#select #pick_a_game {
+  position: absolute;
+  line-height: 45px;
+  height: 45px;
+  left: 15px;
+  color: #6c6c6c;
+  font-family: helvetica;
+  font-size: 15px;
+  font-weight: normal;
+}
+/* line 146, ../sass/partials/_pick_a_game.scss */
+#select select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
 
-/* line 137, ../sass/partials/_pick_a_game.scss */
+/* line 153, ../sass/partials/_pick_a_game.scss */
 #send_button {
   background-image: url("../images/send_button.png");
   width: 63px;
