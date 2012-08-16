@@ -1780,7 +1780,7 @@ body, html {
 }
 /* line 14, ../sass/partials/_loading.scss */
 #loading_wrapper header {
-  background-image: url("../images/header.png");
+  background-image: url("../images/blank_header.png");
   width: 320px;
   height: 43px;
   position: relative;
@@ -1794,7 +1794,28 @@ body, html {
   text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
 }
 
-/* line 29, ../sass/partials/_loading.scss */
+/* line 28, ../sass/partials/_loading.scss */
+#logo {
+  width: 101px;
+  height: 25px;
+  margin: 0 auto;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 8px;
+  z-index: 99;
+}
+
+/* line 41, ../sass/partials/_loading.scss */
+#spinner {
+  position: relative;
+  width: 123px;
+  height: 124px;
+  background-image: url("../images/spinner.gif");
+  margin: 0 auto;
+}
+
+/* line 48, ../sass/partials/_loading.scss */
 #finding {
   background-image: url("../images/box_middle.png");
   background-repeat: repeat-y;
@@ -1803,7 +1824,7 @@ body, html {
   margin: 0 auto;
   margin-top: 14px;
   text-align: center;
-  top: 23px;
+  margin-top: 35px;
 }
 /* line 77, ../sass/partials/_mixins.scss */
 #finding:before {
@@ -1834,7 +1855,7 @@ body, html {
   color: #6c6c6c;
   font-size: 14px;
 }
-/* line 34, ../sass/partials/_loading.scss */
+/* line 53, ../sass/partials/_loading.scss */
 #finding .text {
   text-align: center;
   font-family: Helvetica, Arial;
@@ -1842,6 +1863,18 @@ body, html {
   color: #685f5f;
   text-shadow: white 0px 1px 1px;
   font-weight: bold;
+}
+
+/* line 61, ../sass/partials/_loading.scss */
+#table {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+/* line 66, ../sass/partials/_loading.scss */
+#table #table-cell {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 /* line 2, ../sass/partials/_thanks.scss */

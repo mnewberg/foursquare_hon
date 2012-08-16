@@ -12,7 +12,7 @@
 	}
 
 	header{
-		background-image:url('../images/header.png');
+		background-image:url('../images/blank_header.png');
 		width:320px;
 		height:43px;
 		position:relative;
@@ -25,11 +25,30 @@
 
 
 }
+#logo {
+  width: 101px;
+  height: 25px;
+  margin: 0 auto;
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  position: relative;
+  top: 8px;
+  z-index: 99;
+}
 
+
+
+#spinner{
+	position: relative;
+	width:123px;
+	height:124px;
+	background-image:url('../images/spinner.gif');
+	margin:0 auto;
+}
 #finding{
 	@include white_box();
 	text-align:center;
-	top:23px;
+	margin-top:35px;
 
 	.text{
 		text-align:center;
@@ -37,4 +56,15 @@
 		font-weight:bold;
 	}
 	
+}
+
+#table{
+	display:table;
+	height:100%;
+	width:100%;
+
+	#table-cell{
+		display:table-cell;
+		vertical-align:middle;
+	}
 }
