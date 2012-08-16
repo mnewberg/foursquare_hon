@@ -1579,11 +1579,11 @@ body, html {
 }
 
 /* line 173, ../sass/partials/_gather_info.scss */
-.dropdown-ul {
+.ui-menu {
   list-style-type: none;
 }
 /* line 175, ../sass/partials/_gather_info.scss */
-.dropdown-ul li {
+.ui-menu li {
   width: 100%;
   padding-left: 10px;
   padding-top: 5px;
@@ -1596,19 +1596,19 @@ body, html {
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
 /* line 183, ../sass/partials/_gather_info.scss */
-.dropdown-ul li a .autocomplete-name {
+.ui-menu li a .autocomplete-name {
   text-shadow: white 0px 1px 1px;
   font-size: 13px;
   color: #969696;
 }
 /* line 188, ../sass/partials/_gather_info.scss */
-.dropdown-ul li a .autocomplete-detail {
+.ui-menu li a .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px;
   color: #bbbbbb;
 }
 /* line 193, ../sass/partials/_gather_info.scss */
-.dropdown-ul li a .autocomplete-detail {
+.ui-menu li a .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px;
   color: #bbbbbb;
