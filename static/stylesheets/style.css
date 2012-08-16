@@ -1056,15 +1056,12 @@ body, html {
 
 /* line 31, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper {
-  height: 412px;
-  width: 320px;
   margin: 0 auto;
   position: absolute;
 }
 /* line 38, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper header {
   background-image: url("../images/blank_header.png");
-  width: 320px;
   height: 43px;
   position: fixed;
   top: 0px;
@@ -1102,6 +1099,9 @@ body, html {
 .photo img {
   position: relative;
   vertical-align: top;
+  width:100%;
+  height: auto !important;
+
 }
 
 /* line 74, ../sass/partials/_photo_grid.scss */
@@ -1596,11 +1596,11 @@ body, html {
 }
 
 /* line 173, ../sass/partials/_gather_info.scss */
-.dropdown-ul {
+.ui-menu {
   list-style-type: none;
 }
 /* line 175, ../sass/partials/_gather_info.scss */
-.dropdown-ul li {
+.ui-menu li {
   width: 100%;
   padding-left: 10px;
   padding-top: 5px;
@@ -1613,19 +1613,19 @@ body, html {
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
 /* line 183, ../sass/partials/_gather_info.scss */
-.dropdown-ul li a .autocomplete-name {
+.ui-menu li a .autocomplete-name {
   text-shadow: white 0px 1px 1px;
   font-size: 13px;
   color: #969696;
 }
 /* line 188, ../sass/partials/_gather_info.scss */
-.dropdown-ul li a .autocomplete-detail {
+.ui-menu li a .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px;
   color: #bbbbbb;
 }
 /* line 193, ../sass/partials/_gather_info.scss */
-.dropdown-ul li a .autocomplete-detail {
+.ui-menu li a .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px;
   color: #bbbbbb;
