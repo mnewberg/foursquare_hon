@@ -29,15 +29,14 @@ body, html{
 	position: fixed;
 }
 #photo_grid_wrapper{
-	
-	height:412px;
-	width:320px;
+	//height:412px;
+	//width:320px;
 	margin:0 auto;
 	position:absolute;
 
 	header{
 		background-image:url('../images/blank_header.png');
-		width:320px;
+		//width:320px;
 		height:43px;
 		position:fixed;
 		top:0px;
@@ -68,6 +67,8 @@ body, html{
 	img{
 		position: relative;
 		vertical-align: top;
+		width:100%;
+  		height: auto !important;
 	}
 }
 
