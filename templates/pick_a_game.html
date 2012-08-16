@@ -31,16 +31,22 @@
 </div>
 		</div>
 		<div id="footer">
+			<form action="/outreach" method="post">
 			<div id="select">
 				<div id="pick_a_game">Pick a game</div>
-				<select>
-					<option value="value1">value1</option>
-					<option value="value1">value2</option>
-					<option value="value1">value3</option>
+				<select name="game_id">
+				  {% for game in games %}
+				  <option value="{{game.gid}}">{{game.name}}</option>
+				  {% endfor %}
 				</select>
 			</div>
-			
-			<div id="send_button">Send</div>
+			<input type="hidden" value="{{venue_id}}" name="venue_id">
+			<input type="hidden" value="{{t_handle}}" name="t_handle">
+			<input type="hidden" value="{{f_name}}" name="f_name">
+			<input type="hidden" value="{{t_pic}}" name="t_pic">
+
+			{% csrf_token %}
+			<input type="submit" id="send_button" onclick="mixpanel.track('sent-invite')">Send</input>
 		</div>
 	</div>
 </body>
