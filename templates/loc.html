@@ -325,8 +325,27 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 </div>
 <div id="link"></div>
 </div>
-
 				</div>
+				<div data-role="page" id="loading">
+				  <div data-role="content">
+				
+				<div id="fixed_bg"></div>
+				<div id="loading_wrapper">
+					<header>
+						<div id="logo"></div>
+					</header>
+					<div id="table">
+						<div id="table-cell">
+							<div id="spinner"></div>
+							<div id="finding">
+								<div class="text">Finding nearby people...</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				
 		<div data-role="page" id="newgallery">
 		  <div data-role="content" id="thegallery">
 			<div id="fixed_bg"></div>
