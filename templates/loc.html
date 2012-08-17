@@ -199,7 +199,7 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 var ajaxOK = true;
 $(window).on('scroll', function () { 
 if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height()) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
-ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};document.getElementById('the_grid').innerHTML+=newhtml;ajaxOK=true;})}})
+ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};document.getElementById('the_grid').innerHTML+=newhtml;ajaxOK=true;$('.photo').fadeIn('slow')})}})
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
