@@ -274,7 +274,6 @@ def outreach(request):
     params = {}
     params.update(csrf(request))
     
-    #message=request.POST['message']
     game_id=request.POST['game_id']
     t_handle=request.POST['t_handle']
     venue=request.POST['venue_id']
@@ -284,7 +283,8 @@ def outreach(request):
     uid=random_string(5)
     
     thegame=game.objects.get(gid=game_id)
-    
+    message='N/A'
+
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     if datarget.unsubscribed==True or sender in datarget.blocks.all():

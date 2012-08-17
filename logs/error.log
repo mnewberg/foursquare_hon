@@ -7610,3 +7610,12 @@
 [Fri Aug 17 09:32:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Fri Aug 17 10:54:23 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
 [Fri Aug 17 11:00:26 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 17 10:33:16 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 17 10:33:16 2012] [warn] RSA server certificate CommonName (CN) `playdo.pe' does NOT match server name!?
+[Fri Aug 17 13:08:39 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 17 13:09:25 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 17 13:13:33 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 17 13:25:13 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Fri Aug 17 13:26:15 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blaheader.png, referer: http://playdo.pe/loc/?code=VVVQ33TPLV2OI3W0YUKDYW1UFJWDENGPVDRB11IOJS3HYGDX
+[Fri Aug 17 13:26:15 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blanheader.png, referer: http://playdo.pe/loc/?code=VVVQ33TPLV2OI3W0YUKDYW1UFJWDENGPVDRB11IOJS3HYGDX
+[Fri Aug 17 13:26:16 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blankheader.png, referer: http://playdo.pe/loc/?code=VVVQ33TPLV2OI3W0YUKDYW1UFJWDENGPVDRB11IOJS3HYGDX

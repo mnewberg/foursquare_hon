@@ -163,13 +163,12 @@ def new_nearby(key,the_id,lat,lon):
 				if len(found)<=10:
 					p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
 				else:
-					pass
-				try:
-					s = SessionStore(session_key=key)
-					s['chickpix'].append(chickpix[fsq_id])
-					s.save()
-				except:
-					logger.error('chickpix',exc_info=True,extra={'stack':True,})
+					try:
+						s = SessionStore(session_key=key)
+						s['chickpix'].append(chickpix[fsq_id])
+						s.save()
+					except:
+						logger.error('chickpix',exc_info=True,extra={'stack':True,})
 				try:
 					user_lookup.objects.create(first_name=fname,fsq_id=fsq_id,pic_id=pic_id,t_handle=twitter)
 				except:

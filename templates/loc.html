@@ -291,9 +291,11 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 	</head>
 	<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 		<div data-role="page" id="main">
-			<div data-role="content">	
-				<header></header>
-<div id="fixed_bg"></div>
+			<div data-role="content">
+			  <div id="fixed_bg"></div>
+			  <header>
+			    <div id="logo"></div>
+			    </header>
 				<div id="info_box">
 					<div id="exclamation"></div>
 					<div class="text">
@@ -303,14 +305,11 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 	<input id="venue" />
 	<div>Venue name</div>
 </div>
-	<div id="venue-dropdown-wrapper">
-	<div class="arrow-up"></div>
-	<div id="venue-dropdown">
         <input type="hidden" id="venue-id"/>
         <div id="venue-name" class="autocomplete-name"></div>
         <div id="venue-address" class="autocomplete-detail"></div>
 	<div id="venue-cityLine" class="autocomplete-detail"></div>
-	</div>
+
 <!-- <div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div> -->
 {% if not twitter %}
 <div class="info_header">Twitter handle</div>
@@ -328,24 +327,6 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 </div>
 
 				</div>
-				<div data-role="page" id="loading">
-				  <div data-role="content">
-				<div id="loading_wrapper">
-					<header>
-						<div id="logo"></div>
-					</header>
-					<div id="table">
-						<div id="table-cell">
-							<div id="spinner"></div>
-							<div id="finding">
-								<div class="text">Finding nearby people...</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				</div>
-				</div>
-
 		<div data-role="page" id="newgallery">
 		  <div data-role="content" id="thegallery">
 			<div id="fixed_bg"></div>
