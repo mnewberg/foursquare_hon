@@ -27,6 +27,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import time
 import tweepy
+import logging 
 
 authenticator = psq.FSAuthenticator(settings.CLIENT_ID, settings.CLIENT_SECRET, settings.CALLBACK_URL)
 consumer_key=settings.CONSUMER_KEY
@@ -36,6 +37,7 @@ access_token_secret=settings.ACCESS_TOKEN_SECRET
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
+logger=logging.getLogger('django.request')
 
 
 def postrecv(request):
@@ -296,6 +298,7 @@ def outreach(request):
     if tweet_response:
         return HttpResponse(simplejson.dumps({'error':False}), mimetype='application/json')
     else:
+        logger.error('There was a twitter error', exc_info=True, extra={'stack': True})
         return HttpResponse(simplejson.dumps({'error':True,'optout':False}),mimetype='application/json')
 
 def onboard(request, uid):
