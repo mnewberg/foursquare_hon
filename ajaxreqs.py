@@ -104,10 +104,12 @@ def new_nearby(key,the_id,lat,lon):
 				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
 				if len(found)<=10:
 					p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
-					if len(found)==0:
+					if len(found)==1:
 						s = SessionStore(session_key=key)
 						s['chickpix']=[]
 						s.save()
+					else:
+						pass
 				else:
 					try:
 						s = SessionStore(session_key=key)
@@ -120,8 +122,7 @@ def new_nearby(key,the_id,lat,lon):
 				except:
 					pass
 			except:
-					logger.error('There was a parsing error', exc_info=True, extra={'stack': True,'url':i.entities['urls']})
-
+				pass
 		else:
 			pass
 	return 'Ok'
