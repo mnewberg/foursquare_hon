@@ -175,12 +175,6 @@ margin-bottom: -90px;
 </style>
 
 	     <script>
-	
-// $(window).scroll(function () { 
-//   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
-// 	$('photo').fadeIn('slow')
-//   }
-// });
 
 	
 var pusher = new Pusher('890abd57f862ab2712ff');
@@ -281,10 +275,6 @@ log(message);
         });
     };
 					
-$("#missingnumber").live('pageinit',function() {
-$('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');});
-
-
 function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'}){% endif %}{% if not twitter %}$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}{% if not phone %}$.post('/phone/',{'twitter':document.getElementById('phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %} }
 
 
