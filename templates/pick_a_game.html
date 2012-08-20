@@ -29,10 +29,10 @@ $('#select').textinput({ preventFocusZoom: true });
 			Play with {{f_name}}!
 		</header>
 		<div id="picture" style="background: url('https://is1.4sqi.net/userpix/{{t_pic}}') no-repeat center;background-size:100%;background-position-y:30%;">
-			<div id="name">{% if topics %}Interests: {% for topic in topics|slice:":5" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
+			<div id="name">{% if topics %}Likes: {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
 		</div>
 		<div id="interests">
-			<div class="text">About {{f_name}}: {{t_bio}}
+			<div class="text"><b>About me:</b> {{t_bio}}
 </div>
 		</div>
 		<div id="footer">

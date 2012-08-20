@@ -52,7 +52,4 @@ urlpatterns = patterns('',
      url(r'^nudge$','sms.text.nudge'),
      url(r'^textall$','sms.text.endgame'),
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^simon/','sms.text.xml'),
-     url(r'^tts/','sms.text.simon'),
-     url(r'^simon2$','sms.text.simon2'),
 )

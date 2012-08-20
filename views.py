@@ -288,17 +288,15 @@ def outreach(request):
     datarget=user_lookup.objects.get(pic_id=request.POST['t_pic'])
     sender=user.objects.get(fsq_id=request.session['fsq_id'])
     if datarget.unsubscribed==True or sender in datarget.blocks.all():
-        return render_to_respons('error.html')
+        return HttpResponse(simplejson.dumps({'error':True,'optout':True}),mimetype='application/json')
     else:
         pass
     twitter_outreach.objects.create(m_target=datarget, sender=sender,game=thegame, uid=uid, message=message, read=False, venue_id=venue)
     tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid)
-    if tweet_response and sender.phone:
-        return render_to_response('sent.html')
-    elif not sender.phone:
-        return render_to_response('missing.html', {'csrf':params,'role':'sender'}, context_instance=RequestContext(request))
+    if tweet_response:
+        return HttpResponse(simplejson.dumps({'error':False}), mimetype='application/json')
     else:
-        return render_to_response('error.html')
+        return HttpResponse(simplejson.dumps({'error':True,'optout':False}),mimetype='application/json')
 
 def onboard(request, uid):
     user_agent = get_user_agent(request)

@@ -270,6 +270,7 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
                 $("#venue-id").val(ui.item.id);
                 $("#venue-address").html(ui.item.address);
                 $("#venue-cityLine").html(ui.item.cityLine);
+                $("#venue-icon").attr("src", ui.item.photo);
                 return false;
             },
             'onError' : function (errorCode, errorType, errorDetail) {
@@ -306,11 +307,12 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 	<div>Venue name</div>
 </div>
 <div id="venue-dropdown-wrapper">
-	<div class="arrow-up"></div>
-	<div id="venue-dropdown">
-		<ul></ul>
-	</div>
-
+<div class="arrow-up"></div>
+<div id="venue-dropdown">
+        <input type="hidden" id="venue-id"/>
+        <div id="venue-name" class="autocomplete-name"></div>
+        <div id="venue-address" class="autocomplete-detail"></div>
+	<div id="venue-cityLine" class="autocomplete-detail"></div>
 </div>
 <!-- <div><input type="submit" value="Check in!" onclick=$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'})></div> -->
 {% if not twitter %}
