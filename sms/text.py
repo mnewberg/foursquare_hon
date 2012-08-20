@@ -20,22 +20,6 @@ def transcribe(request):
 	print sid, text, url
 	return HttpResponse('ok')
 
-def simon2(request):
-	client.calls.create(from_="+13109123101", to="+14158952957", url="http://staging.tryfourplay.com/static/play.xml")
-	return HttpResponse('ok')
-
-def simon(request):
-	return render_to_response('simon2.html')
-
-def xml(request):
-	voice=request.GET['voice']
-	text=re.sub(' ','%20',request.GET['text'])
-	document=open('/var/www/four_staging/foursquare/static/media/test.xml','w')
-	document.write("""<?xml version=\"1.0\" encoding=\"utf-8\"?><Response>
-<Play>http://api.ispeech.org/api/rest?apikey=44ce84e83a1f4e7f676d058a3f6c921a&amp;action=convert&amp;text="""+text+"""&amp;voice="""+voice+"""&amp;format=wav</Play>
-</Response>""")
-	document.close()
-	return HttpResponse('done')
 
 
 def advanceDID(phone):
@@ -122,10 +106,10 @@ def endgame(request):
 		other_user_status='lost :( . How about buying '+logged_in_name+' a drink nearby at '+venue_names[0]+'?'
 	else:
 		logged_in_status='lost :( . How about buying '+other_user_name+' a drink nearby at '+venue_names[1]+'?'
-		other_user_status='beat '+logged_in_name+'!!All messages sent to this # for the next hour will go to '+other_user_name+'.'
+		other_user_status='beat '+logged_in_name+'!! All messages sent to this # for the next hour will go to '+other_user_name+'.'
 
-	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="Game over, you " +logged_in_status)
-	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="Game over, you "+other_user_status)
+	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="*Message from playdo.pe* Game over, you " +logged_in_status)
+	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="*Message from playdo.pe* Game over, you "+other_user_status)
 	return HttpResponse('success')
 
 def nudge(request):
@@ -135,10 +119,10 @@ def nudge(request):
 	other_user=t.sender
 	if 'uid' not in request.session:	
 		outgoing=routing.objects.get(recipient=logged_in_user.phone,sender=other_user.phone)
-		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body=other_user.first_name + " is waiting to play with you at http://playdo.pe/game/"+uid)
+		message=client.sms.messages.create(to=logged_in_user.phone, from_=outgoing.DID.DID,body='Hey, playdo.pe here, '+other_user.first_name + " is waiting to play with you right now at http://playdo.pe/game/"+uid)
 		status='logged in user'
 	else:
 		outgoing=routing.objects.get(recipient=other_user.phone,sender=logged_in_user.phone)
-		message=client.sms.messages.create(to=other_user.phone, from_=outgoing.DID.DID,body=logged_in_user.first_name + " is waiting to play with you at http://playdo.pe/game/"+uid)
+		message=client.sms.messages.create(to=other_user.phone, from_=outgoing.DID.DID,body='Hey, playdo.pe here, '+logged_in_user.first_name + " is waiting to play with you right now at http://playdo.pe/game/"+uid)
 		status='logged out user'
 	return HttpResponse(status)
