@@ -63,64 +63,6 @@ def ajaxreq(request):
 	return HttpResponse('OK!')
     
 @postpone
-def nearby(fsq_id,lat,lon):
-    p = pusher.Pusher()
-    u=user.objects.get(fsq_id=fsq_id)
-    token = u.token
-    trending=authenticator.query("/venues/trending", token, {'ll':str(lat)+','+str(lon)})
-    trending_venues={}
-    nearby_venues={}
-    for item in trending['venues']:
-        try:
-            trending_venues[item['id']]=item['name']
-        except:
-            pass
-    radius='2000'
-    all_nearby = authenticator.query("/venues/search", token, {'ll':str(lat)+','+str(lon), 'limit':50, 'intent':'browse', 'radius':radius})
-    i=0
-    for item in all_nearby['venues']:
-        if item['hereNow']['count']>0:
-            nearby_venues[item['id']]=item['name']
-    for item in set(nearby_venues).intersection(set(trending_venues)):
-            del nearby_venues[item]
-    all_venues_nearby = nearby_venues.items() + trending_venues.items()
-    venue_names=[]
-    chickpix={}
-    backpix={}
-    herenow=[]
-    v_ids=[]
-    i=0
-    n=0
-
-
-    for venue in all_venues_nearby:
-            herenow.append(authenticator.query("/venues/"+venue[0]+"/herenow",token))
-            v_ids.append(venue[0])
-            herenow[i]['hereNow']['venueName']=venue[1][0]
-            i = i+1
-    p['chickpix-'+token].trigger('done','')
-    for item in herenow:
-            venueName=item['hereNow']['venueName']
-            for entry in item['hereNow']['items']:
-                  the_id=entry['user']['id']
-                  query = finder.findUser(token, the_id)
-                  twitter=query.twitter()
-                  if entry['user']['photo'].startswith("https://foursquare.com/img/"):
-                          pass
-                  elif twitter:
-                      chickpix[the_id]=[entry['user']['photo'][36:],entry['user']['firstName'],venueName.split('-')[0],v_ids[n],twitter]
-                      p['chickpix-'+token].trigger('image',{'entry':chickpix[the_id]})                   
-		      n+=1
-                  try:
-                      user_lookup.objects.create(first_name=entry['user']['firstName'],fsq_id=entry['user']['id'],pic_id=entry['user']['photo'][36:],t_handle=twitter)
-                  except:
-                      pass
-    ## nobody nearby
-    if n==0:
-	    p['chickpix-'+token].trigger('crickets','')
-    return 'Ok'
-
-@postpone
 def new_nearby(key,the_id,lat,lon):
 	p = pusher.Pusher()
 	p['error'].trigger('hit','')
@@ -162,6 +104,10 @@ def new_nearby(key,the_id,lat,lon):
 				chickpix[fsq_id]=[pic_id,fname,venue_name.split('-')[0],venue_id,twitter]
 				if len(found)<=10:
 					p['chickpix-'+token].trigger('image',{'entry':chickpix[fsq_id]})
+					if len(found)==0:
+						s = SessionStore(session_key=key)
+						s['chickpix']=[]
+						s.save()
 				else:
 					try:
 						s = SessionStore(session_key=key)
