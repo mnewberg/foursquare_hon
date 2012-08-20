@@ -189,7 +189,7 @@ var gallerybody = ""
 
 {% if from_4app %}
 $(document).ready(function(){$.mobile.changePage('#loading')})
-channel.bind('done',function(){alert('we ready');$.mobile.changePage('#newgallery')})
+channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){$('#button')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
 {% endif %}
