@@ -123,7 +123,7 @@ def new_nearby(key,the_id,lat,lon):
 				pass
 		else:
 			pass
-		logger.error('testin',exc_info=True,extra{'stack':True,'chickpix':chickpix,})
+	logger.error('testin',exc_info=True,extra={'stack':True,'chickpix':chickpix,})
 	return 'Ok'
 
 
