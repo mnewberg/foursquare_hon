@@ -175,12 +175,6 @@ margin-bottom: -90px;
 </style>
 
 	     <script>
-	
-// $(window).scroll(function () { 
-//   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
-// 	$('photo').fadeIn('slow')
-//   }
-// });
 
 	
 var pusher = new Pusher('890abd57f862ab2712ff');
@@ -189,7 +183,7 @@ var gallerybody = ""
 
 {% if from_4app %}
 $(document).ready(function(){$.mobile.changePage('#loading')})
-channel.bind('done',function(){alert('we ready');$.mobile.changePage('#newgallery')})
+channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){$('#button')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
 {% endif %}
@@ -200,7 +194,13 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 var ajaxOK = true;
 $(window).on('scroll', function () { 
 if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height()) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
-ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};document.getElementById('the_grid').innerHTML+=newhtml;ajaxOK=true;$('.photo').fadeIn('slow')})}})
+ajaxOK=false; $.get("/getpage",function(data){
+		    var newhtml=[]; 
+		    for (key in data.d){
+		    newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};
+		    $('#the_grid')[0].innerHTML+=newhtml;
+		    if (data.done){ajaxOK=false;}else{$('div[name=profile]').load(function(){$('.photo').delay(1000).fadeIn(1000);ajaxOK=true;})}}
+		    )}})
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
@@ -280,12 +280,9 @@ log(message);
             
         });
     };
-					
-$("#missingnumber").live('pageinit',function() {
-$('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');});
 
 
-function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'}){% endif %}{% if not twitter %}$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}{% if not phone %}$.post('/phone/',{'twitter':document.getElementById('phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %} }
+function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'}){% endif %}{% if not twitter %}$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}{% if not phone %}$.post('/phone/',{'twitter':document.getElementById('phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}}
 
 
 	    </script>  
