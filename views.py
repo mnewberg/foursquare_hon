@@ -204,8 +204,9 @@ def second(request):
 ##RETURNING USER
       elif invite_codes.objects.filter(code=invite_code).count()==1:
 		request.session['fsq_id']=f_id
-		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
-                welcome_email(query.email(),query.first_name())
+		u=user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
+                welcome_email(u.email(),u.first_name())
+                authenticator.query("/users/6478/request",u.token,None)
                 invite_codes.objects.get(code=invite_code).delete()
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token,'phone':query.phone(), 'twitter':query.twitter(),'recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
       elif queue.objects.filter(fsq_id=query.id()).count()==0:
