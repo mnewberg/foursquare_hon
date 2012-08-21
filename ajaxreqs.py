@@ -71,7 +71,6 @@ def new_nearby(key,the_id,lat,lon):
 	u=user.objects.get(fsq_id=the_id)
 	token=u.token
 	found=[]
-	logger.error('before loop')
 	chickpix={}
 
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
@@ -124,6 +123,7 @@ def new_nearby(key,the_id,lat,lon):
 				pass
 		else:
 			pass
+		logger.error('testin',exc_info=True,extra{'stack':True,'chickpix':chickpix,})
 	return 'Ok'
 
 
