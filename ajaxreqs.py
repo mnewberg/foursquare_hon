@@ -76,8 +76,7 @@ def new_nearby(key,the_id,lat,lon):
 
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
 		try: 
-			e=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])
-			d=e[0]['long_url']
+			d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
 		except:
 			logger.error('There was a bitly error', exc_info=True, extra={'stack': True,'url':i.entities['urls'][0]['expanded_url']})
 		if i.from_user not in found:
