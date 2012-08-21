@@ -5,8 +5,6 @@
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/on_board_ui.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
-		<script src="http://fgnass.github.com/spin.js/dist/spin.min.js"></script>
-		<!-- // <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script> -->
 <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
 		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/4sqacplugin.js"></script>
@@ -14,9 +12,6 @@
 
 		<link Href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
 		<link rel="stylesheet" href="../static/stylesheets/jquery.mobile.structure-1.1.1.css" />
-
-		
-	<!--<link rel="stylesheet" href="http://staging.tryfourplay.com/static/css/customswatch.css" /> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<meta name="apple-touch-fullscreen" content="YES" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,22 +132,6 @@ align:center;
 }
 
 
-.overflow{
-         width:200px;
-         overflow:hidden;
-
-}
-
-.dialog_image{
-max-width:400px;}
-
-.poptitle{
-font-size:16px;}
-
-.ribbon{
-visibility:hidden;
-}
-
 }
 #image img {
 position:relative;
@@ -168,15 +147,10 @@ bottom:100px;
 width:100%
 }
 
-#image {
-margin-bottom: -90px;
-}
 
 </style>
 
 	     <script>
-
-	
 var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix-{{token}}')
 var gallerybody = ""
@@ -193,14 +167,11 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 //infinite scroll
 var ajaxOK = true;
 $(window).on('scroll', function () { 
-if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height()) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
-ajaxOK=false; $.get("/getpage",function(data){
-		    var newhtml=[]; 
-		    for (key in data.d){
-		    newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};
-		    $('#the_grid')[0].innerHTML+=newhtml;
-		    if (data.done){ajaxOK=false;}else{$('div[name=profile]').load(function(){$('.photo').delay(1000).fadeIn(1000);ajaxOK=true;})}}
-		    )}})
+if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
+ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader></div>');if (data.done){ajaxOK=false}else{$('div[name=profile]').load(function(){$('#loader')[0].innerHTML='loading...'});ajaxOK=true};$('.photo').fadeIn('slow')})}})
+
+
+$('div[name=profile]').load(function(){$('.photo').delay(1000).fadeIn(1000);
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
