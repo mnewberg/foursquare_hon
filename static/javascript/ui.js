@@ -105,6 +105,7 @@ function game_over(){
 }
 
 function waiting_room_to_game(){
+	$('#game').show();
 	$('#game').animate({
     	opacity: 1
     });

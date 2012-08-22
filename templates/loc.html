@@ -151,15 +151,13 @@ width:100%
 </style>
 
 	     <script>
-	
-	
 var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix-{{token}}')
 var gallerybody = ""
 
 {% if from_4app %}
 $(document).ready(function(){$.mobile.changePage('#loading')})
-channel.bind('done',function(){alert('we ready');$.mobile.changePage('#newgallery')})
+channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){$('#button')[0].innerHTML='<a href=#newgallery>Ready!</a>'});
 {% endif %}
@@ -170,7 +168,8 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 var ajaxOK = true;
 $(window).on('scroll', function () { 
 if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
-ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div style="float:bottom; padding-top:50px;" class=loader>Loading...</div>');if (data.done){ajaxOK=false}else{$('img[name=profile]').load(function(){$('.loader').hide()});ajaxOK=true};$('.photo').fadeIn('slow')})}})
+ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader></div>');if (data.done){ajaxOK=false}else{$('img[name=profile]').load(function(){$('#loader')[0].innerHTML='loading'});ajaxOK=true};$('.photo').fadeIn('slow')})}})
+>>>>>>> 7e0c7cbb76a0308c419e390e5e8211a3d8c846a6
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
@@ -251,7 +250,7 @@ log(message);
         });
     };
 
-function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'}){% endif %}{% if not twitter %}$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}{% if not phone %}$.post('/phone/',{'twitter':document.getElementById('phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %} }
+function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'}){% endif %}{% if not twitter %}$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}{% if not phone %}$.post('/phone/',{'twitter':document.getElementById('phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}){% endif %}}
 
 
 	    </script>  

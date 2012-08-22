@@ -83,7 +83,7 @@
     $.foursquareAutocomplete.defaultOptions = {
         'latitude': 47.22,
         'longitude': -122.2,
-        'oauth_token': "",
+        'oauth_token': "SLAKULNNSIJH1RCYGNM0NMJMLHXSD3MDFSQNYCVFGTY4BQCW",
         'minLength': 3,
         'select': function (event, ui) {},
         'onError': function (errorCode, errorType, errorDetail) {},
