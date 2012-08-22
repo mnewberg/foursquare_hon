@@ -1919,8 +1919,6 @@ body, html {
 /* line 2, ../sass/partials/_thanks.scss */
 #thanks_wrapper {
   text-align: center;
-  height: 412px;
-  width: 320px;
   margin: 0 auto;
   position: absolute;
 }
