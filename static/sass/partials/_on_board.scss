@@ -126,6 +126,33 @@ header{
 	z-index:1;
 }
 
+#black_bubble{
+	@include border-radius(10px);
+	@include white_font();
+	font-size:14px;
+	font-weight:normal;
+	padding-left:10px;
+	padding-right:10px;
+	background-color:rgba(0,0,0,.55);
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	display:inline-block;
+	position:absolute;
+	right:25px;
+	top:15px;
+
+	&:after{
+		content:'';
+		display:block;
+		background-image:url('../images/on_board_speech_arrow.png');
+		width:21px;
+		height:17px;
+		right:18px;
+		position:absolute;
+	}
+}
+
 #punch_out{
 	background-image:url('../images/punch_out.png');
 	width:320px;
