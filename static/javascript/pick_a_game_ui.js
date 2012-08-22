@@ -1,5 +1,8 @@
 $(document).ready(function() {
-	//show_modal();
+	$('#game_select').change( function() {
+		var value = $(this).val();
+	    $('#pick_a_game').html(value);
+	});
 });
 
 

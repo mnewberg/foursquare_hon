@@ -6,7 +6,7 @@
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/pick_a_game_ui.js"></script>
 <script>
-$('#select').textinput({ preventFocusZoom: true });
+//$('#select').textinput({ preventFocusZoom: true });
 </script>
 </head> 
 <body>
@@ -39,8 +39,9 @@ $('#select').textinput({ preventFocusZoom: true });
 			<form action="/outreach" method="post">
 			<div id="select">
 				<div id="pick_a_game">Pick a game</div>
-				<select name="game_id">
+				<select name="game_id" id="game_select">
 				  {% for game in games %}
+				  <option value="Pick a game">Pick a game</option>
 				  <option value="{{game.gid}}">{{game.name}}</option>
 				  {% endfor %}
 				</select>
@@ -52,6 +53,7 @@ $('#select').textinput({ preventFocusZoom: true });
 
 			{% csrf_token %}
 			<div id="send_button" onclick="$.post('/outreach',{'venue_id':'{{venue_id}}','t_handle':'{{t_handle}}','f_name':'{{f_name}}','t_pic':'{{t_pic}}','game_id':document.getElementsByName('game_id')[0].value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value}, function(data){if (data.error && data.optout == false){$('#status')[0].innerHTML='Uh oh! Looks like there was a problem inviting, please try again in a few minutes';$('#statust').hide();}else if(data.error && data.optout){$('#status')[0].innerHTML='Looks like this person doesn\'t want to receive invitations, please try someone else!';$('#statust').hide();}else{error=false;}});$('#pick_a_game_modal').show();">Send</div>
+		</form>
 		</div>
 	</div>
 </body>
