@@ -1599,6 +1599,10 @@ body, html {
   top: 5px;
 }
 /* line 83, ../sass/partials/_gather_info.scss */
+#info_box .input input#twitter {
+  text-indent: 28px;
+}
+/* line 87, ../sass/partials/_gather_info.scss */
 #info_box .input div {
   color: #c4c4c4;
   font-size: 14px;
@@ -1610,7 +1614,7 @@ body, html {
   text-indent: 10px;
 }
 
-/* line 96, ../sass/partials/_gather_info.scss */
+/* line 100, ../sass/partials/_gather_info.scss */
 #exclamation {
   background-image: url("../images/exclamation.png");
   width: 38px;
@@ -1621,7 +1625,7 @@ body, html {
   margin-bottom: -18px;
 }
 
-/* line 105, ../sass/partials/_gather_info.scss */
+/* line 109, ../sass/partials/_gather_info.scss */
 #send_button {
   background-image: url("../images/send_button.png");
   width: 63px;
@@ -1637,7 +1641,7 @@ body, html {
   cursor: pointer;
 }
 
-/* line 117, ../sass/partials/_gather_info.scss */
+/* line 121, ../sass/partials/_gather_info.scss */
 .info_header {
   font-family: Helvetica, Arial;
   font-weight: bold;
@@ -1646,7 +1650,7 @@ body, html {
   margin-bottom: 15px;
 }
 
-/* line 121, ../sass/partials/_gather_info.scss */
+/* line 125, ../sass/partials/_gather_info.scss */
 #button {
   background: url("../images/button_middle.png") repeat;
   display: inline-block;
@@ -1661,7 +1665,7 @@ body, html {
   margin: 0 auto;
   margin-top: 11px;
 }
-/* line 132, ../sass/partials/_gather_info.scss */
+/* line 136, ../sass/partials/_gather_info.scss */
 #button:before {
   content: '';
   display: block;
@@ -1672,7 +1676,7 @@ body, html {
   position: absolute;
   left: -12px;
 }
-/* line 142, ../sass/partials/_gather_info.scss */
+/* line 146, ../sass/partials/_gather_info.scss */
 #button:after {
   content: '';
   display: block;
@@ -1686,7 +1690,7 @@ body, html {
   top: 0px;
 }
 
-/* line 156, ../sass/partials/_gather_info.scss */
+/* line 160, ../sass/partials/_gather_info.scss */
 #venue-dropdown-wrapper {
   display: inline-block;
   position: absolute;
@@ -1695,7 +1699,7 @@ body, html {
   width: 100%;
 }
 
-/* line 163, ../sass/partials/_gather_info.scss */
+/* line 167, ../sass/partials/_gather_info.scss */
 #venue-dropdown {
   width: 198px;
   margin: 0 auto;
@@ -1712,7 +1716,7 @@ body, html {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px;
 }
 
-/* line 172, ../sass/partials/_gather_info.scss */
+/* line 176, ../sass/partials/_gather_info.scss */
 .arrow-up {
   margin: 0 auto;
   width: 0;
@@ -1722,11 +1726,11 @@ body, html {
   border-bottom: 3px solid #cbcbcb;
 }
 
-/* line 182, ../sass/partials/_gather_info.scss */
+/* line 186, ../sass/partials/_gather_info.scss */
 .ui-menu {
   list-style-type: none;
 }
-/* line 184, ../sass/partials/_gather_info.scss */
+/* line 188, ../sass/partials/_gather_info.scss */
 .ui-menu li {
   width: 100%;
   padding-left: 10px;
@@ -1739,23 +1743,23 @@ body, html {
   background: -ms-linear-gradient(#fcfcfc, #f6f6f6);
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
-/* line 191, ../sass/partials/_gather_info.scss */
+/* line 195, ../sass/partials/_gather_info.scss */
 .ui-menu li a {
   text-decoration: none;
 }
-/* line 194, ../sass/partials/_gather_info.scss */
+/* line 198, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-name {
   text-shadow: white 0px 1px 1px;
   font-size: 13px !important;
   color: #969696 !important;
 }
-/* line 199, ../sass/partials/_gather_info.scss */
+/* line 203, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;
   color: #bbbbbb !important;
 }
-/* line 204, ../sass/partials/_gather_info.scss */
+/* line 208, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;

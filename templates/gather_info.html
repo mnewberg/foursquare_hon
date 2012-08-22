@@ -3,13 +3,18 @@
 	<head> 
 	<title>Playdope</title> 
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	
 	<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/4sqacplugin.js"></script>
-		 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		 
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
+
+		<script type="text/javascript" src="../static/javascript/gather_info.js"></script>
 		
 	<script type="text/javascript">
-	function lookup() {
+	/*function lookup() {
 		$("#venue").foursquareAutocomplete({
 	            'latitude': 40.7,
 	            'longitude': -74,
@@ -23,7 +28,7 @@
 	                return false;
 	            },
 	            'onError' : function (errorCode, errorType, errorDetail) { var message = "Foursquare Error: Code=" + errorCode + ", errorType= " + errorType + ", errorDetail= " + errorDetail;
-					log(message);} });  };
+					log(message);} });  };*/
 		
 	</script>
 </head> 
@@ -39,21 +44,21 @@
 			<div class="text">
 				<div class="info_header">Where are you?</div>
 				<div class="input">
-					<input type="text" />
+					<input type="text" id="venue" />
 					<div>Venue name</div>
 				</div>
-				<div class="info_header">Where are you?</div>
+				<div class="info_header">Phone number?</div>
 				<div class="input">
-					<input type="text" />
-					<div>Venue name</div>
+					<input type="tel" id="tel" />
+					<div>555-555-5555</div>
 				</div>
-				<div class="info_header">Where are you?</div>
+				<div class="info_header">Twitter handle?</div>
 				<div class="input">
-					<input type="text" />
-					<div>Venue name</div>
+					<input type="text" id="twitter" />
+					<div>@</div>
 				</div>
 			</div>
-			<div id="venue-dropdown-wrapper">
+			<div id="venue-dropdown-wrapper" style="display:none;">
 			<div class="arrow-up"></div>
 			<div id="venue-dropdown">
 
