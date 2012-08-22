@@ -145,9 +145,12 @@ def second(request):
       showmessage=True
       params = {}
       params.update(csrf(request))
-      if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
-          recentcheckin=True
-      else:
+      try:
+          if time.time()-query.data['checkins']['items'][0]['createdAt'] < 3600:
+              recentcheckin=True
+          else:
+              recentcheckin=False
+      except:
           recentcheckin=False
       if 'uid' in request.session:
             uidsesh=True
