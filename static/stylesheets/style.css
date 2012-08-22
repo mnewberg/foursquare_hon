@@ -778,47 +778,30 @@ body a {
   position: absolute;
   overflow: hidden;
 }
+
 /* line 31, ../sass/partials/_on_board.scss */
-#on_board_wrapper header {
-  background-image: url("../images/blank_header.png");
-  width: 320px;
+header {
+  background-image: url("../images/header.png");
+  width: 100%;
   height: 43px;
   position: relative;
   top: 0px;
   z-index: 2;
-  line-height: 38px;
-  text-align: center;
-  font-family: Helvetica, Arial;
-  font-weight: bold;
-  color: #f8f2f2;
-  text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 1px;
 }
 
-/* line 43, ../sass/partials/_on_board.scss */
-#logo {
-  width: 101px;
-  height: 25px;
-  margin: 0 auto;
-  background-image: url("../images/logo.png");
-  background-repeat: no-repeat;
-  position: relative;
-  top: 8px;
-  z-index: 99;
-}
-
-/* line 53, ../sass/partials/_on_board.scss */
+/* line 39, ../sass/partials/_on_board.scss */
 #screens {
   width: 640px;
   height: 150px;
 }
 
-/* line 57, ../sass/partials/_on_board.scss */
+/* line 43, ../sass/partials/_on_board.scss */
 #screen_1 {
   float: left;
   width: 320px;
   height: 147px;
 }
-/* line 62, ../sass/partials/_on_board.scss */
+/* line 48, ../sass/partials/_on_board.scss */
 #screen_1 #scene_1 #input {
   background: url("../images/input.png") no-repeat;
   width: 200px;
@@ -827,7 +810,7 @@ body a {
   margin: 0 auto;
   top: 30px;
 }
-/* line 70, ../sass/partials/_on_board.scss */
+/* line 56, ../sass/partials/_on_board.scss */
 #screen_1 #scene_1 #input #animation_text {
   position: absolute;
   line-height: 33px;
@@ -835,7 +818,7 @@ body a {
   color: #c4c4c4;
   font-size: 14px;
 }
-/* line 78, ../sass/partials/_on_board.scss */
+/* line 64, ../sass/partials/_on_board.scss */
 #screen_1 #scene_1 .text {
   color: #7b7b7b;
   font-size: 12px;
@@ -845,14 +828,14 @@ body a {
   top: 68px;
 }
 
-/* line 88, ../sass/partials/_on_board.scss */
+/* line 74, ../sass/partials/_on_board.scss */
 #screen_2 {
   float: left;
   width: 320px;
   height: 147px;
 }
 
-/* line 93, ../sass/partials/_on_board.scss */
+/* line 79, ../sass/partials/_on_board.scss */
 #twitter_bio {
   background-image: url("../images/twitter_bio.png");
   width: 261px;
@@ -862,25 +845,25 @@ body a {
   margin: 0 auto;
   left: -2px;
 }
-/* line 101, ../sass/partials/_on_board.scss */
+/* line 87, ../sass/partials/_on_board.scss */
 #twitter_bio > div {
   position: absolute;
   top: 30px;
   left: 18px;
 }
-/* line 107, ../sass/partials/_on_board.scss */
+/* line 93, ../sass/partials/_on_board.scss */
 #twitter_bio #name {
   font-family: Helvetica;
   font-weight: bold;
   font-size: 18px;
   color: #4f4f4f;
 }
-/* line 113, ../sass/partials/_on_board.scss */
+/* line 99, ../sass/partials/_on_board.scss */
 #twitter_bio #twitter_handle {
   color: #7b7b7b;
   font-size: 14px;
 }
-/* line 117, ../sass/partials/_on_board.scss */
+/* line 103, ../sass/partials/_on_board.scss */
 #twitter_bio #bio {
   color: #7b7b7b;
   font-size: 12px;
@@ -889,7 +872,7 @@ body a {
   height: 50px;
 }
 
-/* line 125, ../sass/partials/_on_board.scss */
+/* line 111, ../sass/partials/_on_board.scss */
 #back_arrow {
   position: absolute;
   background-image: url("../images/back_arrow.png");
@@ -899,7 +882,7 @@ body a {
   cursor: pointer;
 }
 
-/* line 133, ../sass/partials/_on_board.scss */
+/* line 119, ../sass/partials/_on_board.scss */
 #picture {
   background: url("../images/picture.jpg") no-repeat center;
   width: 100%;
@@ -910,7 +893,7 @@ body a {
   z-index: 1;
 }
 
-/* line 143, ../sass/partials/_on_board.scss */
+/* line 129, ../sass/partials/_on_board.scss */
 #black_bubble {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -934,7 +917,7 @@ body a {
   right: 25px;
   top: 15px;
 }
-/* line 159, ../sass/partials/_on_board.scss */
+/* line 145, ../sass/partials/_on_board.scss */
 #black_bubble:after {
   content: '';
   display: block;
@@ -945,7 +928,7 @@ body a {
   position: absolute;
 }
 
-/* line 170, ../sass/partials/_on_board.scss */
+/* line 156, ../sass/partials/_on_board.scss */
 #punch_out {
   background-image: url("../images/punch_out.png");
   width: 320px;
@@ -955,7 +938,7 @@ body a {
   z-index: 2;
 }
 
-/* line 179, ../sass/partials/_on_board.scss */
+/* line 165, ../sass/partials/_on_board.scss */
 #play {
   background-image: url("../images/play.png");
   width: 105px;
@@ -972,7 +955,7 @@ body a {
   line-height: 57px;
 }
 
-/* line 198, ../sass/partials/_on_board.scss */
+/* line 184, ../sass/partials/_on_board.scss */
 #game_animation {
   background-image: url("../images/game_animation.png");
   width: 261px;
@@ -983,7 +966,7 @@ body a {
   left: -2px;
 }
 
-/* line 209, ../sass/partials/_on_board.scss */
+/* line 195, ../sass/partials/_on_board.scss */
 #location_info {
   background: url("../images/location_info.png") center no-repeat;
   width: 261px;
@@ -994,7 +977,7 @@ body a {
   margin: 0 auto;
 }
 
-/* line 219, ../sass/partials/_on_board.scss */
+/* line 205, ../sass/partials/_on_board.scss */
 #map_pin {
   background: url("../images/map_pin.png") center no-repeat;
   width: 32px;
@@ -1005,7 +988,7 @@ body a {
   margin-left: 9px;
 }
 
-/* line 229, ../sass/partials/_on_board.scss */
+/* line 215, ../sass/partials/_on_board.scss */
 #location.text {
   width: 170px;
   height: 42px;
@@ -1018,7 +1001,7 @@ body a {
   overflow: hidden;
 }
 
-/* line 239, ../sass/partials/_on_board.scss */
+/* line 225, ../sass/partials/_on_board.scss */
 #arrow {
   background-image: url("../images/arrow.png");
   width: 27px;
@@ -1030,18 +1013,18 @@ body a {
   cursor: pointer;
 }
 
-/* line 250, ../sass/partials/_on_board.scss */
+/* line 236, ../sass/partials/_on_board.scss */
 footer {
   position: relative;
   text-align: center;
 }
 
-/* line 258, ../sass/partials/_on_board.scss */
+/* line 244, ../sass/partials/_on_board.scss */
 #stop_sign {
   display: inline-block;
   margin-right: 18px;
 }
-/* line 261, ../sass/partials/_on_board.scss */
+/* line 247, ../sass/partials/_on_board.scss */
 #stop_sign .icon {
   background-image: url("../images/stop_sign.png");
   width: 22px;
@@ -1051,7 +1034,7 @@ footer {
   float: left;
   margin-left: 5px;
 }
-/* line 270, ../sass/partials/_on_board.scss */
+/* line 256, ../sass/partials/_on_board.scss */
 #stop_sign .text {
   color: #7b7b7b;
   font-family: helvetica;
@@ -1060,11 +1043,11 @@ footer {
   float: left;
 }
 
-/* line 277, ../sass/partials/_on_board.scss */
+/* line 263, ../sass/partials/_on_board.scss */
 #block {
   display: inline-block;
 }
-/* line 279, ../sass/partials/_on_board.scss */
+/* line 265, ../sass/partials/_on_board.scss */
 #block .icon {
   background-image: url("../images/circle_x.png");
   width: 22px;
@@ -1074,7 +1057,7 @@ footer {
   float: left;
   margin-left: 5px;
 }
-/* line 288, ../sass/partials/_on_board.scss */
+/* line 274, ../sass/partials/_on_board.scss */
 #block .text {
   color: #7b7b7b;
   font-family: helvetica;

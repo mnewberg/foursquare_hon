@@ -12,6 +12,9 @@
 
 		<link Href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
 		<link rel="stylesheet" href="../static/stylesheets/jquery.mobile.structure-1.1.1.css" />
+       <script type="text/javascript" src="../static/javascript/pick_a_game_ui.js"></script>
+<script type="text/javascript" src="../static/javascript/gather_info.js"></script>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<meta name="apple-touch-fullscreen" content="YES" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,15 +52,6 @@ padding: 0;
 min-height:40px;
 }
 
-.categoryIconContainer {
-border-radius: 3px 3px 3px 3px;
-    float: left;
-    height: 32px;
-    margin-right: 5px;
-    overflow: hidden;
-    width: 32px;
-    vertical-align: middle;
-}
 .autocomplete-name {
 color: #333333;
     font-weight: bold;
@@ -74,25 +68,6 @@ color: #999999;
     text-overflow: ellipsis;
     }
 
-
-
-.target{
-
-margin-left:-40px;
-
-}
-
-.ribbon_corner{
-visibility:hidden;
-}
-
-.dialog_image{
-max-width:180px;
-}
-.poptitle{
-font-size:14px;
-
-}
 
 #the_grid {
 
@@ -168,8 +143,8 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 var ajaxOK = true;
 $(window).on('scroll', function () { 
 if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
-ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader></div>');if (data.done){ajaxOK=false}else{$('img[name=profile]').load(function(){$('#loader')[0].innerHTML='loading'});ajaxOK=true};$('.photo').fadeIn('slow')})}})
->>>>>>> 7e0c7cbb76a0308c419e390e5e8211a3d8c846a6
+ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader></div>');if (data.done){ajaxOK=false}else{ajaxOK=true};$('.photo').fadeIn('slow')})}})
+
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
@@ -283,7 +258,13 @@ function submit(){ {% if not recentcheckin %}$.post('https://api.foursquare.com/
 	<input type="text" id="twitter" />
 	<div>@</div>
 </div>
-<!-- <input type="submit" value="OK" onclick=$.post('/updatetwitter/',{'twitter':document.getElementById('twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value})> -->
+{% endif %}
+{% if not phone %}
+<div class="info_header">Phone number?</div>
+<div class="input">
+<input type="tel" id="tel" />
+<div>555-555-5555</div>
+</div>
 {% endif %}
 {% csrf_token %}
 </div>

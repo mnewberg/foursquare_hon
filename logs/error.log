@@ -7763,3 +7763,16 @@
 [Tue Aug 21 15:26:14 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
 [Tue Aug 21 15:26:14 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
 [Tue Aug 21 16:26:19 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Wed Aug 22 09:04:18 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Wed Aug 22 09:04:18 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Wed Aug 22 10:07:49 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: https://playdo.pe/
+[Wed Aug 22 10:21:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: https://playdo.pe/
+[Wed Aug 22 10:23:18 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/
+[Wed Aug 22 10:24:09 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: https://playdo.pe/
+[Wed Aug 22 10:24:28 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: https://playdo.pe/
+[Wed Aug 22 10:25:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/bheader.png, referer: http://playdo.pe/loc/?code=2OLEXUKADLBF4K35DCHXMWOME2GFMG21LUOJIYPI0N1XWT2Z
+[Wed Aug 22 10:25:56 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blheader.png, referer: http://playdo.pe/loc/?code=2OLEXUKADLBF4K35DCHXMWOME2GFMG21LUOJIYPI0N1XWT2Z
+[Wed Aug 22 10:25:57 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blanheader.png, referer: http://playdo.pe/loc/?code=2OLEXUKADLBF4K35DCHXMWOME2GFMG21LUOJIYPI0N1XWT2Z
+[Wed Aug 22 10:25:57 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blankheader.png, referer: http://playdo.pe/loc/?code=2OLEXUKADLBF4K35DCHXMWOME2GFMG21LUOJIYPI0N1XWT2Z
+[Wed Aug 22 10:25:57 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/images/blankheader.png, referer: http://playdo.pe/loc/?code=2OLEXUKADLBF4K35DCHXMWOME2GFMG21LUOJIYPI0N1XWT2Z
+[Wed Aug 22 10:41:00 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/mixp.js, referer: http://playdo.pe/

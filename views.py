@@ -325,7 +325,6 @@ def onboard(request, uid):
     last_checkin_id=v2['user']['checkins']['items'][0]['venue']['id']
     t.other_venue_id=last_checkin_id
     t.save()
-    
     request.session['uid']=uid
     request.session.set_expiry(120)
     return render_to_response('on_board.html',{'pic':the_user.photo,'first_name':the_user.first_name,'twitter':the_user.twitter, 'message':msg, 'venue':venue_name, 'location':location, 'bio':bio, 'last_checkin':last_checkin})
