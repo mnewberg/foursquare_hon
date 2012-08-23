@@ -43,8 +43,8 @@ $(document).ready(function() {
 	$('#button').on('click', function(){
 
 		
-		$("#gather_info_form").valid();
-		
+		var validated=$("#gather_info_form").valid();
+	    if (validated){submit()}; 
 
 	});
 	
