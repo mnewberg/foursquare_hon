@@ -72,8 +72,9 @@ def new_nearby(key,the_id,lat,lon):
 	token=u.token
 	found=[]
 	chickpix={}
-
+	logger.error('before',exc_info=True,extra={'stack':True,'chickpix':chickpix,})
 	for i in api.search(geocode=lat+','+lon+',1mi',rpp='100',page=1,q='4sq.com',include_entities='true'):
+		logger.error('testin',exc_info=True,extra={'stack':True,'chickpix':chickpix,})
 		try: 
 			d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
 		except:
