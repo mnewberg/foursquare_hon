@@ -40,8 +40,8 @@ $('#select').textinput({ preventFocusZoom: true });
 			<div id="select">
 				<div id="pick_a_game">Pick a game</div>
 				<select name="game_id" id="game_select">
+					<option value="Pick a game">Pick a game</option>
 				  {% for game in games %}
-				  <option value="Pick a game">Pick a game</option>
 				  <option value="{{game.gid}}">{{game.name}}</option>
 				  {% endfor %}
 				</select>
