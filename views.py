@@ -222,7 +222,7 @@ def second(request):
                 queue_email(query.email(),query.first_name())
                 return render_to_response('thank_you.html',{'photo':photo})
       else:
-                print 'uh oh'
+                logger.error('Login exception', exc_info=True, extra={'stack': True})
                 return render_to_response('thank_you.html')
     
 

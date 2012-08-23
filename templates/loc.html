@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="../static/stylesheets/jquery.mobile.structure-1.1.1.css" />
        <script type="text/javascript" src="../static/javascript/pick_a_game_ui.js"></script>
 <script type="text/javascript" src="../static/javascript/gather_info.js"></script>
+<script type="text/javascript" src="../static/javascript/additional-methods.min.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<meta name="apple-touch-fullscreen" content="YES" />
@@ -241,13 +242,14 @@ function submit(){ {% if not recentcheckin %}
 		<div data-role="page" id="main">
 			<div data-role="content">
 			  <div id="fixed_bg"></div>
+			  <div id="gather_info_wrapper">
 			  <header>
 			    <div id="logo"></div>
 			    </header>
 				<div id="info_box">
 					<div id="exclamation"></div>
 					<div class="text">
-
+<form id="gather_info_form">
 <div class="info_header">Where are you?</div>
 <div class="input">
 	<input id="venue" />
@@ -274,10 +276,11 @@ function submit(){ {% if not recentcheckin %}
 </div>
 {% endif %}
 {% csrf_token %}
-</div>
+</div></div>
 <div id="button" onclick="submit()">Let's Play</div>
 </div>
 <div id="link"></div>
+</form>
 </div>
 				</div>
 				<div data-role="page" id="loading">

@@ -47,8 +47,7 @@
                                 name: item.name,
                                 id: item.id,
                                 address: (item.location.address == undefined ? "" : item.location.address),
-                                cityLine: (item.location.city == undefined ? "" : item.location.city + ", ") + (item.location.state == undefined ? "" : item.location.state + " ") + (item.location.postalCode == undefined ? "" : item.location.postalCode),
-                                photo: (item.category == undefined ? "" : item.category.icon.prefix + "32" + item.category.icon.name), 
+                                cityLine: (item.location.city == undefined ? "" : item.location.city + ", ") + (item.location.state == undefined ? "" : item.location.state + " ") + (item.location.postalCode == undefined ? "" : item.location.postalCode), 
                                 full: item
                             };
                         }));
