@@ -29,10 +29,10 @@ $('#select').textinput({ preventFocusZoom: true });
 			Play with {{f_name}}!
 		</header>
 		<div id="picture" style="background: url('https://is1.4sqi.net/userpix/{{t_pic}}') no-repeat center;background-size:100%;background-position-y:30%;">
-			<div id="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{% if topics %}Likes: {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last and topics|length != 2 %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
+			<div id="name" class="elipses">{% if topics %}Likes: {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last and topics|length != 2 %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
 		</div>
 		<div id="interests">
-			<div class="text"><b>About me:</b> {{t_bio}}
+			<div class="text elipses"><b>About me:</b> {{t_bio}}
 </div>
 		</div>
 		<div id="footer">
@@ -52,7 +52,7 @@ $('#select').textinput({ preventFocusZoom: true });
 			<input type="hidden" value="{{t_pic}}" name="t_pic">
 
 			{% csrf_token %}
-			<div id="send_button" onclick="sbumit()">
+			<div id="send_button" onclick="sbumit()">Send</div>
 		</form>
 		</div>
 	</div>
