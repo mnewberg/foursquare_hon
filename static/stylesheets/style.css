@@ -1792,11 +1792,13 @@ body, html {
 /* line 194, ../sass/partials/_gather_info.scss */
 .ui-menu {
   list-style-type: none;
+  top: 0px !important;
 }
-/* line 196, ../sass/partials/_gather_info.scss */
+/* line 197, ../sass/partials/_gather_info.scss */
 .ui-menu li {
   width: 100%;
-  padding-left: 10px;
+  left: 10px;
+  position: relative;
   padding-top: 5px;
   padding-bottom: 5px;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcfcfc), color-stop(100%, #f6f6f6));
@@ -1806,23 +1808,23 @@ body, html {
   background: -ms-linear-gradient(#fcfcfc, #f6f6f6);
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
-/* line 203, ../sass/partials/_gather_info.scss */
+/* line 205, ../sass/partials/_gather_info.scss */
 .ui-menu li a {
   text-decoration: none;
 }
-/* line 206, ../sass/partials/_gather_info.scss */
+/* line 208, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-name {
   text-shadow: white 0px 1px 1px;
   font-size: 13px !important;
   color: #969696 !important;
 }
-/* line 211, ../sass/partials/_gather_info.scss */
+/* line 213, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;
   color: #bbbbbb !important;
 }
-/* line 216, ../sass/partials/_gather_info.scss */
+/* line 218, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;

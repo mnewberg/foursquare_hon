@@ -193,9 +193,11 @@
 
 .ui-menu{
 	list-style-type:none;
+	top: 0px !important;
 	li{
 		width:100%;
-		padding-left:10px;
+		left:10px;
+		position:relative;
 		padding-top:5px;
 		padding-bottom:5px;
 

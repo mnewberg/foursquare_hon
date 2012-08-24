@@ -76,7 +76,7 @@
                 return $("<li></li>")
                     .data("item.autocomplete", item)
                     .append("<a>" + getAutocompleteText(item) + "</a>")
-                    .appendTo(ul).appendTo('#venue-dropdown ul');
+                    .appendTo(ul);
             };
 
     };
