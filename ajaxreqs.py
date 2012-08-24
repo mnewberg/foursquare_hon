@@ -78,7 +78,8 @@ def new_nearby(key,the_id,lat,lon):
 		try: 
 			d=bitly.expand(shortUrl=i.entities['urls'][0]['expanded_url'])[0]['long_url']
 		except:
-			logger.error('There was a bitly error', exc_info=True, extra={'stack': True,'url':i.entities['urls'][0]['expanded_url']})
+			logger.error('There was a bitly error', exc_info=True, extra={'stack': True,'url':i.text})
+		logger.error('before loop',exc_info=True,extra={'stack':True,'chickpix':chickpix,'user':i.from_user,'d':d})
 		if i.from_user not in found:
 			if len(found)==10:
 				p['chickpix-'+token].trigger('done','')
@@ -87,6 +88,7 @@ def new_nearby(key,the_id,lat,lon):
 			try:
 				signature=re.findall('\^?s=.{27}',d)[0][2:]
 				checkin=re.findall('checkin/.{0,24}',d)[0][8:]
+				logger.error('trying url',exc_info=True,extra={'stack':True,'chickpix':chickpix,'user':i.from_user,'d':d,})
 				entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
 				found.append(i.from_user)
 				fname=entry['checkin']['user']['firstName']
