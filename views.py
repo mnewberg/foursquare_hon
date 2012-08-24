@@ -233,10 +233,6 @@ def pickmessage(request):
     t_api = tweepy.API(auth)
     fsq_id=request.session['fsq_id']
     the_user=user.objects.get(fsq_id=fsq_id)
-    if len(the_user.photo)<=4:
-        return render_to_response('error_photo.html')
-    else:
-        pass
     params={}
     params.update(csrf(request))
     
