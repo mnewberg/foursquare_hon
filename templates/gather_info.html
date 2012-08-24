@@ -3,59 +3,122 @@
 	<head> 
 	<title>Playdope</title> 
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
-	
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/4sqacplugin.js"></script>
+	<script type="text/javascript" src="http://c4261091.r91.cf2.rackcdn.com/jquery.autotab-1.1b.js"></script>
+	<script type="text/javascript" src="../static/javascript/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../static/javascript/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../static/javascript/gather_info.js"></script>
+
+		
+	<script type="text/javascript">
+    $(function () {
+        $("#venue").foursquareAutocomplete({
+            'latitude': 47.22,
+            'longitude': -122.2,
+            'oauth_token': "SLAKULNNSIJH1RCYGNM0NMJMLHXSD3MDFSQNYCVFGTY4BQCW",
+            'minLength': 3,
+            'search': function (event, ui) {
+                $("#venue-name").html(ui.item.name);
+                $("#venue-id").val(ui.item.id);
+                $("#venue-address").html(ui.item.address);
+                $("#venue-cityLine").html(ui.item.cityLine);
+                $("#venue-icon").attr("src", ui.item.photo);
+                return false;
+            },
+            'onError' : function (errorCode, errorType, errorDetail) {
+            	var message = "Foursquare Error: Code=" + errorCode + ", errorType= " + errorType + ", errorDetail= " + errorDetail;
+            	log(message);
+            }
+            
+        });
+    });
+    function log(message) {
+        $("<div/>").text(message).prependTo("#log");
+        $("#log").scrollTop(0);
+    }
+
+	</script>
+	<style type="text/css">
+.ui-autocomplete-loading { background: white url('http://jqueryui.com/demos/autocomplete/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+#venue { width: 25em; }
+#venue-label {
+display: block;
+font-weight: bold;
+margin-bottom: 1em;
+}
+#venue-icon {
+float: left;
+height: 32px;
+width: 32px;
+vertical-align: middle;
+}
+#venue-address {
+margin: 0;
+padding: 0;
+}
+#venue-city {
+margin: 0;
+padding: 0;
+}
+
+.ui-menu-item {
+min-height:40px;
+}
+
+.autocomplete-name {
+color: #333333;
+    font-weight: bold;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+.autocomplete-detail {
+color: #999999;
+    font-weight: normal;
+    font-size: 13px;
+    margin-left: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+	</style>
 </head> 
 <body>
 	<div id="fixed_bg"></div>
 	<div id="gather_info_wrapper">
-		<header>Please update some info
+		<header>
+			<div id="logo"></div>
 		</header>
 
 		<div id="info_box">
 			<div id="exclamation"></div>
 			<div class="text">
-				<div class="info_header">Where are you?</div>
-				<div class="input">
-					<input type="text" />
-					<div>Venue name</div>
-				</div>
-				<div class="info_header">Where are you?</div>
-				<div class="input">
-					<input type="text" />
-					<div>Venue name</div>
-				</div>
-				<div class="info_header">Where are you?</div>
-				<div class="input">
-					<input type="text" />
-					<div>Venue name</div>
-				</div>
-			</div>
-			<div id="venue-dropdown-wrapper">
-			<div class="arrow-up"></div>
-			<div id="venue-dropdown">
+				<form id="gather_info_form">
+					<div class="info_header">Where are you?</div>
+					<div class="input">
+						<input type="text" id="venue" name="venue" />
+						<div>Venue name</div>
+					</div>
+					<input type="hidden" id="venue-id"/>
+			        <div id="venue-name" class="autocomplete-name"></div>
+			        <div id="venue-address" class="autocomplete-detail"></div>
+					<div id="venue-cityLine" class="autocomplete-detail"></div>
 
-			<ul class="ui-menu">
-				<li class="ui-menu-item" role="menuitem" style="background-color: grey;">
-					<a class="ui-corner-all" tabindex="-1">
-						<div>
-							<div class="autocomplete-name">Tre Restaurant &amp; Wine Bar</div>
-							<div class="autocomplete-detail">173 Ludlow St</div>
-							<div class="autocomplete-detail">New York, NY 10002</div>
-						</div>
-					</a>
-				</li>
-				<li class="ui-menu-item" role="menuitem" style="background-color: grey;">
-					<a class="ui-corner-all" tabindex="-1">
-						<div>
-							<div class="autocomplete-name">Tre Restaurant &amp; Wine Bar</div>
-							<div class="autocomplete-detail">173 Ludlow St</div>
-							<div class="autocomplete-detail">New York, NY 10002</div>
-						</div>
-					</a>
-				</li>
-			</ul>
+					<div class="info_header">Phone number?</div>
+					<div class="input">
+						<input type="tel" id="tel" name="tel" />
+						<div>555-555-5555</div>
+					</div>
+					<div class="info_header">Twitter handle?</div>
+					<div class="input">
+						<input type="text" id="twitter" name="twitter" />
+						<div>@</div>
+					</div>
+				</form>
 			</div>
-		</div>
+			
 
 		</div>
 		<div id="button">Let's Play</div>
