@@ -1,5 +1,6 @@
-$(document).bind('pageinit',function() {
-    $('#select').textinput({ preventFocusZoom: true });
+$(document).ready(function() {
+	alert('hi');
+    //$('#select').textinput({ preventFocusZoom: true });
     $('#game_select').change( function() {
 		var value = $(this).val();
 	    $('#pick_a_game').html(value);

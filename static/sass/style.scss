@@ -33,7 +33,5 @@ ul{
 #filler{
 	height:100%;
 	width:100%;
-	background-image:url('../images/bgnoise.jpg');
-	background-repeat:repeat;
-	//@include background-image(linear-gradient(bottom, #6f6f6f, #aaa));
+	background:url('../images/corrugation.jpg') repeat;
 }
