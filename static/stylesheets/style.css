@@ -1754,14 +1754,14 @@ body, html {
 
 /* line 166, ../sass/partials/_gather_info.scss */
 #venue-dropdown-wrapper {
-  display: inline-block;
-  position: absolute;
+  position: relative;
   z-index: 999;
-  top: 90px;
+  top: -22px;
   width: 100%;
+  display: none;
 }
 
-/* line 173, ../sass/partials/_gather_info.scss */
+/* line 174, ../sass/partials/_gather_info.scss */
 #venue-dropdown {
   width: 198px;
   margin: 0 auto;
@@ -1773,12 +1773,13 @@ body, html {
   border-radius: 5px;
   overflow: hidden;
   text-align: left;
+  background-color: #fff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px;
 }
 
-/* line 182, ../sass/partials/_gather_info.scss */
+/* line 184, ../sass/partials/_gather_info.scss */
 .arrow-up {
   margin: 0 auto;
   width: 0;
@@ -1788,11 +1789,11 @@ body, html {
   border-bottom: 3px solid #cbcbcb;
 }
 
-/* line 192, ../sass/partials/_gather_info.scss */
+/* line 194, ../sass/partials/_gather_info.scss */
 .ui-menu {
   list-style-type: none;
 }
-/* line 194, ../sass/partials/_gather_info.scss */
+/* line 196, ../sass/partials/_gather_info.scss */
 .ui-menu li {
   width: 100%;
   padding-left: 10px;
@@ -1805,23 +1806,23 @@ body, html {
   background: -ms-linear-gradient(#fcfcfc, #f6f6f6);
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
-/* line 201, ../sass/partials/_gather_info.scss */
+/* line 203, ../sass/partials/_gather_info.scss */
 .ui-menu li a {
   text-decoration: none;
 }
-/* line 204, ../sass/partials/_gather_info.scss */
+/* line 206, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-name {
   text-shadow: white 0px 1px 1px;
   font-size: 13px !important;
   color: #969696 !important;
 }
-/* line 209, ../sass/partials/_gather_info.scss */
+/* line 211, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;
   color: #bbbbbb !important;
 }
-/* line 214, ../sass/partials/_gather_info.scss */
+/* line 216, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;

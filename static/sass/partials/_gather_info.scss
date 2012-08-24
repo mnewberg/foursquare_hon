@@ -164,11 +164,12 @@
 	}
 
 #venue-dropdown-wrapper{
-	display:inline-block;
-	position: absolute;
+	position: relative;
 	z-index:999;
-	top:90px;
+	top:-22px;
 	width:100%;
+	display:none;
+
 }
 #venue-dropdown{
 	width:198px;
@@ -177,6 +178,7 @@
 	@include border-radius(5px);
 	overflow:hidden;
 	text-align:left;
+	background-color:#fff;
 	@include box-shadow(rgba(0,0,0,.25) 0px 3px 5px);
 }
 .arrow-up {

@@ -72,10 +72,11 @@
             }
         })
             .data("autocomplete")._renderItem = function (ul, item) {
+                $('#venue-dropdown-wrapper').css('display','inline-block');
                 return $("<li></li>")
                     .data("item.autocomplete", item)
                     .append("<a>" + getAutocompleteText(item) + "</a>")
-                    .appendTo(ul);
+                    .appendTo(ul).appendTo('#venue-dropdown ul');
             };
 
     };
@@ -94,7 +95,6 @@
     /// Builds out the <select> portion of autocomplete control
     function getAutocompleteText(item) {
         var text = "<div>";
-        text += "<div class='categoryIconContainer'><img src='" + (item.photo == "" ? "" : item.photo) + "' /></div>";
         text += "<div class='autocomplete-name'>" + item.name + "</div>";
         if (item.address == "" && item.cityLine == "")
             text += "<div class='autocomplete-detail'>&nbsp;</div>";

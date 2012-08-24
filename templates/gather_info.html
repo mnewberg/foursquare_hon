@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="../static/javascript/additional-methods.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/gather_info.js"></script>
 
-		
+	
 	<script type="text/javascript">
     $(function () {
         $("#venue").foursquareAutocomplete({
@@ -64,25 +64,6 @@ margin: 0;
 padding: 0;
 }
 
-.ui-menu-item {
-min-height:40px;
-}
-
-.autocomplete-name {
-color: #333333;
-    font-weight: bold;
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
-.autocomplete-detail {
-color: #999999;
-    font-weight: normal;
-    font-size: 13px;
-    margin-left: 40px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
 	</style>
 </head> 
 <body>
@@ -100,6 +81,12 @@ color: #999999;
 					<div class="input">
 						<input type="text" id="venue" name="venue" />
 						<div>Venue name</div>
+					</div>
+					<div id="venue-dropdown-wrapper">
+						<div class="arrow-up"></div>
+						<div id="venue-dropdown">
+							<ul class="ui-menu"></ul>
+						</div>
 					</div>
 					<input type="hidden" id="venue-id"/>
 			        <div id="venue-name" class="autocomplete-name"></div>
