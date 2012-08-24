@@ -47,7 +47,8 @@
                                 name: item.name,
                                 id: item.id,
                                 address: (item.location.address == undefined ? "" : item.location.address),
-                                cityLine: (item.location.city == undefined ? "" : item.location.city + ", ") + (item.location.state == undefined ? "" : item.location.state + " ") + (item.location.postalCode == undefined ? "" : item.location.postalCode), 
+                                cityLine: (item.location.city == undefined ? "" : item.location.city + ", ") + (item.location.state == undefined ? "" : item.location.state + " ") + (item.location.postalCode == undefined ? "" : item.location.postalCode),
+                                photo: (item.category == undefined ? "" : item.category.icon.prefix + "32" + item.category.icon.name), 
                                 full: item
                             };
                         }));
@@ -74,7 +75,7 @@
                 return $("<li></li>")
                     .data("item.autocomplete", item)
                     .append("<a>" + getAutocompleteText(item) + "</a>")
-                    .appendTo('#venue-dropdown ul');
+                    .appendTo(ul);
             };
 
     };
@@ -82,7 +83,7 @@
     $.foursquareAutocomplete.defaultOptions = {
         'latitude': 47.22,
         'longitude': -122.2,
-        'oauth_token': "SLAKULNNSIJH1RCYGNM0NMJMLHXSD3MDFSQNYCVFGTY4BQCW",
+        'oauth_token': "",
         'minLength': 3,
         'select': function (event, ui) {},
         'onError': function (errorCode, errorType, errorDetail) {},
@@ -93,6 +94,7 @@
     /// Builds out the <select> portion of autocomplete control
     function getAutocompleteText(item) {
         var text = "<div>";
+        text += "<div class='categoryIconContainer'><img src='" + (item.photo == "" ? "" : item.photo) + "' /></div>";
         text += "<div class='autocomplete-name'>" + item.name + "</div>";
         if (item.address == "" && item.cityLine == "")
             text += "<div class='autocomplete-detail'>&nbsp;</div>";
