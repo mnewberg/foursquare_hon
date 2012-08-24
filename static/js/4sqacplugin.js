@@ -73,10 +73,10 @@
         })
             .data("autocomplete")._renderItem = function (ul, item) {
                 $('#venue-dropdown-wrapper').css('display','inline-block');
-                return $("<li class=\"ui-menu-item\" role=\"menuitem\"></li>")
+                return $("<li></li>")
                     .data("item.autocomplete", item)
-                    .append("<a class=\"ui-corner-all\">" + getAutocompleteText(item) + "</a>")
-                    .appendTo(ul).appendTo('#venue-dropdown-wrapper ul');
+                    .append("<a>" + getAutocompleteText(item) + "</a>")
+                    .appendTo(ul);
             };
 
     };

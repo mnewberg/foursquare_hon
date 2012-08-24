@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	
+
 	 jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, ""); 
 	return this.optional(element) || phone_number.length > 9 &&
@@ -50,4 +52,8 @@ $(document).ready(function() {
 
 	});
 	
+});
+
+$(document).bind('DOMNodeInserted',function(){
+  	$('.ui-menu').appendTo('#venue-dropdown');
 });
