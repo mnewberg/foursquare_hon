@@ -29,11 +29,12 @@
 <STYLE TYPE="text/css">
 
 #loader{
+display:none;
 position:absolute;
 bottom: 0px;
-width: 35px;
-left:17px;
-margin-left:-17px;
+width: 16px;
+left:8px;
+margin-left:-8px;
 }
 .elipses {
 white-space: nowrap;
@@ -156,8 +157,8 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 //infinite scroll
 var ajaxOK = true;
 $(window).on('scroll', function () { 
-if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
-ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader></div>');if (data.done){ajaxOK=false}else{ajaxOK=true};$('.photo').fadeIn('slow')})}})
+$('#loader').show();if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){
+ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader><img src="../static/images/ajax-loader.gif"></div>');if (data.done){ajaxOK=false}else{ajaxOK=true};$('.photo').fadeIn('slow')})}})
 
 
   var _gaq = _gaq || [];
