@@ -44,7 +44,9 @@ $(document).ready(function() {
 
 		
 		var validated=$("#gather_info_form").valid();
-	    if (validated){submit()}; 
+	    if (validated){
+	    	submit();
+	    }
 
 	});
 	

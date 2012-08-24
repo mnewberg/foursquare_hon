@@ -869,7 +869,7 @@ body a {
   left: 18px;
 }
 /* line 107, ../sass/partials/_on_board.scss */
-#twitter_bio #name {
+#twitter_bio #on_board_name {
   font-family: Helvetica;
   font-weight: bold;
   font-size: 18px;
@@ -1114,6 +1114,7 @@ body, html {
 /* line 37, ../sass/partials/_photo_grid.scss */
 #photo_grid_wrapper header {
   background-image: url("../images/blank_header.png");
+  width: 100%;
   height: 43px;
   position: fixed;
   top: 0px;
@@ -1407,23 +1408,24 @@ body, html {
   text-align: center;
   line-height: 40px;
   cursor: pointer;
+  top: 2px;
 }
 
-/* line 165, ../sass/partials/_pick_a_game.scss */
+/* line 166, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal {
   width: 100%;
-  height: 100%;
+  height: 600px;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 5;
   display: table;
 }
-/* line 172, ../sass/partials/_pick_a_game.scss */
+/* line 173, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal #modal_wrap {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 176, ../sass/partials/_pick_a_game.scss */
+/* line 177, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal #success {
   position: relative;
   margin: 0 auto;
@@ -1463,11 +1465,11 @@ body, html {
   color: #6c6c6c;
   font-size: 14px;
 }
-/* line 181, ../sass/partials/_pick_a_game.scss */
+/* line 182, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal #success .text {
   text-align: center;
 }
-/* line 185, ../sass/partials/_pick_a_game.scss */
+/* line 186, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal #success #tick {
   width: 29px;
   height: 24px;
@@ -1477,13 +1479,13 @@ body, html {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 195, ../sass/partials/_pick_a_game.scss */
+/* line 196, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal #button_wrap {
   text-align: center;
   position: relative;
   margin-top: 20px;
 }
-/* line 200, ../sass/partials/_pick_a_game.scss */
+/* line 201, ../sass/partials/_pick_a_game.scss */
 #pick_a_game_modal #okay {
   background: url("../images/button_middle.png") repeat;
   display: inline-block;
@@ -2171,6 +2173,5 @@ ul {
 #filler {
   height: 100%;
   width: 100%;
-  background-image: url("../images/bgnoise.jpg");
-  background-repeat: repeat;
+  background: url("../images/corrugation.jpg") repeat;
 }

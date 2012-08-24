@@ -1,7 +1,8 @@
-$(document).bind('pageinit',function() {
+$(document).ready(function() {
+	alert('hi');
     $('#select').textinput({ preventFocusZoom: true });
     $('#game_select').change( function() {
-		var value = $(this).val();
+		var value = $(this).innerHTML();
 	    $('#pick_a_game').html(value);
 	});
 });
