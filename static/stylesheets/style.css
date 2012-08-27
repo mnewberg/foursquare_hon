@@ -819,7 +819,7 @@ body a {
   height: 147px;
 }
 /* line 62, ../sass/partials/_on_board.scss */
-#screen_1 #scene_1 #input {
+#screen_1 #scene_1 #scene_2 #scene_3 #input {
   background: url("../images/input.png") no-repeat;
   width: 200px;
   height: 33px;
@@ -828,7 +828,7 @@ body a {
   top: 30px;
 }
 /* line 70, ../sass/partials/_on_board.scss */
-#screen_1 #scene_1 #input #animation_text {
+#screen_1 #scene_1 #scene_2 #scene_3 #input #animation_text {
   position: absolute;
   line-height: 33px;
   margin-left: 7px;
@@ -836,7 +836,7 @@ body a {
   font-size: 14px;
 }
 /* line 78, ../sass/partials/_on_board.scss */
-#screen_1 #scene_1 .text {
+#screen_1 #scene_1 #scene_2 #scene_3 .text {
   color: #7b7b7b;
   font-size: 12px;
   width: 100%;
