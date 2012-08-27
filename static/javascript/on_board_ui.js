@@ -7,8 +7,6 @@ $(document).ready(function() {
 	$('#back_arrow').on('click', function(){
 		game_animation();
 	});
-
-	runIt();
 });
 
 function twitter_bio(){
@@ -23,14 +21,20 @@ function game_animation(){
     });
 }
 
-function runIt() {
-		setTimeout ( $('animation_text').html('P'), 0 );
-		setTimeout ( $('animation_text').html('Py'), 100 );
-		setTimeout ( $('animation_text').html('Pyr'), 200 );
-		setTimeout ( $('animation_text').html('Pyra'), 300 );
-		setTimeout ( $('animation_text').html('Pyram'), 400 );
-		setTimeout ( $('animation_text').html('Pyrami'), 500 );
-		setTimeout ( $('animation_text').html('Pyramid'), 600 );
-		setTimeout ( $('animation_text').html('Pyramids'), 700 );
+var text = "Guess an item"
+var delay= 1000
+i=0
+function text_animation(i){
+    $('#animation_text').html(word.slice(0,i));
+}
+
+function runIt()
+{
+    var c = 0;
+    var interval = setInterval(function() { 
+        $('#animation_text')[0].innerHTML += text[c]; 
+        c++; 
+        if(c >= text.length) clearInterval(interval);
+    }, 300);
 
 }
