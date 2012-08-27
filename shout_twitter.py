@@ -12,7 +12,7 @@ api = tweepy.API(auth)
 def send_twitter_shout(t_handle,sender,f_name,venue_name,uid):
     try: 
         api.update_status(
-'@'+t_handle+' '+'Hey '+f_name+'! '+ sender+' saw you check-in @ '+ venue_name +' & left you a message. See who it was here http://staging.tryfourplay.com/message/'+ uid)
+'@'+t_handle+' '+'Hey '+f_name+'! '+ sender+' saw your check-in @ '+ venue_name +' & challenged you to a game of trivia! http://playdo.pe/message/'+ uid)
         success=True
     except:
         success=False
