@@ -845,12 +845,62 @@ body a {
   top: 68px;
 }
 
+#screen_1 #scene_2{
+	display:none;
+}
+
+#scene_2 #sample_guess {
+	padding-top: 32px;
+	font-weight:bold;
+}
+
 /* line 88, ../sass/partials/_on_board.scss */
 #screen_2 {
   float: left;
   width: 320px;
   height: 147px;
 }
+
+#screen_1 #scene_3{
+	display:none;
+}
+
+#screen_1 #scene_3 #time_remaining{
+	right: 22px;
+	position:relative;
+	top: 35px;
+	width: 103px;
+	font-size:31px;
+	
+}
+
+#screen_1 #scene_3 #scoreboard{
+	float:right;
+	top: 39px;
+	left: 193px;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position-y: 11px;
+	background-position-x: 25px;
+	position:initial;
+	
+}
+#screen_1 #scene_3 #scoreboard{
+  position: absolute;
+  margin-left: -83px;
+  margin-top: -40px;
+	
+}
+
+#screen_1 #scene_3 #directions{
+	position: relative;
+	color: #7B7B7B;
+	top: 29px;
+	left: 37px;
+	font-size: 13px;
+	width: 100px;
+}
+
 
 /* line 93, ../sass/partials/_on_board.scss */
 #twitter_bio {
