@@ -836,7 +836,7 @@ body a {
   font-size: 14px;
 }
 /* line 78, ../sass/partials/_on_board.scss */
-#screen_1 #scene_1 .text {
+#screen_1 #scene_2 .text, #screen_1 #scene_1 .text {
   color: #7b7b7b;
   font-size: 12px;
   width: 100%;
