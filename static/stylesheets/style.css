@@ -1882,6 +1882,7 @@ body, html {
 }
 /* line 213, ../sass/partials/_gather_info.scss */
 .ui-menu li .autocomplete-detail {
+  margin-left: 0 !important;
   text-shadow: white 0px 1px 1px;
   font-size: 10px !important;
   color: #bbbbbb !important;
