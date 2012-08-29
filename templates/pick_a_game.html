@@ -29,7 +29,7 @@
 			<div id="name" class="elipses">{% if topics %}Likes: {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last and topics|length != 2 %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
 		</div>
 		<div id="interests">
-			<div class="text"><b>About me:</b> {{t_bio}}
+			<div class="text"><b style="font-size:14px">About me:</b><br> {{t_bio}}
 </div>
 		</div>
 		<div id="footer">
