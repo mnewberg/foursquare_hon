@@ -154,7 +154,7 @@ window.isdone = false
 $(document).ready(function(){$.mobile.changePage('#loading')})
 channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
-channel.bind('done',function(){window.isdone=true});
+channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id="loading"){$.mobile.changePage('#newgallery')}});
 {% endif %}
 channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});

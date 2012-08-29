@@ -26,7 +26,7 @@
 			Play with {{f_name}}!
 		</header>
 		<div id="picture" style="background: url('https://is1.4sqi.net/userpix/{{t_pic}}') no-repeat center;background-size:100%;background-position-y:30%;">
-			<div id="name" class="elipses">{% if topics %}Likes: {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last and topics|length != 2 %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
+			<div id="name" class="elipses">{% if topics %}Likes <i> {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %} & {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last and topics|length != 2 %}, {% endif %}{% endfor %}</i>{% else %}{{f_name}}{% endif %}</div>
 		</div>
 		<div id="interests">
 			<div class="text"><b style="font-size:14px">About me:</b><br> {{t_bio}}
