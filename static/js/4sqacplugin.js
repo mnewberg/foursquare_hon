@@ -69,7 +69,13 @@
             },
             close: function () {
                 $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
-            }
+				/* Start Marcelo Code */
+				$("#venue-dropdown-wrapper").hide();
+				/* End Marcelo Code */
+            },
+			/* Start Marcelo Code */
+			appendTo: "#venue-dropdown"
+			/* End Marcelo Code */
         })
             .data("autocomplete")._renderItem = function (ul, item) {
                 $('#venue-dropdown-wrapper').css('display','inline-block');

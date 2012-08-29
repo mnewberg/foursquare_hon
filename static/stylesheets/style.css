@@ -1838,19 +1838,18 @@ body, html {
   border-right: 3px solid transparent;
   border-bottom: 3px solid #cbcbcb;
 }
-
+/* Start Marcelo Code */
 /* line 194, ../sass/partials/_gather_info.scss */
 .ui-menu {
   list-style-type: none;
+  left: 0px !important;
   top: 0px !important;
 }
 /* line 197, ../sass/partials/_gather_info.scss */
 .ui-menu li {
-  width: 100%;
-  left: 10px;
+  width: 178px;
   position: relative;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 10px;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcfcfc), color-stop(100%, #f6f6f6));
   background: -webkit-linear-gradient(#fcfcfc, #f6f6f6);
   background: -moz-linear-gradient(#fcfcfc, #f6f6f6);
@@ -1858,6 +1857,19 @@ body, html {
   background: -ms-linear-gradient(#fcfcfc, #f6f6f6);
   background: linear-gradient(#fcfcfc, #f6f6f6);
 }
+.ui-menu li:first-child {
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+.ui-menu li:last-child {
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+/* End Marcelo Code */
 /* line 205, ../sass/partials/_gather_info.scss */
 .ui-menu li a {
   text-decoration: none;
