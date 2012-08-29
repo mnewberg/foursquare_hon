@@ -5,9 +5,6 @@
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/pick_a_game_ui.js"></script>
-<script>
-//$('#select').textinput({ preventFocusZoom: true });
-</script>
 </head> 
 <body>
 	<div id="pick_a_game_modal" style="display:none">
@@ -32,17 +29,17 @@
 			<div id="name" class="elipses">{% if topics %}Likes: {% for topic in topics|slice:":3" %}{% if forloop.last and not forloop.first %}& {{topic}}{% else %}{{topic}}{% endif %}{% if not forloop.last and topics|length != 2 %}, {% endif %}{% endfor %}{% else %}{{f_name}}{% endif %}</div>
 		</div>
 		<div id="interests">
-			<div class="text elipses"><b>About me:</b> {{t_bio}}
+			<div class="text"><b>About me:</b> {{t_bio}}
 </div>
 		</div>
 		<div id="footer">
-			<form action="/outreach" method="post">
-			<div id="select">
+			<form action="/outreach" method="post" style="margin-bottom:0px">
+			<div id="select" onclick="$('#pick_a_game').hide()">
 				<div id="pick_a_game">Pick a game</div>
 				<select name="game_id" id="game_select">
-
+				    <optgroup label="Pick a game">
+				      <option></option>
 				  {% for game in games %}
-				  <option value="{{game.gid}}">{{game.name}}</option>
 				  <option value="{{game.gid}}">{{game.name}}</option>
 				  {% endfor %}
 				</select>

@@ -18,7 +18,7 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 </script>
 
 </head> 
-<body> 
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);"> 
 
 <div id="on_board_wrapper">
 	<header>
@@ -36,7 +36,7 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 				<div id="input">
 					<div id="animation_text"></div>
 				</div>
-				<div class="text">Guess an answer by typing</div>
+				<div class="text">How the game works...</div>
 			</div>
 			<div id="scene_2">
 			       <div id="your_score" class="player_score" style="margin-top: 20px;margin-left: 38px;">0</div>

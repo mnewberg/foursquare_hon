@@ -26,7 +26,7 @@ function game_animation() {
 	});
 }
 
-var text = "Guess an item"
+var text = "Guess as much as you can"
 function theInterval(){
 		$('#animation_text')[0].innerHTML += text[d];
 		d++;
@@ -37,7 +37,7 @@ function theInterval(){
 	}
 
 function typing() {
-	 the_typing=setInterval(theInterval,500)
+	 the_typing=setInterval(theInterval,200)
 }
 
 var guesses = ['Mississippi', 'California', 'Nevada']
@@ -47,7 +47,7 @@ function sample_guesses(){
 	$('#your_score')[0].innerHTML++;
 	c++;
 	if (c >= guesses.length){
-		clearInterval(start_guess);
+	    clearInterval(start_guess);scene_3()
 	}
 }
 
