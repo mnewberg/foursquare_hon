@@ -34,6 +34,8 @@
                         query: request.term
                     },
                     success: function (data) {
+					    var results, limit;
+						limit = 5;
                     		// Check to see if there was success
                     		if (data.meta.code != 200)
                     		{
@@ -41,8 +43,15 @@
                     			options.onError(data.meta.code, data.meta.errorType, data.meta.errorDetail);
                     			return false;
                     		}
-                    	
-                        response($.map(data.response.minivenues, function (item) {
+                    	if (data.response.minivenues) {
+							results = data.response.minivenues;
+							if (results.length > limit) {
+								results = results.slice(0, limit);
+							}
+						} else {
+							results = [];
+						}
+                        response($.map(results, function (item) {
                             return {
                                 name: item.name,
                                 id: item.id,
