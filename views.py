@@ -349,9 +349,9 @@ def checkin(request):
 
 
 def missing_sender(request):
-    phone=request.POST['area_code']+request.POST['number1']+request.POST['number2']
+    phone=request.POST['phone']
     u=user.objects.get(fsq_id=request.session['fsq_id'])
-    u.phone=re.sub('[^\d.]+','',phone)
+    u.phone=phone
     u.save()
     return HttpResponse('ok')
 

@@ -1,4 +1,4 @@
-<Html>
+<Htmlt>
 
 <head>
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
@@ -156,7 +156,7 @@ channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id=="loading"){$.mobile.changePage('#newgallery')}});
 {% endif %}
-channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=https://is1.4sqi.net/userpix'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
+channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=https://is1.4sqi.net/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 //infinite scroll
