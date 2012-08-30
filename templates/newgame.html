@@ -40,7 +40,10 @@ function timer(){
 duration=duration-1;
  var secs=duration%60;
 if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;game_over();$.get('/textall',{'victory':victory});};
- if (secs.toString().length < 2)
+if (victory){var status='won'}else{var status='lost'};
+var done_copy = 'You '+status+' to {{user2_name}}!! We will connect you two over an anonymous SMS line for an hour!';
+$('#game_over_text').html(done_copy);
+if (secs.toString().length < 2)
  {
   secs = '0' + secs;
  }
@@ -96,8 +99,8 @@ guessed.push(entry);}}}}
 			<div id="modal_cell">
 				<div id="modal">
 					<div class="modal_header"><div id="game_over">Game Over!</div></div>
-					<div id="game_over_text">tesaugs daskj hdabffnn aksjgd</div>
-					<div id="okay">Okay</div>
+					<div id="game_over_text"></div>
+					<a href="http://playdo.pe" border="0"><div id="okay">Okay</div></a>
 				</div>
 			</div>
 		</div>
@@ -110,14 +113,14 @@ guessed.push(entry);}}}}
 			<div>
 				<img src="https://is1.4sqi.net/userpix_thumbs/{{user1_pic}}" id="game_opponent" class="player_small" />
 				<div id="your_score" class="player_score">0</div>
-				<div id="your_last_guess" class="last_guess">Broadway</div>
+				<div id="your_last_guess" class="last_guess elipses">...</div>
 			</div>
 		</div>
 		<div id="game_opponent" class="game_player">
 			<div>
 				<img src="https://is1.4sqi.net/userpix_thumbs/{{user2_pic}}" id="game_opponent" class="player_small" />
 				<div id="opponent_score" class="player_score">0</div>
-				<div id="opponent_last_guess" class="last_guess">Test</div>
+				<div id="opponent_last_guess" class="last_guess elipses">...</div>
 			</div>
 		</div>
 		<div id="input_container">

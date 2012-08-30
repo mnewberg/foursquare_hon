@@ -3,6 +3,12 @@
   src: url("../fonts/dsdigital.TTF");
 }
 
+.elipses{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
 /* line 3, ../sass/partials/_waiting_room.scss */
 #red {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8282), color-stop(50%, #ff4545), color-stop(100%, #ff8282));
@@ -756,6 +762,7 @@ input:focus {
   text-shadow: white 0px 1px 1px;
   line-height: 39px;
   height: 39px;
+  width:130px
 }
 
 /* line 15, ../sass/partials/_on_board.scss */
@@ -2235,7 +2242,7 @@ ul {
 
 /* line 33, ../sass/style.scss */
 #filler {
-  height: 100%;
+  height: 600px;
   width: 100%;
   background: url("../images/corrugation.jpg") repeat;
 }

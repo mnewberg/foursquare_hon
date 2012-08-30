@@ -154,7 +154,7 @@ window.isdone = false
 $(document).ready(function(){$.mobile.changePage('#loading')})
 channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
-channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id="loading"){$.mobile.changePage('#newgallery')}});
+channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id=="loading"){$.mobile.changePage('#newgallery')}});
 {% endif %}
 channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
@@ -162,7 +162,7 @@ $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 //infinite scroll
 var ajaxOK = true;
 $(window).on('scroll', function () { 
-;if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=='newgallery' && ajaxOK){$('#loader').show();
+;if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=="newgallery" && ajaxOK){$('#loader').show();
 ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader><img id=ajax_spinner src="../static/images/ajax-loader.gif"></div>');if (data.done){ajaxOK=false}else{ajaxOK=true};$('.photo').fadeIn('slow');$('#loader').hide()})}})
 
 
