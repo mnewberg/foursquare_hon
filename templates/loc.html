@@ -156,7 +156,7 @@ channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id=="loading"){$.mobile.changePage('#newgallery')}});
 {% endif %}
-channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=http://img-s.foursquare.com/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
+channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=https://is1.4sqi.net/userpix'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
 $('#grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 //infinite scroll
@@ -249,8 +249,8 @@ function submit(){ {% if not recentcheckin %}
 		    $.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'});
 		    {% endif %}
 		    {% if not twitter %}
-		    $.post('/updatetwitter/',{'twitter':$('#twitter').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});{% endif %}
-		    {% if not phone %}$.post('/phone/',{'twitter':$('#phone').value,'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});
+		    $.post('/updatetwitter/',{'twitter':$('#twitter').val(),'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});{% endif %}
+		    {% if not phone %}$.post('/phone/',{'phone':$('#tel').val(),'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});
 		    {% endif %}if(window.isdone=true){$.mobile.changePage('#newgallery')}else{$.mobile.changePage('#loading');}
 }
 
