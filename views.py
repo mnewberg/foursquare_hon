@@ -50,7 +50,7 @@ def home(request):
     if is_desktop(user_agent):
         return render_to_response('home.html')
     else:
-        return render_to_response('home.html')
+        return render_to_response('front_2.html')
 
 def login(request):
         try:
