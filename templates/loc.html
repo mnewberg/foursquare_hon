@@ -246,11 +246,15 @@ log(message);
     };
 
 function submit(){ {% if not recentcheckin %}
-		    $.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'});
+    $('#venue').selectmenu({ preventFocusZoom: true });
+$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'});
 		    {% endif %}
 		    {% if not twitter %}
+    $('#twitter').selectmenu({ preventFocusZoom: true });
 		    $.post('/updatetwitter/',{'twitter':$('#twitter').val(),'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});{% endif %}
-		    {% if not phone %}$.post('/phone/',{'phone':$('#tel').val(),'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});
+		    {% if not phone %}
+    $('#tel').selectmenu({ preventFocusZoom: true });
+$.post('/phone/',{'phone':$('#tel').val(),'csrfmiddlewaretoken':document.getElementsByName('csrfmiddlewaretoken')[0].value});
 		    {% endif %}if(window.isdone=true){$.mobile.changePage('#newgallery')}else{$.mobile.changePage('#loading');}
 }
 

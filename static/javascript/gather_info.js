@@ -1,8 +1,4 @@
 $(document).ready(function() {
-    $('#tel').selectmenu({ preventFocusZoom: true });
-    $('#twitter').selectmenu({ preventFocusZoom: true });
-    $('#venue').selectmenu({ preventFocusZoom: true });
-
 	 jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, ""); 
 	return this.optional(element) || phone_number.length > 9 &&
