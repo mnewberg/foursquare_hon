@@ -78,7 +78,8 @@ function timer() {
             $('#scene_1').fadeIn('fast');
 			$('#animation_text').html('')
 			d=0
-			$('#time_remaining').css({color: '#FFFC00'});		 
+			$('#time_remaining').css({color: '#FFFC00'});
+	    $('#time_remaining').html('0:00');
 			typing();
         });
     }
