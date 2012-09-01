@@ -48,7 +48,7 @@ def postrecv(request):
 def home(request):
     user_agent = get_user_agent(request)
     if is_desktop(user_agent):
-        return render_to_response('home.html')
+        return render_to_response('desktop.html')
     else:
         return render_to_response('front_2.html')
 
