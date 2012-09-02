@@ -7913,3 +7913,8 @@
 [Fri Aug 31 16:39:15 2012] [error] [client 10.183.253.50] File does not exist: /var/www/four_staging/foursquare/static/javascript/frontpage.js, referer: http://playdo.pe/
 [Fri Aug 31 20:39:14 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
 [Fri Aug 31 20:39:14 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Sun Sep 02 01:21:01 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Sun Sep 02 13:12:05 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Sun Sep 02 13:12:05 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Sun Sep 02 13:16:07 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
+[Sun Sep 02 13:16:07 2012] [warn] RSA server certificate CommonName (CN) `www.playdo.pe' does NOT match server name!?
