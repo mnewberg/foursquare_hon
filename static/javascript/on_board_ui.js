@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	$('#arrow').on('click', function() {
 		twitter_bio();
-	});
+	});	
 
 	$('#back_arrow').on('click', function() {
 		game_animation();
@@ -12,6 +12,8 @@ $(document).ready(function() {
 
 var d=0
 var c=0
+var i=0
+
 
 
 function twitter_bio() {
@@ -26,27 +28,33 @@ function game_animation() {
 	});
 }
 
-var text = "Guess as much as you can"
-function theInterval(){
-		$('#animation_text')[0].innerHTML += text[d];
-		d++;
-		if (d >= text.length) {
+var rappers=["50 Cent","Jay-Z","Biggie"]
+function theInterval() {
+	$('#animation_text')[0].innerHTML += rappers[i][d];
+	d++
+	if (d > rappers[i].length && i <= rappers.length-1) {
+		$('#animation_text').html('')
+		i++;
+		d=0;
+		} 
+		else if (d == rappers[i].length && i == rappers.length-1)
+		{
 			clearInterval(the_typing);
 			runAnimation();
 		}
-	}
 
-function typing() {
-	 the_typing=setInterval(theInterval,200)
 }
 
-var guesses = ['Mississippi', 'California', 'Nevada']
+
+function typing() {
+	 the_typing=setInterval(theInterval,300)
+}
 
 function sample_guesses(){
-	$('#sample_guess').html(guesses[c]);
+	$('#sample_guess').html(rappers[c]);
 	$('#your_score')[0].innerHTML++;
 	c++;
-	if (c >= guesses.length){
+	if (c >= rappers.length){
 	    clearInterval(start_guess);scene_3()
 	}
 }
@@ -54,7 +62,7 @@ function sample_guesses(){
 function scene_2() {
 	c=0
 	$('#your_score').html('0')
-	$('#sample_guess').html(guesses[c])
+	$('#sample_guess').html('')
 	$('#scene_2').fadeIn('slow',function(){start_guess=setInterval(sample_guesses, 1000);})
 }
 
@@ -76,10 +84,11 @@ function timer() {
         });
         $('#scene_3').fadeOut('fast', function () {
             $('#scene_1').fadeIn('fast');
-			$('#animation_text').html('')
-			d=0
+			$('#animation_text').html('');
+			i=0;
+			d=0;
 			$('#time_remaining').css({color: '#FFFC00'});
-	    $('#time_remaining').html('0:00');
+	    $('#time_remaining').html('0:05');
 			typing();
         });
     }

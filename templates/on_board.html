@@ -6,7 +6,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" href="../static/stylesheets/style.css" />
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="../static/javascript/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="../static/javascript/on_board_ui.js"></script>
 <!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_formsregister register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
 g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);mixpanel.init("58e3c644f32d1b4f722dcf78a1e2cf58");</script><!-- end Mixpanel -->
@@ -36,18 +36,18 @@ $("#block").click(function(){ mixpanel.track("Blocked user");});
 				<div id="input">
 					<div id="animation_text"></div>
 				</div>
-				<div class="text">How the game works...</div>
+				<div class="text">Guess as many answers as you can!</div>
 			</div>
 			<div id="scene_2">
 			       <div id="your_score" class="player_score" style="margin-top: 20px;margin-left: 38px;">0</div>
-			<div id="sample_guess">Mississippi</div>
+			<div id="sample_guess"></div>
 			<div class="text">Earn points by guessing correctly</div>
 			</div>
 			<div id="scene_3">
 				<div id="scoreboard">
 					<div id="time_remaining">0:05</div>
 				</div>
-				<div id="directions">Earn the most points before time runs out!</div>
+				<div id="directions">Score the most points before time runs out!</div>
 				</div>
 		</div>
 		<div id="location_info">
