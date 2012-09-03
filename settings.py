@@ -10,7 +10,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME':'four_staging',                      # Or path to database file if using sqlite3.
+        'NAME':'prod',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': 'swagoo',                  # Not used with sqlite3.
         'HOST': '108.171.160.105',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -95,7 +95,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/four_staging/foursquare/'
+STATIC_ROOT = '/var/www/playdope/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -142,7 +142,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-	"/var/www/four_staging/foursquare/templates"
+	"/var/www/playdope/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
