@@ -5,3 +5,4 @@ settings.py
 *mobileadmin/
 compass_app_log.txt
 logs/*
+*.pyc
