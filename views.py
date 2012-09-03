@@ -219,7 +219,7 @@ def second(request):
                     photo=False
                 else:
                     photo=True
-                queue_email(query.email(),query.first_name())
+                queue_email(query.email,query.first_name())
                 return render_to_response('thank_you.html',{'photo':photo})
       else:
                 logger.error('Login exception', exc_info=True, extra={'stack': True})
