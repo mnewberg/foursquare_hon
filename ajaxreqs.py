@@ -85,7 +85,6 @@ def new_nearby(key,the_id,lat,lon):
 			try:
 				signature=re.findall('\^?s=.{27}',d)[0][2:]
 				checkin=re.findall('checkin/.{0,24}',d)[0][8:]
-				logger.error('trying url',exc_info=True,extra={'stack':True,'chickpix':chickpix,'user':i.from_user,'d':d,})
 				entry=authenticator.query('/checkins/'+checkin,token,{'signature':signature})
 				found.append(i.from_user)
 				fname=entry['checkin']['user']['firstName']
