@@ -51,7 +51,7 @@
 
 			{% csrf_token %}
 			<div id="send_button" onclick="if (game_validate() == false) {
-	alert('Please Select A Game before inviting {{f_name}}! ')
+	alert('Please select a game before inviting {{f_name}}!!')
 } else {
 	$.post('/outreach', {
 		'venue_id': '{{venue_id}}',
