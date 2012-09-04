@@ -1388,9 +1388,9 @@ body, html {
   width: 261px;
   position: relative;
   margin: 0 auto;
-  margin-top: 14px;
+  margin-top: 9px;
   top: 23px;
-  height: 78px;
+  height: 84px;
 }
 /* line 77, ../sass/partials/_mixins.scss */
 #interests:before {
