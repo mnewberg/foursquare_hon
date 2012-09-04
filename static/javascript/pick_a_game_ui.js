@@ -7,7 +7,7 @@ $(document).ready(function() {
 });
 
 function game_validate(){
-var val=document.getElementsByName('game_id')[0].value; if (val==""){return true}else{return false}
+var val=document.getElementsByName('game_id')[0].value; if (val==""){return false}else{return true}
 }
 
 function show_modal(){
