@@ -6,6 +6,9 @@ $(document).ready(function() {
 	});
 });
 
+function game_validate(){
+var val=document.getElementsByName('game_id')[0].value; if (val==""){return true}else{return false}
+}
 
 function show_modal(){
 	$('#pick_a_game_modal').show();
