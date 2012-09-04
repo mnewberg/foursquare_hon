@@ -53,6 +53,7 @@ def home(request):
         return render_to_response('front_2.html')
 
 def login(request):
+        user_agent = get_user_agent(request)
         if is_desktop(user_agent):
             return render_to_response('desktop.html')
        	else:
