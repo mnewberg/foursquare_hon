@@ -18,17 +18,19 @@ DATABASES = {
     }
 }
 
+LOGGER_ID='staging_errors'
+
 SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 
 SESSION_ENGINE='django.contrib.sessions.backends.db'
 
 SESSION_SAVE_EVERY_REQUEST=True
 
-CLIENT_ID='4KS2JZ3U4GYSHOL1NQ3DCEH5ZXC3R5PVEVAAQAQCA5Z5RRRS'
+CLIENT_ID='CKGAW2XPLDZPQLI3ANWMFQLFGOHGVSGSKAQP5BDMVXZHQ5WE'
 
-CLIENT_SECRET='TOXCCMYSGVPM2OAVPR3RIDUM0WFMKVJ4VUFNFSI00QSZF4IH'
+CLIENT_SECRET='R0M34MMYJSHCDVNRF5NSNTZI5RPUJ1ZEWJJ2HYXIEDC0ITFI'
 
-CALLBACK_URL='http://playdo.pe/loc/'
+CALLBACK_URL='http://staging.playdo.pe/loc/'
 
 SENTRY_DSN='http://9b5bc04b51714ec09d37667b71b4dfa6:5281b6ccb4134b4ab98a992378f41d51@50.57.186.209:9000/2'
 
@@ -189,7 +191,7 @@ LOGGING = {
         }
     },
     "loggers": {
-        "django.request": {
+        "staging_errors": {
             "handlers": ["sentry"],
             "level": "ERROR",
             "propagate": True

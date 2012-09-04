@@ -15,7 +15,7 @@ import re
 import logging
 from django.contrib.sessions.backends.db import SessionStore
 
-logger=logging.getLogger('django.request')
+logger=logging.getLogger(settings.LOGGER_ID)
 
 consumer_key=settings.CONSUMER_KEY
 consumer_secret=settings.CONSUMER_SECRET
