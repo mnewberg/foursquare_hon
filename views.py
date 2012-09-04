@@ -53,10 +53,10 @@ def home(request):
         return render_to_response('front_2.html')
 
 def login(request):
-		if is_desktop(user_agent):
-	        return render_to_response('desktop.html')
-		else:
-			pass
+        if is_desktop(user_agent):
+            return render_to_response('desktop.html')
+       	else:
+       		pass
         try:
             request.session['lat']=request.GET['lat']
             request.session['lon']=request.GET['lon']
