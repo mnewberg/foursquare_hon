@@ -37,7 +37,7 @@ access_token_secret=settings.ACCESS_TOKEN_SECRET
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
-logger=logging.getLogger('django.request')
+logger=logging.getLogger(settings.LOGGER_ID)
 
 
 def postrecv(request):
