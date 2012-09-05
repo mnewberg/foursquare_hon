@@ -187,7 +187,7 @@ def second(request):
       elif unread and uidsesh and twitter_outreach.objects.get(uid=request.session['uid']).m_target.fsq_id != f_id:
                 return HttpResponse ('INVALID LOGIN ATTEMPT')
       elif unread>0 and uidsesh and user.objects.filter(fsq_id=f_id).count()==0:
-		sobjects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
+		user.objects.create(fsq_id=query.id(), first_name=scrub(query.first_name()), last_name=last_name,date_joined=datetime.datetime.today(),phone=query.phone(),email=query.email(),twitter=query.twitter(),facebook=query.facebook(),photo=query.photo()[36:], has_shared=False, token=token, gender=query.gender())
                 if not query.phone():
                     return render_to_response('missing.html',{'role':'onboard'}, context_instance=RequestContext(request))
                 else:
