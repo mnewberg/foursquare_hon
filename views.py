@@ -53,6 +53,7 @@ def home(request):
         return render_to_response('front_2.html')
 
 def login(request):
+        user_agent = get_user_agent(request)
         if is_desktop(user_agent):
             return render_to_response('desktop.html')
        	else:
@@ -348,7 +349,7 @@ def checkin(request):
         fsq_id=request.session['fsq_id']
         u=queue.objects.get(fsq_id=fsq_id)
         token = u.token
-        post_data=[('oauth_token',token),('venueId','4fe5e2897b0c9089d7f57194'),('shout','YOU MAKE ME WANNA SHOUT! (teest)'),('broadcast','public,followers')]
+        post_data=[('oauth_token',token),('venueId','4fe5e2897b0c9089d7f57194'),('shout','Getting ready for playdo.pe. A new way to make friends nearby with games.'),('broadcast','public,followers')]
         urllib2.urlopen('https://api.foursquare.com/v2/checkins/add',urllib.urlencode(post_data))
         u.has_shared=True
         u.save()
