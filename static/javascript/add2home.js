@@ -190,7 +190,7 @@ var addToHome = (function (w) {
 				case 'bubble':
 					duration = '0.6s';
 					balloon.style.opacity = '0';
-					balloon.style.webkitTransform = 'translate3d(0,' + (startY + 50) + 'px,0)';
+					balloon.style.webkitTransform = 'translate3d(0,' + (startY) + 'px,0)';
 					break;
 				default:
 					duration = '1s';
@@ -216,7 +216,7 @@ var addToHome = (function (w) {
 					break;
 				case 'bubble':
 					duration = '0.6s';
-					balloon.style.webkitTransform = 'translate3d(0,' + (balloon.offsetHeight + options.bottomOffset + 50) + 'px,0)';
+					balloon.style.webkitTransform = 'translate3d(0,' + (balloon.offsetHeight + options.bottomOffset) + 'px,0)';
 					break;
 				default:
 					duration = '1s';
@@ -265,20 +265,20 @@ var addToHome = (function (w) {
 				if ( isIPad ) {
 					duration = '0.4s';
 					opacity = '0';
-					posY = posY + 50;
+					posY = posY;
 				} else {
 					duration = '0.6s';
-					posY = posY + balloon.offsetHeight + options.bottomOffset + 50;
+					posY = posY + balloon.offsetHeight + options.bottomOffset;
 				}
 				break;
 			case 'bubble':
 				if ( isIPad ) {
 					duration = '0.8s';
-					posY = posY - balloon.offsetHeight - options.bottomOffset - 50;
+					posY = posY - balloon.offsetHeight - options.bottomOffset;
 				} else {
 					duration = '0.4s';
 					opacity = '0';
-					posY = posY - 50;
+					posY = posY;
 				}
 				break;
 			default:
