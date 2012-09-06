@@ -48,7 +48,7 @@ def callback(request):
 		if routing.objects.filter(sender=i[1]).count()>0:
 			curr_did=advanceDID(i[1])
 		else:
-			curr_did=avail_DIDs.objects.get(id=1)
+			curr_did=avail_DIDs.objects.all()[0]
 		routing.objects.create(recipient=i[0],sender=i[1],DID=curr_did, time_created=round(time()))
 	request.session['curr_did']=curr_did
 	request.session['logged_in']=logged_in_user.phone
