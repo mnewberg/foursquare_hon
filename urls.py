@@ -18,6 +18,7 @@ uri = authenticator.authorize_uri()
 
 urlpatterns = patterns('',
     url(r'^$','views.home'),
+    url(r'^instagram',redirect_to,{'url':'instagram://user?username=tlimongello'}),
     url(r'^favicon.ico',redirect_to, {'url':'http://c15075740.r40.cf2.rackcdn.com/favicon.ico'}),
     url(r'^faq$','views.faq'),
     url(r'^hook$','views.hook'),

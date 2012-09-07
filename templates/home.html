@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +11,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="description" content="playdo.pe is a fun way to play games with nearby people you should know.">
 <META NAME="KEYWORDS" CONTENT="playdope,playdo.pe,play dope, dope, lbs game, location game, nearby, game">
-  <link rel="stylesheet" href="/static/stylesheets/add2home.css">
 	<link rel="apple-touch-icon-precomposed" href="http://c15075740.r40.cf2.rackcdn.com/Icon@2x.png" />
                 <!-- start Mixpanel --><script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("scr
 ipt");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/s
@@ -34,17 +32,6 @@ gister_once unregister identify name_tag set_config".split(" ");for(e=0;e<      
   })();
 
 
-var addToHomeConfig = {
-animationIn: 'fade',
-animationOut: 'bubble',
-lifespan:10000,
-expire:1440,
-touchIcon:true,
-bottomOffset:5,
-message:'Add playdope to your <strong>%device</strong>! Click the `%icon`! Talk about easy access ;)'
-};
-
-
 function geosuccess(position){document.getElementById('lat').value=position.coords.latitude;document.getElementById('lon').value=position.coords.longitude;document.getElementById('hiddenform').submit()}
 
 function geofail(){alert('To continue Please enable geolocation in your phone\'s settings.')}
@@ -54,7 +41,6 @@ function initgeo(){navigator.geolocation.getCurrentPosition(geosuccess,geofail)}
 
 
 </script>
-<script type="application/javascript" src="/static/javascript/add2home.js" charset="utf-8"></script>
 <style type="text/css">
 
 @-webkit-keyframes reset {
