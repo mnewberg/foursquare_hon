@@ -156,48 +156,35 @@ channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id=="loading"){$.mobile.changePage('#newgallery')}});
 {% endif %}
-channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class=photo><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=https://is1.4sqi.net/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
-$('#grid').bind('click', function(){mixpanel.track('clicked-image')});
+channel.bind('image',function(data){document.getElementById('the_grid').innerHTML+='<div class="\photo page0\"><a href=/pickmessage?pic_id='+data["entry"][0]+'&venue_id='+data["entry"][3]+'><img src=https://is1.4sqi.net/userpix/'+data["entry"][0]+'></a><div class=name>'+data["entry"][1]+'</div></div>'});
+$('#the_grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 
-// var ajaxOK = true;
-// $(window).on('scroll', function() {;
-// 	if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150) && $.mobile.activePage[0].id == "newgallery" && ajaxOK) {
-// 		$('#loader').show();
-// 		$('.photo').css{visibility:hidd}
-// 		ajaxOK = false;
-// 		$.get("/getpage", function(data) {
-//			var newhtml = [];
-//			for (key in data.d) {
-//				newhtml += '<div class=photo style=display:none><a href=/pickmessage?pic_id=' + data.d[key][0] + '&venue_id=' + data.d[key][3] + '><img name=profile src=http://img-s.foursquare.com/userpix/' + data.d[key][0] + '></a><div class=name>' + data.d[key][1] + '</div></div>'
-//			};
-// 			$('#the_grid')[0].innerHTML += (newhtml + '<div id=loader><img id=ajax_spinner src="../static/images/ajax-loader.gif"></div>');
-// 			if (data.done) {
-// 				ajaxOK = false
-// 			} else {
-// 				ajaxOK = true
-// 			};
-// 			$('.photo').fadeIn('slow');
-// 			$('#loader').hide()
-// 		})
-// 	}
-// })
-function grabpage() {
+function grabpage(page) {
 	$.get("/getpage", function(data) {
 		var newhtml = [];
 		for (key in data.d) {
-			newhtml += '<div class=photo style=display:none><a href=/pickmessage?pic_id=' + data.d[key][0] + '&venue_id=' + data.d[key][3] + '><img name=profile src=http://img-s.foursquare.com/userpix/' + data.d[key][0] + '></a><div class=name>' + data.d[key][1] + '</div></div>'
-		};$('#the_grid').html(newhtml);$('.photo').fadeIn('fast');
+			newhtml += '<div class="\photo page'+page+'\"'+' style=display:none><a href=/pickmessage?pic_id=' + data.d[key][0] + '&venue_id=' + data.d[key][3] + '><img name=profile src=http://img-s.foursquare.com/userpix/' + data.d[key][0] + '></a><div class=name>' + data.d[key][1] + '</div></div>'
+		};$('.page'+(page-1)).slideToggle('fast');$('#the_grid').append(newhtml);$('.page'+page).slideToggle('fast');return (data.done);
 	});
 }
 
-// var ajaxOK = true;
-// $(window).on('scroll', function () { 
-// ;if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height() - 150 ) && $.mobile.activePage[0].id=="newgallery" && ajaxOK){$('#loader').show();
-// ajaxOK=false; $.get("/getpage",function(data){var newhtml=[]; for (key in data.d){newhtml+='<div class=photo style=display:none><a href=/pickmessage?pic_id='+data.d[key][0]+'&venue_id='+data.d[key][3]+'><img name=profile src=http://img-s.foursquare.com/userpix_thumbs/'+data.d[key][0]+'></a><div class=name>'+data.d[key][1]+'</div></div>'};$('#the_grid')[0].innerHTML+=(newhtml+'<div id=loader><img id=ajax_spinner src="../static/images/ajax-loader.gif"></div>');if (data.done){ajaxOK=false}else{ajaxOK=true};$('.photo').fadeIn('slow');$('#loader').hide()})}})
-//
-
-$(document).bind('pageinit',function(){$('#newgallery').swipe(grabpage())});
+var page=1
+var ajaxOK = true;
+$(window).on('scroll', function() {
+	if ($(window).scrollTop() >= ($(document).height() - $.mobile.activePage.height()) && $.mobile.activePage[0].id == "newgallery" && ajaxOK) {
+		$('#loader').show();
+		ajaxOK = false;
+		checkdone=grabpage(page);
+		if (checkdone) {
+			ajaxOK = false;
+		} else {
+			ajaxOK = true;
+		        window.page++
+		};
+		$('#loader').hide()
+}else if($(window).scrollTop() == 0 && $.mobile.activePage[0].id=="newgallery" && ajaxOK && page>1){ajaxOK=false;window.page--;$('.page'+page).slideToggle('fast');$('.page'+(page-1)).slideToggle('fast');ajaxOK=true}
+});
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33635510-1']);
