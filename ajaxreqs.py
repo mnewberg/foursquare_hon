@@ -129,7 +129,7 @@ def new_nearby(key,the_id,lat,lon):
 def get_page(request):
 	d=request.session['chickpix'][:10]
 	del request.session['chickpix'][:10]
-	if request.session['chickpix']=='':
+	if request.session['chickpix']==[]:
 		done=True
 	else:
 		done=False
