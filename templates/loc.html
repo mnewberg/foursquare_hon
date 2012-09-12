@@ -151,7 +151,7 @@ var gallerybody = ""
 window.isdone = false
 
 {% if from_4app %}
-$(document).bind('pageinit',function(){$.mobile.changePage('#loading')})
+$.mobile.changePage('#loading')
 channel.bind('done',function(){$.mobile.changePage('#newgallery')})
 {% else %}
 channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id=="loading"){$.mobile.changePage('#newgallery')}});
