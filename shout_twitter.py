@@ -21,7 +21,7 @@ bitly=bitly_api.Connection(bitly_user,bitly_key)
 
 
 def send_twitter_shout(t_handle,sender,f_name,venue_name,uid):
-    url=bitly.shorten('http://playdo.pe/'+uid)
+    url=str(bitly.shorten('http://playdo.pe/'+uid))
     options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but '+ sender+' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but '+ sender +' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! '+ sender+' is around the corner from your check-in @ '+ venue_name +' & challenged you to a game of trivia: '+ url)]
     try: 
         api.update_status(random.choice(options))
