@@ -13,8 +13,15 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
+bitly_key='R_4d6d45ada0e0b63358e51af5161c0074'
+bitly_user='thenewb'
+
+bitly=bitly_api.Connection(bitly_user,bitly_key)
+
+
 def send_twitter_shout(t_handle,sender,f_name,venue_name,uid):
-    options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but '+ sender+' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: http://playdo.pe/message/'+ uid),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but '+ sender +' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: http://playdo.pe/message/'+ uid),('@'+t_handle+' '+'Hey '+f_name+'!'+ sender+' is around the corner from your check-in @ '+ venue_name +' & challenged you to a game of trivia: http://playdo.pe/message/'+ uid)]
+    url=bitly.shorten('http://playdo.pe/'+uid)
+    options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but '+ sender+' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but '+ sender +' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! '+ sender+' is around the corner from your check-in @ '+ venue_name +' & challenged you to a game of trivia: '+ url)]
     try: 
         api.update_status(random.choice(options))
         success=True
