@@ -1,3 +1,4 @@
+import bitly_api
 import tweepy
 import settings
 import random
