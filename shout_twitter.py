@@ -14,7 +14,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 def send_twitter_shout(t_handle,sender,f_name,venue_name,uid):
-    options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but '+ sender+' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia! Learn more >> http://playdo.pe/message/'+ uid),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but '+ sender +' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia! Learn more >> http://playdo.pe/message/'+ uid),('@'+t_handle+' '+'Hey '+f_name+'!'+ sender+' is around the corner from your check-in @ '+ venue_name +' & challenged you to a game of trivia! Learn more >> http://playdo.pe/message/'+ uid)]
+    options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but '+ sender+' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: http://playdo.pe/message/'+ uid),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but '+ sender +' just saw you check-in @ '+ venue_name +' & challenged you to a game of trivia: http://playdo.pe/message/'+ uid),('@'+t_handle+' '+'Hey '+f_name+'!'+ sender+' is around the corner from your check-in @ '+ venue_name +' & challenged you to a game of trivia: http://playdo.pe/message/'+ uid)]
     try: 
         api.update_status(random.choice(options))
         success=True
