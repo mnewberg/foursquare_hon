@@ -1,6 +1,9 @@
 import tweepy
 import settings
 import random
+import logging
+
+logger=logging.getLogger(settings.LOGGER_ID)
 
 consumer_key=settings.CONSUMER_KEY
 consumer_secret=settings.CONSUMER_SECRET
@@ -17,6 +20,7 @@ def send_twitter_shout(t_handle,sender,f_name,venue_name,uid):
         success=True
     except:
         success=False
+        logger.error('There was a twitter error', exc_info=True, extra={'stack': True})
     return (success)
 
 def get_bio(t_handle):
