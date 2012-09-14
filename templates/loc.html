@@ -168,12 +168,12 @@ $('#the_grid').bind('click', function(){mixpanel.track('clicked-image')});
 
 
 var checkdone=false
-function grabpage(page) {
+function grabpage(page) {$.mobile.showPageLoadingMsg();
 	$.get("/getpage", function(data) {
 		var newhtml = [];
 		for (key in data.d) {
 			newhtml += '<div class="\photo page'+page+'\"'+' style=display:none><a href=/pickmessage?pic_id=' + data.d[key][0] + '&venue_id=' + data.d[key][3] + '><img name=profile src=http://img-s.foursquare.com/userpix/' + data.d[key][0] + '></a><div class=name>' + data.d[key][1] + '</div></div>'
-		};$('.page'+(page-1)).slideToggle('slow');$('#the_grid').append(newhtml);$('.page'+page).slideToggle('slow');window.checkdone=data.done;
+		};$('.page'+(page-1)).slideToggle('slow');$('#the_grid').append(newhtml);$('.page'+page).slideToggle('slow');window.checkdone=data.done;$.mobile.hidePageLoadingMsg();
 	});if(checkdone){$('#bottomgrid').hide();$('#topgrid').show();}else{$('#bottomgrid').show();$('#topgrid').show();}
 }
 
@@ -189,7 +189,7 @@ $(window).on('scroll', function() {
 			ajaxOK = true;
 		        window.page++
 		};
-}else if($(window).scrollTop() == 0 && $.mobile.activePage[0].id=="newgallery" && page>1){ajaxOK=false;window.page--;$('.page'+page).slideToggle('slow');$('.page'+(page-1)).slideToggle('slow');ajaxOK=true}
+}else if($(window).scrollTop() == 0 && $.mobile.activePage[0].id=="newgallery" && page>1){$.mobile.showPageLoadingMsg();ajaxOK=false;window.page--;$('.page'+page).slideToggle('slow');$('.page'+(page-1)).slideToggle('slow');ajaxOK=true;$.mobile.hidePageLoadingMsg();}
 });
 
   var _gaq = _gaq || [];
@@ -238,7 +238,6 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
 	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000,})}
 
                       function geo_preloaded(){
-                        alert('hit'); 
 		        lookup(lat,lon);
                         $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000});}
 
