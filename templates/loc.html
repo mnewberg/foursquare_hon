@@ -143,13 +143,23 @@ width:100%
 </style>
 
 	     <script>
+
 var pusher = new Pusher('890abd57f862ab2712ff');
 var channel = pusher.subscribe('chickpix-{{token}}')
-var gallerybody = ""
 window.isdone = false
 
+{% if lat and lon %}
+var lat={{lat}}
+var lon={{lon}}
+$('#main').ready(function(){channel.bind('pusher:subscription_succeeded',geo_preloaded())});
+{% else %}
+$('#main').ready(function(){channel.bind('pusher:subscription_succeeded',initiate_geolocation())});
+{% endif %}
+
+
 {% if from_4app %}
-$(document).ready(function(){$.mobile.changePage('#loading');channel.bind('done',function(){$.mobile.changePage('#newgallery')})});
+$(document).ready(function(){$.mobile.changePage('#loading')});
+channel.bind('done',function(){$.mobile.changePage('#newgallery')});
 {% else %}
 channel.bind('done',function(){window.isdone=true;if ($.mobile.activePage[0].id=="loading"){$.mobile.changePage('#newgallery')}});
 {% endif %}
@@ -196,13 +206,6 @@ $(window).on('scroll', function() {
 
 //{{sex}}
 
-{% if lat and lon %}
-var lat={{lat}}
-var lon={{lon}}
-$('main').ready(geo_preloaded);
-{%else%}
-$('main').ready(initiate_geolocation)	            
-{% endif %}
 
 function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
 	        }
@@ -235,7 +238,8 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
 	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000,})}
 
                       function geo_preloaded(){
-                         lookup(lat,lon);
+                        alert('hit'); 
+		        lookup(lat,lon);
                         $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000});}
 
 
@@ -260,6 +264,7 @@ log(message);
             
         });
     };
+
 
 function submit(){ {% if not recentcheckin %}
     $('#venue').selectmenu({ preventFocusZoom: true });
