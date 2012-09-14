@@ -222,7 +222,7 @@ def second(request):
                 return render_to_response('loc.html', {'lat':lat,'lon':lon,'sex':query.gender(),'token':token,'phone':query.phone(), 'twitter':query.twitter(),'recentcheckin':recentcheckin,'csrf':params}, context_instance=RequestContext(request))
       elif queue.objects.filter(fsq_id=query.id()).count()==0:
                 the_code=invite_codes.objects.create(code=random_string(7),quota=1)
-                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=request.session['lat'],lon=request.session['lon'])
+                queue.objects.create(fsq_id=query.id(),first_name=scrub(query.first_name()),last_name=scrub(query.last_name()),date_joined=datetime.datetime.today(),token=token,email=query.email(),allocated_invite=the_code, lat=lat,lon=lon)
                 if len(re.findall('blank',query.photo()))>0:
                     photo=False
                 else:
