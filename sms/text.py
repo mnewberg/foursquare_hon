@@ -63,7 +63,7 @@ def callback(request):
 	if routing.objects.filter(sender=logged_in_user.phone).count()>1:
 		curr_outgoing_did=advanceDID(logged_in_user.phone)
 	else:
-		curr_outgoing_did=avail_DIDs.objects.all()[0]
+		curr_outgoing_did=avail_DIDs.objects.get(id=1)
 	request.session['curr_outgoing_did']=curr_outgoing_did
 	request.session['other_user']=other_user.phone
 	request.session['other_user_name']=other_user.first_name
