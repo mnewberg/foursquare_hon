@@ -106,7 +106,7 @@ def endgame(request):
 		other_user_status='lost :( . How about buying '+logged_in_name+' a drink nearby at '+venue_names[0]+'?'
 	else:
 		logged_in_status='lost :( . How about buying '+other_user_name+' a drink nearby at '+venue_names[1]+'?'
-		other_user_status='beat '+logged_in_name+'!! All messages sent to this # for the next hour will go to '+other_user_name+'.'
+		other_user_status='beat '+logged_in_name+'!! All messages sent to this # for the next hour will go to '+logged_in_user+'.'
 
 	message=client.sms.messages.create(to=logged_in, from_=curr_did, body="*Message from playdo.pe* Game over, you " +logged_in_status)
 	message2=client.sms.messages.create(to=other_user, from_=curr_outgoing_did,body="*Message from playdo.pe* Game over, you "+other_user_status)
