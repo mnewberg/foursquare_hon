@@ -39,8 +39,8 @@ function startclock(){setInterval('timer()',1000)};
 function timer(){
 duration=duration-1;
  var secs=duration%60;
-if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);var victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;game_over();$.get('/textall',{'victory':victory});};
-if (victory){var status='won'}else{var status='lost'};
+if (duration==0){$('#time_remaining')[0].innerHTML='0:00';clearInterval(counter);window.victory = $("#your_score")[0].innerHTML > $("#opponent_score")[0].innerHTML;game_over();$.get('/textall',{'victory':window.victory});};
+if (window.victory){var status='won'}else{var status='lost'};
 var done_copy = 'You '+status+' to {{user2_name}}!! We will connect you two over an anonymous SMS line for an hour!';
 $('#game_over_text').html(done_copy);
 if (secs.toString().length < 2)
