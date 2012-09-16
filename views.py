@@ -302,7 +302,7 @@ def outreach(request):
     else:
         pass
     twitter_outreach.objects.create(m_target=datarget, sender=sender,game=thegame, uid=uid, message=message, read=False, venue_id=venue)
-    tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid)
+    tweet_response = send_twitter_shout(t_handle,sender.first_name,f_name,venue_name,uid,sender.twitter)
     if tweet_response:
         return HttpResponse(simplejson.dumps({'error':False}), mimetype='application/json')
     else:

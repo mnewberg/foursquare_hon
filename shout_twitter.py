@@ -20,7 +20,7 @@ bitly_user='thenewb'
 bitly=bitly_api.Connection(bitly_user,bitly_key)
 
 
-def send_twitter_shout(t_handle,sender,f_name,venue_name,uid):
+def send_twitter_shout(t_handle,sender,f_name,venue_name,uid,sender_twitter):
     venue_name=' '.join(venue_name.split(' ')[:2])
     url=str(bitly.shorten('http://playdo.pe/message/'+uid)['url'])
     options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but '+ sender+' just saw you checkin @ '+ venue_name +' & challenged you to a trivia game: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but '+ sender +' just saw you checkin @ '+ venue_name +' & challenged you to a trivia game: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! '+ sender+' is around the corner from you @ '+ venue_name +' & challenged you to a trivia game: '+ url)]
