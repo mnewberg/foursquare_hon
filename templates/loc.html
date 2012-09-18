@@ -267,7 +267,7 @@ log(message);
 
 function submit(){ {% if not recentcheckin %}
     $('#venue').selectmenu({ preventFocusZoom: true });
-$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'oauth_token':'{{token}}'});
+$.post('https://api.foursquare.com/v2/checkins/add',{'venueId':document.getElementById('venue-id').value,'shout':'I\'m playing games against people nearby on playdo.pe! Link your foursquare account to http://playdo.pe.','oauth_token':'{{token}}'});
 		    {% endif %}
 		    {% if not twitter %}
     $('#twitter').selectmenu({ preventFocusZoom: true });
