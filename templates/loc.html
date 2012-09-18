@@ -186,10 +186,10 @@ $(window).on('scroll', function() {
 		if (checkdone) {
 			ajaxOK = false;
 		} else {
-			ajaxOK = true;
+			setTimeout(function(){ajaxOK = true;},1000)
 		        window.page++
 		};
-}else if($(window).scrollTop() == 0 && $.mobile.activePage[0].id=="newgallery" && page>1){$.mobile.showPageLoadingMsg();ajaxOK=false;window.page--;$('.page'+page).slideToggle('slow');$('.page'+(page-1)).slideToggle('slow');ajaxOK=true;$.mobile.hidePageLoadingMsg();}
+}else if($(window).scrollTop() == 0 && $.mobile.activePage[0].id=="newgallery" && page>1){$.mobile.showPageLoadingMsg();ajaxOK=false;window.page--;$('.page'+page).slideToggle('slow');$('.page'+(page-1)).slideToggle('slow');setTimeout(function(){ajaxOK=true},1000);$.mobile.hidePageLoadingMsg();}
 });
 
   var _gaq = _gaq || [];

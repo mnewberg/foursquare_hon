@@ -424,6 +424,8 @@ def hook(request):
         u=user.objects.get(fsq_id=dic['user']['id'])
         post_data=[('oauth_token',str(u.token)),('text','Play a game with nearby people! Click here...'),('url','http://playdo.pe/login')]
         urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'+dic['id']+'/reply'),urllib.urlencode(post_data))
+        comment_data[('oauth_token',str(u.token)),('text','I am so cool')]
+        urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'+dic['id']+'/addcomment'),urllib.urlencode(comment_data))
     except:
         pass
     return HttpResponse('OK')
