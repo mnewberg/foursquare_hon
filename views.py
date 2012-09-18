@@ -71,7 +71,7 @@ def login(request):
                                 request.session['fsq_id']=f_id
                                 request.session['lat']=d['checkin']['venue']['location']['lat']
                                 request.session['lon']=d['checkin']['venue']['location']['lng']
-                                comment_data[('oauth_token',str(user.objects.get(fsq_id=f_id).token)),('text','I am so cool')]
+                                comment_data=[('oauth_token',str(user.objects.get(fsq_id=f_id).token)),('text','I\'m playing games against people nearby on playdo.pe! Link your foursquare account to http://playdo.pe.')]
                                 urllib2.urlopen(str('https://api.foursquare.com/v2/checkins/'+cid+'/addcomment'),urllib.urlencode(comment_data))
                                 return HttpResponseRedirect('/loc')
 			else:
