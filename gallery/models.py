@@ -29,7 +29,7 @@ class user(models.Model):
 	token= models.CharField(max_length=60, null=True)
 	last_lat = models.FloatField(null=True)
 	last_lon = models.FloatField(null=True)
-	gender = models.CharField(max_length=6)
+	gender = models.CharField(max_length=6, null=True)
 	def __unicode__(self):
 		return self.fsq_id
 
