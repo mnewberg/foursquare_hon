@@ -22,10 +22,18 @@ bitly=bitly_api.Connection(bitly_user,bitly_key)
 
 def send_twitter_shout(t_handle,sender,f_name,venue_name,uid,sender_twitter):
     url=str(bitly.shorten('http://playdo.pe/message/'+uid)['url'])
+    if len(venue_name)>15:
+        venue_name=[' '.join(venue_name.split(' ')[:2])][0]
+    else:
+        pass
     options=[('@'+t_handle+' '+'Yo '+f_name+'! This is crazy but @'+ sender_twitter +' just saw you checkin @ '+ venue_name +' & challenged you to a trivia game: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! This is crazy but @'+ sender_twitter +' just saw you checkin @ '+ venue_name +' & challenged you to a trivia game: '+ url),('@'+t_handle+' '+'Hey '+f_name+'! @'+ sender_twitter+' is around the corner from you @ '+ venue_name +' & challenged you to a trivia game: '+ url)]
-
-    try: 
-        api.update_status(random.choice(options))
+    choice=random.choice(options)
+    if len(choice)>140:
+        choice=('@'+t_handle+' Hey '+f_name+'! @'+sender_twitter+' is near '+venue_name+' & challenged you to a trivia game: '+url)
+    else:
+        pass
+    try
+        api.update_status(choice)
         success=True
     except:
         success=False
