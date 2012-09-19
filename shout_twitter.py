@@ -32,7 +32,7 @@ def send_twitter_shout(t_handle,sender,f_name,venue_name,uid,sender_twitter):
         choice=('@'+t_handle+' Hey '+f_name+'! @'+sender_twitter+' is near '+venue_name+' & challenged you to a trivia game: '+url)
     else:
         pass
-    try
+    try:
         api.update_status(choice)
         success=True
     except:
