@@ -14,16 +14,16 @@
 	    $('#area_code, #number1, #number2').autotab_magic().autotab_filter('numeric');
 	});
 </script>
-	
+<title>playdo.pe</title>	
 	</head>
 <body>
 <div data-role="page" data-theme="a" id="missingnumber">
 <div data-role="header" align="center" style="font-family:HelveticaNeueLight, HelveticaNeue-Light, Helvetica Neue Light, HelveticaNeue, Helvetica Neue, TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;size:10px;color:#ff6666;line-height:50px; text-align:center;"> We need your #!</div>
 <div align="center" style="padding-top:100px;">
 <form action="/missing" method="post">
-<table align="center"><tr><td> (</td><td><input type="text" name="area_code" id="area_code" maxlength="3" size="3" /></td><td> ) - </td><td>
-    <input type="text" name="number1" id="number1" maxlength="3" size="3"  /></td><td> - </td><td>
-    <input type="text" name="number2" id="number2" maxlength="4" size="5" /></td></tr><tr><td colspan="6">
+<table align="center"><tr><td> (</td><td><input type="tel" name="area_code" id="area_code" maxlength="3" size="3" /></td><td> ) - </td><td>
+    <input type="tel" name="number1" id="number1" maxlength="3" size="3"  /></td><td> - </td><td>
+    <input type="tel" name="number2" id="number2" maxlength="4" size="5" /></td></tr><tr><td colspan="6">
 <input type="submit" value="submit"></td></tr>
 <input type="hidden" name="user" value="{{role}}">
 {% csrf_token %}
