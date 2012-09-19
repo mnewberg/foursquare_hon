@@ -7,3 +7,9 @@ def send_invite(quota):
         approval_email(item.email, item.allocated_invite.code, item.first_name)
         item.delete()
     return 'success'
+
+def send_filter(queue_objects):
+    for item in queue_objects:
+        approval_email(item.email, item.allocated_invite.code, item.first_name)
+        item.delete()
+    return 'success'
