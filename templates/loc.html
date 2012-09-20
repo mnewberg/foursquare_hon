@@ -238,7 +238,6 @@ function initiate_geolocation() { navigator.geolocation.getCurrentPosition(handl
 	                $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000,})}
 
                       function geo_preloaded(){
-		        alert('im reloaded');
 		        lookup(lat,lon);
                         $.ajax({url:"/fsq",data:{'lat':lat,'lon':lon},type:"GET",timeout:100000});}
 
