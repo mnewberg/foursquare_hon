@@ -151,9 +151,9 @@ window.isdone = false
 {% if lat and lon %}
 var lat={{lat}}
 var lon={{lon}}
-$('#main').ready(function(){channel.bind('pusher:subscription_succeeded',setTimeout(geo_preloaded(),2000))});
+$(window).load(function(){channel.bind('pusher:subscription_succeeded',setTimeout(geo_preloaded(),2000))});
 {% else %}
-$('#main').ready(function(){channel.bind('pusher:subscription_succeeded',setTimeout(initiate_geolocation(),2000))});
+$(window).load(function(){channel.bind('pusher:subscription_succeeded',setTimeout(initiate_geolocation(),2000))});
 {% endif %}
 
 
